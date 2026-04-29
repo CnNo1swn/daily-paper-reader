@@ -1,0 +1,166 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-001.webp",
+      "caption": "Figure 6. Heat map of the types of research methods used",
+      "page": 11,
+      "index": 1,
+      "width": 739,
+      "height": 596
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-002.webp",
+      "caption": "Figure 11. Top Five Research Topics by Usage Proportion Across Academic Age Groups. An academic age of < 7 years indicates young scholars, 7–14 years indicates middle-aged scholars, and > 14 years indicates senior scholars.",
+      "page": 15,
+      "index": 2,
+      "width": 869,
+      "height": 733
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-003.webp",
+      "caption": "Figure 10. Top Five Research Topics by Usage Proportion Across Academic Age Groups",
+      "page": 15,
+      "index": 3,
+      "width": 750,
+      "height": 542
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-004.webp",
+      "caption": "Figure 2. Classification results of research methods based on academic papers",
+      "page": 7,
+      "index": 4,
+      "width": 858,
+      "height": 417
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-005.webp",
+      "caption": "Figure 3. Classification results of research topics based on academic papers",
+      "page": 7,
+      "index": 5,
+      "width": 930,
+      "height": 571
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-006.webp",
+      "caption": "Figure 5. Statistical differences in the frequency of method selection among scholars in different academic age groups",
+      "page": 10,
+      "index": 6,
+      "width": 867,
+      "height": 579
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-007.webp",
+      "caption": "Table 2. Studies on the use of research methods",
+      "page": 3,
+      "index": 7,
+      "width": 965,
+      "height": 414
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-008.webp",
+      "caption": "Figure 15. Heatmap of Research Method Usage by Senior Scholars Across Research Topics",
+      "page": 18,
+      "index": 8,
+      "width": 852,
+      "height": 569
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-009.webp",
+      "caption": "Figure 16. Trends in Research Topic Application",
+      "page": 18,
+      "index": 9,
+      "width": 911,
+      "height": 627
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-010.webp",
+      "caption": "Figure 9. Evolutionary trends in the use of different research methods by scholars at different stages of their academic careers",
+      "page": 13,
+      "index": 10,
+      "width": 937,
+      "height": 705
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-011.webp",
+      "caption": "Figure 1. Framework of this study",
+      "page": 4,
+      "index": 11,
+      "width": 917,
+      "height": 444
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-012.webp",
+      "caption": "Figure 17. Evolution of research method usage among scholars at different career stages",
+      "page": 19,
+      "index": 12,
+      "width": 899,
+      "height": 590
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-013.webp",
+      "caption": "Figure 14. Heatmap of Research Method Usage by Middle-aged Scholars Across Research Topics",
+      "page": 17,
+      "index": 13,
+      "width": 854,
+      "height": 487
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-014.webp",
+      "caption": "Figure 13. Heatmap of Research Method Usage by Young Scholars Across Research Topics",
+      "page": 17,
+      "index": 14,
+      "width": 854,
+      "height": 571
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-015.webp",
+      "caption": "Figure 8. Top five research methods used by different academic age groups. An academic age of < 7 years indicates young scholars, 7–14 years indicates middle-aged scholars, and > 14 years indicates senior scholars.",
+      "page": 12,
+      "index": 15,
+      "width": 930,
+      "height": 659
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-016.webp",
+      "caption": "Figure 7. Top five research methods by usage proportion across different academic age groups",
+      "page": 12,
+      "index": 16,
+      "width": 904,
+      "height": 429
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-017.webp",
+      "caption": "Figure 4. Distribution of authors' academic age",
+      "page": 9,
+      "index": 17,
+      "width": 793,
+      "height": 454
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-018.webp",
+      "caption": "Table 4. Classification system of research methods in LIS discipline(Chu&Ke,2017)",
+      "page": 5,
+      "index": 18,
+      "width": 950,
+      "height": 962
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-019.webp",
+      "caption": "Table 3. Number of academic articles in high quality representative journals in the field of LIS",
+      "page": 5,
+      "index": 19,
+      "width": 858,
+      "height": 412
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20528v1/fig-020.webp",
+      "caption": "Figure 12. Three-Dimensional Representation of Publication Count, Research Methods, and Topic Diversity Across Scholar Groups",
+      "page": 16,
+      "index": 20,
+      "width": 863,
+      "height": 283
+    }
+  ]
+}

@@ -1,0 +1,669 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-04-29T07:10:39.635510+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 1,
+    "deep_divecandidates": 11,
+    "deep_cap": 6,
+    "deep_selected": 6,
+    "quick_candidates": 44,
+    "quick_skim_target": 11,
+    "quick_selected": 11
+  },
+  "deep_dive": [
+    {
+      "id": "2604.23430v1",
+      "source": "arxiv",
+      "title": "Automating Categorization of Scientific Texts with In-Context Learning and Prompt-Chaining in Large Language Models",
+      "abstract": "The relentless expansion of scientific literature presents significant challenges for navigation and knowledge discovery. Within Research Information Retrieval, established tasks such as text summarization and classification remain crucial for enabling researchers and practitioners to effectively navigate this vast landscape, so that efforts have increasingly been focused on developing advanced research information systems. These systems aim not only to provide standard keyword-based search functionalities but also to incorporate capabilities for automatic content categorization within knowledge-intensive organizations across academia and industry. This study systematically evaluates the performance of off-the-shelf Large Language Models (LLMs) in analyzing scientific texts according to a given classification scheme. We utilized the hierarchical ORKG taxonomy as a classification framework, employing the FORC dataset as ground truth. We investigated the effectiveness of advanced prompt engineering strategies, namely In-Context Learning (ICL) and Prompt Chaining, and experimentally explored the influence of the LLMs' temperature hyperparameter on classification accuracy. Our experiments demonstrate that Prompt Chaining yields superior classification accuracy compared to pure ICL, particularly when applied to the nested structure of the ORKG taxonomy. LLMs with prompt chaining outperform the state-of-the-art models for domain (1st level) prediction and show even better performance for subject (2nd level) prediction compared to the older BERT model. However, LLMs are not yet able to perform well in classifying the topic (3rd level) of research areas based on this specific hierarchical taxonomy, as they only reach about 50% accuracy even with prompt chaining.",
+      "authors": [
+        "Gautam Kishore Shahi",
+        "Oliver Hummel"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL",
+        "cs.DL",
+        "cs.SE"
+      ],
+      "published": "2026-04-25T19:52:21+00:00",
+      "link": "https://arxiv.org/pdf/2604.23430v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "automating categorization of scientific texts for research information retrieval systems",
+      "llm_evidence_cn": "为研究信息检索系统实现科学文本的自动分类",
+      "llm_evidence": "为研究信息检索系统实现科学文本的自动分类",
+      "canonical_evidence": "为研究信息检索系统实现科学文本的自动分类",
+      "llm_tldr_en": "This study evaluates LLMs for automatic content categorization to help navigate expanding scientific literature.",
+      "llm_tldr_cn": "本研究评估了LLM在自动内容分类中的表现，以帮助导航不断增长的科学文献。",
+      "llm_tldr": "本研究评估了LLM在自动内容分类中的表现，以帮助导航不断增长的科学文献。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "artificial intelligence applications in library and information science",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "biorxiv-10-64898-2026-04-12-718044-v2",
+      "source": "biorxiv",
+      "title": "MetaMuse: A Multi-Agent AI System for Biomedical Metadata Curation and Harmonization",
+      "abstract": "Inconsistent and unstructured metadata in public biomedical repositories, such as the Gene Expression Omnibus (GEO), severely limits data discoverability and research reproducibility. To address this, we introduce MO_SCPLOWETAC_SCPLOWMO_SCPLOWUSEC_SCPLOW, a modular, multi-agent artificial intelligence framework designed to autonomously extract, validate, and standardize unstructured biomedical metadata. Operating through a three-stage architecture utilizing large language model agents, specialized CO_SCPLOWURATORC_SCPLOWAO_SCPLOWGENTSC_SCPLOW contextually extract candidate values for specific target metadata fields. A centralized AO_SCPLOWRBITRATORC_SCPLOWAO_SCPLOWGENTC_SCPLOW enforces cross-field logical consistency to prevent contradictory annotations. Finally, a NO_SCPLOWORMALIZERC_SCPLOWAO_SCPLOWGENTC_SCPLOW leveraging a domain-specific semantic search model (SapBERT) maps these free-text candidates to formal ontological terms. We evaluated MO_SCPLOWETAC_SCPLOWMO_SCPLOWUSEC_SCPLOW on a gold-standard dataset of manually curated GEO samples, achieving over 95% curation accuracy across key target metadata fields, and demonstrated robust scalability on a broader dataset of 400 samples. Notably, MO_SCPLOWETAC_SCPLOWMO_SCPLOWUSEC_SCPLOW avoids data hallucination by defaulting to conservative false negatives when evidence is ambiguous, thereby preserving strict data integrity. By providing a fully auditable and context-aware curation pipeline, MO_SCPLOWETAC_SCPLOWMO_SCPLOWUSEC_SCPLOW offers a scalable solution for enriching public data repositories and accelerating reproducible, data-driven scientific discovery.",
+      "authors": [
+        "Mittal, E.",
+        "Litman, E.",
+        "Myers, T.",
+        "Agarwal, V.",
+        "Gopinath, A.",
+        "Kassis, T."
+      ],
+      "primary_category": "genomics",
+      "categories": [
+        "genomics"
+      ],
+      "published": "2026-04-20T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.04.12.718044v2.full.pdf",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Multi-agent AI system for biomedical metadata curation and harmonization",
+      "llm_evidence_cn": "用于生物医学元数据整理和协调的多智能体人工智能系统",
+      "llm_evidence": "用于生物医学元数据整理和协调的多智能体人工智能系统",
+      "canonical_evidence": "用于生物医学元数据整理和协调的多智能体人工智能系统",
+      "llm_tldr_en": "An autonomous AI framework for extracting and standardizing unstructured metadata in digital repositories.",
+      "llm_tldr_cn": "一个用于自动提取和标准化数字仓库中非结构化元数据的人工智能框架。",
+      "llm_tldr": "一个用于自动提取和标准化数字仓库中非结构化元数据的人工智能框架。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.22861v1",
+      "source": "arxiv",
+      "title": "IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review",
+      "abstract": "Scientific research relies on accurate information retrieval from literature to support analytical decisions. In this work, we introduce a new task, INformation reTRieval through literAture reVIEW (IntraView), which aims to automate fine-grained information retrieval faithfully grounded in the provided content in response to research-driven queries, and propose IntrAgent, an LLM-based agent that addresses this challenging task. In particular, IntrAgent is designed to mimic human behaviors when reading literature for information retrieval -- identifying relevant sections and then iteratively extracting key details to refine the retrieved information. It follows a two-stage pipeline: a Section Ranking stage that prioritizes relevant literature sections through structural-knowledge-enabled reasoning, and an Iterative Reading stage that continuously extracts details and synthesizes them into concise, contextually grounded answers. To support rigorous evaluation, we introduce IntraBench, a new benchmark consisting of 315 test instances built from expert-authored questions paired with literature spanning five STEM domains. Across seven backbone LLMs, IntrAgent achieves on average 13.2% higher cross-domain accuracy than state-of-the-art RAG and research-agent baselines.",
+      "authors": [
+        "Fengbo Ma",
+        "Zixin Rao",
+        "Xiaoting Li",
+        "Zhetao Chen",
+        "Hongyue Sun",
+        "Yiping Zhao",
+        "Xianyan Chen",
+        "Zhen Xiang"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-04-23T01:55:08+00:00",
+      "link": "https://arxiv.org/pdf/2604.22861v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "automated information retrieval from scientific literature",
+      "llm_evidence_cn": "从科学文献中自动检索信息",
+      "llm_evidence": "从科学文献中自动检索信息",
+      "canonical_evidence": "从科学文献中自动检索信息",
+      "llm_tldr_en": "IntrAgent is an LLM-based agent that automates fine-grained information retrieval from scientific literature.",
+      "llm_tldr_cn": "IntrAgent是一个基于大语言模型的智能体，可自动从科学文献中进行细粒度的信息检索。",
+      "llm_tldr": "IntrAgent是一个基于大语言模型的智能体，可自动从科学文献中进行细粒度的信息检索。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.24334v1",
+      "source": "arxiv",
+      "title": "Reducing Redundancy in Retrieval-Augmented Generation through Chunk Filtering",
+      "abstract": "Standard Retrieval-Augmented Generation (RAG) chunking methods often create excessive redundancy, increasing storage costs and slowing retrieval. This study explores chunk filtering strategies, such as semantic, topic-based, and named-entity-based methods in order to reduce the indexed corpus while preserving retrieval quality. Experiments are conducted on multiple corpora. Retrieval performance is evaluated using a token-based framework based on precision, recall, and intersection-over-union metrics. Results indicate that entity-based filtering can reduce vector index size by approximately 25% to 36% while maintaining high retrieval quality close to the baseline. These findings suggest that redundancy introduced during chunking can be effectively reduced through lightweight filtering, improving the efficiency of retrieval-oriented components in RAG pipelines.",
+      "authors": [
+        "Daria Berdyugina",
+        "Anaëlle Cohen",
+        "Yohann Rioual"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-27T11:23:39+00:00",
+      "link": "https://arxiv.org/pdf/2604.24334v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "redundancy reduction in digital libraries",
+      "llm_evidence_cn": "数字图书馆中的冗余减少",
+      "llm_evidence": "数字图书馆中的冗余减少",
+      "canonical_evidence": "数字图书馆中的冗余减少",
+      "llm_tldr_en": "Explores chunk filtering to reduce vector index size in RAG systems while maintaining retrieval quality.",
+      "llm_tldr_cn": "探索块过滤技术以减少RAG系统的索引体积，同时保持检索质量。",
+      "llm_tldr": "探索块过滤技术以减少RAG系统的索引体积，同时保持检索质量。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.18845v1",
+      "source": "arxiv",
+      "title": "Dual-View Training for Instruction-Following Information Retrieval",
+      "abstract": "Instruction-following information retrieval (IF-IR) studies retrieval systems that must not only find documents relevant to a query, but also obey explicit user constraints such as required attributes, exclusions, or output preferences. However, most retrievers are trained primarily for semantic relevance and often fail to distinguish documents that match the topic from those that satisfy the instruction. We propose a dual-view data synthesis strategy based on polarity reversal: given a query, a document that is relevant under the instruction, and a hard negative that matches the query but violates the instruction, we prompt an LLM to generate a complementary instruction under which the two documents swap relevance labels. By presenting the same document pair under complementary instructions that invert their relevance labels, the training signal forces the retriever to reconsider the same candidate set through the instruction, rather than relying on fixed topical cues. On a 305M-parameter encoder, our method improves performance on the FollowIR benchmark by 45%, surpassing general-purpose embedding models of comparable or larger scale. Through head-to-head comparisons at matched data budgets, we further show that data diversity and instruction supervision play complementary roles: the former preserves general retrieval quality, while the latter improves instruction sensitivity. These results highlight the value of targeted data synthesis for building retrieval systems that are both broadly capable and instruction-aware.",
+      "authors": [
+        "Qingcheng Zeng",
+        "Puxuan Yu",
+        "Aman Mehta",
+        "Fuheng Zhao",
+        "Rajhans Samdani"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-04-20T21:10:29+00:00",
+      "link": "https://arxiv.org/pdf/2604.18845v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Instruction-following information retrieval with user constraints",
+      "llm_evidence_cn": "遵循用户约束指令的信息检索",
+      "llm_evidence": "遵循用户约束指令的信息检索",
+      "canonical_evidence": "遵循用户约束指令的信息检索",
+      "llm_tldr_en": "A training strategy to help retrieval systems follow explicit user constraints beyond semantic relevance.",
+      "llm_tldr_cn": "一种帮助检索系统在语义相关性之外遵循明确用户约束的训练策略。",
+      "llm_tldr": "一种帮助检索系统在语义相关性之外遵循明确用户约束的训练策略。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.20144v1",
+      "source": "arxiv",
+      "title": "An Agentic Approach to Metadata Reasoning",
+      "abstract": "As LLM-driven autonomous agents evolve to perform complex, multi-step tasks that require integrating multiple datasets, the problem of discovering relevant data sources becomes a key bottleneck. Beyond the challenge posed by the sheer volume of available data sources, data-source selection is difficult because the semantics of data are extremely nuanced and require considering many aspects of the data. To address this, we introduce the Metadata Reasoner, an agentic approach to metadata reasoning, designed to identify a small set of data sources that are both sufficient and minimal for a given analytical task. The Metadata Reasoner leverages a table-search engine to retrieve candidate tables, and then autonomously consults various aspects of the available metadata to determine whether the candidates fit the requirements of the task. We demonstrate the effectiveness of the Metadata Reasoner through a series of empirical studies. Evaluated on the real-world KramaBench datasets for data selection, our approach achieves an average F1-score of 83.16%, outperforming state-of-the-art baselines by a substantial margin of 32 percentage points. Furthermore, evaluations on a newly-created synthetic benchmark based on the BIRD data lake reveal that the Metadata Reasoner is highly robust against redundant and low-quality tables that may be in the data lake. In this noisy environment, it maintains an average of 85.5% F1-score for selecting the right datasets and demonstrates a 99% success rate in avoiding low-quality data.",
+      "authors": [
+        "Jiani Zhang",
+        "Sercan O. Arik",
+        "Cosmin Arad",
+        "Fatma Ozcan",
+        "Alon Halevy"
+      ],
+      "primary_category": "cs.DB",
+      "categories": [
+        "cs.DB"
+      ],
+      "published": "2026-04-22T03:14:40+00:00",
+      "link": "https://arxiv.org/pdf/2604.20144v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "agentic approach to metadata reasoning for discovering relevant data sources",
+      "llm_evidence_cn": "用于发现相关数据源的元数据推理智能体方法",
+      "llm_evidence": "用于发现相关数据源的元数据推理智能体方法",
+      "canonical_evidence": "用于发现相关数据源的元数据推理智能体方法",
+      "llm_tldr_en": "Metadata Reasoner uses LLM agents to autonomously identify minimal and sufficient data sources for tasks.",
+      "llm_tldr_cn": "Metadata Reasoner利用LLM智能体自主识别满足任务需求的最小且充分的数据源。",
+      "llm_tldr": "Metadata Reasoner利用LLM智能体自主识别满足任务需求的最小且充分的数据源。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2604.20528v1",
+      "source": "arxiv",
+      "title": "Evolution of Research Method Usage Across the Academic Careers of Library and Information Science Scholars",
+      "abstract": "Research methods constitute an indispensable tool for scholars engaged in scientific inquiry. Investigating how scholars use research methods throughout their careers can reveal distinct patterns in method adoption, providing valuable insights for novice researchers in selecting appropriate methods. This study employs a comprehensive dataset comprising full-text journal articles and bibliographic records from the Library and Information Science (LIS) domain. Utilizing an automated classification model based on full-text cognitive analysis, the research methods employed by LIS scholars are systematically identified. Topic modeling was then conducted using Top2Vec. Subsequently, author name disambiguation is performed, and academic age is calculated for each scholar. This study focuses on 435 senior scholars with an academic age of more than 14 years and a consistent publication record at five-year intervals, covering a total of 6,116 articles. The corpus covers 16 research method categories and 20 research topics. The findings indicate that bibliometric methods are the most frequently used across career stages, accounting for 19.61% among early-career scholars and 31.81% among senior scholars. Over the course of a scholarly career, the diversity of research methods initially increases and then declines. Furthermore, scholars exhibit a propensity for combining multiple research methods, including both conventional and unconventional pairings. Notably, the research methods most commonly used by researchers change with age and seniority.",
+      "authors": [
+        "Jiayi Hao",
+        "Chengzhi Zhang"
+      ],
+      "primary_category": "cs.DL",
+      "categories": [
+        "cs.DL",
+        "cs.CY"
+      ],
+      "published": "2026-04-22T13:06:58+00:00",
+      "link": "https://arxiv.org/pdf/2604.20528v1",
+      "tags": [
+        "keyword:AI图书馆"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "automated classification and topic modeling in Library and Information Science domain",
+      "llm_evidence_cn": "图书馆与信息科学领域的自动分类和主题建模",
+      "llm_evidence": "图书馆与信息科学领域的自动分类和主题建模",
+      "canonical_evidence": "图书馆与信息科学领域的自动分类和主题建模",
+      "llm_tldr_en": "Uses AI models to analyze research method evolution within the Library and Information Science domain.",
+      "llm_tldr_cn": "利用人工智能模型分析图书馆与信息科学领域研究方法的演变。",
+      "llm_tldr": "利用人工智能模型分析图书馆与信息科学领域研究方法的演变。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "artificial intelligence applications in library and information science",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.19047v1",
+      "source": "arxiv",
+      "title": "RARE: Redundancy-Aware Retrieval Evaluation Framework for High-Similarity Corpora",
+      "abstract": "Existing QA benchmarks typically assume distinct documents with minimal overlap, yet real-world retrieval-augmented generation (RAG) systems operate on corpora such as financial reports, legal codes, and patents, where information is highly redundant and documents exhibit strong inter-document similarity. This mismatch undermines evaluation validity: retrievers can be unfairly undervalued even when they retrieve documents that provide sufficient evidence, because redundancy across documents is not accounted for in evaluation. On the other hand, retrievers that perform well on standard benchmarks often generalize poorly to real-world corpora with highly similar and redundant documents. We present RARE (Redundancy-Aware Retrieval Evaluation), a framework for constructing realistic benchmarks by (i) decomposing documents into atomic facts to enable precise redundancy tracking and (ii) enhancing LLM-based data generation with CRRF. RAG benchmark data usually requires multiple quality criteria, but LLMs often yield trivial outputs. CRRF scores criteria separately and fuses decisions by rank, improving the reliability of generated data. Applying RARE to Finance, Legal, and Patent corpora, we introduce RedQA, where a strong retriever baseline drops from 66.4% PerfRecall@10 on 4-hop General-Wiki to 5.0-27.9% PerfRecall@10 at 4-hop depth, revealing robustness gaps that current benchmarks fail to capture. RARE enables practitioners to build domain-specific RAG evaluations that faithfully reflect real-world deployment conditions.",
+      "authors": [
+        "Hanjun Cho",
+        "Jay-Yoon Lee"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-04-21T03:54:09+00:00",
+      "link": "https://arxiv.org/pdf/2604.19047v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "evaluating retrieval systems in high-similarity corpora like legal and patent documents",
+      "llm_evidence_cn": "评估法律和专利等高相似度语料库中的检索系统",
+      "llm_evidence": "评估法律和专利等高相似度语料库中的检索系统",
+      "canonical_evidence": "评估法律和专利等高相似度语料库中的检索系统",
+      "llm_tldr_en": "RARE is a framework for evaluating retrieval systems in redundant corpora, improving accuracy for complex documents.",
+      "llm_tldr_cn": "RARE是一个针对冗余语料库的检索评估框架，提高了复杂文档检索的准确性。",
+      "llm_tldr": "RARE是一个针对冗余语料库的检索评估框架，提高了复杂文档检索的准确性。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.18424v1",
+      "source": "arxiv",
+      "title": "Context-Aware Search and Retrieval Under Token Erasure",
+      "abstract": "This paper introduces and analyzes a search and retrieval model for RAG-like systems under {token} erasures. We provide an information-theoretic analysis of remote document retrieval when query representations are only partially preserved. The query is represented using term-frequency-based features, and semantically adaptive redundancy is assigned according to feature importance. Retrieval is performed using TF-IDF-weighted similarity. We characterize the retrieval error probability by showing that the vector of similarity margins converges to a multivariate Gaussian distribution, yielding an explicit approximation and computable upper bounds. Numerical results support the analysis, while a separate data-driven evaluation using embedding-based retrieval on real-world data shows that the same importance-aware redundancy principles extend to modern retrieval pipelines. Overall, the results show that assigning higher redundancy to semantically important query features improves retrieval reliability.",
+      "authors": [
+        "Sara Ghasvarianjahromi",
+        "Joshua Barr",
+        "Yauhen Yakimenka",
+        "Jörg Kliewer"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.IT"
+      ],
+      "published": "2026-04-20T15:42:12+00:00",
+      "link": "https://arxiv.org/pdf/2604.18424v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "search and retrieval model for RAG-like systems",
+      "llm_evidence_cn": "类RAG系统的搜索与检索模型",
+      "llm_evidence": "类RAG系统的搜索与检索模型",
+      "canonical_evidence": "类RAG系统的搜索与检索模型",
+      "llm_tldr_en": "Analyzes a search and retrieval model under token erasure to improve robustness in RAG-like systems.",
+      "llm_tldr_cn": "分析了令牌擦除下的搜索检索模型，旨在提升类RAG系统的鲁棒性。",
+      "llm_tldr": "分析了令牌擦除下的搜索检索模型，旨在提升类RAG系统的鲁棒性。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.20795v1",
+      "source": "arxiv",
+      "title": "Automatic Ontology Construction Using LLMs as an External Layer of Memory, Verification, and Planning for Hybrid Intelligent Systems",
+      "abstract": "This paper presents a hybrid architecture for intelligent systems in which large language models (LLMs) are extended with an external ontological memory layer. Instead of relying solely on parametric knowledge and vector-based retrieval (RAG), the proposed approach constructs and maintains a structured knowledge graph using RDF/OWL representations, enabling persistent, verifiable, and semantically grounded reasoning.   The core contribution is an automated pipeline for ontology construction from heterogeneous data sources, including documents, APIs, and dialogue logs. The system performs entity recognition, relation extraction, normalization, and triple generation, followed by validation using SHACL and OWL constraints, and continuous graph updates. During inference, LLMs operate over a combined context that integrates vector-based retrieval with graph-based reasoning and external tool interaction.   Experimental observations on planning tasks, including the Tower of Hanoi benchmark, indicate that ontology augmentation improves performance in multi-step reasoning scenarios compared to baseline LLM systems. In addition, the ontology layer enables formal validation of generated outputs, transforming the system into a generation-verification-correction pipeline.   The proposed architecture addresses key limitations of current LLM-based systems, including lack of long-term memory, weak structural understanding, and limited reasoning capabilities. It provides a foundation for building agent-based systems, robotics applications, and enterprise AI solutions that require persistent knowledge, explainability, and reliable decision-making.",
+      "authors": [
+        "Pavel Salovskii",
+        "Iuliia Gorshkova"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-22T17:19:43+00:00",
+      "link": "https://arxiv.org/pdf/2604.20795v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "automated ontology construction from heterogeneous data sources using LLMs",
+      "llm_evidence_cn": "利用大语言模型从异构数据源自动构建本体",
+      "llm_evidence": "利用大语言模型从异构数据源自动构建本体",
+      "canonical_evidence": "利用大语言模型从异构数据源自动构建本体",
+      "llm_tldr_en": "This paper proposes an automated pipeline for constructing structured knowledge graphs to enhance intelligent systems.",
+      "llm_tldr_cn": "本文提出了一种自动构建结构化知识图谱的流水线，以增强智能系统。",
+      "llm_tldr": "本文提出了一种自动构建结构化知识图谱的流水线，以增强智能系统。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.19685v1",
+      "source": "arxiv",
+      "title": "An Answer is just the Start: Related Insight Generation for Open-Ended Document-Grounded QA",
+      "abstract": "Answering open-ended questions remains challenging for AI systems because it requires synthesis, judgment, and exploration beyond factual retrieval, and users often refine answers through multiple iterations rather than accepting a single response. Existing QA benchmarks do not explicitly support this refinement process. To address this gap, we introduce a new task, document-grounded related insight generation, where the goal is to generate additional insights from a document collection that help improve, extend, or rethink an initial answer to an open-ended question, ultimately supporting richer user interaction and a better overall question answering experience. We curate and release SCOpE-QA (Scientific Collections for Open-Ended QA), a dataset of 3,000 open-ended questions across 20 research collections. We present InsightGen, a two-stage approach that first constructs a thematic representation of the document collection using clustering, and then selects related context based on neighborhood selection from the thematic graph to generate diverse and relevant insights using LLMs. Extensive evaluation on 3,000 questions using two generation models and two evaluation settings shows that InsightGen consistently produces useful, relevant, and actionable insights, establishing a strong baseline for this new task.",
+      "authors": [
+        "Saransh Sharma",
+        "Pritika Ramu",
+        "Aparna Garimella",
+        "Koyel Mukherjee"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-21T17:07:53+00:00",
+      "link": "https://arxiv.org/pdf/2604.19685v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "generating related insights for open-ended document-grounded QA to support user interaction",
+      "llm_evidence_cn": "为开放式文档问答生成相关见解，以支持用户交互",
+      "llm_evidence": "为开放式文档问答生成相关见解，以支持用户交互",
+      "canonical_evidence": "为开放式文档问答生成相关见解，以支持用户交互",
+      "llm_tldr_en": "SCOpE-QA introduces a task for generating additional insights from document collections to improve user QA experience.",
+      "llm_tldr_cn": "SCOpE-QA引入了一项从文档集中生成额外见解的任务，以改善用户问答体验。",
+      "llm_tldr": "SCOpE-QA引入了一项从文档集中生成额外见解的任务，以改善用户问答体验。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "AI-enhanced user services in libraries",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.18580v2",
+      "source": "arxiv",
+      "title": "Sessa: Selective State Space Attention",
+      "abstract": "Modern sequence modeling is dominated by two families: Transformers, whose self-attention can access arbitrary elements of the visible sequence, and structured state-space models, which propagate information through an explicit recurrent state. These mechanisms face different limitations on long contexts: when attention is diffuse, the influence of individual tokens is diluted across the effective support, while recurrent state propagation can lose long-range sensitivity unless information is actively preserved. As a result, both mechanisms face challenges in preserving and selectively retrieving information over long contexts. We propose Sessa, a decoder that places attention inside a recurrent feedback path. This creates many attention-based paths through which past tokens can influence future states, rather than relying on a single attention read or a single recurrent chain. We prove that, under explicit assumptions and matched regimes, Sessa admits power-law memory tails $O(\\ell^{-β})$ for $0 < β< 1$, with slower decay than in the corresponding Transformer and Mamba-style baselines. We further give an explicit construction that achieves this power-law rate. Under the same assumptions, Sessa is the only model class among those considered that realizes flexible selective retrieval, including profiles whose influence does not decay with distance. Consistent with this theoretical advantage, across matched experiments, Sessa achieves the strongest performance on long-context benchmarks while remaining competitive with Transformer and Mamba-style baselines on short-context language modeling.",
+      "authors": [
+        "Liubomyr Horbatko"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-04-20T17:59:08+00:00",
+      "link": "https://arxiv.org/pdf/2604.18580v2",
+      "tags": [
+        "keyword:AI图书馆"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "Selective state space attention for improving information retrieval over long contexts",
+      "llm_evidence_cn": "选择性状态空间注意力机制，用于改进长上下文中的信息检索",
+      "llm_evidence": "选择性状态空间注意力机制，用于改进长上下文中的信息检索",
+      "canonical_evidence": "选择性状态空间注意力机制，用于改进长上下文中的信息检索",
+      "llm_tldr_en": "Proposes a new sequence modeling architecture to enhance information retrieval in long-context scenarios.",
+      "llm_tldr_cn": "提出了一种新的序列建模架构，旨在增强长上下文场景下的信息检索能力。",
+      "llm_tldr": "提出了一种新的序列建模架构，旨在增强长上下文场景下的信息检索能力。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.22294v1",
+      "source": "arxiv",
+      "title": "Contexts are Never Long Enough: Structured Reasoning for Scalable Question Answering over Long Document Sets",
+      "abstract": "Real-world document question answering is challenging. Analysts must synthesize evidence across multiple documents and different parts of each document. However, any fixed LLM context window can be exceeded as document collections grow. A common workaround is to decompose documents into chunks and assemble answers from chunk-level outputs, but this introduces an aggregation bottleneck: as the number of chunks grows, systems must still combine and reason over an increasingly large body of extracted evidence. We present SLIDERS, a framework for question answering over long document collections through structured reasoning. SLIDERS extracts salient information into a relational database, enabling scalable reasoning over persistent structured state via SQL rather than concatenated text. To make this locally extracted representation globally coherent, SLIDERS introduces a data reconciliation stage that leverages provenance, extraction rationales, and metadata to detect and repair duplicated, inconsistent, and incomplete records. SLIDERS outperforms all baselines on three existing long-context benchmarks, despite all of them fitting within the context window of strong base LLMs, exceeding GPT-4.1 by 6.6 points on average. It also improves over the next best baseline by ~19 and ~32 points on two new benchmarks at 3.9M and 36M tokens, respectively.",
+      "authors": [
+        "Harshit Joshi",
+        "Priyank Shethia",
+        "Jadelynn Dao",
+        "Monica S. Lam"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-24T07:16:44+00:00",
+      "link": "https://arxiv.org/pdf/2604.22294v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Scalable question answering over long document sets using structured reasoning",
+      "llm_evidence_cn": "利用结构化推理在长文档集上进行可扩展问答",
+      "llm_evidence": "利用结构化推理在长文档集上进行可扩展问答",
+      "canonical_evidence": "利用结构化推理在长文档集上进行可扩展问答",
+      "llm_tldr_en": "Presents SLIDERS, a framework for efficient information retrieval and reasoning across large document collections.",
+      "llm_tldr_cn": "提出了SLIDERS框架，用于在大型文档集中进行高效的信息检索和推理。",
+      "llm_tldr": "提出了SLIDERS框架，用于在大型文档集中进行高效的信息检索和推理。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.20487v2",
+      "source": "arxiv",
+      "title": "Knowledge Capsules: Structured Nonparametric Memory Units for LLMs",
+      "abstract": "Large language models (LLMs) encode knowledge in parametric weights, making it costly to update or extend without retraining. Retrieval-augmented generation (RAG) mitigates this limitation by appending retrieved text to the input, but operates purely through context expansion, where external knowledge competes as tokens within the attention mechanism. As a result, its influence is indirect and often unstable, particularly in long context and multi hop reasoning scenarios. We propose Knowledge Capsules, structured nonparametric memory units that represent normalized relational knowledge and can be constructed directly from document corpora using a frozen base model. Instead of injecting knowledge as text, we introduce an External Key Value Injection (KVI) framework that compiles capsules into attention-compatible key value representations, enabling external knowledge to directly participate in the model's attention computation. By shifting knowledge integration from context-level augmentation to memory level interaction, the proposed framework consistently outperforms RAG and GraphRAG across multiple QA benchmarks, with improved stability and accuracy in long context and multi hop reasoning, while requiring no parameter updates.",
+      "authors": [
+        "Bin Ju",
+        "Shenfeng Weng",
+        "Danying Zhou",
+        "Rongkai Xu",
+        "Kunkai Su"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-22T12:21:00+00:00",
+      "link": "https://arxiv.org/pdf/2604.20487v2",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "structured nonparametric memory units for document corpora",
+      "llm_evidence_cn": "用于文档语料库的结构化非参数存储单元",
+      "llm_evidence": "用于文档语料库的结构化非参数存储单元",
+      "canonical_evidence": "用于文档语料库的结构化非参数存储单元",
+      "llm_tldr_en": "Proposes Knowledge Capsules to improve LLM knowledge retrieval from document corpora without retraining.",
+      "llm_tldr_cn": "提出知识胶囊技术，无需重新训练即可优化大模型从文档语料库中检索知识的效果。",
+      "llm_tldr": "提出知识胶囊技术，无需重新训练即可优化大模型从文档语料库中检索知识的效果。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.20065v1",
+      "source": "arxiv",
+      "title": "From Hidden Profiles to Governable Personalization: Recommender Systems in the Age of LLM Agents",
+      "abstract": "Personalization has traditionally depended on platform-specific user models that are optimized for prediction but remain largely inaccessible to the people they describe. As LLM-based assistants increasingly mediate search, shopping, travel, and content access, this arrangement may be giving way to a new personalization stack in which user representation is no longer confined to isolated platforms. In this paper, we argue that the key issue is not simply that large language models can enhance recommendation quality, but that they reconfigure where and how user representations are produced, exposed, and acted upon. We propose a shift from hidden platform profiling toward governable personalization, where user representations may become more inspectable, revisable, portable, and consequential across services. Building on this view, we identify five research fronts for recommender systems: transparent yet privacy-preserving user modeling, intent translation and alignment, cross-domain representation and memory design, trustworthy commercialization in assistant-mediated environments, and operational mechanisms for ownership, access, and accountability. We position these not as isolated technical challenges, but as interconnected design problems created by the emergence of LLM agents as intermediaries between users and digital platforms. We argue that the future of recommender systems will depend not only on better inference, but on building personalization systems that users can meaningfully understand, shape, and govern.",
+      "authors": [
+        "Jiahao Liu",
+        "Mingzhe Han",
+        "Guanming Liu",
+        "Weihang Wang",
+        "Dongsheng Li",
+        "Hansu Gu",
+        "Peng Zhang",
+        "Tun Lu",
+        "Ning Gu"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-04-22T00:04:47+00:00",
+      "link": "https://arxiv.org/pdf/2604.20065v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "LLM-based personalization for content access and search",
+      "llm_evidence_cn": "基于大语言模型的个性化内容访问与搜索",
+      "llm_evidence": "基于大语言模型的个性化内容访问与搜索",
+      "canonical_evidence": "基于大语言模型的个性化内容访问与搜索",
+      "llm_tldr_en": "Proposes governable personalization in LLM agents to improve user-centric content recommendation and search.",
+      "llm_tldr_cn": "提出大模型代理中的可治理个性化，旨在改进以用户为中心的内容推荐与搜索。",
+      "llm_tldr": "提出大模型代理中的可治理个性化，旨在改进以用户为中心的内容推荐与搜索。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "AI-enhanced user services in libraries",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.23090v1",
+      "source": "arxiv",
+      "title": "Towards Automated Ontology Generation from Unstructured Text: A Multi-Agent LLM Approach",
+      "abstract": "Automatically generating formal ontologies from unstructured natural language remains a central challenge in knowledge engineering. While large language models (LLMs) show promise, it remains unclear which architectural design choices drive generation quality and why current approaches fail. We present a controlled experimental study using domain-specific insurance contracts to investigate these questions. We first establish a single-agent LLM baseline, identifying key failure modes such as poor Ontology Design Pattern compliance, structural redundancy, and ineffective iterative repair. We then introduce a multi-agent architecture that decomposes ontology construction into four artifact-driven roles: Domain Expert, Manager, Coder, and Quality Assurer. We evaluate performance across architectural quality (via a panel of heterogeneous LLM judges) and functional usability (via competency question driven SPARQL evaluation with complementary retrieval augmented generation based assessment). Results show that the multi-agent approach significantly improves structural quality and modestly enhances queryability, with gains driven primarily by front-loaded planning. These findings highlight planning-first, artifact-driven generation as a promising and more auditable path toward scalable automated ontology engineering.",
+      "authors": [
+        "Abid Talukder",
+        "Maruf Ahmed Mridul",
+        "Oshani Seneviratne"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-25T00:58:17+00:00",
+      "link": "https://arxiv.org/pdf/2604.23090v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "automated ontology generation from unstructured text using multi-agent LLMs",
+      "llm_evidence_cn": "利用多智能体LLM从非结构化文本中自动生成本体",
+      "llm_evidence": "利用多智能体LLM从非结构化文本中自动生成本体",
+      "canonical_evidence": "利用多智能体LLM从非结构化文本中自动生成本体",
+      "llm_tldr_en": "A multi-agent architecture improves the quality of automated formal ontology generation from natural language.",
+      "llm_tldr_cn": "一种多智能体架构提高了从自然语言自动生成正式本体的质量。",
+      "llm_tldr": "一种多智能体架构提高了从自然语言自动生成正式本体的质量。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.21133v1",
+      "source": "arxiv",
+      "title": "GRISP: Guided Recurrent IRI Selection over SPARQL Skeletons",
+      "abstract": "We present GRISP (Guided Recurrent IRI Selection over SPARQL Skeletons), a novel SPARQL-based question-answering method over knowledge graphs based on fine-tuning a small language model (SLM). Given a natural-language question, the method first uses the SLM to generate a natural-language SPARQL query skeleton, and then to re-rank and select knowledge graph items to iteratively replace the natural-language placeholders using knowledge graph constraints. The SLM is jointly trained on skeleton generation and list-wise re-ranking data generated from standard question-query pairs. We evaluate the method on common Wikidata and Freebase benchmarks, and achieve better results than other state-of-the-art methods in a comparable setting.",
+      "authors": [
+        "Sebastian Walter",
+        "Hannah Bast"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-22T22:47:01+00:00",
+      "link": "https://arxiv.org/pdf/2604.21133v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "query:AI图书馆"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "SPARQL-based question-answering over knowledge graphs using language models",
+      "llm_evidence_cn": "使用语言模型在知识图谱上进行基于SPARQL的问答",
+      "llm_evidence": "使用语言模型在知识图谱上进行基于SPARQL的问答",
+      "canonical_evidence": "使用语言模型在知识图谱上进行基于SPARQL的问答",
+      "llm_tldr_en": "Introduces GRISP, a method for natural language question answering over knowledge graphs using small language models.",
+      "llm_tldr_cn": "介绍了GRISP，一种利用小语言模型在知识图谱上进行自然语言问答的方法。",
+      "llm_tldr": "介绍了GRISP，一种利用小语言模型在知识图谱上进行自然语言问答的方法。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    }
+  ]
+}
