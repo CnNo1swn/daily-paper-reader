@@ -1,0 +1,71 @@
+Title: Demonstrating Online Schema Alignment in Decentralized Knowledge Graphs Querying
+
+URL Source: https://arxiv.org/pdf/2604.19205v1
+
+Published Time: Wed, 22 Apr 2026 00:55:03 GMT
+
+Number of Pages: 5
+
+Markdown Content:
+# Demonstrating Online Schema Alignment in Decentralized Knowledge Graphs Querying 
+
+Bryan-Elliott Tam 1[0000 −0003 −3467 −9755] , Pieter Colpaert 1[0000 −0001 −6917 −2167] ,and Ruben Taelman 1[0000 −0001 −5118 −256 X]
+
+IDLab, Dept. Electronics and Information Systems Ghent University – imec, Belgium 
+
+Abstract. Decentralized Knowledge Graphs querying enables integrat-ing distributed data without centralization, but is highly sensitive to vocabulary heterogeneity. Query issuers cannot realistically anticipate all vocabulary mismatches, especially when alignment rules are local, scoped, or discovered at runtime. We present an online schema alignment 
+
+approach for Link Traversal Query Processing (LTQP) that discovers, scopes, and applies alignment rules dynamically during query execution while preserving traversal behavior. This demo paper demonstrates the approach on a decentralized social-media scenario through a web inter-face built on a Comunica-based LTQP engine. Source code, a CLI, and a reusable library are publicly available. The demonstration shows that online schema alignment recovers complete query results with low over-head, providing a practical foundation for web-scale reasoning in LTQP systems. 
+
+Keywords: SPARQL · Decentralization · Link Traversal · Schema Alignment 
+
+## 1 Introduction 
+
+Integrating multiple Knowledge Graphs (KGs) [8] presents scalability and hetero-geneity challenges. Data volume, decentralization across independently managed sources, or privacy requirements often necessitate federated or link traversal-based querying [6] rather than centralized materialization. Link Traversal Query Processing (LTQP) [6] is particularly suited to such settings as it exploits the fact that IRIs in triples can be dereferenced to discover further KGs. However, in unindexed distributed networks, different providers often express semantically equivalent information using heterogeneous vocabularies, and query issuers ex-pect to formulate queries under a single, consistent representation. Schema align-ment, which maps knowledge from one vocabulary to a semantically equivalent representation in another, can simplify the formulation of such queries. Prior work has investigated reasoning over SPARQL endpoints [15], RDF streams [3], and schema alignment in SPARQL systems [4, 7, 10], but existing approaches assume alignment rules are known and scoped a priori. This assumption is unreal-istic in large decentralized networks, given the complexity of ontology design and the possibility of provider-side modeling mistakes [2, 9]. Even trivial inconsisten-cies (e.g., HTTP vs. HTTPS schema.org vocabularies) require query rewriting  
+
+> arXiv:2604.19205v1 [cs.DB] 21 Apr 2026 2B-E. Tam et al.
+
+such as UNION clauses. Deeper semantic mismatches, for instance where providers conceptualize responses as “replies” or “comments”, or represent attributes as lit-erals or IRIs, are even harder. Rule chaining compounds the problem by requir-ing either materializing intermediate KGs through multiple CONSTRUCT queries or backchaining to produce a final query [10]. Both methods are incompatible with LTQP, as the former loses awareness of previously traversed documents and the latter fails to discover intermediate resources needed for traversal. Our work introduces online schema alignment , where schema mappings are discov-ered, scoped, and applied dynamically during LTQP query execution. The rest of this paper presents our approach, the demonstrator, and conclusions. 
+
+## 2 Online Schema Alignment 
+
+Schema alignment requires the definition of a set of rules. In this work, we draw 1
+
+on the Simple Standard for Sharing Ontological Mappings (SSSOM) specifica-tion [1, 11] to structure and formalize these rules. For the purpose of this work, we developed a simplified version of SSSOM and use the concept of subweb [14], a sub-Decentralized Knowledge Graph (DKG) defined by the KG derived from a set of Internationalized Resource Identifiers (IRIs) controlled by a data provider, to scope the domain of applicability of the alignment rules. We opted for this design for several practical reasons. First, our system operates under the open-world assumption, in which multiple new KGs and schema alignment rules may be discovered during processing. To ensure robustness, the system should pre-vent infinite recursive rule applications. 2 When such situations occur, it should ideally resolve them without aborting the entire computation. Since rules are ap-plied within specific domains, the likelihood of infinite recursion is significantly reduced. In cases where infinite recursion is detected or overlap of subwebs, the simple resolution strategy of rejecting the newly generated schema alignment rule is applied. Second, there is the potential misuse, overspecification, and un-derspecification of ontology terms [2, 9]. In our use case, the goal is to enable querying data across the web under the assumption that data providers best un-derstand their own data models and the intended entailments. Thus, we scope the rules to non-overlapping subwebs to prevent unintended entailments. How-ever, we also allow query issuers to define additional rules that may interact with those provided by data publishers. This is justified by the fact that query issuers can more easily track and manage the consequences of their own entailment def-initions, whereas it would be unrealistic to expect data providers to anticipate the broader implications of their rules beyond the scope of their own datasets or use cases. Third, global alignment rules that are discoverable and executable on the web present a potential attack vector for malicious actors.       
+
+> 1– Vocabulary: https://onlineschemaalignmentltqp.github.io/vocabulary/voc ab.ttl – Example: https://onlineschemaalignmentltqp.github.io/vocabulary /example.ttl
+> 2With our schema alignment entailment, logical contradictions are not possible. Demonstrating Online Schema Alignment 3
+
+In LTQP, a traversal policy determines which discovered IRIs the engine should dereference to find additional KGs. To discover alignment rules, we extend this policy to also follow object terms of triples with predicate IRI semmap: ruleSetLocation , where the dereferenced term provides a rule set. When the engine encounters a rule set, it applies the rules to its internal KG via forward chaining, producing additional aligned triples. These aligned triples, rather than the original ones, are passed to the traversal policy and used for join processing, as traversal policies are not designed to handle vocabulary mismatches. 
+
+## 3 Demonstration 
+
+We implemented an online schema alignment system using the link traversal version of the Comunica [13] query engine. Both our demonstration 3 and imple-mentation 4 are open source and publicly available. A video of the demonstration is available online. 5 Users can download the implementation to integrate it as a library or use the command-line interface to execute queries. Our demonstration scenario is based on a social media network built using the SolidBench bench-mark [12]. This social media network is decentralized, meaning that users store their data in personal data vaults called pods ; there is no centralized endpoint to query user information. For the purpose of this demonstration, we modified the user data such that different users express similar information using different vocabularies. Additionally, each user exposes a file that describes their schema alignment rules. The demonstrator is a web-based application that allows users to execute either the proposed queries or arbitrary custom queries. Queries can be run over two network configurations: the base network, where all pods use the same vocabulary, and the modified network, where pods use alternative vo-cabularies. The proposed queries are typical social media-related queries, such as retrieving information about a user, identifying the forums where a user has posted, and finding posts liked by specific users. To illustrate, consider a query retrieving a user’s profile, when executed over the modified network without alignment, the query returns incomplete results because some pods use HTTPS variants or alternative terms for the same properties. With online schema align-ment enabled, the engine discovers the relevant mapping rules during traversal and returns the complete result set. For each execution, the system provides de-tailed feedback, including the query results, execution time, and the alignment rules discovered during query processing, along with their associated subwebs. Table 1 reports the execution times 6 over ten runs per query. For queries that                              
+
+> 3https://github.com/onlineSchemaAlignmentLTQP/demo
+> 4https://www.npmjs.com/package/query-sparql-link-traversal-solid-schem a-alignment
+> 5https://www.youtube.com/watch?v=fGDQwu65los
+> 6https://github.com/constraintAutomaton/Online-Schema-Alignment-for-Lin k-Traversal-Queries-in-Decentralized-Knowledge-Graphs/blob/main/eval/n omal_query_eval_times.md 4B-E. Tam et al. Query With alignment (s) Without alignment (s) Messages of liked users 6.90 ±1.58 —Forums a user posted ——User information 1.09 ±0.07 1.05 ±0.05
+> Posts of a user 0.35 ±0.05 ∗
+> Tag distribution 2.77 ±0.22 2.11 ±0.27
+> Table 1. The usage of online schema alignment does not have a large impact on the query execution time of the demo queries. "—" indicates a timeout (180 s) and " ∗"indicates incomplete results.
+
+complete under both configurations, alignment introduces an average overhead of 0.28 ± 0.31 s. Users can alternate between configurations to compare result completeness and observe the overhead introduced by schema alignment. Users can also define custom schema alignment rules scoped to specific subwebs, which can addition-ally serve to align the vocabulary of their queries to that of a target network. 
+
+## 4 Conclusion 
+
+In this demo paper, we present a system for online schema alignment. Through this demonstration, we show that, in unindexed and decentralized networks, LTQP queries can be executed successfully in a generalized manner without increasing the complexity of the user-issued queries. Limitations remain in the expressivity of those rules. Future work includes extending the system to support more advanced reasoning mechanisms, such as the SPARQL entailment regimes, full SSSOM, Notation3 and the upcoming SHACL rules. Engines such as the EYE reasoner [16] or modern Prolog [5] implementations like Scryer Prolog 7
+
+could enable such reasoning capabilities. More broadly, this work contributes to the vision of querying the web as a single coherent knowledge base, where data sovereignty and vocabulary diversity coexist with seamless interoperability. 
+
+## 5 Acknowledgement 
+
+This research was supported by SolidLab Vlaanderen (Flemish Government, EWI RRF project VV023/10) and Serendipity Engine (Research Foundation -Flanders (FWO) grant number S006323N). Ruben Taelman is a postdoctoral fellow of the Research Foundation – Flanders (FWO) (1202124N). 
+
+## References 
+
+[1] A Simple Standard for Sharing Ontology Mappings (SSSOM) . https:// mapping-commons.github.io/sssom/ . Accessed: 2025-10-27. 2025.   
+
+> 7https://www.scryer.pl/ Demonstrating Online Schema Alignment 5
+
+[2] Ziawasch Abedjan, Johannes Lorey, and Felix Naumann. “Reconciling on-tologies and the web of data”. In: 21st ACM . 2012, pp. 1532–1536. [3] Pieter Bonte et al. “Languages and systems for RDF stream processing, a survey: P. Bonte et al.” In: The VLDB Journal 34.4 (2025), p. 50. [4] Sijin Cheng, Sebastián Ferrada, and Olaf Hartig. “Considering vocabulary mappings in query plans for federations of RDF data sources”. In: Inter-national Conference on Cooperative Information Systems . Springer. 2023. [5] Alain Colmerauer and Philippe Roussel. “The birth of Prolog”. In: His-tory of Programming Languages—II . New York, NY, USA: Association for Computing Machinery, 1996, pp. 331–367. isbn : 0201895021. url : https: //doi.org/10.1145/234286.1057820 .[6] Olaf Hartig and Johann-Christoph Freytag. “Foundations of Traversal Based Query Execution over Linked Data”. In: Conference on Hypertext and So-cial Media . HT ’12. Milwaukee, Wisconsin, USA: ACM, 2012, pp. 43–52. [7] Amit Krishna Joshi et al. “Alignment-Based Querying of Linked Open Data”. In: On the Move to Meaningful Internet Systems: OTM 2012 . 2012. [8] Linked Data . https : / / www . w3 . org / DesignIssues / LinkedData . Ac-cessed: 2025-10-27. 2006. [9] Johannes Lorey et al. “Rdf ontology (re-) engineering through large-scale data mining”. In: Semantic Web Challenge (2011). [10] Vandenbrande Maarten et al. “POD-QUERY: Schema Mapping and Query Rewriting for Solid Pods”. In: ISWC 2023 . 2023. [11] Nicolas Matentzoglu et al. “A simple standard for sharing ontological map-pings (SSSOM)”. In: Database 2022 (2022), baac035. [12] Ruben Taelman and Ruben Verborgh. Link Traversal Query Processing Over Decentralized Environments with Structural Assumptions . Cham, 2023. [13] Ruben Taelman et al. “Comunica: a modular SPARQL query engine for the web”. In: International Semantic Web Conference . Springer. 2018. [14] Bryan-Elliott Tam et al. “Traveling with a Map: Reducing the Search Space of Link Traversal Queries Using RDF Shapes”. Submitted to Semantic Web Journal. 2025. [15] Mehdi Terdjimi, Lionel Médini, and Michael Mrissa. “Hylar+ improving hybrid location-agnostic reasoning with incremental rule-based update”. In: 25th International Conference Companion on World Wide Web . 2016. [16] Ruben Verborgh and Jos De Roo. “Drawing Conclusions from Linked Data on the Web: The EYE Reasoner”. In: IEEE Software 32.3 (2015).

@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.25906v1/fig-001.webp",
+      "caption": "Table 1: Comparative analysis of HoT construction methods. Lower effort ratio indicates better navigation support. Random Hypergraphs of various sizes are provided as a sanity check. RDP = Relevant Disconnect Proportion",
+      "page": 6,
+      "index": 1,
+      "width": 440,
+      "height": 281
+    }
+  ]
+}

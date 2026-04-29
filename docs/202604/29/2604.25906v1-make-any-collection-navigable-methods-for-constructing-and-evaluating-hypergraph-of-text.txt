@@ -1,0 +1,287 @@
+Title: Make Any Collection Navigable: Methods for Constructing and Evaluating Hypergraph of Text
+
+URL Source: https://arxiv.org/pdf/2604.25906v1
+
+Published Time: Wed, 29 Apr 2026 01:18:37 GMT
+
+Number of Pages: 7
+
+Markdown Content:
+# Make Any Collection Navigable: Methods for Constructing and Evaluating Hypergraph of Text 
+
+# Dean E. Alvarez 
+
+University of Illinois Urbana-Champaign Urbana, IL, USA deana3@illinois.edu 
+
+# ChengXiang Zhai 
+
+University of Illinois Urbana-Champaign Urbana, IL, USA czhai@illinois.edu 
+
+## ABSTRACT 
+
+One reason the Web is more useful than a simple collection of doc-uments is that the structure created by hyperlinks enables flexible navigation from one web page to another. However, hyperlinks are typically created manually and cannot fully capture a corpus’ implicit semantic structures. Is there a general way to make an arbitrary collection navigable? Recent work has formalized this problem generally as constructing a Hypergraph of Text (HoT), which provides a formal mathematical structure for supporting navigation and browsing. However, how to construct and evaluate a Hypergraph of Text remains a challenge. In this paper, we pro-pose and study several methods for constructing a HoT. We also propose a novel quantitative metric, effort ratio, for evaluating the structural quality of a constructed HoT. Experimental results show that even simple TF-IDF baselines can match LLM-based methods on our proposed effort ratio metric. 
+
+## 1 INTRODUCTION 
+
+Despite the massive progress in the field of information retrieval over the past decades, discovering and navigating relevant con-tent in a scattered collection remains a challenge. Although recent progress in Large Language Models (LLMs) has addressed this chal-lenge to some extent (notably via direct support of question an-swering), concerns about their trustworthiness [ 14 ] and their lack of access to the most recent information limit their utility. How to enable users to have direct access to and discover the most relevant original information is still an open challenge. While search engines and LLM tools such as ChatGPT are useful to help people find relevant information, they require users to formulate an effective query or question, thus limiting their utility when there is a vocabulary gap. Moreover, they are less helpful helping users discover relevant but unknown information. Browsing has been proposed as a way to overcome these diffi-culties by enabling users to explore the information space without needing any prior knowledge on how to formulate queries, what vocabulary is used in the document collection, nor what sort of things are in the collection at all. Browsing allows for a greater de-gree of user agency and clearer information provenance than LLM QA systems, while allowing for more serendipity than traditional search. These features make it an attractive paradigm for tasks such as exploratory information retrieval or collection understanding. While browsing has long been of interest to many within the IR and Web communities (see, e.g., [ 6– 8 , 10 , 11 , 19 , 25 , 26 , 34 ]), it has seen relatively less research progress toward general technolo-gies to support browsing compared to those to support search and question answering. A key difference between browsing and search or question answering is that while search and question answer-ing have enjoyed unified mathematical frameworks and intuitive quantitative metrics, browsing has not. As a result, while many previous studies have argued for the need to support browsing (see, e.g., [7, 19, 34]) and much work has been done on browsing, there is still a lack of a general tool to organize an arbitrary collection of text and enable navigation in the entire space; users today mostly only navigate through manually created links such as the many hyperlinks on the Web. Recently, Hypergraph of Text (HoT) [ 4 ] was proposed as a math-ematical structure to organize an arbitrary collection of text docu-ments into a hypergraph semantic structure and make it navigable. The intuition is that a hyperedge provides a general way to define any semantic neighborhood, a key concept enabling semantic nav-igation. HoT can serve as a theoretical framework for building a general navigation system in the sense that it is possible to repre-sent any browsable collection of documents as a HoT and any HoT can be visually browsed on a uniform interface. Indeed, the Text Information Navigation Kit [ 5] can be used to visualize any HoT and enable a user to navigate the information space represented by the HoT. However, how to construct a HoT and how to evaluate the utility of the browsing support provided by a HoT to a user remain open challenging questions that are not well studied; the original work [ 4 ]only introduced a single method which was evaluated qualitatively. In this paper, we seek to address this knowledge gap by study-ing how to tackle both challenges. Specifically, we study several approaches to HoT construction such as LLMs, embedding, and TF-IDF filtering. We address the evaluation challenge by proposing a novel metric that quantifies the utility of the HoT’s hyperedges for browsing. Using the proposed evaluation method, we system-atically compared multiple approaches of HoT construction on a Web dataset. Experimental results show that while various meth-ods can create effective links, each involves distinct tradeoffs and LLM-based approaches do not always outperform simpler statistical approaches in terms of structural navigation. In sum, the contributions of this paper include: (1) We propose and study three methods (TF-IDF filtering, LLM topic extraction, and two step similarity-then-LLM) for solv-ing the HoT construction problem. (2) We propose a novel metric, which enables quantitative eval-uation of HoT construction algorithms. (3) We conduct experiments to evaluate HoT construction al-gorithms and find that LLM-doc achieves the lowest effort ratio but at the cost of 38% disconnected relevant pairs, and that TF-IDF-based All-Words is competitive on structure despite being orders of magnitude cheaper. 
+
+> arXiv:2604.25906v1 [cs.IR] 28 Apr 2026 Dean E. Alvarez and ChengXiang Zhai
+
+Overall, our work demonstrates the great potential of developing general technologies for supporting browsing based on HoT con-struction. 
+
+## 2 RELATED WORK 
+
+Information Extraction: Information Extraction [ 38 ] has been studied extensively for many decades with some recent work fo-cused on extraction of entities and relations to construct a knowl-edge graph [ 42 ]. Traditional methods rely on supervised learning, notably the Conditional Random Field approaches [ 16 , 28 ] and fo-cus more on pre-defined entity and relation types. Later approaches explored how to perform information extraction with open entities and relations [21]. Recently, LLMs have been leveraged for knowledge graph con-struction [ 23 , 36 ]. Although KG could be used to organize text data, its coverage of text content is limited to the entities and relations included in the KG; in contrast, the links generated for HoT con-struction cover the entire information space and enable a user to navigate into potentially any region in the information space. In terms of the information extracted, HoT construction aims to ex-tract topical information, whereas Information Extraction is more focused on extracting entities and relations. The information ex-tracted in HoT construction is more useful for supporting user navigation, whereas the extracted entities and relations tend to be more useful for constructing a knowledge graph to further support all kinds of downstream applications in NLP. 
+
+Topic Models: Probabilistic topic models [ 1, 31 ] are general techniques to discover and analyze topics covered in the text data. The extracted topics are usually represented as word distributions. There are many applications of the discovered topics and their cov-erage in the documents, especially opinion analysis, spatiotemporal topic trend analysis, and document representation based on topics. Most relevant to our work is the fact that the topic structures discov-ered from text using topic models can also be used to organize text. However, such a structure has various limitations in supporting user navigation [ 4] (e.g., only the major topics can be covered well). The hyperedges in HoT can cover all kinds of semantic links and cover them at the text segment level. As such, they are more useful than topic models for supporting navigation. 
+
+Text clustering: HoT construction can also be related to both text clustering [ 2, 3 ] and segmentation [ 22 ]. While both of these tasks are focused on grouping text collections, traditional cluster-ing approaches partition objects into non-overlapping sets. This makes traditional text clustering approaches ill-suited for HoT con-struction since a HoT with non-overlapping hyperedges would only enable within cluster navigation. By comparison, HoT allows for overlapping hyperedges meaning nodes can be a member of multiple sets. This enables broader connectivity making it a more suitable framework for supporting browsing. 
+
+Semantic Matching, Hyperlink Generation, and Semantic Labeling: Much work has been done on semantic matching of text [ 17 , 18 ], mostly for applications such as information retrieval, question answering, text clustering, and plagiarism detection [ 13 ]. Some recent methods are based on LLMs [ 39 ]. Some work (e.g., [ 27 ]) has also used similarity measure to create links to convert linear text into hypertext. Indeed, the automatic generation of hypertext and hyperlinks has also been studied extensively [ 35 , 37 ]. While the point-to-point linking of documents achieved by both semantic text matching and automatic hyperlink generation can indeed fa-cilitate browsing, they do not enable topical browsing. Since HoT can enable both point-to-point browsing (via size 2 hyperedges) and topical browsing, it is a more general framework than older paradigms. Some recent work has also explored using LLMs for semantic tag-ging of text data (e.g., [ 9 , 32 ], where a semantic tag from a hierarchy may be assigned to a text document, essentially enabling hierarchi-cal text classification. Like text clustering, the objective of this task is similar to that of HoT construction. In fact, semantic labeling is even closer to HoT in that the groups have natural language labels. However, like text clustering, semantic labeling / tagging generally focuses on sorting texts into disjoint groups. While we can take inspiration from their approaches, the computational tasks of HoT and semantic tagging are ultimately different due to the focus of HoT construction on browsing requiring that nodes be members of many groups. 
+
+Large Language Models (LLMs): Recent years have seen ex-plosive growth of work on applications of LLMs in many natural language processing [ 20 ] and information retrieval tasks [ 40 ], in-cluding, e.g., text summarization [41], information extraction [36] and question answering [ 29 ]. Our work introduces a new applica-tion of LLMs for HoT construction, which has not been explored before and directly supports semantic browsing in a large document space. 
+
+## 3 HYPERGRAPH OF TEXT 
+
+As discussed earlier, while users use both querying and browsing in information seeking, the support for querying is far more mature than that for browsing. While much progress has been made in search engine technology, we do not yet have any similar general technology for turning an arbitrary collection of scattered content into a well-organized linked content for general browsing sup-port. One major barrier here is the difficulty in formalization of the browsing as a computational problem; without a well-defined computational problem for browsing, it is hard to study or evaluate any algorithms. A recent study has suggested that a browsable collection can be formally represented as a Hypergraph of Text (HoT) [ 4]. This work sheds some light on how to remove this long-standing barrier since we can now formally define the problem of supporting browsing as a computational problem, where the input is any collection of documents and the output is a HoT with each document as a node. The HoT can thus serve as a general mathematical structure for organizing scattered content. A significant benefit of framing the browsing problem in this way is that once a HoT is constructed, it can be visually displayed to a user using a general system such as the TINK system [ 5] for browsing. This means that the same browsing system can be used to support browsing any HoT. Therefore, the whole problem of how to provide general support for browsing can now be reduced to one of how to construct a HoT for any arbitrary collection of documents. A main goal of this paper is to develop algorithms for constructing a HoT and, crucially, develop a method to evaluate a constructed HoT. Make Any Collection Navigable: Methods for Constructing and Evaluating Hypergraph of Text 
+
+As background, we first provide a brief introduction to the Hy-pergraph of Text (HoT) structure as proposed in [ 4 ]. We start with their definition: 
+
+Definition 3.1 (Hypergraph of Text). 
+
+A Hypergraph of Text is a hypergraph where the nodes and hy-peredges have textual elements. Formally, we can define it as a hypergraph 𝐻 = (𝑉 , 𝐸, 𝑋 𝑉 , 𝑋 𝐸 ) where (1) V is a set of nodes (2) E is a set of hyperedges (3) 𝑋 𝑉 = {𝑥 𝑣 }𝑣 ∈𝑉 is a set of texts such that ∀𝑥 𝑣 ∈ 𝑋 𝑉 , 𝑥 𝑣 ∈ 𝑍 𝐿 𝑣 
+
+(4) 𝑋 𝐸 = {𝑥 𝑒 }𝑒 ∈𝐸 is a set of texts such that ∀𝑥 𝑒 ∈ 𝑋 𝐸 , 𝑥 𝑒 ∈ 𝑍 𝐿 𝑒 
+
+Where 𝑍 is the vocabulary and 𝐿 𝑣 and 𝐿 𝑒 are the length of the text sequence for node v and hyperedge e respectively. This definition, which can be seen as a generalization of a textual graph, provides a foundation for navigation and various types of analysis when applied to a text collection. The skeptical reader may be wondering: what is gained from generalizing beyond graphs? To answer this question, we can return to foundational works in browsing. In the seminal work articulating the berrypicking model of information systems [ 7], Bates articulates six techniques for browsing: (1) Footnote chasing (2) Citation searching (3) Journal run (4) Area scanning (5) Subject searching (6) Author searching We make the following observation on Bates’ six methods: of these six methods, only footnote chasing and citation searching are point-to-point. In the other four, the user is interested in groups of doc-uments (either authorial groups as in author searching or topical groups in the rest). Therefore, to best support all modes of brows-ing we need a structure that can support both point-to-point con-nections (as a standard graph would) and n-ary connections. A hypergraph is precisely this structure. 
+
+## 4 METHODS 
+
+In this section we discuss three approaches to HoT construction and their corresponding implementations. The first approach, “All-Words” treats all words in a document as a hyperedge and then weights and prunes hyperedges using TF-IDF scores. The second method, “LLM-Doc” and “LLM-Sentence” uses LLMs to extract top-ics at both sentence and document levels. Finally, our two-step similarity based approach combines semantic similarity measure-ments with LLM-guided topic extraction attempting to address weaknesses of the previous methods. In our discussion of these methods, we will mention the use of LLM and the use of a sentence transformer. In our implementations we use llama3-8b-instruct [12 ] as our LLM. For sentence trans-formers, we utilize the sentence transformers package [ 24 ] with 
+
+All-MiniLM-L6-v2 as our particular model [ 33 ]. Full code for each of these methods, including LLM prompts, will be made available on GitHub. 
+
+## 4.1 All-Words 
+
+The core idea behind this approach is to treat “All words” shared between documents as a potential hyperedge. Naturally, including all words would be superfluous for navigation or analysis. Therefore, we only include those words which have a high average TF-IDF score (i.e. the top n % of hyperedges as measured by average TF-IDF). More specifically, we can describe our approach as follows: First, create a hyperedge for each word in the document collection C. For a given hyperedge 𝑒 which represents (and has its text 𝑥 𝑒 set to) word 𝑊 𝑒 , a document 𝑑 𝑖 is a member of a hyperedge 𝑒 if the term 
+
+𝑊 𝑒 ∈ 𝑑 𝑖 . We then give a score to each hyperedge 𝑒 according to the following formula: 
+
+Score (𝑒 ) = 1
+
+|𝑒 |∑︁ 𝑑 ∈𝑒 
+
+TF-IDF (𝑊 𝑒 , 𝑑 )
+
+Finally, we sort the hyperedges by Score (𝑒 ) and prune the HoT to include only the top 𝑛 % of hyperedges. 
+
+## 4.2 LLM-Doc and LLM-Sentence 
+
+Prior work indicated that LLMs could be used to create a HoT [ 4 ]. In particular, they split each document into its sentences and prompt an LLM to extract the topics of each sentence and output them as a list. The prior work noted that this approach created two orders of magnitude more topics than documents. In order to avoid this, we propose an additional LLM based HoT construction method. The method is largely similar to the prior method, except topics are extracted at document level instead of sentence level. 
+
+## 4.3 Two-Step Similarity 
+
+Initial investigation of prior methods indicated that while LLM showed promise, it was not without issue. In particular, the sentence level approach trended towards creating too many hyperedges and the document level approach trended towards too few. In order to focus the LLM on extracting topics with both fine-grained detail and relevance to the collection, we propose first picking sentence pairs and then using an LLM to extract the semantic links between these predetermined sentences. To ensure we only consider the most informative sentences, we use a two-step filtering process combining TF-IDF scores and embedding cosine similarity. We compute the average TF-IDF score for each sentence, allowing us to give a single number representing the importance of a sentence. The average TF-IDF score is as follows, where 𝑣 𝑖 is the cached TF-IDF vector representation of sentence 𝑠 𝑖 :
+
+𝑠𝑐𝑜𝑟𝑒 (𝑠 𝑖 ) = 1
+
+|𝑠 𝑖 |∑︁ 𝑗 
+
+𝑣 𝑖,𝑗 
+
+We compute the above score for each sentence in each document. We then sort the scores per document and retain only the top k sentences per document. Following the filtering step, we next want to utilize the sentence embeddings to find the most similar sentences for each sentence. While this approach is already made faster due to the prior filtering step, we use the GPU version of FAISS [ 15 ] to ensure efficient execution. Finally, the top-k sentence pairs are chosen according to the following logic: First attempt to pick the highest cosine Dean E. Alvarez and ChengXiang Zhai 
+
+similarity sentence pairs without repeating sentences or documents, if this is not possible fill in the remaining sentence pairs allowing for repeats. This approach was chosen instead of simply choosing the top k pairs by cosine similarity in order to promote a diversity in connections. For each pair of sentences, we use LLM to extract the common topic. Each common topic becomes a hyperedge featuring the doc-uments from the pair. Any subsequent documents also found to share this topic are accordingly added to the hyperedge. Unlike the "All-Words" method, this approach is quite usable without any addi-tional pruning. However, the method does produce a lot of semantic links that are based on topics shared only by two documents. While it is well-defined for a hyperedge to have two members, one might also be interested in pruning these size-two hyperedges to focus on more substantial topical groups. We explore both a pruned version and a non-pruned version in our results. 
+
+## 5 EVALUATING HOT CONSTRUCTION 
+
+How to evaluate HoT construction is a challenging problem. Indeed, there are no prior quantitative metrics that indicate the quality of a HoT for the purpose of browsing. This challenge is further complicated by the fact that there are many potentially useful ways to create hyperedges. To mitigate this problem, we introduce a general methodology for quantitatively evaluating the quality of a HoT’s structure. The core idea in this evaluation methodology is based on one of the goals of HoT: enabling navigation. If we have prior infor-mation indicating which documents are relevant to each other, we can compare the distances between these known relevant nodes and the distances between random nodes. The intuition is that if in a HoT, the average distance (as measured in hops on the hy-pergraph) of known relevant nodes to each other is 2 while the average distance of random nodes to each other is 4 then the pro-duced hyperedges are useful because they allow for lower effort traversal between relevant nodes. Suppose we have a family of subsets 𝑅 = {𝑟 1, 𝑟 2, . . . } ⊆ P (C) where C is the set of documents and each 𝑟 ∈ 𝑅 is a set of documents that are relevant to each other (for example, 𝑅 = {{ 𝑎, 𝑏, 𝑐 }, {𝑎, 𝑐, 𝑒, 𝑓 }, . . . }; note that a document may appear in multiple sets of 𝑅 ). Suppose also that we generate a HoT 𝐻 from C. The average relevant distance on 𝐻 is computed as the average, across every set 𝑟 ∈ 𝑅 , of the mean pairwise distance between documents in 𝑟 . We call this measure DRel: DRel = 1
+
+|𝑅 |∑︁ 𝑟 ∈𝑅 
+
+1
+
+|𝑟 |(| 𝑟 | − 1)∑︁ 𝑑 𝑖 ,𝑑 𝑗 ∈𝑟 𝑖 ≠𝑗 
+
+𝑑 𝐻 (𝑑 𝑖 , 𝑑 𝑗 )
+
+Note that if a pair (𝑑 𝑖 , 𝑑 𝑗 ) appears in multiple 𝑟 ∈ 𝑅 , it contributes once per containing set; this weights pairs by the number of rele-vance groups they co-occur in, which we view as desirable. Sim-ilarly, if we define a family of subsets 𝑅 ′ = {𝑟 ′
+
+> 1
+
+, 𝑟 ′
+
+> 2
+
+, . . . } ⊆ P (C) 
+
+where each 𝑟 ′ ∈ 𝑅 ′ is a randomly sampled set of documents, we define the average random distance as follows: DRand = 1
+
+|𝑅 ′ |∑︁ 𝑟 ∈𝑅 ′
+
+1
+
+|𝑟 |(| 𝑟 | − 1)∑︁ 𝑑 𝑖 ,𝑑 𝑗 ∈𝑟 𝑖 ≠𝑗 
+
+𝑑 𝐻 (𝑑 𝑖 , 𝑑 𝑗 )
+
+In both of these definitions, we take 𝑑 𝐻 (𝑑 𝑖 , 𝑑 𝑗 ) to be the shortest path distance between nodes 𝑑 𝑖 and 𝑑 𝑗 on the generated hypergraph 
+
+𝐻 . We treat the hypergraph as inducing an undirected graph in which two nodes 𝑢, 𝑣 ∈ 𝑉 are adjacent iff there exists a hyperedge 
+
+𝑒 ∈ 𝐸 with {𝑢, 𝑣 } ⊆ 𝑒 ; 𝑑 𝐻 (𝑢, 𝑣 ) is the length of the shortest path in this induced graph (and is undefined when 𝑢 and 𝑣 lie in differ-ent connected components, which we handle separately via RDP, defined below). We can take the ratio of these measures DRel /DRand to be the “effort ratio”: ER = DRel DRand An effort ratio of 1 indicates no benefit over random navigation; values below 1 indicate that relevant documents are closer than random documents; values above 1 would indicate that relevant documents are paradoxically farther from each other than the ran-dom set. Intuitively, if DRel = 2 and DRand = 5 then ER = 0.4,meaning that navigating between relevant nodes requires on av-erage 40% as many hops as navigating between random pairs of nodes. This effort ratio will be the primary metric we use for evaluation. It is worth reiterating that this evaluation methodology and these metrics are quite general for evaluating HoT construction. While we choose a particular class of dataset in our experiments, there are many ways in which one can find documents with known relevance. A few examples include web logs, survey papers, and question answering datasets. 
+
+## 5.1 Properties of Effort Ratio 
+
+The effort ratio has several key features that make it well-suited for evaluating HoT construction. In this section, we spend some time walking through some of these properties. We begin with a few useful definitions. 
+
+Definition 5.1 (Relevance-Aligned Hyperedge). 
+
+Let 𝐻 = (𝑉 , 𝐸, 𝑋 𝑉 , 𝑋 𝐸 ) be a HoT. A hyperedge 𝑒 ∈ 𝐸 is 𝛼 -relevance-aligned if: 
+
+{{ 𝑑 𝑖 , 𝑑 𝑗 } : 𝑑 𝑖 , 𝑑 𝑗 ∈ 𝑒, 𝑖 ≠ 𝑗, ∃ 𝑟 ∈ 𝑅 s.t. 𝑑 𝑖 , 𝑑 𝑗 ∈ 𝑟 }
+
+ |𝑒 |
+
+> 2
+
+ ≥ 𝛼 
+
+Definition 5.2 (Non-Relevance-Aligned Hyperedge). 
+
+Let 𝐻 = (𝑉 , 𝐸, 𝑋 𝑉 , 𝑋 𝐸 ) be a HoT. A hyperedge 𝑒 ∈ 𝐸 is 𝛽 -non-relevance-aligned if: 
+
+{{ 𝑑 𝑖 , 𝑑 𝑗 } : 𝑑 𝑖 , 𝑑 𝑗 ∈ 𝑒, 𝑖 ≠ 𝑗, ∃ 𝑟 ∈ 𝑅 s.t. 𝑑 𝑖 , 𝑑 𝑗 ∈ 𝑟 }
+
+ |𝑒 |
+
+> 2
+
+ < 𝛽 
+
+In other words, a hyperedge is 𝛼 -relevance-aligned if at least an 
+
+𝛼 fraction of the (unordered) pairs of documents in the hyperedge are relevant to each other. Likewise a hyperedge is 𝛽 -non-relevance-aligned if fewer than a 𝛽 fraction of pairs of documents are relevant to each other. Note that both numerator and denominator count unordered pairs, so the ratio lies in [0, 1].
+
+Definition 5.3 (Saturation Measures). For a hypergraph 𝐻 , we define the following two measures of saturation: 
+
+𝜎 rel =
+
+Í𝑟 ∈𝑅 
+
+Í𝑑 𝑖 ,𝑑 𝑗 ∈𝑟 𝑖 ≠𝑗 
+
+[𝑑 𝐻 (𝑑 𝑖 , 𝑑 𝑗 ) = 1]
+
+Í𝑟 ∈𝑅 
+
+Í𝑑 𝑖 ,𝑑 𝑗 ∈𝑟 𝑖 ≠𝑗 
+
+1Make Any Collection Navigable: Methods for Constructing and Evaluating Hypergraph of Text 
+
+𝜎 rand =
+
+Í𝑟 ∈𝑅 ′
+
+Í𝑑 𝑖 ,𝑑 𝑗 ∈𝑟 𝑖 ≠𝑗 
+
+[𝑑 𝐻 (𝑑 𝑖 , 𝑑 𝑗 ) = 1]
+
+Í𝑟 ∈𝑅 ′
+
+Í𝑑 𝑖 ,𝑑 𝑗 ∈𝑟 𝑖 ≠𝑗 
+
+1
+
+where [·] denotes the Iverson bracket and 𝑅 and 𝑅 ′ are the same relevance and random sets as defined above. 
+
+𝜎 rel and 𝜎 rand can be understood as the fraction of pairs of docu-ments that are one hop away for relevant and random documents respectively. With these definitions in place, we now move on to character-izing effort ratio under different conditions. We start with inves-tigating what happens when we add poorly-aligned edges to the hypergraph. 
+
+5.1.1 Impact of non-relevance-aligned hyperedges. 
+
+Proposition 5.4 (Informal). Let 𝐻 be a hypergraph with ER (𝐻 ) <
+
+1, and let 𝑒 be a candidate hyperedge that is 𝛽 -non-relevance-aligned for some 𝛽 < 0.5. Assume that (i) all pairs (𝑑 𝑖 , 𝑑 𝑗 ) ⊆ 𝑒 have finite distance in 𝐻 prior to adding 𝑒 , and (ii) the expected shortcut (reduc-tion in shortest-path distance) per non-relevant pair in 𝑒 is at least as large as the expected shortcut per relevant pair in 𝑒 . Then adding 𝑒 to 
+
+𝐻 (weakly) increases ER. 
+
+The intuition behind Proposition 5.4 is that a 𝛽 -non-relevance-aligned edge with 𝛽 < 0.5 shortcuts more non-relevant pairs than relevant ones, so under the stated symmetry assumption on pair-wise shortcut magnitudes it decreases DRand by more than it de-creases DRel , pushing ER up toward 1. A full proof tracks, for each pair (𝑑 𝑖 , 𝑑 𝑗 ) ⊆ 𝑒 , the change in 𝑑 𝐻 (𝑑 𝑖 , 𝑑 𝑗 ) (which is at most 
+
+1 − 𝑑 𝐻 (𝑑 𝑖 , 𝑑 𝑗 ) since 𝑒 creates a single-hop path) and sums these changes over the relevant- and non-relevant-pair partitions. However, Proposition 5.4 can fail when the assumptions do not hold. The most extreme case is 𝜎 rand = 1 and 𝜎 rel < 1. In this case, adding an edge 𝑒 that is 𝛽 -non-relevance-aligned for 𝛽 < 0.5 but is 
+
+𝛼 -relevance-aligned for some 𝛼 > 0 (i.e. any edge containing at least one relevant pair) can actually decrease the effort ratio. Consider: if 
+
+𝜎 rand = 1 then DRand = 1, and adding further edges cannot change that. However, if 𝜎 rel < 1 then DRel > 1, and shortcutting any of the remaining non-connected relevant pairs decreases DRel . So the resulting decrease in effort ratio comes from moving it from above 1 down toward 1. The key insight here is that, except in pathological cases where the hypergraph structure is highly imbalanced and random nodes are more closely connected than relevant nodes, the effort ratio pe-nalizes adding hyperedges that connect more irrelevant documents than relevant ones. This is exactly the type of behavior we would want in a navigation metric. Another desirable property of a navigation metric is the ability to penalize overload. That is to say, we do not want to give a good score to a method that achieves good connections by simply spamming edges. We want a metric that has some regularizing effect on the total number of edges in the hypergraph. This leads us to our next result. 
+
+5.1.2 Moderation of hypergraph size. 
+
+Proposition 5.5 (Informal). Let 𝐻 0 be a finite hypergraph over 
+
+C, and let {𝑒 1, 𝑒 2, . . . } be a sequence of hyperedges, each 𝛼 -relevance-aligned for some fixed 𝛼 ∈ ( 0, 1], where for every 𝑛 the pairs contained in 𝑒 𝑛 are drawn from a distribution over  C
+
+> 2
+
+ that assigns positive probability to every pair. Let 𝐻 𝑛 be the hypergraph obtained by adding 
+
+𝑒 1, . . . , 𝑒 𝑛 to 𝐻 0, and assume 𝐻 𝑛 is connected for all sufficiently large 
+
+𝑛 . Then, almost surely, 
+
+lim 
+
+> 𝑛 →∞
+
+DRel 𝑛 
+
+DRand 𝑛 
+
+= 1.
+
+The intuition is a coupon-collector-style argument: even “good” edges that are 𝛼 -relevance-aligned for 𝛼 close to 1 eventually sat-urate the hypergraph. Because every pair has positive sampling probability, every pair (relevant and random alike) is eventually one hop apart, so both DRel 𝑛 and DRand 𝑛 tend to 1 and their ratio tends to 1. The connectedness assumption ensures the distances are finite at each step; under the positive-probability assumption this occurs almost surely for some finite 𝑛 .
+
+5.1.3 Limitations of Effort Ratio. While effort ratio allows quanti-tative evaluation of HoT, it does have two key limitations. First, it is not well defined if the hypergraph has disconnected components. This is the direct result of the metric being based on distances be-tween nodes. As a result, effort ratio should always be considered alongside the extent to which items are disconnected. For this rea-son, we propose another metric: Relevant Disconnect Proportion (RDP). This metric is simply the proportion of pairs of relevant doc-uments which are disconnected from each other. Taken together with effort ratio, RDP allows us to know if the HoT construction method is essentially cheating the metric via selection bias. The second key limitation of effort ratio is that it does not mea-sure the coherence of the hyperedge with the text describing the hyperedge. While it does implicitly measure the semantic coher-ence of the hyperedge itself, the hyperedge text could be anything. For example, if one had a HoT 𝐻 and created a new HoT 𝐻 ′ by changing the text associated with every hyperedge to be a random word, 𝐻 and 𝐻 ′ would have the same effort ratio. This indicates that it would likely be useful to also evaluate the text of the hyperedges in HoTs in addition to the hypergraph structure. We leave this for future work. 
+
+## 6 EXPERIMENTAL RESULTS 
+
+For our experiments we use the metrics proposed in section 5 on a MultiHop-RAG QA data set [ 30 ]. This dataset consists of 609 arti-cles and 2556 multi-hop queries distributed across 2 to 4 documents. While the MultiHop-RAG paper does not indicate any topic distri-bution, manual inspection shows topics including current events, financial markets and stocks, sporting events, and video games. For the purposes of our experiments, we take each query associated with documents to be a set of documents relevant to each other. This means that our set 𝑅 (as described in section 5) is a set of sets size 2556 where each member set is size 2 to 4. Our experiments revealed interesting differences in performance across the various HoT construction methods. The results are sum-marized in table 1. Before getting deeper into the results, it is first worth noting the relative compute requirements of each method. The two ‘All-Words’ methods are fairly lightweight and do not require any machine-learning-capable hardware. The LLM-based Dean E. Alvarez and ChengXiang Zhai 
+
+Table 1: Comparative analysis of HoT construction methods. Lower effort ratio indicates better navigation support. Ran-dom Hypergraphs of various sizes are provided as a sanity check. RDP = Relevant Disconnect Proportion 
+
+Method Effort Ratio Number of RDP Hyperedges 
+
+LLM-doc 0.362 2,155 0.385 LLM-sentence 0.919 21,295 0.000 Two-step LLM 0.596 5,311 0.014 Two-step LLM (pruned) 0.598 2,084 0.015 All-Words top 1% 0.523 232 0.199 All-Words top 5% 0.582 1,160 0.000 Random HG (200) 0.989 200 0.037 Random HG (800) 1.002 800 0.000 Random HG (1600) 0.991 1,600 0.000 
+
+methods are much more computationally demanding requiring sig-nificant LLM usage. The two-step LLM methods also require LLM usage, but significantly less due to the filtering step. The LLM category of approaches displayed the most variance with the sentence level approach and document level approaches getting the highest (non-random) and lowest effort ratios respec-tively. This is, perhaps, unsurprising in that these two methods also show the largest discrepancy in number of hyperedges with the sentence level approach being an order of magnitude larger than the document level approach. While the document level approach achieved the lowest effort ratio of any of the proposed methods, it is important to note that almost 40% of relevant document pairs were disconnected. Since disconnected documents cannot be counted in the average distances as they’d turn the average distance to infinity, this method having the lowest effort ratio could be indicating that it was only able to make the “easy” connections. Methods with lower disconnect rates must account for these ’hard’ connections, which are typically farther apart, thus incurring a penalty to their average relevant distance. In comparison, both the “All-Words” and “two-step” methods achieved results with effort ratios in the .50 to .60 range. Both ‘All-Words’ methods perform well despite their fewer number of hyperedges. The caveat to this is that the semantic links created by the ‘All-Words’ are single word topics. This is a quality limita-tion for their semantic links. For instance, unless a person is easily recognizable by a single name (e.g. Plato) then this method cannot capture topics related to that person as well. The “two-step” method does not have this downside. Since the “two-step” method takes considerably longer to run than “All-Words”, the best method likely depends on one’s limitations and use cases as each method has benefits and drawbacks. For budget-constrained scenarios or sce-narios where topic nuance are less important, All-Words at top-5% is within 0.02 of Two-Step at 1/5 the hyperedge count and no LLM calls. 
+
+## 7 LIMITATIONS 
+
+As an initial study of HoT construction, we only study HoT Con-struction on one dataset. In the future, it is important to further verify our findings by experimenting with additional datasets by using the proposed simulation evaluation strategy. Once a HoT is constructed, many algorithms (e.g., random walk, path discovery, outlier discovery) can be applied to post-process HoT to reveal many interesting latent semantic patterns in the text data (e.g., controversy analysis, comparative analysis, or association analy-sis). Additionally, while the quantitative evaluation enabled us to compare multiple HoT construction approaches, the actual utility of HoT construction from a user’s perspective still needs further evaluation using user studies. 
+
+## 8 CONCLUSION AND FUTURE WORK 
+
+In this paper, we study how to construct a Hypergraph of Text (HoT) to semantically organize an arbitrary text collection for supporting navigation. We study three approaches to performing HoT construc-tion, including approaches that leverage LLMs. To quantitatively evaluate browsing, we propose a novel evaluation metric: effort ratio. Our experiment results show that while various methods are able to produce potentially useful links, each has its own benefits and drawbacks. With HoT as a foundation, our work makes a step toward developing a general technology to support a user in brows-ing an arbitrary collection of documents, which has widespread applications. An important next step is to further validate these metrics and algorithms using real user studies. Another promising future direction is to apply the proposed algorithms to specific ap-plication scenarios such as constructing a HoT to organize search results, research paper collections, organize any shared digital li-braries created by a group of people (e.g., student essays in a class), or organize any personal folders of content. 
+
+## ACKNOWLEDGMENT 
+
+This work is supported by a grant from Talroo Inc. It is also sup-ported in part by the National Science Foundation (NSF) under grant number 2433308. 
+
+## REFERENCES                         
+
+> [1] Aly Abdelrazek, Yomna Eid, Eman Gawish, Walaa Medhat, and Ahmed Hassan. 2023. Topic modeling algorithms and applications: A survey. Information Systems
+> 112 (2023), 102131. [2] Charu C Aggarwal and ChengXiang Zhai. 2012. A survey of text clustering algorithms. Mining text data (2012), 77–128. [3] Majid Hameed Ahmed, Sabrina Tiun, Nazlia Omar, and Nor Samsiah Sani. 2022. Short text clustering algorithms, application and challenges: A survey. Applied Sciences 13, 1 (2022), 342. [4] Dean E. Alvarez and ChengXiang Zhai. 2024. Hypergraph of Text: a Mathe-matical Structure for Organizing and Analyzing Big Text Data. In 2024 IEEE International Conference on Big Data (BigData) . 8605–8607. https://doi.org/10. 1109/BigData62323.2024.10824995 [5] Dean E. Alvarez and ChengXiang Zhai. 2025. TINK: Text Information Navigation Kit. In Proceedings of the 48th International ACM SIGIR Conference on Research and Development in Information Retrieval (Padua, Italy) (SIGIR ’25) . Association for Computing Machinery, New York, NY, USA, 4056–4060. https://doi.org/10. 1145/3726302.3730141 [6] Anne Aula, Rehan M Khan, and Zhiwei Guan. 2010. How does search behavior change as search becomes more difficult?. In Proceedings of the SIGCHI conference on human factors in computing systems . 35–44. [7] Marcia J Bates. 1989. The design of browsing and berrypicking techniques for the online search interface. Online review 13, 5 (1989), 407–424. [8] Marcia J Bates. 2007. What is browsing–really? A model drawing from be-havioural science research. Information research 12, 4 (2007).
+
+Make Any Collection Navigable: Methods for Constructing and Evaluating Hypergraph of Text 
+
+[9] Haibin Chen, Qianli Ma, Zhenxi Lin, and Jiangyue Yan. 2021. Hierarchy-aware Label Semantics Matching Network for Hierarchical Text Classification. In Pro-ceedings of the 59th Annual Meeting of the Association for Computational Lin-guistics and the 11th International Joint Conference on Natural Language Process-ing (Volume 1: Long Papers) , Chengqing Zong, Fei Xia, Wenjie Li, and Roberto Navigli (Eds.). Association for Computational Linguistics, Online, 4370–4379. https://doi.org/10.18653/v1/2021.acl-long.337 [10] Ed H Chi, Peter Pirolli, Kim Chen, and James Pitkow. 2001. Using information scent to model user information needs and actions and the Web. In Proceedings of the SIGCHI conference on Human factors in computing systems . 490–497. [11] Bernhard Clemm von Hohenberg, Sebastian Stier, Ana S Cardenal, Andrew M Guess, Ericka Menchen-Trevino, and Magdalena Wojcieszak. 2024. Analysis of web browsing data: A guide. Social Science Computer Review 42, 6 (2024), 1479–1504. [12] Abhimanyu Dubey et al. 2024. The Llama 3 Herd of Models. arXiv:2407.21783 [cs.AI] https://arxiv.org/abs/2407.21783 [13] Tomáš Foltýnek, Norman Meuschke, and Bela Gipp. 2019. Academic Plagiarism Detection: A Systematic Literature Review. ACM Comput. Surv. 52, 6, Article 112 (Oct. 2019), 42 pages. https://doi.org/10.1145/3345317 [14] Ziwei Ji, Nayeon Lee, Rita Frieske, Tiezheng Yu, Dan Su, Yan Xu, Etsuko Ishii, Yejin Bang, Delong Chen, Wenliang Dai, Andrea Madotto, and Pascale Fung. 2022. Survey of Hallucination in Natural Language Generation. Comput. Surveys 
+
+55 (2022), 1 – 38. https://api.semanticscholar.org/CorpusID:246652372 [15] Jeff Johnson, Matthijs Douze, and Hervé Jégou. 2019. Billion-scale similarity search with GPUs. IEEE Transactions on Big Data 7, 3 (2019), 535–547. [16] John Lafferty, Andrew McCallum, Fernando Pereira, et al . 2001. Conditional random fields: Probabilistic models for segmenting and labeling sequence data. In Icml , Vol. 1. Williamstown, MA, 3. [17] Hang Li, Jun Xu, et al . 2014. Semantic matching in search. Foundations and Trends ® in Information Retrieval 7, 5 (2014), 343–469. [18] Jimmy Lin, Rodrigo Nogueira, and Andrew Yates. 2022. Pretrained transformers for text ranking: Bert and beyond . Springer Nature. [19] Gary Marchionini. 1995. Information seeking in electronic environments . Number 9. Cambridge university press. [20] Bonan Min, Hayley Ross, Elior Sulem, Amir Pouran Ben Veyseh, Thien Huu Nguyen, Oscar Sainz, Eneko Agirre, Ilana Heintz, and Dan Roth. 2023. Recent advances in natural language processing via large pre-trained language models: A survey. Comput. Surveys 56, 2 (2023), 1–40. [21] Christina Niklaus, Matthias Cetto, André Freitas, and Siegfried Handschuh. 2018. A survey on open information extraction. arXiv preprint arXiv:1806.05599 (2018). [22] Irina Pak and Phoey Lee Teh. 2018. Text segmentation techniques: a critical review. Innovative Computing, Optimization and Its Applications: Modelling and Simulations (2018), 167–181. [23] Shirui Pan, Linhao Luo, Yufei Wang, Chen Chen, Jiapu Wang, and Xindong Wu. 2024. Unifying large language models and knowledge graphs: A roadmap. IEEE Transactions on Knowledge and Data Engineering (2024). [24] Nils Reimers and Iryna Gurevych. 2019. Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. In Proceedings of the 2019 Conference on Em-pirical Methods in Natural Language Processing . Association for Computational Linguistics. https://arxiv.org/abs/1908.10084 [25] Ronald E Rice, Maureen McCreadie, and Shan-Ju L Chang. 2001. Accessing and browsing information and communication . Mit Press. [26] Philipp Singer, Florian Lemmerich, Robert West, Leila Zia, Ellery Wulczyn, Markus Strohmaier, and Jure Leskovec. 2017. Why we read Wikipedia. In Pro-ceedings of the 26th international conference on world wide web . 1591–1600. [27] Alan F Smeaton and Patrick J Morrissey. 1995. Experiments on the automatic construction of hypertext from texts. New Review of Hypermedia and Multimedia 
+
+1, 1 (1995), 23–39. [28] Charles Sutton, Andrew McCallum, et al . 2012. An introduction to conditional random fields. Foundations and Trends ® in Machine Learning 4, 4 (2012), 267–373. [29] Yiming Tan, Dehai Min, Yu Li, Wenbo Li, Nan Hu, Yongrui Chen, and Guilin Qi. 2023. Can ChatGPT replace traditional KBQA models? An in-depth analysis of the question answering performance of the GPT LLM family. In International Semantic Web Conference . Springer, 348–367. [30] Yixuan Tang and Yi Yang. 2024. MultiHop-RAG: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries. arXiv:2401.15391 [cs.CL] https://arxiv.org/abs/2401.15391 [31] Ike Vayansky and Sathish AP Kumar. 2020. A review of topic modeling methods. 
+
+Information Systems 94 (2020), 101582. [32] Mengting Wan, Tara Safavi, Sujay Kumar Jauhar, Yujin Kim, Scott Counts, Jen-nifer Neville, Siddharth Suri, Chirag Shah, Ryen W. White, Longqi Yang, Reid Andersen, Georg Buscher, Dhruv Joshi, and Nagu Rangan. 2024. TnT-LLM: Text Mining at Scale with Large Language Models. In Proceedings of the 30th ACM SIGKDD Conference on Knowledge Discovery and Data Mining (Barcelona, Spain) (KDD ’24) . Association for Computing Machinery, New York, NY, USA, 5836–5847. https://doi.org/10.1145/3637528.3671647 [33] Wenhui Wang, Furu Wei, Li Dong, Hangbo Bao, Nan Yang, and Ming Zhou. 2020. MiniLM: Deep Self-Attention Distillation for Task-Agnostic Compression of Pre-Trained Transformers. arXiv:2002.10957 [cs.CL] https://arxiv.org/abs/2002.10957 [34] Ryen W White and Resa A Roth. 2009. Exploratory search: Beyond the query-response paradigm . Number 3. Morgan & Claypool Publishers. [35] Ross Wilkinson and Alan F. Smeaton. 1999. Automatic link generation. ACM Comput. Surv. 31 (1999), 27. https://api.semanticscholar.org/CorpusID:5712924 [36] Derong Xu, Wei Chen, Wenjun Peng, Chao Zhang, Tong Xu, Xiangyu Zhao, Xian Wu, Yefeng Zheng, and Enhong Chen. 2023. Large language models for generative information extraction: A survey. arXiv preprint arXiv:2312.17617 
+
+(2023). [37] Hsin-Chang Yang and Chung-Hong Lee. 2005. A text mining approach for automatic construction of hypertexts. Expert Syst. Appl. 29 (2005), 723–734. https://api.semanticscholar.org/CorpusID:18217868 [38] Yang Yang, Zhilei Wu, Yuexiang Yang, Shuangshuang Lian, Fengjie Guo, and Zhiwei Wang. 2022. A survey of information extraction based on deep learning. 
+
+Applied Sciences 12, 19 (2022), 9691. [39] Yuheng Zha, Yichi Yang, Ruichen Li, and Zhiting Hu. 2023. Text Align-ment Is An Efficient Unified Model for Massive NLP Tasks. In Advances in Neural Information Processing Systems , A. Oh, T. Naumann, A. Glober-son, K. Saenko, M. Hardt, and S. Levine (Eds.), Vol. 36. Curran Associates, Inc., 77942–77968. https://proceedings.neurips.cc/paper_files/paper/2023/file/ f5708199bdc013c5b56406db305b991e-Paper-Conference.pdf [40] ChengXiang Zhai. 2024. Large Language Models and Future of Information Retrieval: Opportunities and Challenges. In Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval .481–490. [41] Haopeng Zhang, Philip S Yu, and Jiawei Zhang. 2024. A Systematic Survey of Text Summarization: From Statistical Methods to Large Language Models. arXiv preprint arXiv:2406.11289 (2024). [42] Lingfeng Zhong, Jia Wu, Qian Li, Hao Peng, and Xindong Wu. 2023. A compre-hensive survey on automatic knowledge graph construction. Comput. Surveys 
+
+56, 4 (2023), 1–62.

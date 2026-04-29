@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-04-29T08:07:33.773831+00:00",
-  "updated_date": "20260331-20260429",
+  "generated_at": "2026-04-29T21:12:11.550600+00:00",
+  "updated_date": "20260429",
   "carryover_days": 9,
   "tag_states": {
     "AI图书馆": {
-      "updated_date": "20260331-20260429",
+      "updated_date": "20260429",
       "carryover_days": 9,
       "items": []
     },
     "SR AMCR": {
-      "updated_date": "20260331-20260429",
+      "updated_date": "20260429",
       "carryover_days": 9,
       "items": []
     }

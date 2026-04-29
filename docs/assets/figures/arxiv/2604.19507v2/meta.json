@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.19507v2/fig-001.webp",
+      "caption": "FIG. 1. The Innovation Annulus. The outer circle represents the structuring frontier—the frontier of what has been structured and made available in analysable form. Beyond the outer circle lies unprocessed, unstructured, or as-yet-unpublished scholarly output. The inner circle represents the boundary of openness boundary—data that is freely licensed, transparently governed, stable and available for unrestricted reuse. The zone between the two circles is the innovation annulus: Data that has been structured and refined to a level that makes it useful, but that has not yet been commoditised to the point of free availability. Arrows on the outer circle indicate expansion (new data types, new structuring capabilities). Arrows on the inner circle indicate outward migration (standards adoption, collective disclosure, technological commoditisation). The width of the annulus at any point represents the gap between the current frontier of commercially refined data and the current baseline of open provision. Adapted from Hook [6].",
+      "page": 3,
+      "index": 1,
+      "width": 1062,
+      "height": 779
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19507v2/fig-002.webp",
+      "caption": "FIG. 2. Sectoral Dimensions of the Annulus. The concentric-circle diagram from Figure 1, but with the annulus divided into radial sectors of different widths and different radial positions, each labelled with a data type. Critically, the inner and outer arc of each sector are positioned independently. The radial distance from the centre represents the total structuring investment and ecosystem development for that data type: segments further from the centre indicate more mature, more developed, and more extensively structured domains. The thickness of each segment represents the commercial opportunity—the gap between what is openly available and what has been structured at the frontier.",
+      "page": 6,
+      "index": 2,
+      "width": 1062,
+      "height": 881
+    },
+    {
+      "url": "assets/figures/arxiv/2604.19507v2/fig-003.webp",
+      "caption": "FIG. 3. A welfare-theoretic view of the optimal annulus width. Panel (a) plots net welfare W as a function of annulus width w, holding the outer boundary at its optimal level. The inverted-U is asymmetric: the left shoulder reflects a discrete feasibility collapse as the sustainability constraint, Eq. (2), ceases to hold and frontier structuring becomes unsustainable; the right shoulder reflects the continuous opportunity cost of forgoing units of B(ri). Panel (b) shows the boundaries ri and ro and the width w.",
+      "page": 10,
+      "index": 3,
+      "width": 1062,
+      "height": 560
+    }
+  ]
+}

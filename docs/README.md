@@ -6,79 +6,65 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-03-31 ~ 2026-04-29
-- 运行时间：2026-04-29 08:20:10 UTC
+- 最新运行日期：2026-04-29
+- 运行时间：2026-04-29 21:21:52 UTC
 - 运行状态：成功
-- 本次总论文数：19
-- 精读区：7
+- 本次总论文数：15
+- 精读区：3
 - 速读区：12
 
 ### 今日简报（AI）
-本月日报成功推荐19篇论文，精读聚焦AI驱动智能图书馆与高效研究工具。  
-最值得关注AI知识图谱转型数字图书馆及小模型任务感知检索方向。  
-建议读者尝试集成这些工具以优化个人研究流程。
-- 详情：[/20260331-20260429/README](/20260331-20260429/README)
+今日精读3篇、速读12篇AI前沿论文，聚焦人机协作理论与基准测试。最值得关注《pAI/MSc》提出的人机闭环机器学习理论框架与《MetaGAI》的大规模生成式AI基准。建议读者跟踪人机协作理论如何重塑AI研发流程。
+- 详情：[/202604/29/README](/202604/29/README)
 
 ### 精读区论文标签
-1. [Transforming OPACs into Intelligent Discovery Systems: An AI-Powered, Knowledge Graph-Driven Smart OPAC for Digital Libraries](/20260331-20260429/2604.01262v1-transforming-opacs-into-intelligent-discovery-systems-an-ai-powered-knowledge-graph-driven-smart-opac-for-digital-libraries)  
-   标签：评分：10.0/10、query:ai
-   evidence：人工智能驱动、知识图谱驱动的数字图书馆智能OPAC
-2. [Lishu: A Real-Source Research Workbench for Elite Business Journal Search, Analysis, and Writing Support](/20260331-20260429/2604.07934v2-lishu-a-real-source-research-workbench-for-elite-business-journal-search-analysis-and-writing-support)  
-   标签：评分：9.0/10、query:ai
-   evidence：用于期刊搜索、分析和文献解读的研究工作台
-3. [Evolution of Research Method Usage Across the Academic Careers of Library and Information Science Scholars](/20260331-20260429/2604.20528v1-evolution-of-research-method-usage-across-the-academic-careers-of-library-and-information-science-scholars)  
-   标签：评分：9.0/10、query:ai
-   evidence：图书馆与信息科学中的研究方法使用
-4. [Experience as a Compass: Multi-agent RAG with Evolving Orchestration and Agent Prompts](/20260331-20260429/2604.00901v1-experience-as-a-compass-multi-agent-rag-with-evolving-orchestration-and-agent-prompts)  
+1. [pAI/MSc: ML Theory Research with Humans on the Loop](/202604/29/2604.20622v1-paimsc-ml-theory-research-with-humans-on-the-loop)  
    标签：评分：8.5/10、query:sr-amcr
-   evidence：具有演化编排和自适应提示的多智能体RAG
-5. [Federation over Text: Insight Sharing for Multi-Agent Reasoning](/20260331-20260429/2604.16778v1-federation-over-text-insight-sharing-for-multi-agent-reasoning)  
-   标签：评分：8.5/10、query:sr-amcr
-   evidence：用于共享元认知见解库的多智能体框架
-6. [pAI/MSc: ML Theory Research with Humans on the Loop](/20260331-20260429/2604.20622v1-paimsc-ml-theory-research-with-humans-on-the-loop)  
-   标签：评分：8.5/10、query:sr-amcr
-   evidence：用于学术研究工作流和文献基础的多智能体系统
-7. [IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review](/20260331-20260429/2604.22861v1-intragent-an-llm-agent-for-content-grounded-information-retrieval-through-literature-review)  
-   标签：评分：8.5/10、query:sr-amcr
-   evidence：用于通过文献综述进行自动化信息检索以支持研究查询的LLM代理
+   evidence：用于学术研究工作流和基于文献起草的多智能体系统
+2. [MetaGAI: A Large-Scale and High-Quality Benchmark for Generative AI Model and Data Card Generation](/202604/29/2604.23539v1-metagai-a-large-scale-and-high-quality-benchmark-for-generative-ai-model-and-data-card-generation)  
+   标签：评分：8.0/10、query:sr-amcr
+   evidence：包含专门检索和生成智能体的多智能体框架
+3. [Make Any Collection Navigable: Methods for Constructing and Evaluating Hypergraph of Text](/202604/29/2604.25906v1-make-any-collection-navigable-methods-for-constructing-and-evaluating-hypergraph-of-text)  
+   标签：评分：8.0/10、query:ai
+   evidence：构建文本超图，使数字图书馆中的文档集合具有可导航性
 
 ### 速读区论文标签
-1. [Multi-Agent Orchestration for Knowledge Extraction and Retrieval: AI Expert System for GPCRs](/20260331-20260429/biorxiv-10-64898-2026-04-10-696782-v1-multi-agent-orchestration-for-knowledge-extraction-and-retrieval-ai-expert-system-for-gpcrs)  
-   标签：评分：8.5/10、query:sr-amcr
-   evidence：用于知识提取和检索的多智能体架构
-2. [Do We Need Bigger Models for Science? Task-Aware Retrieval with Small Language Models](/20260331-20260429/2604.01965v1-do-we-need-bigger-models-for-science-task-aware-retrieval-with-small-language-models)  
-   标签：评分：8.0/10、query:sr-amcr
-   evidence：用于科学应用和学术助手的任务感知检索框架
-3. [Matching Researchers to Funding Calls: A Reproducible Institution-Level Framework](/20260331-20260429/2604.06321v1-matching-researchers-to-funding-calls-a-reproducible-institution-level-framework)  
-   标签：评分：8.0/10、query:sr-amcr
-   evidence：通过文献计量分析将研究人员与资助匹配
-4. [Revise: A Framework for Revising OCRed text in Practical Information Systems with Data Contamination Strategy](/20260331-20260429/2604.08115v1-revise-a-framework-for-revising-ocred-text-in-practical-information-systems-with-data-contamination-strategy)  
-   标签：评分：8.0/10、query:ai
-   evidence：文档AI中OCR错误的系统性纠正
-5. [Proactive Agent Research Environment: Simulating Active Users to Evaluate Proactive Assistants](/20260331-20260429/2604.00842v1-proactive-agent-research-environment-simulating-active-users-to-evaluate-proactive-assistants)  
+1. [Market Dynamics, Governance and Open Research Metadata in the AI Era](/202604/29/2604.19507v2-market-dynamics-governance-and-open-research-metadata-in-the-ai-era)  
    标签：评分：7.5/10、query:ai
-   evidence：模拟活跃用户以评估主动式数字助手
-6. [Experience as a Compass: Multi-agent RAG with Evolving Orchestration and Agent Prompts](/20260331-20260429/2604.00901v2-experience-as-a-compass-multi-agent-rag-with-evolving-orchestration-and-agent-prompts)  
+   evidence：人工智能时代的学术知识基础设施与开放研究元数据
+2. [EvoAgent: An Evolvable Agent Framework with Skill Learning and Multi-Agent Delegation](/202604/29/2604.20133v1-evoagent-an-evolvable-agent-framework-with-skill-learning-and-multi-agent-delegation)  
    标签：评分：7.5/10、query:sr-amcr
-   evidence：用于复杂推理和多步资源检索的多智能体RAG
-7. [Self-Optimizing Multi-Agent Systems for Deep Research](/20260331-20260429/2604.02988v1-self-optimizing-multi-agent-systems-for-deep-research)  
-   标签：评分：7.5/10、query:sr-amcr
-   evidence：用于深度研究和跨文档证据合成的多智能体系统
-8. [Beyond Fluency: Toward Reliable Trajectories in Agentic IR](/20260331-20260429/2604.04269v1-beyond-fluency-toward-reliable-trajectories-in-agentic-ir)  
+   evidence：该论文提出了一个具有分层子代理委派机制的多代理框架，可应用于图书馆咨询转介系统。
+3. [Automatic Ontology Construction Using LLMs as an External Layer of Memory, Verification, and Planning for Hybrid Intelligent Systems](/202604/29/2604.20795v1-automatic-ontology-construction-using-llms-as-an-external-layer-of-memory-verification-and-planning-for-hybrid-intelligent-systems)  
    标签：评分：7.5/10、query:ai
-   evidence：信息检索中的自主智能体工作流
-9. [An Empirical Study of Multi-Agent Collaboration for Automated Research](/20260331-20260429/2603.29632v1-an-empirical-study-of-multi-agent-collaboration-for-automated-research)  
-   标签：评分：6.5/10、query:sr-amcr
-   evidence：用于自动化研究和优化的多智能体系统
-10. [Agentic AI-Empowered Wireless Agent Networks With Semantic-Aware Collaboration via ILAC](/20260331-20260429/2604.02381v1-agentic-ai-empowered-wireless-agent-networks-with-semantic-aware-collaboration-via-ilac)  
-   标签：评分：6.5/10、query:sr-amcr
-   evidence：代理AI与语义感知协作机制
-11. [Do Agent Societies Develop Intellectual Elites? The Hidden Power Laws of Collective Cognition in LLM Multi-Agent Systems](/20260331-20260429/2604.02674v1-do-agent-societies-develop-intellectual-elites-the-hidden-power-laws-of-collective-cognition-in-llm-multi-agent-systems)  
-   标签：评分：6.5/10、query:sr-amcr
-   evidence：大语言模型多代理系统中的协作动力学
-12. [Graph of Skills: Dependency-Aware Structural Retrieval for Massive Agent Skills](/20260331-20260429/2604.05333v2-graph-of-skills-dependency-aware-structural-retrieval-for-massive-agent-skills)  
-   标签：评分：6.5/10、query:sr-amcr
-   evidence：大型智能体技能库的结构化检索
+   evidence：数字图书馆的自动本体构建和知识图谱生成
+4. [ResRank: Unifying Retrieval and Listwise Reranking via End-to-End Joint Training with Residual Passage Compression](/202604/29/2604.22180v1-resrank-unifying-retrieval-and-listwise-reranking-via-end-to-end-joint-training-with-residual-passage-compression)  
+   标签：评分：7.5/10、query:ai
+   evidence：使用大语言模型进行高级信息检索和重排序，适用于数字图书馆系统
+5. [IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review](/202604/29/2604.22861v1-intragent-an-llm-agent-for-content-grounded-information-retrieval-through-literature-review)  
+   标签：评分：7.5/10、query:ai
+   evidence：利用大语言模型代理自动化科学文献中的细粒度信息检索。
+6. [Automating Categorization of Scientific Texts with In-Context Learning and Prompt-Chaining in Large Language Models](/202604/29/2604.23430v1-automating-categorization-of-scientific-texts-with-in-context-learning-and-prompt-chaining-in-large-language-models)  
+   标签：评分：7.5/10、query:ai
+   evidence：利用大语言模型在数字研究系统中实现自动分类和信息检索。
+7. [LogosKG: Hardware-Optimized Scalable and Interpretable Knowledge Graph Retrieval](/202604/29/2604.18913v1-logoskg-hardware-optimized-scalable-and-interpretable-knowledge-graph-retrieval)  
+   标签：评分：6.5/10、query:ai
+   evidence：用于数字信息系统中结构化推理的可扩展知识图谱检索技术
+8. [Demonstrating Online Schema Alignment in Decentralized Knowledge Graphs Querying](/202604/29/2604.19205v1-demonstrating-online-schema-alignment-in-decentralized-knowledge-graphs-querying)  
+   标签：评分：6.5/10、query:ai
+   evidence：去中心化知识图谱查询中的在线模式对齐
+9. [ECLASS-Augmented Semantic Product Search for Electronic Components](/202604/29/2604.19664v1-eclass-augmented-semantic-product-search-for-electronic-components)  
+   标签：评分：6.5/10、query:ai
+   evidence：针对结构化目录的语义检索与稠密检索技术
+10. [ProMMSearchAgent: A Generalizable Multimodal Search Agent Trained with Process-Oriented Rewards](/202604/29/2604.20486v1-prommsearchagent-a-generalizable-multimodal-search-agent-trained-with-process-oriented-rewards)  
+   标签：评分：6.5/10、query:ai
+   evidence：用于知识密集型推理和信息检索的多模态搜索代理
+11. [The Last Harness You'll Ever Build](/202604/29/2604.21003v1-the-last-harness-youll-ever-build)  
+   标签：评分：6.5/10、query:ai
+   evidence：利用AI代理自动化多步研究流程和特定领域工作流
+12. [Multilingual and Domain-Agnostic Tip-of-the-Tongue Query Generation for Simulated Evaluation](/202604/29/2604.21096v1-multilingual-and-domain-agnostic-tip-of-the-tongue-query-generation-for-simulated-evaluation)  
+   标签：评分：6.5/10、query:ai
+   evidence：该论文讨论了多语言信息检索和基于大语言模型的查询模拟，这是现代数字图书馆搜索系统的核心组成部分。
 
 
 <div class="dpr-home-promo-card">

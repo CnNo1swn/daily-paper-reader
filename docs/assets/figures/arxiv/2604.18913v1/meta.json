@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.18913v1/fig-001.webp",
+      "caption": "Table 1: Comparison of retrieval systems and libraries. Matrix-based indicates the use of linear-algebra primitives for retrieval. Note: Entries reflect the default design under a single-machine setting. Scalability indicates the ability to process graphs that exceed single-machine memory limits. Unavailable features can be achieved with additional processing, at the cost of time and memory.",
+      "page": 1,
+      "index": 1,
+      "width": 452,
+      "height": 293
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18913v1/fig-002.webp",
+      "caption": "Table 3: Scalability of LogosKG-Large on the PKG across hops, batch sizes, cache sizes, and backends.",
+      "page": 6,
+      "index": 2,
+      "width": 451,
+      "height": 554
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18913v1/fig-003.webp",
+      "caption": "Table 2: Retrieval efficiency comparison across hops. Timeout limits are fixed at 2000, 4000, 6000, 8000, and 10000 ms for 1–5 hops, respectively. All methods are run under the same CPU workload for fair comparison. For each hop, the best method is shown in bold and the second-best is underlined.",
+      "page": 6,
+      "index": 3,
+      "width": 941,
+      "height": 450
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18913v1/fig-004.webp",
+      "caption": "Table 6: Retrieval refinement performance on UMLS and PrimeKG. Results are grouped by refinement strategy (Similarity Threshold τ vs. Top-N Selection) with varying k.",
+      "page": 15,
+      "index": 4,
+      "width": 452,
+      "height": 867
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18913v1/fig-005.webp",
+      "caption": "Figure 1: Overview of the LogosKG retrieval framework. LogosKG adopts a linear algebra–based retrieval method that supports both small and large KGs. For large graphs, LogosKG incorporates graph partitioning, cross-graph routing, and on-demand caching to enable efficient multi-hop retrieval across distributed subgraphs. The retrieved evidence can provide knowledge-grounded support for medical diagnosis generation.",
+      "page": 2,
+      "index": 5,
+      "width": 929,
+      "height": 329
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18913v1/fig-006.webp",
+      "caption": "Table 5: PDSQI-9 evaluation comparing Baseline (B), LogosKG Round 1 (R1), and Round 2 (R2) at k = 5. Results for base models across UMLS and PrimeKG. ↑ indicates improvement over baseline.",
+      "page": 14,
+      "index": 6,
+      "width": 889,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18913v1/fig-007.webp",
+      "caption": "Figure 7: Performance comparison of KG filtering (Round 1) and enhancement (Round 2) across varying hop distances (k = 1 to k = 5) on ProbSum and DDXPlus datasets using UMLS and PrimeKG. Precision, recall, and F1 score metrics are shown for Qwen-2.5-7B-Instruct (Fine-tuned) and Llama-3.1-8B-Instruct (Fine-tuned), with baseline performance included for reference.",
+      "page": 14,
+      "index": 7,
+      "width": 891,
+      "height": 469
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18913v1/fig-008.webp",
+      "caption": "Figure 6: Performance comparison of KG filtering (Round 1) and enhancement (Round 2) across varying hop distances (k = 1 to k = 5) on ProbSum and DDXPlus datasets using UMLS and PrimeKG. Precision, recall, and F1 score metrics are shown for GPT-4.1, Qwen-2.5-7B-Instruct, and Llama-3.1-8B-Instruct in the Zero-shot setting, with baseline performance included for reference.",
+      "page": 13,
+      "index": 8,
+      "width": 891,
+      "height": 642
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18913v1/fig-009.webp",
+      "caption": "Figure 3: Performance comparison of KG filtering (Round 1) and enhancement (Round 2) across varying hop distances (k = 1 to k = 5) on ProbSum and DDXPlus datasets using UMLS and PrimeKG. F1-score metrics are shown for GPT-4.1, Qwen-2.5-7B-Instruct, and Llama-3.1-8B-Instruct in the zero-shot setting, with baseline performance included for reference.",
+      "page": 8,
+      "index": 9,
+      "width": 929,
+      "height": 308
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18913v1/fig-010.webp",
+      "caption": "Figure 5: Illustrative example of the LOGOSKG two-round prediction pipeline on a clinical case from ProbSum. (A) Clinical input consists of a patient progress note with the gold standard diagnosis. (B) Round 1: The baseline LLM generates differential diagnoses, which are then filtered by validating against KG neighbors retrieved within k = 1 hop. (C) Round 2: Additional candidate diseases from the KG are presented to the LLM for selection, and the final prediction combines the filtered Round 1 diagnoses with the disease selected in Round 2. (D) Summary table comparing baseline, Round 1 (KG-filtered), Round 2 (KG-enhanced), and gold standard diagnoses.",
+      "page": 9,
+      "index": 10,
+      "width": 929,
+      "height": 544
+    },
+    {
+      "url": "assets/figures/arxiv/2604.18913v1/fig-011.webp",
+      "caption": "Table 7: Performance of KG-augmented supervised finetuning on UMLS and PrimeKG. We compare Llama-3.18B-Instruct and Qwen-2.5-7B-Instruct models trained with specific (k = 1, 2) versus cumulative (k ≤ 2, 3) retrieval contexts.",
+      "page": 16,
+      "index": 11,
+      "width": 461,
+      "height": 367
+    }
+  ]
+}
