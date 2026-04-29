@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.02381v1/fig-001.webp",
+      "caption": "Fig. 4. Convergence behavior of the proposed inner-level joint motion and resource optimization algorithm, illustrating the alternating BCD iterations and the SCA sub-iterations within the second BCD block.",
+      "page": 11,
+      "index": 1,
+      "width": 469,
+      "height": 364
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02381v1/fig-002.webp",
+      "caption": "Fig. 8. Visualization of the progressive knowledge aggregation process when N = 6. The arrow signifies the directed communication link. The colored translucent circle denotes the patrol region assigned to each colored agent. When one agent transmits its information to another, its region information is fused to the received agent.",
+      "page": 13,
+      "index": 2,
+      "width": 1038,
+      "height": 343
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02381v1/fig-003.webp",
+      "caption": "Fig. 5. Total energy consumption versus: (a) Channel reference gain β0, (b) Path loss exponent δ, (c) Computational capacity f , (d) Sender data payload Li, (e) Initial distance between two agents, (f) Maximum latency constraint Tmax.",
+      "page": 12,
+      "index": 3,
+      "width": 1009,
+      "height": 524
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02381v1/fig-004.webp",
+      "caption": "Fig. 6. Average total energy consumption versus the number of total agents N , which is based on the average result of 10 random runs.",
+      "page": 12,
+      "index": 4,
+      "width": 447,
+      "height": 366
+    },
+    {
+      "url": "assets/figures/arxiv/2604.02381v1/fig-005.webp",
+      "caption": "Fig. 7. Impact of hyper-parameter ζ on total energy consumption.",
+      "page": 12,
+      "index": 5,
+      "width": 451,
+      "height": 362
+    }
+  ]
+}

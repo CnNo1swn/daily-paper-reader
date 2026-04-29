@@ -1,0 +1,196 @@
+Title: Lishu: A Real-Source Research Workbench for Elite Business Journal Search, Analysis, and Writing Support
+
+URL Source: https://arxiv.org/pdf/2604.07934v2
+
+Published Time: Tue, 14 Apr 2026 02:47:08 GMT
+
+Number of Pages: 15
+
+Markdown Content:
+# Lishu: 
+
+# A Real-Source Research Workbench for Elite Business Journal Search, Analysis, and Writing Support 
+
+Chuang Zhao Hongke Zhao, Yichen Li ADM Lab, https://www.adm-cube.online/ zhaochuang@tju.edu.cn hongke@tju.edu.cn ycli0204@hust.edu.cn 
+
+Abstract 
+
+This paper presents Lishu , a deployable web artifact for searching, monitoring, and interpreting literature from elite business and management journals. The system integrates the UTD-24 and Finan-cial Times 50 (FT50) journal pools and combines Crossref, OpenAlex, Unpaywall, and optional CORE enrichment to support a broader research workflow than article retrieval alone. In the current implemen-tation, users can search across curated journal pools, apply multi-journal filters, preview open full-text excerpts when available, generate citations and exports, inspect topic and affiliation structure, produce review drafts, simulate virtual peer review, and assemble grant-oriented research narratives. Unlike static journal directories or general-purpose academic search engines, the artifact is explicitly scoped to high-status management outlets and is designed to support sensemaking tasks that matter to researchers, doctoral students, and lab managers: identifying recent work, surfacing topical concentration, compar-ing themes, and converting search output into actionable research material. Architecturally, the system emphasizes source transparency, modularity, and low-cost public deployability through a lightweight Node.js service layer, a multi-page client interface, optional large-language-model enhancement for in-terpretation and writing support, and a free-tier persistence path through Supabase. The paper contributes both a functioning design artifact and an extensible architectural pattern for journal-pool-specific schol-arly discovery and writing support, with implications for digital research infrastructure in information systems and business scholarship. 
+
+Keywords: design science, scholarly search, research analytics, business journals, Crossref, OpenAlex, digital research infrastructure 
+
+# 1 Introduction 
+
+Researchers in business schools often rely on elite journal lists as practical filters for literature review, outlet targeting, and academic evaluation. Two such lists are especially influential: the UTD-24 , commonly used in research productivity assessment, and the FT50 , frequently referenced in ranking, accreditation, and prestige signaling contexts. Yet the working process around these lists remains fragmented. Journal pools are typically maintained separately from live literature search, publisher pages provide inconsistent browsing experiences, and monitoring topical developments across multiple elite journals is labor intensive. 1
+
+> arXiv:2604.07934v2 [cs.DL] 13 Apr 2026
+
+This paper introduces Lishu , a web-based research artifact designed to reduce that fragmentation. The artifact does not attempt to replace publisher websites or commercial bibliographic databases. Rather, it provides a focused, domain-specific decision support layer that combines journal-pool curation, real-source metadata retrieval, full-text availability enrichment, topic extraction, export utilities, review-generation sup-port, and lightweight behavioral analytics. In design-science terms, the artifact addresses a class of recurrent scholarly search and sensemaking problems by creating a practical digital object for use in a specific prob-lem domain (Hevner et al., 2004; Gregor and Hevner, 2013). The broader ambition is to show that even a relatively lightweight artifact can offer meaningful infrastructure value when its scope, sourcing logic, and task support are carefully aligned. The current public instance of the artifact is available online 1, which allows the system to function not only as a conceptual design exemplar but also as a live, inspectable research artifact. The artifact was designed around three overarching objectives. First, it should help researchers quickly search within a trusted set of top management and business journals. Second, it should provide interpretable signals about emerging topics from returned results rather than merely displaying lists of papers. Third, it should remain easy to deploy and maintain in low-budget, lab-managed, or publicly hosted environments. The paper proceeds as follows. Section 2 positions the artifact in design science and scholarly discovery work. Section 3 outlines design objectives and artifact requirements. Section 5 presents the architecture and search-to-insight workflow. Section 6 describes the research analytics layer. Section 7 discusses im-plementation and deployment decisions. The final sections discuss contributions, limitations, and future directions. 
+
+# 2 Background and Research Motivation 
+
+Design science research in information systems emphasizes the creation and evaluation of artifacts that address relevant organizational and human problems (Hevner et al., 2004). In this tradition, the artifact presented here is best understood as a domain-specific search and sensemaking system for scholarly work. It occupies the intersection of information retrieval, research support, and digital infrastructure for academic decision making. The design also resonates with the view that information systems artifacts become more valuable when they embed both operational functionality and interpretive support (March and Smith, 1995; Gregor and Hevner, 2013). The motivating problem is not a lack of journal information per se. Instead, the problem lies in the separation between (1) curated notions of journal quality and prestige, (2) real-time metadata about recent papers, and (3) tools that help scholars quickly interpret what a search result set means. General search engines offer breadth, but they are not optimized for journal-pool-specific exploration. Static journal directories offer curation, but rarely offer live query-based insight generation. This artifact addresses that gap through a lightweight but integrated workflow. From a research-infrastructure perspective, the artifact is promising because it reduces the translation cost between “finding papers” and “understanding what a query reveals about a field.” This positioning is also consistent with prior work that compares scholarly search and citation infrastruc-
+
+> 1https://utd24-journal-portal.onrender.com/
+
+2Table 1: Problem Context and Artifact Response 
+
+Problem Area Observed Limitation Artifact Response 
+
+Elite journal navigation UTD-24 and FT50 are consulted separately; outlet information is fragmented Unified journal-pool directory with pool membership, official links, and submission links Current literature discovery Researcher must scan multiple journal or publisher pages manually Live query-based retrieval from Crossref constrained by journal pools Topic sensing Search results alone do not reveal topical concentration or method signals Hotspot extraction, distributions, and result-set summaries Practical research workflow Search, export, citation formatting, and bookmarking are disconnected Citation modal, favorites, DOI links, and CSV/report export Public deployment and maintenance Low-cost hosting often breaks persistence and increases maintenance burden Minimal Node.js stack with optional Supabase-backed persistence tures across coverage, retrieval quality, and analytical usefulness. Comparative studies have shown that Google Scholar, Web of Science, Scopus, PubMed, and other academic search systems differ materially in coverage, precision, transparency, and suitability for specific scholarly tasks (Bakkalbasi et al., 2006; Fala-gas et al., 2008; Harzing and Alakangas, 2016; Martín-Martín et al., 2018; Gusenbauer, 2022). In parallel, scientometric work has demonstrated the value of visual and structural techniques for detecting emerging topics and research fronts in large document collections (Chen, 2006). The present artifact contributes to this broader conversation by operationalizing a journal-pool-specific layer for management research rather than attempting universal scholarly search. 
+
+# 3 Design Objectives 
+
+The artifact was built around five design objectives. 
+
+Domain focus. The portal is intentionally limited to journals in the UTD-24 and FT50 pools. This restriction reduces noise and aligns the interface with business-school research evaluation logic. 
+
+Real-source transparency. All journal and article content is tied to identifiable sources. Journal pool membership is documented, article metadata are retrieved from Crossref, and output records expose DOI and source links. 
+
+Query-to-insight workflow. The system should not only retrieve search results but also help users interpret them through hotspot analysis, distributions, affiliation views, and simple trend analytics. 
+
+Practical research support. Citation export, favorites, downloadable CSV output, full-text preview, pa-per interpretation, and structured writing assistance are included because they reduce friction in everyday research tasks. 
+
+Low-cost deployability. The artifact should remain easy to deploy without a heavy dependency chain, while still supporting persistent analytics on a free hosting path. 3Table 2: Core Design Objectives and Implemented Features 
+
+Design Objective Operationalization Implemented Features 
+
+Domain focus Restrict scope to elite business journals UTD-24/FT50 pools, list filters, journal directory Source transparency Expose provenance at the object level DOI links, source notes, official site links, submission links Search-to-insight Transform query results into interpretable summaries Hotspots, distributions, affiliation ranking, method signals Workflow support Reduce post-search friction Citation modal, BibTeX export, favorites, CSV export Deployability Keep infrastructure lean and maintainable Node.js server, static front end, Render deployment, Supabase persistence 
+
+# 4 Artifact Overview 
+
+The artifact follows a lightweight client-server architecture. The front end is a modular multi-page website; the back end is a small Node.js application that serves static assets, proxies metadata retrieval, computes an-alytics, and persists usage events. The current implementation is intended as a publicly deployable research artifact rather than a large-scale platform. This design choice is deliberate: the goal is to demonstrate that a comparatively small technical stack can still support a meaningful research workflow when the architecture is organized around clear scholarly tasks and traceable data provenance. 
+
+4.1 Front-End Structure 
+
+The user-facing interface is organized into five modules: 1. Home : overview, source note, and quick-access entry points. 2. Journal Directory : filtered browsing of UTD-24 and FT50 journals. 3. Article Search : multi-source article retrieval, filters, full-text access, hotspot analysis, export, favorites, and citation support. 4. Comparative and Daily Views : topic comparison, daily top-paper briefing, and author leaderboard analytics. 5. Research Writing Tools : review generation, virtual review, paper reading, grant-proposal drafting, and AutoResearch orchestration. 6. Resources and Analytics : conferences, submission tools, usage analytics, and support materials. 
+
+4.2 Back-End Services 
+
+The Node.js back end performs four roles: 4Table 3: Front-End and Back-End Technical Composition 
+
+Layer Implemented Technology Technical Role in the Artifact 
+
+Presentation layer HTML, CSS, vanilla JavaScript Multi-page interface for search, journal browsing, writing support, export utilities, and analytics views Search interaction Browser-side form state and query serialization Stable query submission, multi-journal filtering, shareable URLs, local favorites, and citation actions Visualization layer ECharts Hotspot ranking, distributional views, and cumulative traffic analytics Application layer Node.js HTTP server Static asset delivery, API routing, metadata orchestration, writing workflow jobs, and result normalization Metadata sources Crossref REST API + OpenAlex Live retrieval of paper-level metadata, dates, authors, affiliations, citations, and DOI records Full-text enrichment Unpaywall + optional CORE Open-access location resolution, PDF availability, and excerpt-level preview support Persistence layer Supabase or local JSON fallback Analytics durability across deployments and lightweight operational monitoring Deployment layer Render-compatible hosting path Public accessibility with minimal infrastructure overhead 1. static file serving, 2. metadata retrieval, enrichment, and normalization, 3. analytical summary generation, 4. writing-support workflow orchestration, 5. usage analytics storage and reporting. 
+
+# 5 Search-to-Insight Workflow 
+
+The portal implements a query-to-insight workflow rather than a search-only pipeline. Figure 2 summarizes the operational sequence. Given a keyword and optional filters, the back end first identifies the journals that belong to the selected pool. It then issues bounded Crossref requests journal by journal, supplements results with OpenAlex records when available, enriches access metadata through Unpaywall and optional CORE retrieval, normalizes the returned data into a common article schema, applies filtering and sorting logic, and computes analytical summaries from the resulting set. 5Presentation Layer             
+
+> Home Search Daily Briefing Topic Com-parison Writing Workflows Analytics
+> Application Layer
+> Node.js server for routing, Crossref/OpenAlex orchestration, OA enrichment, metadata normalization, query filtering, pagina-tion, citation formatting, job handling, and analytics aggregation
+> Analytics and Workflow Layer
+> Hotspot extraction distributional analytics full-text preview ci-tation export favorites ranking optional LLM enhancement
+> Curated Sources
+> UTD-24 metadata FT50 metadata
+> External Metadata
+> Crossref OpenAlex Unpaywall CORE
+> Persistence
+> Supabase an-alytics store or local fallback
+
+Figure 1: System architecture of the Lishu research workbench artifact This workflow is important because it turns journal-pool curation into an operational search boundary. Rather than querying a global metadata space and later attempting to infer whether results belong to top journals, the system begins from a trusted elite-journal pool and then builds the result set upward. The implemented interface now supports a broader set of researcher-facing tasks than the initial version of the artifact. In addition to journal-pool search and analytics, the system includes daily briefing views, topic-comparison dashboards, review-generation interfaces, paper-reading assistance, proposal drafting, and Au-toResearch orchestration. Instead of emphasizing low-fidelity mockups, the report therefore highlights the implemented views that researchers actually interact with during search, synthesis, and writing support. Fig-ures 3–7 serve not only as screenshots, but as evidence of how the artifact translates architectural intentions into concrete workflows. Figure 3 illustrates the artifact’s front-door logic: it foregrounds source transparency, journal-pool framing, and navigational shortcuts. Figure 4 shows the core retrieval surface, where live metadata retrieval, filtering, full-text preview, citation export, and hotspot analysis are tightly coupled in a single page. Figure 5 ex-tends the artifact into ongoing field monitoring through topic-comparison and daily-briefing views. Figure 6 shows that the artifact now supports structured downstream writing tasks such as literature review genera-tion and proposal drafting. Figure 7 highlights AI-assisted reading and orchestration workflows, whereas Figure 8 captures both author-level exploration and portal-level usage monitoring. Together, these imple-mented views demonstrate that the artifact is not only technically functional but also structurally aligned with recurring scholarly work practices. 6Select Journal Pool UTD-24 / FT50 / All 
+
+## Enter Query and Filters 
+
+## Issue Bounded Crossref Requests 
+
+## Normalize Metadata Title, DOI, Authors, Date 
+
+## Filter, Sort, and Paginate 
+
+## Compute Hotspots and Analytics 
+
+## Render Articles, Charts, and Exports 
+
+Figure 2: Search-to-insight workflow 
+
+# 6 Research Analytics Layer 
+
+The research analytics layer is the artifact’s most distinctive feature. It aims to support rapid scholarly orientation rather than formal bibliometric inference. In other words, the portal is designed less as a re-placement for specialized bibliometric software and more as a decision-support layer that helps researchers recognize what is salient in a query result set quickly enough to guide the next step of reading, downloading, or theorizing. 
+
+6.1 Hotspot Extraction 
+
+Hotspot phrases are derived from titles and abstracts of the current result set. Candidate phrases are scored and then grouped into interpretable categories such as AI/Algorithms, Consumer/Market, Operations/Supply Chain, Finance/Accounting, and Strategy/Organization. When no native article keywords are available, the system falls back to rule-based extraction. When an LLM endpoint is configured, hotspot labels and quick takes can be rewritten into more readable summaries. The current interface also surfaces full-text availability signals such as open-access status, PDF availability, source priority, and in-page excerpt preview when an open version can be located. 
+
+6.2 Distributional Analytics 
+
+The portal computes a lightweight analytical layer from the current search result set: • journal distribution, • category distribution, • year distribution, • keyword distribution, 7Figure 3: Implemented homepage view showing real-source positioning, quick access modules, and statis-tics • top affiliations, • method signals, • top cited papers, • abstract and affiliation coverage. These summaries provide immediate situational awareness for users exploring unfamiliar topics across mul-tiple elite journals. This matters because management researchers often work across fragmented topical boundaries; a lightweight but interpretable analytic layer can materially reduce the cognitive effort required to move from article retrieval to exploratory synthesis. 
+
+6.3 Behavioral Analytics 
+
+The artifact also records page visits, search keywords, and favorites events. These events are aggregated into top pages, source distributions, most frequent search terms, and most favorited papers. For public de-ployment, a ClustrMaps widget can be attached to the analytics page to visualize geographic traffic sources. Although these measures are operational rather than theoretical, they create a useful substrate for future evaluation studies by revealing how scholars actually interact with the artifact over time. 8Figure 4: Implemented retrieval workspace showing live article search, multi-journal filtering, full-text preview entry points, and research analytics 
+
+# 7 Technical Architecture and Implementation 
+
+7.1 Technology Stack 
+
+The artifact uses Node.js for server-side routing and API orchestration, vanilla JavaScript for front-end logic, HTML/CSS for multi-page rendering, ECharts for result-set and analytics visualization, Supabase for free-tier persistence of usage analytics, and Render as a practical public deployment target. The live retrieval layer integrates Crossref, OpenAlex, Unpaywall, and optional CORE enrichment. The implementation de-liberately avoids a heavier front-end framework in order to minimize setup friction and hosting complexity. This restraint is important for the artifact’s design logic: a research support system is more likely to be adopted, replicated, and extended when the technical barrier to deployment remains low. 
+
+7.2 Front-End and Interaction Design 
+
+The front end is organized as a modular multi-page interface rather than a monolithic single-page applica-tion. This choice simplifies routing, page ownership, and public hosting while preserving a coherent user journey across home, journal browsing, live search, topic comparison, daily briefing, review generation, virtual review, paper reading, grant writing, AutoResearch orchestration, and analytics. Browser-side logic manages form state, URL synchronization, multi-journal filtering, favorites persistence, citation actions, and optional user-provided large-language-model configuration. From a software-engineering perspective, this structure improves maintainability by keeping task-specific rendering concerns loosely coupled while still allowing shared interface patterns across pages. 9Figure 5: Implemented comparison and daily-briefing views showing topic timeline analysis and top-paper briefing workflows 
+
+Figure 6: Implemented writing-support views showing review generation and grant-proposal composition workflows 
+
+7.3 Back-End Retrieval and Normalization 
+
+The back end mediates between curated journal pools and live metadata retrieval. For each query, the service first resolves the relevant journal set, then issues bounded Crossref requests on a journal-by-journal basis, supplements records with OpenAlex where available, enriches full-text access candidates through Unpay-wall and optional CORE lookup, normalizes returned records into a common schema, removes duplicates, applies filters, and computes analytical summaries. This orchestration layer is central to the artifact’s con-tribution: it operationalizes prestige-based journal curation as a search boundary, thereby aligning retrieval behavior with the evaluative logic commonly used in business schools. 
+
+7.4 Data Provenance and Source Integrity 
+
+The artifact is intentionally conservative about data provenance. Journal pools are anchored in documented UTD-24 and FT50 sources, while paper-level content is derived from Crossref and OpenAlex records and exposed through DOI links and source labels. Open-access and full-text hints are derived from Unpaywall and optional CORE enrichment rather than opaque scraping. When article keywords are unavailable from 10 Figure 7: Implemented AI-assisted workflow tools showing paper reading and AutoResearch orchestration 
+
+Figure 8: Implemented author and analytics views showing author-network exploration and portal-level usage monitoring native metadata, the system falls back to explicit heuristic extraction rather than presenting opaque or un-traceable enrichment. Optional LLM support is treated as an interpretive and writing enhancement layer rather than a source of authoritative bibliographic truth. 
+
+7.5 Persistence and Deployment 
+
+One implementation challenge concerns analytics persistence on low-cost hosting. Some free web-service environments provide ephemeral file systems, which would reset local counters on redeploy. The artifact therefore supports two persistence modes: 1. local JSON storage for local development and quick tests, 2. Supabase-backed analytics persistence for stable public deployment. This decision is not only technical but also methodological. If the artifact is to be used as public research infrastructure, persistence reliability becomes part of the artifact’s practical validity. A deployable research artifact should not merely demonstrate conceptual fit; it should also remain stable enough for repeated public use, classroom demonstration, or lab-level extension. 11 D-9 D-8 D-7 D-6 D-5 D-4 D-3 D-2 D-1 D0 
+
+0
+
+10 
+
+20 
+
+30 
+
+Recent 10-Day Window 
+
+> Cumulative Visits
+
+Example cumulative traffic trend 
+
+Figure 9: Illustrative cumulative analytics view used in the portal dashboard Table 4: Analytics Objects and Intended Use 
+
+Analytics Object Computation Basis Primary Use 
+
+Hotspot phrases Title and abstract phrase extraction with scoring Rapid topic sensing within a query result set Keyword distribution Crossref subject fields or fallback extraction Quick topical orientation Top affiliations Aggregated author affiliation strings Institutional awareness and field mapping Method signals Heuristic text pattern detection Rough understanding of empirical orientation Top favorited papers Aggregated user bookmark events Monitoring researcher interest and repeated use Visit trend and source mix Pageview events and referrer classification Artifact monitoring and public usage awareness 
+
+7.6 Citation and Export Support 
+
+Each article object can be exported or cited through several output modes, including BibTeX, APA, MLA, Chicago, and plain text. CSV export and report export are also supported. Beyond search, the current artifact also exposes higher-level writing workflows such as review generation, virtual review simulation, proposal drafting, and AutoResearch-style planning. These functions position the artifact closer to an ev-eryday research workbench than a demonstration-only prototype. In practice, they reduce a common break in scholarly workflow: the transition from discovering relevant papers to incorporating them into notes, bibliographies, analytical dashboards, and downstream writing tasks. 
+
+# 8 Discussion 
+
+The artifact contributes to design science and scholarly infrastructure in three ways. First, it demonstrates a domain-specific scholarly search artifact centered on elite business journals rather than undifferentiated bib-liographic breadth. Second, it shows how real-source metadata, open-access enrichment, and lightweight analytics can be combined into a usable search-to-insight workflow without requiring proprietary infrastruc-12 ture. Third, it extends that workflow into writing-support tasks such as review generation, proposal drafting, and AI-assisted reading while preserving traceable source boundaries. More broadly, the artifact suggests that there is substantial room for middle-layer scholarly systems: systems that do not compete with large bibliographic platforms on scale, but outperform them on domain alignment, transparency, and task focus. At the same time, the artifact has important limitations. Coverage still depends on the quality and timeliness of Crossref, OpenAlex, and open-access availability services, which vary across journals and articles. The hotspot layer is optimized for interpretability rather than formal topic-model validity. Although the system can preview open-access text excerpts, it does not yet provide comprehensive full-text indexing or citation-network exploration. The higher-level writing modules are useful as research support, but they should be understood as scaffolding and synthesis aids rather than substitutes for scholarly judgment. Finally, the artifact has not yet undergone formal user evaluation with faculty or doctoral students. These limits should be interpreted as research opportunities rather than as disqualifying weaknesses: they point to the next design cycle needed to move from promising artifact to evaluated scholarly infrastructure. 
+
+# 9 Implications and Future Work 
+
+Several extensions are especially promising: • User evaluation: task-based studies with doctoral students and faculty to assess search efficiency, inter-pretability, and perceived usefulness. • Richer analytics: topic modeling, co-author networks, institution collaboration views, and cross-pool comparison logic. • Temporal intelligence: rolling topic evolution across years, pools, and journals, enabling dynamic field monitoring. • Submission support: connecting observed topic concentration to outlet targeting guidance and journal-fit recommendations. • Artifact generalization: adapting the same architecture to adjacent domains such as finance, informa-tion systems, operations, or interdisciplinary journal pools. Taken together, these directions suggest that the portal can evolve from a useful search utility into a broader research-infrastructure artifact: one that supports discovery, interpretation, and eventually strategic research planning. 
+
+# 10 Conclusion 
+
+Lishu is a focused research artifact for discovering, searching, and analyzing literature from elite business journals. By integrating UTD-24 and FT50 curation with live multi-source retrieval, open-access enrich-ment, analytical summaries, optional AI enhancement, citation utilities, and deployable analytics infrastruc-ture, the artifact offers a practical response to the fragmented search workflows often faced by management 13 researchers. The current system also demonstrates how a search artifact can evolve into a broader research workbench that supports reading, comparison, review generation, and proposal writing without abandoning source transparency. Although it remains an early-stage artifact rather than a finished scholarly platform, it already demonstrates a credible and extensible design pattern for business-school-oriented digital research infrastructure. For ICIS-style design and artifact discussions, the promise of the system lies not only in what it currently does, but in the evaluative and infrastructural research program it makes possible. 
+
+# Acknowledgments 
+
+The current public-facing artifact credits Designed by Chuang Zhao (ADM Lab) . The implementation also integrates external data and infrastructure services, including Crossref, OpenAlex, Unpaywall, CORE, Su-pabase, Render, and ClustrMaps. 
+
+# References 
+
+Crossref. 2026. “REST API Documentation.” Available at https://www.crossref.org/ documentation/retrieve-metadata/rest-api/ .CORE. 2026. “CORE API Documentation.” Available at https://core.ac.uk/documentation/ api .Bakkalbasi, N., Bauer, K., Glover, J., and Wang, L. 2006. “Three Options for Citation Tracking: Google Scholar, Scopus and Web of Science,” Biomedical Digital Libraries (3:1), Article 7. Chen, C. 2006. “CiteSpace II: Detecting and Visualizing Emerging Trends and Transient Patterns in Sci-entific Literature,” Journal of the American Society for Information Science and Technology (57:3), pp. 359–377. Financial Times 50 journal source page used in the current artifact. 2026. Available at https://gsb. hse.ru/en/financialtimesfifty .Falagas, M. E., Pitsouni, E. I., Malietzis, G. A., and Pappas, G. 2008. “Comparison of PubMed, Scopus, Web of Science, and Google Scholar: Strengths and Weaknesses,” The FASEB Journal (22:2), pp. 338–342. Gregor, S., and Hevner, A. R. 2013. “Positioning and Presenting Design Science Research for Maximum Impact,” MIS Quarterly (37:2), pp. 337–355. Gusenbauer, M. 2022. “Search Where You Will Find Most: Comparing the Disciplinary Coverage of 56 Bibliographic Databases,” Scientometrics (127:5), pp. 2683–2745. Harzing, A.-W., and Alakangas, S. 2016. “Google Scholar, Scopus and the Web of Science: A Longitudinal and Cross-Disciplinary Comparison,” Scientometrics (106:2), pp. 787–804. Hevner, A. R., March, S. T., Park, J., and Ram, S. 2004. “Design Science in Information Systems Research,” 
+
+MIS Quarterly (28:1), pp. 75–105. 14 March, S. T., and Smith, G. F. 1995. “Design and Natural Science Research on Information Technology,” 
+
+Decision Support Systems (15:4), pp. 251–266. Martín-Martín, A., Orduna-Malea, E., Thelwall, M., and Delgado López-Cózar, E. 2018. “Google Scholar, Web of Science, and Scopus: A Systematic Comparison of Citations in 252 Subject Categories,” Journal of Informetrics (12:4), pp. 1160–1177. OpenAlex. 2026. “API Documentation.” Available at https://docs.openalex.org/ .Render. 2026. “Documentation.” Available at https://render.com/docs .Supabase. 2026. “Documentation.” Available at https://supabase.com/docs .Unpaywall. 2026. “Support and Integration Documentation.” Available at https://support. unpaywall.org/support/solutions .UTD Top 100 Business School Research Rankings. 2026. “Journal List and Methodology Materials.” Available at https://jsom.utdallas.edu/ the-utd-top-100-business-school-research-rankings/ .15

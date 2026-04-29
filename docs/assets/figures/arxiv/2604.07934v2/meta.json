@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.07934v2/fig-001.webp",
+      "caption": "Figure 1: System architecture of the Lishu research workbench artifact",
+      "page": 6,
+      "index": 1,
+      "width": 852,
+      "height": 507
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07934v2/fig-002.webp",
+      "caption": "Figure 8: Implemented author and analytics views showing author-network exploration and portal-level usage monitoring",
+      "page": 11,
+      "index": 2,
+      "width": 976,
+      "height": 306
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07934v2/fig-003.webp",
+      "caption": "Figure 7: Implemented AI-assisted workflow tools showing paper reading and AutoResearch orchestration",
+      "page": 11,
+      "index": 3,
+      "width": 976,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07934v2/fig-004.webp",
+      "caption": "Figure 2: Search-to-insight workflow",
+      "page": 7,
+      "index": 4,
+      "width": 826,
+      "height": 352
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07934v2/fig-005.webp",
+      "caption": "Figure 5: Implemented comparison and daily-briefing views showing topic timeline analysis and top-paper briefing workflows",
+      "page": 10,
+      "index": 5,
+      "width": 976,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07934v2/fig-006.webp",
+      "caption": "Figure 6: Implemented writing-support views showing review generation and grant-proposal composition workflows",
+      "page": 10,
+      "index": 6,
+      "width": 976,
+      "height": 306
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07934v2/fig-007.webp",
+      "caption": "Table 1: Problem Context and Artifact Response",
+      "page": 3,
+      "index": 7,
+      "width": 977,
+      "height": 450
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07934v2/fig-008.webp",
+      "caption": "Figure 3: Implemented homepage view showing real-source positioning, quick access modules, and statistics",
+      "page": 8,
+      "index": 8,
+      "width": 802,
+      "height": 508
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07934v2/fig-009.webp",
+      "caption": "Table 2: Core Design Objectives and Implemented Features",
+      "page": 4,
+      "index": 9,
+      "width": 977,
+      "height": 338
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07934v2/fig-010.webp",
+      "caption": "Table 4: Analytics Objects and Intended Use",
+      "page": 12,
+      "index": 10,
+      "width": 977,
+      "height": 394
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07934v2/fig-011.webp",
+      "caption": "Figure 9: Illustrative cumulative analytics view used in the portal dashboard",
+      "page": 12,
+      "index": 11,
+      "width": 851,
+      "height": 270
+    },
+    {
+      "url": "assets/figures/arxiv/2604.07934v2/fig-012.webp",
+      "caption": "Figure 4: Implemented retrieval workspace showing live article search, multi-journal filtering, full-text preview entry points, and research analytics",
+      "page": 9,
+      "index": 12,
+      "width": 802,
+      "height": 508
+    }
+  ]
+}

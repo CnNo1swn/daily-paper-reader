@@ -1,0 +1,794 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-04-29T08:07:33.772127+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 17,
+    "deep_cap": 7,
+    "deep_selected": 7,
+    "quick_candidates": 143,
+    "quick_skim_target": 12,
+    "quick_selected": 12
+  },
+  "deep_dive": [
+    {
+      "id": "2604.01262v1",
+      "source": "arxiv",
+      "title": "Transforming OPACs into Intelligent Discovery Systems: An AI-Powered, Knowledge Graph-Driven Smart OPAC for Digital Libraries",
+      "abstract": "Traditional Online Public Access Catalogues (OPACs) are becoming less effective due to the rapid growth of scholarly literature. Conventional search methods, such as keyword indexing and Boolean queries, often fail to support efficient knowledge discovery. This paper proposes a Smart OPAC framework that transforms traditional OPACs into intelligent discovery systems using artificial intelligence and knowledge graph techniques. The framework enables semantic search, thematic filtering, and knowledge graph-based visualization to enhance user interaction and exploration. It integrates multiple open scholarly data sources and applies semantic embeddings to improve relevance and contextual understanding. The system supports exploratory search, semantic navigation, and refined result filtering based on user-defined themes. Quantitative evaluation demonstrates improvements in retrieval efficiency, relevance, and reduction of information overload. The proposed approach offers practical implications for modernizing digital library services and supports next-generation research workflows. Future work includes user-centric evaluation, personalization, and dynamic knowledge graph updates.",
+      "authors": [
+        "M. S. Rajeevan",
+        "B. Mini Devi"
+      ],
+      "primary_category": "cs.DL",
+      "categories": [
+        "cs.DL",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-04-01T12:48:36+00:00",
+      "link": "https://arxiv.org/pdf/2604.01262v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 10.0,
+      "llm_evidence_en": "AI-powered knowledge graph-driven smart OPAC for digital libraries",
+      "llm_evidence_cn": "人工智能驱动、知识图谱驱动的数字图书馆智能OPAC",
+      "llm_evidence": "人工智能驱动、知识图谱驱动的数字图书馆智能OPAC",
+      "canonical_evidence": "人工智能驱动、知识图谱驱动的数字图书馆智能OPAC",
+      "llm_tldr_en": "Transforms traditional library catalogs into intelligent discovery systems using AI and knowledge graphs.",
+      "llm_tldr_cn": "利用人工智能和知识图谱将传统图书馆目录转变为智能发现系统。",
+      "llm_tldr": "利用人工智能和知识图谱将传统图书馆目录转变为智能发现系统。",
+      "llm_tags": [
+        "query:ai:composite"
+      ],
+      "matched_query_tag": "query:ai:composite",
+      "matched_query_text": "Papers central to 请帮我查找人工智能与图书馆的论文, especially work that connects or combines: artificial intelligence in libraries; library services and technology; information retrieval systems in libraries; automation of library processes using AI; AI-enhanced user services in libraries; smart library technologies and AI integration; artificial intelligence applications in library and information science; AI technologies for enhancing library services and operations; machine learning and natural language processing in digital libraries; intelligent systems for library management and user engagement.",
+      "matched_requirement_id": "req-composite-ai",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.07934v2",
+      "source": "arxiv",
+      "title": "Lishu: A Real-Source Research Workbench for Elite Business Journal Search, Analysis, and Writing Support",
+      "abstract": "This paper presents Lishu, a deployable web artifact for searching, monitoring, and interpreting literature from elite business and management journals. The system integrates the UTD-24 and Financial Times 50 (FT50) journal pools and combines Crossref, OpenAlex, Unpaywall, and optional CORE enrichment to support a broader research workflow than article retrieval alone. In the current implementation, users can search across curated journal pools, apply multi-journal filters, preview open full-text excerpts when available, generate citations and exports, inspect topic and affiliation structure, produce review drafts, simulate virtual peer review, and assemble grant-oriented research narratives. Unlike static journal directories or general-purpose academic search engines, the artifact is explicitly scoped to high-status management outlets and is designed to support sensemaking tasks that matter to researchers, doctoral students, and lab managers: identifying recent work, surfacing topical concentration, comparing themes, and converting search output into actionable research material. Architecturally, the system emphasizes source transparency, modularity, and low-cost public deployability through a lightweight Node.js service layer, a multi-page client interface, optional large-language-model enhancement for interpretation and writing support, and a free-tier persistence path through Supabase. The paper contributes both a functioning design artifact and an extensible architectural pattern for journal-pool-specific scholarly discovery and writing support, with implications for digital research infrastructure in information systems and business scholarship.",
+      "authors": [
+        "Chuang Zhao",
+        "Hongke Zhao",
+        "Yichen Li"
+      ],
+      "primary_category": "cs.DL",
+      "categories": [
+        "cs.DL",
+        "cs.SE"
+      ],
+      "published": "2026-04-09T07:52:07+00:00",
+      "link": "https://arxiv.org/pdf/2604.07934v2",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "research workbench for journal search, analysis, and literature interpretation",
+      "llm_evidence_cn": "用于期刊搜索、分析和文献解读的研究工作台",
+      "llm_evidence": "用于期刊搜索、分析和文献解读的研究工作台",
+      "canonical_evidence": "用于期刊搜索、分析和文献解读的研究工作台",
+      "llm_tldr_en": "Presents Lishu, a workbench for searching and interpreting elite business literature to support research workflows.",
+      "llm_tldr_cn": "推出Lishu研究工作台，支持精英商业期刊的搜索、监测和文献解读，辅助学术研究。",
+      "llm_tldr": "推出Lishu研究工作台，支持精英商业期刊的搜索、监测和文献解读，辅助学术研究。",
+      "llm_tags": [
+        "query:ai:composite"
+      ],
+      "matched_query_tag": "query:ai:composite",
+      "matched_query_text": "Papers central to 请帮我查找人工智能与图书馆的论文, especially work that connects or combines: artificial intelligence in libraries; library services and technology; information retrieval systems in libraries; automation of library processes using AI; AI-enhanced user services in libraries; smart library technologies and AI integration; artificial intelligence applications in library and information science; AI technologies for enhancing library services and operations; machine learning and natural language processing in digital libraries; intelligent systems for library management and user engagement.",
+      "matched_requirement_id": "req-composite-ai",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.20528v1",
+      "source": "arxiv",
+      "title": "Evolution of Research Method Usage Across the Academic Careers of Library and Information Science Scholars",
+      "abstract": "Research methods constitute an indispensable tool for scholars engaged in scientific inquiry. Investigating how scholars use research methods throughout their careers can reveal distinct patterns in method adoption, providing valuable insights for novice researchers in selecting appropriate methods. This study employs a comprehensive dataset comprising full-text journal articles and bibliographic records from the Library and Information Science (LIS) domain. Utilizing an automated classification model based on full-text cognitive analysis, the research methods employed by LIS scholars are systematically identified. Topic modeling was then conducted using Top2Vec. Subsequently, author name disambiguation is performed, and academic age is calculated for each scholar. This study focuses on 435 senior scholars with an academic age of more than 14 years and a consistent publication record at five-year intervals, covering a total of 6,116 articles. The corpus covers 16 research method categories and 20 research topics. The findings indicate that bibliometric methods are the most frequently used across career stages, accounting for 19.61% among early-career scholars and 31.81% among senior scholars. Over the course of a scholarly career, the diversity of research methods initially increases and then declines. Furthermore, scholars exhibit a propensity for combining multiple research methods, including both conventional and unconventional pairings. Notably, the research methods most commonly used by researchers change with age and seniority.",
+      "authors": [
+        "Jiayi Hao",
+        "Chengzhi Zhang"
+      ],
+      "primary_category": "cs.DL",
+      "categories": [
+        "cs.DL",
+        "cs.CY"
+      ],
+      "published": "2026-04-22T13:06:58+00:00",
+      "link": "https://arxiv.org/pdf/2604.20528v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:SR AMCR"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "Research method usage in Library and Information Science",
+      "llm_evidence_cn": "图书馆与信息科学中的研究方法使用",
+      "llm_evidence": "图书馆与信息科学中的研究方法使用",
+      "canonical_evidence": "图书馆与信息科学中的研究方法使用",
+      "llm_tldr_en": "Analyzes the evolution of research methods used by LIS scholars using automated classification.",
+      "llm_tldr_cn": "利用自动分类技术分析了图情领域学者研究方法的演变。",
+      "llm_tldr": "利用自动分类技术分析了图情领域学者研究方法的演变。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "artificial intelligence applications in library and information science",
+      "matched_requirement_id": "req-7",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.16778v1",
+      "source": "arxiv",
+      "title": "Federation over Text: Insight Sharing for Multi-Agent Reasoning",
+      "abstract": "LLM-powered agents often reason from scratch when presented with a new problem instance and lack automatic mechanisms to transfer learned skills to other agents. We propose a federated learning-like framework, Federation over Text (FoT), that enables multiple agents solving different tasks to collectively generate a shared library of metacognitive insights by iteratively federating their local reasoning processes. Instead of federation over gradients (e.g., as in distributed training), FoT operates at the semantic level without any gradient optimization or supervision signal. Iteratively, each agent does local thinking and self-improvement on their specific tasks independently, and shares reasoning traces with a central server, which aggregates and distills them into a cross-task (and cross-domain) insight library that existing and future agents can leverage to improve performance on related tasks. Experiments show that FoT improves reasoning effectiveness and efficiency across a wide range of challenging applications, including mathematical problem solving, cross-domain collaboration, and machine learning research insight discovery. Specifically, it improves average accuracies of downstream tasks by 24% while reducing the reasoning tokens by 28% across the first two applications. In the research insight discovery application, FoT is able to generate insights that cover over 90% of the major contributions in the subsequent papers.",
+      "authors": [
+        "Dixi Yao",
+        "Tahseen Rabbani",
+        "Tian Li"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "published": "2026-04-18T01:57:42+00:00",
+      "link": "https://arxiv.org/pdf/2604.16778v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "multi-agent framework for sharing a library of metacognitive insights",
+      "llm_evidence_cn": "用于共享元认知见解库的多智能体框架",
+      "llm_evidence": "用于共享元认知见解库的多智能体框架",
+      "canonical_evidence": "用于共享元认知见解库的多智能体框架",
+      "llm_tldr_en": "A framework enabling multiple agents to collectively generate and share a library of reasoning insights.",
+      "llm_tldr_cn": "一个使多个智能体能够共同生成并共享推理见解库的框架。",
+      "llm_tldr": "一个使多个智能体能够共同生成并共享推理见解库的框架。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent collaborative referral mechanism AI library services",
+      "matched_requirement_id": "req-11",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.00901v1",
+      "source": "arxiv",
+      "title": "Experience as a Compass: Multi-agent RAG with Evolving Orchestration and Agent Prompts",
+      "abstract": "Multi-agent Retrieval-Augmented Generation (RAG), wherein each agent takes on a specific role, supports hard queries that require multiple steps and sources, or complex reasoning. Existing approaches, however, rely on static agent behaviors and fixed orchestration strategies, leading to brittle performance on diverse, multi-hop tasks. We identify two key limitations: the lack of continuously adaptive orchestration mechanisms and the absence of behavior-level learning for individual agents. To this end, we propose HERA, a hierarchical framework that jointly evolves multi-agent orchestration and role-specific agent prompts. At the global level, HERA optimizes query-specific agent topologies through reward-guided sampling and experience accumulation. At the local level, Role-Aware Prompt Evolution refines agent behaviors via credit assignment and dual-axes adaptation along operational and behavioral principles, enabling targeted, role-conditioned improvements. On six knowledge-intensive benchmarks, HERA achieves an average improvement of 38.69\\% over recent baselines while maintaining robust generalization and token efficiency. Topological analyses reveal emergent self-organization, where sparse exploration yields compact, high-utility multi-agent networks, demonstrating both efficient coordination and robust reasoning.",
+      "authors": [
+        "Sha Li",
+        "Naren Ramakrishnan"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-01T13:45:52+00:00",
+      "link": "https://arxiv.org/pdf/2604.00901v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "multi-agent RAG with evolving orchestration and adaptive prompts",
+      "llm_evidence_cn": "具有演化编排和自适应提示的多智能体RAG",
+      "llm_evidence": "具有演化编排和自适应提示的多智能体RAG",
+      "canonical_evidence": "具有演化编排和自适应提示的多智能体RAG",
+      "llm_tldr_en": "Proposes HERA, a framework that evolves multi-agent orchestration and prompts for complex multi-hop tasks.",
+      "llm_tldr_cn": "提出HERA框架，通过演化多智能体编排和提示词来处理复杂的检索增强生成任务。",
+      "llm_tldr": "提出HERA框架，通过演化多智能体编排和提示词来处理复杂的检索增强生成任务。",
+      "llm_tags": [
+        "query:sr-amcr:composite"
+      ],
+      "matched_query_tag": "query:sr-amcr:composite",
+      "matched_query_text": "Papers central to 请帮我查找关于A Multi-Agent Collaborative Referral Mechanism for AI-Supported Academic Library Services: Postgraduate Resource Discovery and Reference Consultation的论文, especially work that connects or combines: multi-agent collaborative referral mechanism AI library services; artificial intelligence supported academic library services; reference consultation services academic libraries; academic library services AI support; multi-agent system library referral; resource discovery academic libraries postgraduate; multi agent collaborative referral mechanism for AI supported academic library services; postgraduate resource discovery and reference consultation in academic libraries using multi agent systems; AI supported academic library services for postgraduate students resource discovery; collaborative referral mechanism in academic libraries using multi agent AI.",
+      "matched_requirement_id": "req-composite-sr-amcr",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.22861v1",
+      "source": "arxiv",
+      "title": "IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review",
+      "abstract": "Scientific research relies on accurate information retrieval from literature to support analytical decisions. In this work, we introduce a new task, INformation reTRieval through literAture reVIEW (IntraView), which aims to automate fine-grained information retrieval faithfully grounded in the provided content in response to research-driven queries, and propose IntrAgent, an LLM-based agent that addresses this challenging task. In particular, IntrAgent is designed to mimic human behaviors when reading literature for information retrieval -- identifying relevant sections and then iteratively extracting key details to refine the retrieved information. It follows a two-stage pipeline: a Section Ranking stage that prioritizes relevant literature sections through structural-knowledge-enabled reasoning, and an Iterative Reading stage that continuously extracts details and synthesizes them into concise, contextually grounded answers. To support rigorous evaluation, we introduce IntraBench, a new benchmark consisting of 315 test instances built from expert-authored questions paired with literature spanning five STEM domains. Across seven backbone LLMs, IntrAgent achieves on average 13.2% higher cross-domain accuracy than state-of-the-art RAG and research-agent baselines.",
+      "authors": [
+        "Fengbo Ma",
+        "Zixin Rao",
+        "Xiaoting Li",
+        "Zhetao Chen",
+        "Hongyue Sun",
+        "Yiping Zhao",
+        "Xianyan Chen",
+        "Zhen Xiang"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-04-23T01:55:08+00:00",
+      "link": "https://arxiv.org/pdf/2604.22861v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "LLM agent for automated information retrieval through literature review to support research queries",
+      "llm_evidence_cn": "用于通过文献综述进行自动化信息检索以支持研究查询的LLM代理",
+      "llm_evidence": "用于通过文献综述进行自动化信息检索以支持研究查询的LLM代理",
+      "canonical_evidence": "用于通过文献综述进行自动化信息检索以支持研究查询的LLM代理",
+      "llm_tldr_en": "Introduces IntrAgent, an LLM-based agent that automates fine-grained information retrieval from scientific literature.",
+      "llm_tldr_cn": "引入了IntrAgent，这是一种基于LLM的代理，可自动从科学文献中进行细粒度的信息检索。",
+      "llm_tldr": "引入了IntrAgent，这是一种基于LLM的代理，可自动从科学文献中进行细粒度的信息检索。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "AI supported academic library services for postgraduate students resource discovery",
+      "matched_requirement_id": "req-19",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.20622v1",
+      "source": "arxiv",
+      "title": "pAI/MSc: ML Theory Research with Humans on the Loop",
+      "abstract": "We present pAI/MSc, an open-source, customizable, modular multi-agent system for academic research workflows. Our goal is not autonomous scientific ideation, nor fully automated research. It is narrower and more practical: to reduce by orders of magnitude the human steering required to turn a specified hypothesis into a literature-grounded, mathematically established, experimentally supported, submission-oriented manuscript draft. pAI/MSc is built with a current emphasis on machine learning theory and adjacent quantitative fields.",
+      "authors": [
+        "Mahmoud Abdelmoneum",
+        "Pierfrancesco Beneventano",
+        "Tomaso Poggio"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-04-22T14:38:28+00:00",
+      "link": "https://arxiv.org/pdf/2604.20622v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "multi-agent system for academic research workflows and literature grounding",
+      "llm_evidence_cn": "用于学术研究工作流和文献基础的多智能体系统",
+      "llm_evidence": "用于学术研究工作流和文献基础的多智能体系统",
+      "canonical_evidence": "用于学术研究工作流和文献基础的多智能体系统",
+      "llm_tldr_en": "A multi-agent system designed to streamline academic research workflows from hypothesis to manuscript.",
+      "llm_tldr_cn": "一种多智能体系统，旨在简化从假设到论文初稿的学术研究工作流程。",
+      "llm_tldr": "一种多智能体系统，旨在简化从假设到论文初稿的学术研究工作流程。",
+      "llm_tags": [
+        "query:sr-amcr:composite"
+      ],
+      "matched_query_tag": "query:sr-amcr:composite",
+      "matched_query_text": "Papers central to 请帮我查找关于A Multi-Agent Collaborative Referral Mechanism for AI-Supported Academic Library Services: Postgraduate Resource Discovery and Reference Consultation的论文, especially work that connects or combines: multi-agent collaborative referral mechanism AI library services; artificial intelligence supported academic library services; reference consultation services academic libraries; academic library services AI support; multi-agent system library referral; resource discovery academic libraries postgraduate; multi agent collaborative referral mechanism for AI supported academic library services; postgraduate resource discovery and reference consultation in academic libraries using multi agent systems; AI supported academic library services for postgraduate students resource discovery; collaborative referral mechanism in academic libraries using multi agent AI.",
+      "matched_requirement_id": "req-composite-sr-amcr",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "biorxiv-10-64898-2026-04-10-696782-v1",
+      "source": "biorxiv",
+      "title": "Multi-Agent Orchestration for Knowledge Extraction and Retrieval: AI Expert System for GPCRs",
+      "abstract": "We present GPCR-Nexus, an AI-driven platform for integrated exploration of G protein-coupled receptor (GPCR) biology that unifies structured databases with unstructured scientific literature. The system combines a GPCR-ligand knowledge graph with vector-based semantic retrieval to enable comprehensive, up-to-date information access. Central to GPCR-Nexus is a multi-agent architecture in which specialized components coordinate query planning, evidence retrieval, validation, and synthesis. This design ensures that generated responses are grounded in verifiable sources while maintaining coherence across heterogeneous data modalities. By jointly leveraging curated databases and primary literature, GPCR-Nexus enables context-aware reasoning over molecular interactions, functional mechanisms, and disease associations. The platform produces citation-backed outputs with traceable evidence, addressing limitations of conventional database queries and standalone language models. We detail the system architecture, data integration strategy, and agent orchestration framework, and demonstrate its utility through representative query scenarios. GPCR-Nexus provides a scalable approach to combining structured and unstructured biomedical knowledge using agent-based AI, offering improved accuracy, interpretability, and coverage. This work establishes a foundation for trustworthy, AI-assisted knowledge synthesis in GPCR research and drug discovery.",
+      "authors": [
+        "spieser, j. C.",
+        "Kogan, P.",
+        "Yang, J.",
+        "meller, j.",
+        "Patra, K.",
+        "shamsaei, B."
+      ],
+      "primary_category": "bioinformatics",
+      "categories": [
+        "bioinformatics"
+      ],
+      "published": "2026-04-14T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.04.10.696782v1.full.pdf",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "multi-agent architecture for knowledge extraction and retrieval",
+      "llm_evidence_cn": "用于知识提取和检索的多智能体架构",
+      "llm_evidence": "用于知识提取和检索的多智能体架构",
+      "canonical_evidence": "用于知识提取和检索的多智能体架构",
+      "llm_tldr_en": "A multi-agent AI system for coordinating query planning and evidence retrieval from scientific literature.",
+      "llm_tldr_cn": "一种多智能体AI系统，用于协调科学文献中的查询规划和证据检索。",
+      "llm_tldr": "一种多智能体AI系统，用于协调科学文献中的查询规划和证据检索。",
+      "llm_tags": [
+        "query:sr-amcr:composite"
+      ],
+      "matched_query_tag": "query:sr-amcr:composite",
+      "matched_query_text": "Papers central to 请帮我查找关于A Multi-Agent Collaborative Referral Mechanism for AI-Supported Academic Library Services: Postgraduate Resource Discovery and Reference Consultation的论文, especially work that connects or combines: multi-agent collaborative referral mechanism AI library services; artificial intelligence supported academic library services; reference consultation services academic libraries; academic library services AI support; multi-agent system library referral; resource discovery academic libraries postgraduate; multi agent collaborative referral mechanism for AI supported academic library services; postgraduate resource discovery and reference consultation in academic libraries using multi agent systems; AI supported academic library services for postgraduate students resource discovery; collaborative referral mechanism in academic libraries using multi agent AI.",
+      "matched_requirement_id": "req-composite-sr-amcr",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.00842v1",
+      "source": "arxiv",
+      "title": "Proactive Agent Research Environment: Simulating Active Users to Evaluate Proactive Assistants",
+      "abstract": "Proactive agents that anticipate user needs and autonomously execute tasks hold great promise as digital assistants, yet the lack of realistic user simulation frameworks hinders their development. Existing approaches model apps as flat tool-calling APIs, failing to capture the stateful and sequential nature of user interaction in digital environments and making realistic user simulation infeasible. We introduce Proactive Agent Research Environment (Pare), a framework for building and evaluating proactive agents in digital environments. Pare models applications as finite state machines with stateful navigation and state-dependent action space for the user simulator, enabling active user simulation. Building on this foundation, we present Pare-Bench, a benchmark of 143 diverse tasks spanning communication, productivity, scheduling, and lifestyle apps, designed to test context observation, goal inference, intervention timing, and multi-app orchestration.",
+      "authors": [
+        "Deepak Nathani",
+        "Cheng Zhang",
+        "Chang Huan",
+        "Jiaming Shan",
+        "Yinfei Yang",
+        "Alkesh Patel",
+        "Zhe Gan",
+        "William Yang Wang",
+        "Michael Saxon",
+        "Xin Eric Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG",
+        "cs.MA"
+      ],
+      "published": "2026-04-01T12:53:01+00:00",
+      "link": "https://arxiv.org/pdf/2604.00842v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "simulating active users to evaluate proactive digital assistants",
+      "llm_evidence_cn": "模拟活跃用户以评估主动式数字助手",
+      "llm_evidence": "模拟活跃用户以评估主动式数字助手",
+      "canonical_evidence": "模拟活跃用户以评估主动式数字助手",
+      "llm_tldr_en": "A framework for building and evaluating proactive agents that anticipate user needs in digital environments.",
+      "llm_tldr_cn": "一个用于构建和评估在数字环境中预测用户需求的主动式智能体的框架。",
+      "llm_tldr": "一个用于构建和评估在数字环境中预测用户需求的主动式智能体的框架。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "intelligent systems for library management and user engagement",
+      "matched_requirement_id": "req-10",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2603.29632v1",
+      "source": "arxiv",
+      "title": "An Empirical Study of Multi-Agent Collaboration for Automated Research",
+      "abstract": "As AI agents evolve, the community is rapidly shifting from single Large Language Models (LLMs) to Multi-Agent Systems (MAS) to overcome cognitive bottlenecks in automated research. However, the optimal multi-agent coordination framework for these autonomous agents remains largely unexplored. In this paper, we present a systematic empirical study investigating the comparative efficacy of distinct multi-agent structures for automated machine learning optimization. Utilizing a rigorously controlled, execution-based testbed equipped with Git worktree isolation and explicit global memory, we benchmark a single-agent baseline against two multi-agent paradigms: a subagent architecture (parallel exploration with post-hoc consolidation) and an agent team architecture (experts with pre-execution handoffs). By evaluating these systems under strictly fixed computational time budgets, our findings reveal a fundamental trade-off between operational stability and theoretical deliberation. The subagent mode functions as a highly resilient, high-throughput search engine optimal for broad, shallow optimizations under strict time constraints. Conversely, the agent team topology exhibits higher operational fragility due to multi-author code generation but achieves the deep theoretical alignment necessary for complex architectural refactoring given extended compute budgets. These empirical insights provide actionable guidelines for designing future autoresearch systems, advocating for dynamically routed architectures that adapt their collaborative structures to real-time task complexity.",
+      "authors": [
+        "Yang Shen",
+        "Zhenyi Yi",
+        "Ziyi Zhao",
+        "Lijun Sun",
+        "Dongyang Li",
+        "Chin-Teng Lin",
+        "Yuhui Shi"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "published": "2026-03-31T11:57:00+00:00",
+      "link": "https://arxiv.org/pdf/2603.29632v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "multi-agent systems for automated research and optimization",
+      "llm_evidence_cn": "用于自动化研究和优化的多智能体系统",
+      "llm_evidence": "用于自动化研究和优化的多智能体系统",
+      "canonical_evidence": "用于自动化研究和优化的多智能体系统",
+      "llm_tldr_en": "Evaluates multi-agent collaboration structures for automated research tasks, relevant to library agent systems.",
+      "llm_tldr_cn": "评估了用于自动化研究任务的多智能体协作结构，与图书馆智能体系统相关。",
+      "llm_tldr": "评估了用于自动化研究任务的多智能体协作结构，与图书馆智能体系统相关。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.01965v1",
+      "source": "arxiv",
+      "title": "Do We Need Bigger Models for Science? Task-Aware Retrieval with Small Language Models",
+      "abstract": "Scientific knowledge discovery increasingly relies on large language models, yet many existing scholarly assistants depend on proprietary systems with tens or hundreds of billions of parameters. Such reliance limits reproducibility and accessibility for the research community. In this work, we ask a simple question: do we need bigger models for scientific applications? Specifically, we investigate to what extent carefully designed retrieval pipelines can compensate for reduced model scale in scientific applications. We design a lightweight retrieval-augmented framework that performs task-aware routing to select specialized retrieval strategies based on the input query. The system further integrates evidence from full-text scientific papers and structured scholarly metadata, and employs compact instruction-tuned language models to generate responses with citations. We evaluate the framework across several scholarly tasks, focusing on scholarly question answering (QA), including single- and multi-document scenarios, as well as biomedical QA under domain shift and scientific text compression. Our findings demonstrate that retrieval and model scale are complementary rather than interchangeable. While retrieval design can partially compensate for smaller models, model capacity remains important for complex reasoning tasks. This work highlights retrieval and task-aware design as key factors for building practical and reproducible scholarly assistants.",
+      "authors": [
+        "Florian Kelber",
+        "Matthias Jobst",
+        "Yuni Susanti",
+        "Michael Färber"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL",
+        "cs.DL"
+      ],
+      "published": "2026-04-02T12:28:51+00:00",
+      "link": "https://arxiv.org/pdf/2604.01965v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "task-aware retrieval framework for scientific applications and scholarly assistants",
+      "llm_evidence_cn": "用于科学应用和学术助手的任务感知检索框架",
+      "llm_evidence": "用于科学应用和学术助手的任务感知检索框架",
+      "canonical_evidence": "用于科学应用和学术助手的任务感知检索框架",
+      "llm_tldr_en": "A lightweight RAG framework that uses small models to enhance scientific knowledge discovery.",
+      "llm_tldr_cn": "一种利用小型模型增强科学知识发现的轻量级检索增强框架。",
+      "llm_tldr": "一种利用小型模型增强科学知识发现的轻量级检索增强框架。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "artificial intelligence supported academic library services",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.00901v2",
+      "source": "arxiv",
+      "title": "Experience as a Compass: Multi-agent RAG with Evolving Orchestration and Agent Prompts",
+      "abstract": "Multi-agent Retrieval-Augmented Generation (RAG), wherein each agent takes on a specific role, supports hard queries that require multiple steps and sources, or complex reasoning. Existing approaches, however, rely on static agent behaviors and fixed orchestration strategies, leading to brittle performance on diverse, multi-hop tasks. We identify two key limitations: the lack of continuously adaptive orchestration mechanisms and the absence of behavior-level learning for individual agents. To this end, we propose HERA, a hierarchical framework that jointly evolves multi-agent orchestration and role-specific agent prompts. At the global level, HERA optimizes query-specific agent topologies through reward-guided sampling and experience accumulation. At the local level, Role-Aware Prompt Evolution refines agent behaviors via credit assignment and dual-axes adaptation along operational and behavioral principles, enabling targeted, role-conditioned improvements. On six knowledge-intensive benchmarks, HERA achieves an average improvement of 38.69\\% over recent baselines while maintaining robust generalization and token efficiency. Topological analyses reveal emergent self-organization, where sparse exploration yields compact, high-utility multi-agent networks, demonstrating both efficient coordination and robust reasoning.",
+      "authors": [
+        "Sha Li",
+        "Naren Ramakrishnan"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-01T13:45:52+00:00",
+      "link": "https://arxiv.org/pdf/2604.00901v2",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "multi-agent RAG for complex reasoning and multi-step source retrieval",
+      "llm_evidence_cn": "用于复杂推理和多步资源检索的多智能体RAG",
+      "llm_evidence": "用于复杂推理和多步资源检索的多智能体RAG",
+      "canonical_evidence": "用于复杂推理和多步资源检索的多智能体RAG",
+      "llm_tldr_en": "Proposes a hierarchical framework to evolve multi-agent RAG for adaptive orchestration in complex tasks.",
+      "llm_tldr_cn": "提出了一种分层框架，用于在复杂任务中演化多智能体RAG的自适应编排。",
+      "llm_tldr": "提出了一种分层框架，用于在复杂任务中演化多智能体RAG的自适应编排。",
+      "llm_tags": [
+        "query:sr-amcr:composite"
+      ],
+      "matched_query_tag": "query:sr-amcr:composite",
+      "matched_query_text": "Papers central to 请帮我查找关于A Multi-Agent Collaborative Referral Mechanism for AI-Supported Academic Library Services: Postgraduate Resource Discovery and Reference Consultation的论文, especially work that connects or combines: multi-agent collaborative referral mechanism AI library services; artificial intelligence supported academic library services; reference consultation services academic libraries; academic library services AI support; multi-agent system library referral; resource discovery academic libraries postgraduate; multi agent collaborative referral mechanism for AI supported academic library services; postgraduate resource discovery and reference consultation in academic libraries using multi agent systems; AI supported academic library services for postgraduate students resource discovery; collaborative referral mechanism in academic libraries using multi agent AI.",
+      "matched_requirement_id": "req-composite-sr-amcr",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.02381v1",
+      "source": "arxiv",
+      "title": "Agentic AI-Empowered Wireless Agent Networks With Semantic-Aware Collaboration via ILAC",
+      "abstract": "The rapid development of agentic artificial intelligence (AI) is driving future wireless networks to evolve from passive data pipes into intelligent collaborative ecosystems under the emerging paradigm of integrated learning and communication (ILAC). However, realizing efficient agentic collaboration faces challenges not only in handling semantic redundancy but also in the lack of an integrated mechanism for communication, computation, and control. To address this, we propose a wireless agent network (WAN) framework that orchestrates a progressive knowledge aggregation mechanism. Specifically, we formulate the aggregation process as a joint energy minimization problem where the agents perform semantic compression to eliminate redundancy, optimize transmission power to deliver semantic payloads, and adjust physical trajectories to proactively enhance channel qualities. To solve this problem, we develop a hierarchical algorithm that integrates inner-level resource optimization with outer-level topology evolution. Theoretically, we reveal that incorporating a potential field into the topology evolution effectively overcomes the short-sightedness of greedy matching, providing a mathematically rigorous heuristic for long-term energy minimization. Simulation results demonstrate that the proposed framework achieves superior energy efficiency and scalability compared to conventional benchmarks, validating the efficacy of semantic-aware collaboration in dynamic environments.",
+      "authors": [
+        "Zhouxiang Zhao",
+        "Jiaxiang Wang",
+        "Zhaohui Yang",
+        "Kun Yang",
+        "Zhaoyang Zhang",
+        "Mingzhe Chen",
+        "Kaibin Huang"
+      ],
+      "primary_category": "cs.NI",
+      "categories": [
+        "cs.NI",
+        "cs.IT",
+        "cs.MA"
+      ],
+      "published": "2026-04-01T16:07:23+00:00",
+      "link": "https://arxiv.org/pdf/2604.02381v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "agentic AI and semantic-aware collaboration mechanism",
+      "llm_evidence_cn": "代理AI与语义感知协作机制",
+      "llm_evidence": "代理AI与语义感知协作机制",
+      "canonical_evidence": "代理AI与语义感知协作机制",
+      "llm_tldr_en": "Proposes a wireless agent network framework for efficient knowledge aggregation and semantic collaboration.",
+      "llm_tldr_cn": "提出了一种无线代理网络框架，用于实现高效的知识聚合和语义协作。",
+      "llm_tldr": "提出了一种无线代理网络框架，用于实现高效的知识聚合和语义协作。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.06321v1",
+      "source": "arxiv",
+      "title": "Matching Researchers to Funding Calls: A Reproducible Institution-Level Framework",
+      "abstract": "Grant recommendation systems remain one of the least explored areas within academic recommender systems, and existing proposals are typically tied to specific funding agencies or disciplinary domains. This paper presents an institution-level reproducible framework for matching researchers to funding opportunities by combining bibliometric profiling with semantic matching. Rather than representing each researcher through a single aggregated profile, the framework constructs multiple publication sets defined by bibliometric criteria such as authorship position and time window, each independently compared against funding calls using word embeddings. Within-researcher normalisation and percentile-based ranking transform cosine similarity scores into actionable recommendations. A case study applied to 3,013 researchers from the University of Granada and 291 Horizon Europe topics verify it and shows that the four indicators capture complementary signals.",
+      "authors": [
+        "Wenceslao Arroyo-Machado",
+        "Laura Lázaro-Soraluce",
+        "Clara Ortega-Sevilla",
+        "Enrique de la Fuente-Gutiérrez",
+        "Daniel Torres-Salinas"
+      ],
+      "primary_category": "cs.DL",
+      "categories": [
+        "cs.DL"
+      ],
+      "published": "2026-04-07T18:00:29+00:00",
+      "link": "https://arxiv.org/pdf/2604.06321v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "matching researchers to funding via bibliometric profiling",
+      "llm_evidence_cn": "通过文献计量分析将研究人员与资助匹配",
+      "llm_evidence": "通过文献计量分析将研究人员与资助匹配",
+      "canonical_evidence": "通过文献计量分析将研究人员与资助匹配",
+      "llm_tldr_en": "A framework for matching researchers to opportunities, supporting academic library resource discovery.",
+      "llm_tldr_cn": "一种将研究人员与机会匹配的框架，支持学术图书馆资源发现。",
+      "llm_tldr": "一种将研究人员与机会匹配的框架，支持学术图书馆资源发现。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "resource discovery academic libraries postgraduate",
+      "matched_requirement_id": "req-16",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.02988v1",
+      "source": "arxiv",
+      "title": "Self-Optimizing Multi-Agent Systems for Deep Research",
+      "abstract": "Given a user's complex information need, a multi-agent Deep Research system iteratively plans, retrieves, and synthesizes evidence across hundreds of documents to produce a high-quality answer. In one possible architecture, an orchestrator agent coordinates the process, while parallel worker agents execute tasks. Current Deep Research systems, however, often rely on hand-engineered prompts and static architectures, making improvement brittle, expensive, and time-consuming. We therefore explore various multi-agent optimization methods to show that enabling agents to self-play and explore different prompt combinations can produce high-quality Deep Research systems that match or outperform expert-crafted prompts.",
+      "authors": [
+        "Arthur Câmara",
+        "Vincent Slot",
+        "Jakub Zavrel"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "published": "2026-04-03T11:48:38+00:00",
+      "link": "https://arxiv.org/pdf/2604.02988v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "multi-agent system for deep research and evidence synthesis across documents",
+      "llm_evidence_cn": "用于深度研究和跨文档证据合成的多智能体系统",
+      "llm_evidence": "用于深度研究和跨文档证据合成的多智能体系统",
+      "canonical_evidence": "用于深度研究和跨文档证据合成的多智能体系统",
+      "llm_tldr_en": "Explores self-optimizing multi-agent systems to improve complex information retrieval and research synthesis.",
+      "llm_tldr_cn": "探索自优化多智能体系统，以改进复杂的信息检索和研究合成。",
+      "llm_tldr": "探索自优化多智能体系统，以改进复杂的信息检索和研究合成。",
+      "llm_tags": [
+        "query:sr-amcr:composite"
+      ],
+      "matched_query_tag": "query:sr-amcr:composite",
+      "matched_query_text": "Papers central to 请帮我查找关于A Multi-Agent Collaborative Referral Mechanism for AI-Supported Academic Library Services: Postgraduate Resource Discovery and Reference Consultation的论文, especially work that connects or combines: multi-agent collaborative referral mechanism AI library services; artificial intelligence supported academic library services; reference consultation services academic libraries; academic library services AI support; multi-agent system library referral; resource discovery academic libraries postgraduate; multi agent collaborative referral mechanism for AI supported academic library services; postgraduate resource discovery and reference consultation in academic libraries using multi agent systems; AI supported academic library services for postgraduate students resource discovery; collaborative referral mechanism in academic libraries using multi agent AI.",
+      "matched_requirement_id": "req-composite-sr-amcr",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.02674v1",
+      "source": "arxiv",
+      "title": "Do Agent Societies Develop Intellectual Elites? The Hidden Power Laws of Collective Cognition in LLM Multi-Agent Systems",
+      "abstract": "Large Language Model (LLM) multi-agent systems are increasingly deployed as interacting agent societies, yet scaling these systems often yields diminishing or unstable returns, the causes of which remain poorly understood. We present the first large-scale empirical study of coordination dynamics in LLM-based multi-agent systems, introducing an atomic event-level formulation that reconstructs reasoning as cascades of coordination. Analyzing over 1.5 Million interactions across tasks, topologies, and scales, we uncover three coupled laws: coordination follows heavy-tailed cascades, concentrates via preferential attachment into intellectual elites, and produces increasingly frequent extreme events as system size grows. We show that these effects are coupled through a single structural mechanism: an integration bottleneck, in which coordination expansion scales with system size while consolidation does not, producing large but weakly integrated reasoning processes. To test this mechanism, we introduce Deficit-Triggered Integration (DTI), which selectively increases integration under imbalance. DTI improves performance precisely where coordination fails, without suppressing large-scale reasoning. Together, our results establish quantitative laws of collective cognition and identify coordination structure as a fundamental, previously unmeasured axis for understanding and improving scalable multi-agent intelligence.",
+      "authors": [
+        "Kavana Venkatesh",
+        "Jiaming Cui"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI"
+      ],
+      "published": "2026-04-03T03:08:07+00:00",
+      "link": "https://arxiv.org/pdf/2604.02674v1",
+      "tags": [
+        "keyword:SR AMCR",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "coordination dynamics in LLM multi-agent systems",
+      "llm_evidence_cn": "大语言模型多代理系统中的协作动力学",
+      "llm_evidence": "大语言模型多代理系统中的协作动力学",
+      "canonical_evidence": "大语言模型多代理系统中的协作动力学",
+      "llm_tldr_en": "Studies coordination dynamics and power laws in large-scale LLM-based multi-agent societies.",
+      "llm_tldr_cn": "研究了大规模基于大语言模型的多代理社会中的协作动力学和幂律。",
+      "llm_tldr": "研究了大规模基于大语言模型的多代理社会中的协作动力学和幂律。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.08115v1",
+      "source": "arxiv",
+      "title": "Revise: A Framework for Revising OCRed text in Practical Information Systems with Data Contamination Strategy",
+      "abstract": "Recent advances in Large Language Models (LLMs) have significantly improved the field of Document AI, demonstrating remarkable performance on document understanding tasks such as question answering. However, existing approaches primarily focus on solving specific tasks, lacking the capability to structurally organize and manage document information. To address this limitation, we propose Revise, a framework that systematically corrects errors introduced by OCR at the character, word, and structural levels. Specifically, Revise employs a comprehensive hierarchical taxonomy of common OCR errors and a synthetic data generation strategy that realistically simulates such errors to train an effective correction model. Experimental results demonstrate that Revise effectively corrects OCR outputs, enabling more structured representation and systematic management of document contents. Consequently, our method significantly enhances downstream performance in document retrieval and question answering tasks, highlighting the potential to overcome the structural management limitations of existing Document AI frameworks.",
+      "authors": [
+        "Gyuho Shim",
+        "Seongtae Hong",
+        "Heuiseok Lim"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-09T11:35:19+00:00",
+      "link": "https://arxiv.org/pdf/2604.08115v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "systematic correction of OCR errors in document AI",
+      "llm_evidence_cn": "文档AI中OCR错误的系统性纠正",
+      "llm_evidence": "文档AI中OCR错误的系统性纠正",
+      "canonical_evidence": "文档AI中OCR错误的系统性纠正",
+      "llm_tldr_en": "A framework to improve document understanding by correcting OCR errors at multiple structural levels.",
+      "llm_tldr_cn": "一种通过在多个结构层面纠正OCR错误来提高文档理解能力的框架。",
+      "llm_tldr": "一种通过在多个结构层面纠正OCR错误来提高文档理解能力的框架。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "automation of library processes using AI",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "8plus"
+    },
+    {
+      "id": "2604.04269v1",
+      "source": "arxiv",
+      "title": "Beyond Fluency: Toward Reliable Trajectories in Agentic IR",
+      "abstract": "Information Retrieval is shifting from passive document ranking toward autonomous agentic workflows that operate in multi-step Reason-Act-Observe loops. In such long-horizon trajectories, minor early errors can cascade, leading to functional misalignment between internal reasoning and external tool execution despite continued linguistic fluency.   This position paper synthesizes failure modes observed in industrial agentic systems, categorizing errors across planning, retrieval, reasoning, and execution. We argue that safe deployment requires moving beyond endpoint accuracy toward trajectory integrity and causal attribution.   To address compounding error and deceptive fluency, we propose verification gates at each interaction unit and advocate systematic abstention under calibrated uncertainty. Reliable Agentic IR systems must prioritize process correctness and grounded execution over plausible but unverified completion.",
+      "authors": [
+        "Anushree Sinha",
+        "Srivaths Ranganathan",
+        "Debanshu Das",
+        "Abhishek Dharmaratnakar"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.LG"
+      ],
+      "published": "2026-04-05T21:20:57+00:00",
+      "link": "https://arxiv.org/pdf/2604.04269v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "autonomous agentic workflows in Information Retrieval",
+      "llm_evidence_cn": "信息检索中的自主智能体工作流",
+      "llm_evidence": "信息检索中的自主智能体工作流",
+      "canonical_evidence": "信息检索中的自主智能体工作流",
+      "llm_tldr_en": "Analyzes failure modes in agentic information retrieval to improve trajectory reliability and reasoning.",
+      "llm_tldr_cn": "分析智能体信息检索中的故障模式，以提高轨迹可靠性和推理能力。",
+      "llm_tldr": "分析智能体信息检索中的故障模式，以提高轨迹可靠性和推理能力。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.05333v2",
+      "source": "arxiv",
+      "title": "Graph of Skills: Dependency-Aware Structural Retrieval for Massive Agent Skills",
+      "abstract": "Skill usage has become a core component of modern agent systems and can substantially improve agents' ability to complete complex tasks. In real-world settings, where agents must monitor and interact with numerous personal applications, web browsers, and other environment interfaces, skill libraries can scale to thousands of reusable skills. Scaling to larger skill sets introduces two key challenges. First, loading the full skill set saturates the context window, driving up token costs, hallucination, and latency. In this paper, we present Graph of Skills (GoS), an inference-time structural retrieval layer for large skill libraries. GoS constructs an executable skill graph offline from skill packages, then at inference time retrieves a bounded, dependency-aware skill bundle through hybrid semantic-lexical seeding, reverse-weighted Personalized PageRank, and context-budgeted hydration. On SkillsBench and ALFWorld, GoS improves average reward by 43.6% over the vanilla full skill-loading baseline while reducing input tokens by 37.8%, and generalizes across three model families: Claude Sonnet, GPT-5.2 Codex, and MiniMax. Additional ablation studies across skill libraries ranging from 200 to 2,000 skills further demonstrate that GoS consistently outperforms both vanilla skills loading and simple vector retrieval in balancing reward, token efficiency, and runtime.",
+      "authors": [
+        "Dawei Liu",
+        "Zongxia Li",
+        "Hongyang Du",
+        "Xiyang Wu",
+        "Shihang Gui",
+        "Yongbei Kuang",
+        "Lichao Sun"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-07T02:09:11+00:00",
+      "link": "https://arxiv.org/pdf/2604.05333v2",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "structural retrieval for large agent skill libraries",
+      "llm_evidence_cn": "大型智能体技能库的结构化检索",
+      "llm_evidence": "大型智能体技能库的结构化检索",
+      "canonical_evidence": "大型智能体技能库的结构化检索",
+      "llm_tldr_en": "Introduces Graph of Skills for efficient retrieval in massive agent skill libraries to reduce latency and costs.",
+      "llm_tldr_cn": "提出技能图谱（GoS），用于大型智能体技能库的高效检索，降低延迟与成本。",
+      "llm_tldr": "提出技能图谱（GoS），用于大型智能体技能库的高效检索，降低延迟与成本。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

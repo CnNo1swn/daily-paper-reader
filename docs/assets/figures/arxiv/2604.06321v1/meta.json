@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.06321v1/fig-001.webp",
+      "caption": "Table 2. Main pre-trained word embedding models for academic text.",
+      "page": 7,
+      "index": 1,
+      "width": 954,
+      "height": 535
+    },
+    {
+      "url": "assets/figures/arxiv/2604.06321v1/fig-002.webp",
+      "caption": "Table 3. Multidimensional indicators used to assess researcher-call alignment.",
+      "page": 10,
+      "index": 2,
+      "width": 943,
+      "height": 411
+    },
+    {
+      "url": "assets/figures/arxiv/2604.06321v1/fig-003.webp",
+      "caption": "Table 6. Top-two recommended calls per indicator for the selected researcher.",
+      "page": 14,
+      "index": 3,
+      "width": 943,
+      "height": 635
+    },
+    {
+      "url": "assets/figures/arxiv/2604.06321v1/fig-004.webp",
+      "caption": "Table 5. Pairwise overlap between indicators, expressed as the percentage of call-researcher pairs in the row indicator also present in the column indicator, and the Spearman correlation between the percentile ranks assigned by each indicator pair.",
+      "page": 13,
+      "index": 4,
+      "width": 945,
+      "height": 436
+    },
+    {
+      "url": "assets/figures/arxiv/2604.06321v1/fig-005.webp",
+      "caption": "Figure 1. Methodological framework for matching researchers to funding opportunities.",
+      "page": 4,
+      "index": 5,
+      "width": 943,
+      "height": 433
+    },
+    {
+      "url": "assets/figures/arxiv/2604.06321v1/fig-006.webp",
+      "caption": "Table 4. Assignment summary by indicator",
+      "page": 12,
+      "index": 6,
+      "width": 943,
+      "height": 373
+    },
+    {
+      "url": "assets/figures/arxiv/2604.06321v1/fig-007.webp",
+      "caption": "Figure 2. Distribution of recommended calls per researcher for each indicator. Left panels show histograms; the right panel displays the corresponding box plots.",
+      "page": 12,
+      "index": 7,
+      "width": 943,
+      "height": 413
+    },
+    {
+      "url": "assets/figures/arxiv/2604.06321v1/fig-008.webp",
+      "caption": "Table 1. Field equivalence between publications and calls for proposals.",
+      "page": 5,
+      "index": 8,
+      "width": 943,
+      "height": 408
+    }
+  ]
+}
