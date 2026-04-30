@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.20241v1/fig-001.webp",
+      "caption": "Fig. 3: Search results by author name and by concept (research descriptor). Author names have been omitted to preserve anonymity.",
+      "page": 11,
+      "index": 1,
+      "width": 775,
+      "height": 535
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20241v1/fig-002.webp",
+      "caption": "Fig. 2: Examples of generated word clouds representation of author research descriptors vectors for two authors in battery research.",
+      "page": 10,
+      "index": 2,
+      "width": 777,
+      "height": 231
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20241v1/fig-003.webp",
+      "caption": "Fig. 5: Example of similarity map showing all proximity co-authorship for a batteryrelated author. In this figure specifically, ”the representative keywords” refer to the research descriptors. Author names have been omitted to preserve anonymity.",
+      "page": 13,
+      "index": 3,
+      "width": 775,
+      "height": 492
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20241v1/fig-004.webp",
+      "caption": "Fig. 4: Example of similarity map of the first-level connections of a battery-related author (Figure 4a) and the shared research descriptors behind each connection (Figure 4b). In this figure specifically, ”the representative keywords” refer to the research descriptors. Author names have been omitted to preserve anonymity.",
+      "page": 12,
+      "index": 4,
+      "width": 777,
+      "height": 423
+    },
+    {
+      "url": "assets/figures/arxiv/2604.20241v1/fig-005.webp",
+      "caption": "Fig. 1: Overview of the proposed pipeline. Dataset construction (Section 3.1) collects, filters, and preprocesses data from OpenAlex, extracting OpenAlex concepts in the process. The resulting battery-related dataset is enriched with keyphrases extracted from titles and abstracts (Section 3.2). Research descriptors are then computed with consideration of descriptor origin, temporal period, and authorship position (Section 3.3) to generate a per-author research descriptor vector database (Section 3.4). Finally, the knowledge graph construction supports the generation of word clouds (Section 3.5) and the author similarity map (Section 3.6).",
+      "page": 5,
+      "index": 5,
+      "width": 758,
+      "height": 922
+    }
+  ]
+}

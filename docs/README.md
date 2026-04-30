@@ -6,65 +6,77 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-04-29
-- 运行时间：2026-04-29 21:21:52 UTC
+- 最新运行日期：2026-04-30
+- 运行时间：2026-04-30 20:43:10 UTC
 - 运行状态：成功
-- 本次总论文数：15
-- 精读区：3
+- 本次总论文数：19
+- 精读区：7
 - 速读区：12
 
 ### 今日简报（AI）
-今日精读3篇、速读12篇AI前沿论文，聚焦人机协作理论与基准测试。最值得关注《pAI/MSc》提出的人机闭环机器学习理论框架与《MetaGAI》的大规模生成式AI基准。建议读者跟踪人机协作理论如何重塑AI研发流程。
-- 详情：[/202604/29/README](/202604/29/README)
+今日处理19篇论文，重点精读电池研究知识图谱与学术方法演变两篇高分研究。最值得关注的方向是知识图谱的领域构建（电池研究）与学术生涯中研究方法的演化规律。建议普通读者优先了解知识图谱如何推动专业领域（如电池）的数据互联与智能分析。
+- 详情：[/202604/30/README](/202604/30/README)
 
 ### 精读区论文标签
-1. [pAI/MSc: ML Theory Research with Humans on the Loop](/202604/29/2604.20622v1-paimsc-ml-theory-research-with-humans-on-the-loop)  
-   标签：评分：8.5/10、query:sr-amcr
-   evidence：用于学术研究工作流和基于文献起草的多智能体系统
-2. [MetaGAI: A Large-Scale and High-Quality Benchmark for Generative AI Model and Data Card Generation](/202604/29/2604.23539v1-metagai-a-large-scale-and-high-quality-benchmark-for-generative-ai-model-and-data-card-generation)  
-   标签：评分：8.0/10、query:sr-amcr
-   evidence：包含专门检索和生成智能体的多智能体框架
-3. [Make Any Collection Navigable: Methods for Constructing and Evaluating Hypergraph of Text](/202604/29/2604.25906v1-make-any-collection-navigable-methods-for-constructing-and-evaluating-hypergraph-of-text)  
+1. [Construction of a Battery Research Knowledge Graph using a Global Open Catalog](/202604/30/2604.20241v1-construction-of-a-battery-research-knowledge-graph-using-a-global-open-catalog)  
+   标签：评分：8.5/10、query:ai
+   evidence：利用开放书目目录构建知识图谱
+2. [Evolution of Research Method Usage Across the Academic Careers of Library and Information Science Scholars](/202604/30/2604.20528v1-evolution-of-research-method-usage-across-the-academic-careers-of-library-and-information-science-scholars)  
    标签：评分：8.0/10、query:ai
-   evidence：构建文本超图，使数字图书馆中的文档集合具有可导航性
+   evidence：图书馆与信息科学研究方法的自动分类
+3. [IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review](/202604/30/2604.22861v1-intragent-an-llm-agent-for-content-grounded-information-retrieval-through-literature-review)  
+   标签：评分：8.0/10、query:ai
+   evidence：通过文献综述进行内容锚定信息检索的LLM代理
+4. [How Researchers Navigate Accountability, Transparency, and Trust When Using AI Tools in Early-Stage Research: A Think-Aloud Study](/202604/30/2604.23136v1-how-researchers-navigate-accountability-transparency-and-trust-when-using-ai-tools-in-early-stage-research-a-think-aloud-study)  
+   标签：评分：8.0/10、query:sr-amcr
+   evidence：关于研究人员使用AI工具识别相关文献和评估证据的研究
+5. [Automating Categorization of Scientific Texts with In-Context Learning and Prompt-Chaining in Large Language Models](/202604/30/2604.23430v1-automating-categorization-of-scientific-texts-with-in-context-learning-and-prompt-chaining-in-large-language-models)  
+   标签：评分：8.0/10、query:ai
+   evidence：在研究信息系统中使用LLM自动对科学文本进行分类
+6. [Prism-Reranker: Beyond Relevance Scoring -- Jointly Producing Contributions and Evidence for Agentic Retrieval](/202604/30/2604.23734v1-prism-reranker-beyond-relevance-scoring----jointly-producing-contributions-and-evidence-for-agentic-retrieval)  
+   标签：评分：8.0/10、query:ai
+   evidence：信息系统的代理检索和证据生成
+7. [AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery](/202604/30/2604.25256v1-autoresearchbench-benchmarking-ai-agents-on-complex-scientific-literature-discovery)  
+   标签：评分：8.0/10、query:ai
+   evidence：针对科学文献发现和信息检索的AI代理基准测试
 
 ### 速读区论文标签
-1. [Market Dynamics, Governance and Open Research Metadata in the AI Era](/202604/29/2604.19507v2-market-dynamics-governance-and-open-research-metadata-in-the-ai-era)  
+1. [Multilingual and Domain-Agnostic Tip-of-the-Tongue Query Generation for Simulated Evaluation](/202604/30/2604.21096v1-multilingual-and-domain-agnostic-tip-of-the-tongue-query-generation-for-simulated-evaluation)  
    标签：评分：7.5/10、query:ai
-   evidence：人工智能时代的学术知识基础设施与开放研究元数据
-2. [EvoAgent: An Evolvable Agent Framework with Skill Learning and Multi-Agent Delegation](/202604/29/2604.20133v1-evoagent-an-evolvable-agent-framework-with-skill-learning-and-multi-agent-delegation)  
-   标签：评分：7.5/10、query:sr-amcr
-   evidence：该论文提出了一个具有分层子代理委派机制的多代理框架，可应用于图书馆咨询转介系统。
-3. [Automatic Ontology Construction Using LLMs as an External Layer of Memory, Verification, and Planning for Hybrid Intelligent Systems](/202604/29/2604.20795v1-automatic-ontology-construction-using-llms-as-an-external-layer-of-memory-verification-and-planning-for-hybrid-intelligent-systems)  
+   evidence：多语言信息检索与模拟评估的查询生成
+2. [Contexts are Never Long Enough: Structured Reasoning for Scalable Question Answering over Long Document Sets](/202604/30/2604.22294v1-contexts-are-never-long-enough-structured-reasoning-for-scalable-question-answering-over-long-document-sets)  
    标签：评分：7.5/10、query:ai
-   evidence：数字图书馆的自动本体构建和知识图谱生成
-4. [ResRank: Unifying Retrieval and Listwise Reranking via End-to-End Joint Training with Residual Passage Compression](/202604/29/2604.22180v1-resrank-unifying-retrieval-and-listwise-reranking-via-end-to-end-joint-training-with-residual-passage-compression)  
+   evidence：针对长文档集的可扩展问答系统，适用于信息检索
+3. [IIRSim Studio: A Dashboard for User Simulation](/202604/30/2604.23406v1-iirsim-studio-a-dashboard-for-user-simulation)  
    标签：评分：7.5/10、query:ai
-   evidence：使用大语言模型进行高级信息检索和重排序，适用于数字图书馆系统
-5. [IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review](/202604/29/2604.22861v1-intragent-an-llm-agent-for-content-grounded-information-retrieval-through-literature-review)  
+   evidence：信息检索评估中的用户模拟方法
+4. [S2G-RAG: Structured Sufficiency and Gap Judging for Iterative Retrieval-Augmented QA](/202604/30/2604.23783v1-s2g-rag-structured-sufficiency-and-gap-judging-for-iterative-retrieval-augmented-qa)  
    标签：评分：7.5/10、query:ai
-   evidence：利用大语言模型代理自动化科学文献中的细粒度信息检索。
-6. [Automating Categorization of Scientific Texts with In-Context Learning and Prompt-Chaining in Large Language Models](/202604/29/2604.23430v1-automating-categorization-of-scientific-texts-with-in-context-learning-and-prompt-chaining-in-large-language-models)  
+   evidence：用于多跳信息检索的迭代检索增强问答
+5. [RADD: Retrieval-Augmented Discrete Diffusion for Multi-Modal Knowledge Graph Completion](/202604/30/2604.25693v1-radd-retrieval-augmented-discrete-diffusion-for-multi-modal-knowledge-graph-completion)  
    标签：评分：7.5/10、query:ai
-   evidence：利用大语言模型在数字研究系统中实现自动分类和信息检索。
-7. [LogosKG: Hardware-Optimized Scalable and Interpretable Knowledge Graph Retrieval](/202604/29/2604.18913v1-logoskg-hardware-optimized-scalable-and-interpretable-knowledge-graph-retrieval)  
+   evidence：用于知识图谱补全的检索增强框架
+6. [EvoAgent: An Evolvable Agent Framework with Skill Learning and Multi-Agent Delegation](/202604/30/2604.20133v2-evoagent-an-evolvable-agent-framework-with-skill-learning-and-multi-agent-delegation)  
+   标签：评分：7.0/10、query:sr-amcr
+   evidence：用于复杂任务的分层子代理委派机制
+7. [The Last Harness You'll Ever Build](/202604/30/2604.21003v1-the-last-harness-youll-ever-build)  
    标签：评分：6.5/10、query:ai
-   evidence：用于数字信息系统中结构化推理的可扩展知识图谱检索技术
-8. [Demonstrating Online Schema Alignment in Decentralized Knowledge Graphs Querying](/202604/29/2604.19205v1-demonstrating-online-schema-alignment-in-decentralized-knowledge-graphs-querying)  
+   evidence：使用AI代理自动化复杂的特定领域工作流和研究流程
+8. [Efficient Agent Evaluation via Diversity-Guided User Simulation](/202604/30/2604.21480v1-efficient-agent-evaluation-via-diversity-guided-user-simulation)  
    标签：评分：6.5/10、query:ai
-   evidence：去中心化知识图谱查询中的在线模式对齐
-9. [ECLASS-Augmented Semantic Product Search for Electronic Components](/202604/29/2604.19664v1-eclass-augmented-semantic-product-search-for-electronic-components)  
+   evidence：探索智能体与用户交互的用户模拟框架
+9. [A Decoupled Human-in-the-Loop System for Controlled Autonomy in Agentic Workflows](/202604/30/2604.23049v1-a-decoupled-human-in-the-loop-system-for-controlled-autonomy-in-agentic-workflows)  
+   标签：评分：6.5/10、query:sr-amcr
+   evidence：多智能体环境下的解耦人机协同系统
+10. [Evolve: A Persistent Knowledge Lifecycle for Small Language Models](/202604/30/2604.23424v1-evolve-a-persistent-knowledge-lifecycle-for-small-language-models)  
    标签：评分：6.5/10、query:ai
-   evidence：针对结构化目录的语义检索与稠密检索技术
-10. [ProMMSearchAgent: A Generalizable Multimodal Search Agent Trained with Process-Oriented Rewards](/202604/29/2604.20486v1-prommsearchagent-a-generalizable-multimodal-search-agent-trained-with-process-oriented-rewards)  
-   标签：评分：6.5/10、query:ai
-   evidence：用于知识密集型推理和信息检索的多模态搜索代理
-11. [The Last Harness You'll Ever Build](/202604/29/2604.21003v1-the-last-harness-youll-ever-build)  
-   标签：评分：6.5/10、query:ai
-   evidence：利用AI代理自动化多步研究流程和特定领域工作流
-12. [Multilingual and Domain-Agnostic Tip-of-the-Tongue Query Generation for Simulated Evaluation](/202604/29/2604.21096v1-multilingual-and-domain-agnostic-tip-of-the-tongue-query-generation-for-simulated-evaluation)  
-   标签：评分：6.5/10、query:ai
-   evidence：该论文讨论了多语言信息检索和基于大语言模型的查询模拟，这是现代数字图书馆搜索系统的核心组成部分。
+   evidence：数字图书馆中小型语言模型的持久知识库
+11. [How Personal Characteristics Shape User Exploration of Diverse Movie Recommendations with a LLM-Based Multi-Agent System](/202604/30/2604.24405v1-how-personal-characteristics-shape-user-exploration-of-diverse-movie-recommendations-with-a-llm-based-multi-agent-system)  
+   标签：评分：6.5/10、query:sr-amcr
+   evidence：基于大语言模型的多智能体推荐系统与用户探索研究
+12. [From Hidden Profiles to Governable Personalization: Recommender Systems in the Age of LLM Agents](/202604/30/2604.20065v1-from-hidden-profiles-to-governable-personalization-recommender-systems-in-the-age-of-llm-agents)  
+   标签：评分：6.0/10、query:ai
+   evidence：基于大语言模型的助手用于内容访问和用户表示
 
 
 <div class="dpr-home-promo-card">

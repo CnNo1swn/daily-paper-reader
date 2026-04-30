@@ -1,0 +1,266 @@
+Title: Construction of a Battery Research Knowledge Graph using a Global Open Catalog
+
+URL Source: https://arxiv.org/pdf/2604.20241v1
+
+Published Time: Thu, 23 Apr 2026 00:36:13 GMT
+
+Number of Pages: 19
+
+Markdown Content:
+# Construction of a Battery Research Knowledge Graph using a Global Open Catalog 
+
+Luca Foppiano 1, Sae Dieb 2,3* , Malik Zain 4, Kazuki Kasama 3,Keitaro Sodeyama 2, Mikiko Tanifuji 3,5 
+
+> 1
+
+ScienciaLAB, Loulé, Portugal. 
+
+> 2
+
+CBRM, National Institute for Materials Science, Tsukuba, Japan. 
+
+> 3
+
+CyberMate LLC, Tokyo, Japan. 
+
+> 4
+
+School of Computing, University of North Florida, Jacksonville, United States. 
+
+> 5
+
+National Institute of Informatics, Tokyo, Japan. *Corresponding author(s). E-mail(s): dieb.sae@nims.co.jp; Contributing authors: luca@sciencialab.com; zain.malik@unf.edu; kazuki@igroupjapan.com; keitaro.sodeyama@nims.go.jp; tanifuji@nii.ac.jp; 
+
+Abstract 
+
+Battery research is a rapidly growing and highly interdisciplinary field, making it increasingly difficult to track relevant expertise and identify potential collab-orators across institutional boundaries. In this work, we present a pipeline for constructing an author-centric knowledge graph of battery research built on Ope-nAlex, a large-scale open bibliographic catalogue. For each author, we derive a weighted research descriptors vector that combines coarse-grained OpenAlex concepts with fine-grained keyphrases extracted from titles and abstracts using KeyBERT with ChatGPT (gpt-3.5-turbo) as the backend model, selected after evaluating multiple alternatives. Vector components are weighted by research descriptor origin, authorship position, and temporal recency. The framework is applied to a corpus of 189,581 battery-related works. The resulting vec-tors support author–author similarity computation, community detection, and exploratory search through a browser-based interface. The knowledge graph is then serialized in RDF and linked to Wikidata identifiers, making it interoper-able with external linked open data sources and extensible beyond the battery domain. Unlike prior author-centric analyses confined to institutional reposito-ries, our approach operates at cross-institutional scale and grounds similarity in domain semantics rather than citation or co-authorship structure alone. 
+
+1  
+
+> arXiv:2604.20241v1 [cs.CL] 22 Apr 2026 Keywords: author-centric, knowledge graph, materials informatics, battery research, OpenAlex
+> Preprint — under peer review. This manuscript has not been formally accepted for publication.
+
+# 1 Introduction 
+
+Batteries are a fundamental technology enabling modern energy systems. Battery research intersects with materials science, electrochemistry, safety, manufacturing, and other research areas. With the increasing demand for a green transition toward renewable energy technologies, a growing number of highly interdisciplinary scientific papers are being published [1]. Given this information overload and the fragmentation of battery knowledge across multiple research fields, it is difficult to track relevant concepts and terminology. There is a need for a structured representation of concepts related to battery research that supports easier exploration of the field. Existing works have been proposed to provide a concept map for battery-specific field [2, 3]. However, to our knowledge, they are organized around documents or enti-ties, and do not support author-level discovery. An author-level concept map enables quantitative similarity retrieval, potential collaborations, and expertise identification. In this paper, we introduce a pipeline to construct a reusable, visual, author-centric knowledge graph of battery research descriptors. The graph aggregates battery-relevant descriptors across each author’s publications as a vector representation of the total author research output. This structure enables explainable author similarity search (such as collaborator discovery, reviewer recommendation) and community detection grounded in domain semantics rather than solely in citation or co-authorship structure. In our approach, we used natural language processing techniques on a large dataset constructed using an open catalogue named OpenAlex [4]. OpenAlex provides a rich bibliographic graph composed of aggregated metadata for works, authors, and orga-nizations. Building on OpenAlex offers several advantages: documents are already tagged with general concepts, enabling reproducible data processing; the platform is highly scalable; and its data is continuously updated. However, OpenAlex lacks fine-grained domain semantics. We therefore complemented OpenAlex concepts with keyphrases extracted using KeyBERT [5] – selected after benchmarking against Sen-tenceTransformers and domain-tuned BERT variants – to capture battery-specific terminology at a finer granularity. We constructed author-level research descriptors using three different weighting factors (Section 3.4): the descriptor origin (Ope-nAlex concepts vs. keyphrases), temporal recency (older publication periods were down-weighted to emphasize current expertise), and author position (first-author pub-lications were weighted more heavily as they better reflect primary research focus). Using the resulting author research descriptor vectors, we computed author–author similarity to identify related researchers. A browser-based interface was implemented 2to visualize the graph with functions related to exploratory search. Finally, we seri-alized the graph into the RDF (Resource Description Framework) format [6] to support standardized integration with external knowledge graphs, enabling reuse and extension beyond the battery field. The remainder of this paper is organized as follows. Section 2 reviews related work, followed by our method in Section 3, covering dataset preparation, keyword extraction, data aggregation, and author descriptor construction. Sections 3.5 and 3.6 present the visualization and similarity map, Section 3.7 describes the RDF serialization, and Section 4 concludes the paper. 
+
+# 2 Related Work 
+
+Text mining techniques have been widely applied in materials science to extract struc-tured knowledge from large collections of scientific articles, supporting the automatic construction of specialized datasets across a broad range of subdomains [7–14]. Building on these extraction methods, several general-purpose NLP approaches have been proposed for keyword selection, topic identification, and trend analysis in scientific literature. Trend detection has received particular attention, with approaches ranging from research trend prediction over time [15, 16] to the identification of “bursty research topics” through co-word analysis and matrix factorization [17]. Topic modeling methods have been surveyed extensively by Rani and Kumar [18], who covered classical techniques in materials science and engineering but largely omitted more recent approaches such as Latent Topic Semantic Graphs [19]. Nadim et al. [20] compared several approaches for keyword extraction and topic modeling, finding that BERT-based encoders yield stable results while LLMs achieved stronger perfor-mance, though at the cost of sensitivity to prompt design [21–23]. A related line of work addresses scholarly network analysis and author-level representation. Xu et al. [24] proposed a multi-network embedding framework for author disambiguation, while Nie et al. [25] described a system for tracking research development around a spe-cific subject. Müller [26] demonstrated that title-level semantic representations can be effectively obtained by averaging word embeddings, highlighting the importance of in-domain training data and temporal information for publication disambigua-tion. Schäfermeier et al. [27] proposed a graph structure to compute author research ranking in specific domains, and citation graph analysis has also been applied to research lineage identification through citation classification [28]. At the institutional level, Dieb et al. [29] conducted author-centric analyses within a single repository, providing valuable insights into local research dynamics but inherently limited in scope and cross-institutional coverage. Within the materials science domain specif-ically, a complementary line of work focused on building structured terminological resources from text corpora rather than extracting specific property data. Zhang et al. [3] proposed MGED-KG, a materials terminology knowledge graph automati-cally constructed via NLP from a bilingual Chinese-English dictionary corpus. Beyond cataloging terminology, MGED-KG was embedded into a materials data platform to support query expansion, term recommendation, and data discovery, demonstrating 3how NLP-derived knowledge graphs can serve as a semantic backbone for cross-domain data integration in materials science. The battery subdomain has also seen dedicated investment in semantic infrastructure to support knowledge formalization and data interoperability. Clark et al. [2] surveyed the role of semantic technologies — ontologies, RDF-based vocabularies, and open-source tooling — in structuring battery research knowledge in a machine-readable form, with a focus on resources developed within the BATTERY 2030+ project [30]. Their work introduced the Battery Knowl-edge Base (BKB), a web platform that links domain ontologies to wiki-style articles, datasets, and multimedia content, serving as a centralized hub for knowledge shar-ing across the battery community. This ontology-driven approach complemented text mining pipelines by providing the controlled vocabularies against which extracted con-cepts can be normalized and linked. Work on large-scale scholarly infrastructures such as OpenAlex [4] has enabled new forms of analysis: Färber et al. [31] constructed an RDF-like ontology centered on the citation graph, whereas our work instead focuses on topic and keyword proximity within selected subsets of the OpenAlex corpus. In contrast with prior work, none of the approaches above combines author-centric anal-ysis, domain-specific research descriptors, and cross-institutional scope within a single framework. The present work addresses this gap by constructing an author-level rep-resentation of the battery literature — built directly on the OpenAlex corpus — that integrates thematic descriptors, co-authorship networks, and temporal weighting, with possible generalization to other domains. 
+
+# 3 Method 
+
+The outline of the proposed workflow is represented in Figure 1. First, we collected battery-related scholarly publications from OpenAlex and preprocessed them into a clean, standardized dataset, filtering out irrelevant records and extracting OpenAlex concepts in the process. We then performed keyphrase extraction from titles and abstracts, and combined these with the OpenAlex concepts to build research descrip-tors for each publication. These descriptors were aggregated at the author level, weighted by origin (concept/keyphrase), temporal period and authorship position, to produce an author-level vector database carrying information about publications, co-authorship, and thematic focus over time. Finally, author research descriptor vec-tors were used to generate a similarity map revealing author relations through shared research descriptors. 
+
+3.1 Dataset preparation 
+
+The dataset used for this study was a preprocessed subset from the OpenAlex cat-alogue. OpenAlex is a fully open bibliographic database of scholarly works, authors, institutions, venues, and concepts, launched in 2022 as a successor to Microsoft Aca-demic Graph (MAG) [32]. It indexes over 250 million scholarly works drawn from sources such as Crossref, PubMed, institutional repositories, and open-access archives, making it one of the largest freely available academic knowledge bases. The data is structured around five core entity types — Works, Authors, Sources, Institutions, and Concepts — linked through typed relationships such as authorship, citation, affiliation, 4Fig. 1 : Overview of the proposed pipeline. Dataset construction (Section 3.1) col-lects, filters, and preprocesses data from OpenAlex, extracting OpenAlex concepts in the process. The resulting battery-related dataset is enriched with keyphrases extracted from titles and abstracts (Section 3.2). Research descriptors are then computed with consideration of descriptor origin, temporal period, and authorship position (Section 3.3) to generate a per-author research descriptor vector database (Section 3.4). Finally, the knowledge graph construction supports the generation of word clouds (Section 3.5) and the author similarity map (Section 3.6). 5and topical classification. Each entity is assigned a persistent OpenAlex identifier and enriched with metadata including DOIs, ORCIDs, open-access status, citation counts, and disambiguated author profiles. The concept taxonomy spans six hierarchical levels — from broad domains such as “Physics” down to fine-grained sub-topics. Each work is associated with multiple concepts derived from its title, abstract, and host venue title, using an automated classifier trained on the MAG corpus; a confidence score between 0 and 1 accompanies each assigned concept — though their ancestor concepts are propagated automatically up the hierarchy regardless of score, meaning a work tagged with “Battery (electricity)” (C555008776, level 3) will also carry its ances-tors: level-0 (“Physics”), level-1 (“Quantum Mechanics”, and “Thermodynamic”), and level-2 (“Power (physics)”). In this work, we first retrieved the Works from the OpenAlex API by querying records associated with the identifier “C555008776” (“Battery (electricity)”) and we collected 189,581 records that corresponded to 356,103 authors. We then filtered pub-lications older than 1990 or without publication date to reduce the noise brought by older and imprecise publication data. As a case demonstration, we refined the col-lected dataset to include publications from the top 10,000 authors, sorted by number of publications. This was to provide a proof of concept with reduced computational requirements. We indexed authors using a unique key that was generated using a normalized OpenAlex ID. In addition, we added a subset of researchers from our institution that are specialized in battery research for validation purposes. The dataset preparation included those post-processing steps: • we pruned the concept list of the generic “battery” concept, which is shared across all collected publications and does not provide any additional granular information; • we removed all concepts with a zero confidence score, as these are propagated automatically for hierarchical navigation purposes and introduce noise into our representations; and • we applied data transformation by selecting a subset of fields (identifiers, title, publication metadata, authors and affiliations, abstract, and associated concepts with scores). It is worth noting that, as an aggregated resource, OpenAlex is not free from noise: some records carry incomplete or erroneous metadata, such as missing affiliation information. Correcting such inconsistencies was outside the scope of this work. 
+
+3.2 Keyphrases extraction 
+
+OpenAlex concepts are too coarse for our purposes: spanning all scientific disciplines, they would produce overly broad author similarity matches within a single research domain. For this reason, we complemented the OpenAlex concepts with more domain-specific text-based keyphrases, extracted from the titles and abstracts of the articles. We used KeyBERT [5], an open-source library based on BERT-embeddings [33] and cosine similarity that, given a text in input, finds the keyphrases that are the most representative for the given text. We selected among four models: the original Sen-tenceTransformers [34], two battery-domain-pretrained BERT variants [35] and a Large Language Model (LLM), OpenAI ChatGPT (gpt-3.5-turbo). 6To select the best model, we constructed an evaluation framework composed of a sample of 100 articles and a scoring algorithm. The ground truth was extracted using Grobid [36] from the 100 PDF articles as a silver-standard reference, while acknowledging that keyword metadata is incomplete and heterogeneous across venues. The scoring algorithm was designed to capture broader semantic overlap between two lists of heterogeneous elements. Given Pd is the keyphrases predicted from the models, and Ed the keyphrases expected for document d. Let kd = min( |Pd|, |Ed|),and let ˆPd ⊂ Pd denote the kd highest-confidence predicted keyphrases, with ˆEd ⊂ Ed
+
+the corresponding trimmed expected set, | ˆEd| = kd. Define the threshold ( τ ∈ [0 , 1] )cosine similarity of a predicted keyphrase p against an expected keyword e as: 
+
+ϕ(e, p ) = max (0, cos( e, p ) · I[cos( e, p ) > τ ]) (1) The per-expected-keyphrases score aggregated over predictions is: 
+
+s(d) 
+
+> e
+
+= 1
+
+| ˆPd|
+
+∑  
+
+> p∈ˆPd
+
+ϕ(e, p ) (2) The per-document score is: 
+
+sd = 1
+
+| ˆEd|
+
+∑  
+
+> e∈ˆEd
+
+s(d) 
+
+> e
+
+= 1
+
+k2
+
+> d
+
+∑  
+
+> e∈ˆEd
+
+∑  
+
+> p∈ˆPd
+
+ϕ(e, p ) (3) And the final dataset-level similarity score as an average over N documents: 
+
+S = 1
+
+N
+
+> N
+
+∑
+
+> d=1
+
+sd = 1
+
+N
+
+> N
+
+∑
+
+> d=1
+
+1
+
+k2
+
+> d
+
+∑  
+
+> e∈ˆEd
+
+∑  
+
+> p∈ˆPd
+
+ϕ(e, p ) (4) The evaluation scores in Table 1 indicate each model’s achieved dataset-level score 
+
+S. The OpenAI ChatGPT LLM achieved the highest score with Sentence-Transformer and domain-tuned BERT models close behind.       
+
+> Method Avg. Similarity
+> ChatGPT (chatgpt-3.5-turbo) 0.6781 BatterySciBERT_cased 0.6698 BatteryOnlyBERT 0.6677 SentenceTransformers 0.6665 BatterySciBERT_uncased 0.5423
+
+Table 1 : Average dataset-level similarity score 
+
+S for keyphrases extracted by different models, evaluated against article-supplied keywords as ground truth, on a sample of 100 documents. 7After selecting the LLM-based method for keyphrase extraction, we processed the dataset to extract keyphrases from titles and abstracts. We limited the extracted keyphrases, sorted by similarity, to a maximum of two for title keyphrases KP T , and 10 abstract keyphrases KP A (Figure 1). 
+
+3.3 Data aggregation 
+
+Once keyphrase extraction was completed, the data was aggregated at the author level. For each author, we collected their publications and computed the frequency of each research descriptor across their entire publication record. For each temporal period, we recorded the total publication count broken down by authorship role — corresponding, first, and non-first author — as well as the number of publications shared with each co-author. The aggregated data was organized as illustrated in Listing 1. Listing 1: Example of the authors aggregated data structure                                                 
+
+> {" author1 ": {"1990 -2000": {... }, "2001 -2010": {... }, "2011 -2023": {" nb_publications ": 200, " nb_publications_first_author ": 10, " nb_publications_non_first_author ": 190, " non_first_author ": {" concepts ": {" concept1 ": {"freq ": 123, " avg_confidence_score ": 0.8 }}, " keyphrases ": {" keyphrase1 ": {"freq ": 123, " avg_confidence_score ": 0.2 }}, " co_authors ": {" co_author_id1 ": 1, " co_author_id2 ": 33 }}, " first_author ": {" concepts ": {" concept1 ": {"freq ": 123, " avg_confidence_score ": 0.8 }}, " keyphrases ": {" keyphrase1 ": {"freq ": 123, " avg_confidence_score ": 0.8 }}, " co_authors ": {" co_author_id1 ": 20, " co_author_id2 ": 124, " co_author_id3 ": 22 }}}
+
+8}}
+
+3.4 Author research descriptors vector generation 
+
+We constructed a weighted research descriptors-frequency vector ⃗v a ∈ R|V| ≥0 for each author a based on their publication history. The vocabulary V (a set of research descriptors) was built by selecting the top-1000 most frequent research descriptors collected so far — from OpenAlex concepts and keyphrases — then merging and updating frequencies for overlapping entries. All research descriptors were normalized via lowercasing and singularization over the vocabulary V.We processed each author’s publications across three temporal periods {p0, p 1, p 2}
+
+corresponding to 1990–2000, 2001–2010, and 2011–2023 respectively, applying decay factor fpj to each period, where older periods received a higher value to progressively suppress their contribution and emphasize recent work. The final author vector was given by the following equation: ⃗v a =
+
+> 2
+
+∑
+
+> j=0
+
+fpj ·⃗v pj (5) This equation accounted for temporal recency of the author’s publications. Where ⃗v pj 
+
+was the temporal period vector that was constructed from two vectors that considered the author position (first author, non-first author): ⃗v pj = wf irst ·⃗ Dpj + wnonf irst ·⃗ D′pj (6) where ⃗ Dpj and ⃗ D′pj were vectors computed based on descriptors where the researcher was the first author and non-first author in the publication, respectively. Higher weight was given to research descriptors vectors of first-author publications. Finally, ⃗Dpj = wc ·⃗ C + wpa ·⃗ KP A + wpt ·⃗ KP T (7) where ⃗ C was composed of the author-relative importance values of each concept, where each element was given by the following equation: ⃗C [i] = freq( ci) · score( ci) (8) where freq( ci) and score( ci) were the frequency and the OpenAlex relevance score, respectively, of the i-th concept in the vocabulary V.In a similar manner, the vectors ⃗ KP A , and ⃗ KP T were calculated, without con-sidering the OpenAlex relevance score as the keyphrases were not extracted from OpenAlex. 
+
+3.5 Word cloud representation 
+
+We generated word cloud visualizations to provide an interpretable representation of each author’s research profile. For each author, we constructed a frequency dictionary 9by mapping research descriptors to their respective vector values, which encoded the relative importance of each research descriptor in the author’s publication history. We then generated word clouds using the WordCloud Python library [37] with the font size of each research descriptor proportional to its relevance score in the author vector, allowing dominant research themes to be immediately recognizable. We saved each visualization as a PNG file named after the author’s OpenAlex identifier, producing a complete set of visual research profiles for the entire dataset. Figure 2 provides two examples for two researchers whose main research is about electrochemistry, with the first author focusing on energy storage, and the second author on lithium-ion batteries (names and affiliations of those authors have been omitted to preserve anonymity).  
+
+> (a) Author 1 (b) Author 2
+
+Fig. 2 : Examples of generated word clouds representation of author research descrip-tors vectors for two authors in battery research. 
+
+3.6 Similarity maps 
+
+The similarity map is an interactive visualization showing the author graphs through the research descriptors. The map is author-centric: the researcher can be selected by a list populated by either a search by author (Figure 3b), or by concept (here we refer to the research descriptor) (Figure 3a). Selecting the author from the list opens the knowledge graph representation, where the similarity map centered on that author is displayed (Figure 4a). Each author is represented by a circle that indicates the number of publications. When an author is selected, the primary connections are visualized in blue (authors that shared research descriptors) and in yellow the connections of higher ranks (authors connected indirectly). In this section, we use information from one of the authors of this work, who has contributed to the field of battery research [38–41]. Figure 4a shows the first level connections in blue, indicating other battery research-related authors and one of the co-authors. These connections could be used to foster future collaboration with the authors in the similarity map. When clicking on an arc, the interface shows the common research descriptors between the two authors, illustrating possible overlap that occurred in the past 10 (a) List of authors by concept (research descriptor). 
+
+> (b) Author search results.
+
+Fig. 3 : Search results by author name and by concept (research descriptor). Author names have been omitted to preserve anonymity. (Figure 4b). Those elements can be further examined to find other authors that share the same research descriptors ranked by publication count (Figure 4b). In Figure 5 we provide a view with all connections, in yellow, indicating the sec-ondary connections, when an author is connected through a co-author to someone else. Those secondary connections, apparently not relevant, represent, in fact, potential collaborations. 
+
+3.7 Serialization of the knowledge graphs 
+
+Resource Description Framework (RDF) is a standard for modelling data on the web through the triplets model subject-predicate-object [42]. RDF-ready datasets can potentially be integrated together, given they adopt stable Permanent Identifiers (PID) and then explored using semantic querying through a standardized graph-based representation [43]. First, we enriched the dataset with Wikidata IDs corresponding to the latest author’s affiliation. Wikidata [44] is an open knowledge base providing a rich set of metadata that can be interlinked to other open data sets. The Wikidata knowledge base complemented the information we collected from OpenAlex as it provides stable PIDs [45, 46] and more comprehensive institutional metadata that improve affiliation disambiguation and facilitate linking our records to other open datasets. 11 (a) Map of a battery-related author’s first-level connections. (b) Research descriptors similarity. 
+
+Fig. 4 : Example of similarity map of the first-level connections of a battery-related author (Figure 4a) and the shared research descriptors behind each connection (Figure 4b). In this figure specifically, ”the representative keywords” refer to the research descriptors. Author names have been omitted to preserve anonymity. Then, we generated the RDF representation of our model composed of triples relat-ing authors, works, and research descriptors. For each item (author, work, and research descriptor), we assigned a Uniform Resource Identifier (URI) that uniquely identifies the resource within our graph. We then generated triples linking authors to their works (Author–Paper relationships), papers to their publishing metadata (Paper–Publisher relationships), and papers to their associated research descriptors (Paper–Research Descriptor relationships), thereby constructing a coherent RDF graph, with Institu-tional Affiliation being a property of the Author node and Publisher being a property of the Paper node, (Figure 6) that captures the bibliographic and institutional rela-tionships in a structured representation that can be queried and linked to external linked open data sources. 
+
+# 4 Conclusion 
+
+This paper presents a pipeline for constructing an author-centric battery research knowledge graph from a large open catalogue (OpenAlex) subset and for deriving interpretable author profiles from it. We apply our method to publications of battery research which is a domain of growing importance for the green transition. The prin-cipal novelty of this work lies in its author-centric framing: rather than organizing knowledge around documents or ontologies, we construct weighted research descriptor vectors that aggregate each author’s thematic trajectory across time and authorship position. We further combine coarse-grained OpenAlex concepts with fine-grained 12 Fig. 5 : Example of similarity map showing all proximity co-authorship for a battery-related author. In this figure specifically, ”the representative keywords” refer to the research descriptors. Author names have been omitted to preserve anonymity. domain keyphrases extracted from titles and abstracts, yielding richer author rep-resentations than either source alone. The resulting graph is serialized in RDF and linked to Wikidata, making it reusable and extensible beyond battery research. In the future, we plan to use open-weight LLMs to increase transparency and ensure reproducibility, since more advanced models have been developed since we designed our pipeline. A stricter merging of semantically overlapping keyphrases — such as “anode” and “anode material” — could further improve word cloud readability (Figure 2a).Additionally, further weighting factors could be considered, such as time of first publication, to reduce the penalization of younger authors or authors with a shorter publication history. 
+
+# References 
+
+[1] Ma, J., Li, Y., Grundish, N.S., Goodenough, J.B., Chen, Y., Guo, L., Peng, Z., Qi, X., Yang, F., Qie, L., et al. : The 2021 battery technology roadmap. Journal of Physics D: Applied Physics 54 (18), 183001 (2021) [2] Clark, S., Battaglia, C., Castelli, I.E., Flores, E., Gold, L., Punckt, C., Stier, S., Veit, P.: Semantic resources for managing knowledge in battery research. ChemSusChem 18 (16), 202500458 13 Author Node – Knowledge Graph Schema affiliation ORCID no_publications_fi... total_no_publications AuthorID OpenAlex ID Literal Literal Literal (external) Literal Literal Literal Author <Author_BKGA00001> ex:AuthorID "BKGA00001" ; 
+
+ex:AuthorName "first_last" ; 
+
+ex:affiliation "Example University" ; 
+
+ex:no_publications_first_author "1" ; 
+
+ex:total_no_publications "14" ; 
+
+oa:OpenAlex_ID "A0000000000" ; 
+
+orcid:ORCID "0000-0000-0000-0000" . Paper Node – Knowledge Graph Schema DOI Publisher PaperID PublicationDate OpenAccessStatus OpenAlexID PublicationYear Literal Literal Literal (external) Literal Literal Literal Literal Paper <Paper_BKGP00010> ex:OA_Status "bronze" ; 
+
+ex:PaperID "BKGP00010" ; 
+
+ex:PaperTitle "Achieving High Energy Density..." ; 
+
+ex:PublicationDate "4/1/2019" ; 
+
+ex:PublicationYear "2019" ; 
+
+ex:Publisher "Elsevier BV" ; 
+
+doi:DOI "10.1016/j.chempr.2019.02.003" ; 
+
+oa:OpenAlexID "W2915092910" . Research Descriptor Node – Knowledge 
+
+Graph Schema OpenAlex ID TermID Wikidata ID Ancestor TermID Literal Literal Literal (external) Literal Research 
+
+Descriptor <termAC_power> ex:Ancestor_TermID "BKG00199" ; 
+
+ex:TermID "BKG00227" ; 
+
+ex:TermText "AC power" ; 
+
+oa:OpenAlex_ID "C108755667" ; 
+
+wd:Wikidata_ID "Q1930258" . Fig. 6 : Examples of RDF serialization: the author node, representing the battery-related author, the paper node and the research descriptor node. The Wikidata ID is attached as attribute to the research descriptors. These schemata are all connected. (2025) https://doi.org/10.1002/cssc.202500458 https://chemistry-europe.onlinelibrary.wiley.com/doi/pdf/10.1002/cssc.202500458 [3] Zhang, Y., Chen, F., Liu, Z., Ju, Y., Cui, D., Zhu, J., Jiang, X., Guo, X., He, J., Zhang, L., et al. : A materials terminology knowledge graph automatically 14 constructed from text corpus. Scientific Data 11 (1), 600 (2024) [4] Priem, J., Piwowar, H., Orr, R.: Openalex: A fully-open index of scholarly works, authors, venues, institutions, and concepts. arXiv preprint arXiv:2205.01833 (2022) [5] Grootendorst, M.: KeyBERT: Minimal keyword extraction with BERT. Zen-odo (2020). https://doi.org/10.5281/zenodo.4461265 . https://doi.org/10.5281/ zenodo.4461265 [6] Manola, F., Miller, E., McBride, B., et al. : Rdf primer. W3C recommendation 
+
+10 (1-107), 6 (2004) [7] Foppiano, L., Castro, P., Suarez, P., Terashima, K., Takano, Y., Ishii, M.: Automatic extraction of materials and properties from superconductors scien-tific literature. Science and Technology of Advanced Materials Methods 3 (2023) https://doi.org/10.1080/27660400.2022.2153633 [8] Court, C.J., Cole, J.M.: Magnetic and superconducting phase diagrams and tran-sition temperatures predicted using text mining and machine learning. npj Com-putational Materials 6(1), 18 (2020) https://doi.org/10.1038/s41524-020-0287-8 [9] Kononova, O., Huo, H., He, T., Rong, Z., Botari, T., Sun, W., Tshitoyan, V., Ceder, G.: Text-mined dataset of inorganic materials synthesis recipes. Scientific Data 6(1), 203 (2019) https://doi.org/10.1038/s41597-019-0224-1 [10] Huang, S., Cole, J.M.: A database of battery materials auto-generated using chemdataextractor. Scientific Data 7(1), 260 (2020) [11] Dieb, T.M., Yoshioka, M., Hara, S.: Automatic Information Extraction of Experi-ments from Nanodevices Development Papers, pp. 42–47. IEEE, Fukuoka, Japan (2012). https://doi.org/10.1109/iiai-aai.2012.18 [12] Dieb, T.M., Yoshioka, M.: Extraction of chemical and drug named entities by ensemble learning using chemical ner tools based on different extraction guidelines. Trans. Mach. Learn. Data Min (2015) [13] Dieb, T.M., Yoshioka, M., Hara, S.: Nadev: An annotated corpus to support information extraction from research papers on nanocrystal devices. Journal of Information Processing 24 (3), 554–564 (2016) https://doi.org/10.2197/ipsjjip.24. 554 [14] Foppiano, L., Dieb, S., Suzuki, A., Baptista De Castro, P., Iwasaki, S., Uzuki, A., Echevarria, M.G.E., Meng, Y., Terashima, K., Romary, L., Takano, Y., Ishii, M.: Supermat: construction of a linked annotated dataset from superconductors-related publications. Science and Technology of Advanced Materials: Methods 
+
+1(1), 34–44 (2021) https://doi.org/10.1080/27660400.2021.1918396 15 [15] Charnine, M., Tishchenko, L. A. A. amd Kochiev: Visualization of research trend-ing topic prediction: Intelligent method for data analysis. Proceedings of the 31th International Conference on Computer Graphics and Vision. Volume 2 (2021) https://doi.org/10.20948/graphicon-2021-3027-1028-1037 [16] Jamali, H.R., Nikzad, M.: Article title type and its relation with the number of downloads and citations. Scientometrics 88 , 653–661 (2011) https://doi.org/10. 1007/s11192-011-0412-z [17] Katsurai, M., Ono, S.: Trendnets: Mapping emerging research trends from dynamic co-word networks via sparse representation. Scientometrics 121 , 1583– 1598 (2019) https://doi.org/10.1007/s11192-019-03241-6 [18] Rani, S., Kumar, M.: Topic modeling and its applications in materials science and engineering. Materials Today: Proceedings 45 , 5591–5596 (2021) https:// doi.org/10.1016/j.matpr.2021.02.313 [19] Law, J., Zhuo, H.H., He, J., Rong, E.: Ltsg: Latent topical skip-gram for mutu-ally improving topic model and vector representations. Pattern Recognition and Computer Vision, 375–387 (2018) https://doi.org/10.1007/978-3-030-03338-5_ 32 [20] Nadim, M., Akopian, D., Matamoros, A.: A comparative assessment of unsuper-vised keyword extraction tools. IEEE access 11 , 144778–144798 (2023) [21] Chataut, S., Do, T., Gurung, B.D.S., Aryal, S., Khanal, A., Lushbough, C., Gnimpieba, E.: Comparative study of domain driven terms extraction using large language models. arXiv preprint arXiv:2404.02330 (2024) [22] Jia, X., Roller, C., Wang, C.: Llm-rank: An unsupervised keyword extraction method using local large language models. In: 2025 IEEE International Confer-ence on Information Reuse and Integration and Data Science (IRI), pp. 73–78 (2025). IEEE [23] Maragheh, R.Y., Fang, C., Irugu, C.C., Parikh, P., Cho, J., Xu, J., Sukumar, S., Patel, M., Korpeoglu, E., Kumar, S., et al. : Llm-take: Theme-aware keyword extraction using large language models. In: 2023 IEEE International Conference on Big Data (BigData), pp. 4318–4324 (2023). IEEE [24] Xu, J., Shen, S., Li, D., Fu, Y.: A network-embedding based method for author disambiguation. Proceedings of the 27th ACM International Conference on Infor-mation and Knowledge Management (2018) https://doi.org/10.1145/3269206. 3269272 [25] Nie, Z., Liu, Y., Yang, L., Li, S., Pan, F.: Construction and appli-cation of materials knowledge graph based on author disambiguation: 16 Revisiting the evolution of lifepo4. Advanced Energy Materi-als 11 (16), 2003580 (2021) https://doi.org/10.1002/aenm.202003580 https://advanced.onlinelibrary.wiley.com/doi/pdf/10.1002/aenm.202003580 [26] Müller, M.: Semantic author name disambiguation with word embeddings. Research and Advanced Technology for Digital Libraries, 300–311 (2017) https: //doi.org/10.1007/978-3-319-67008-9_24 [27] Schäfermeier, B., Hirth, J., Hanika, T.: Research topic flows in co-authorship networks. Scientometrics 128 (9), 5051–5078 (2023) [28] Ghosal, T., Tiwary, P., Patton, R.M., Stahl, C.C.: Towards establishing a research lineage via identification of significant citations. Quantitative Science Studies 2,1511–1528 (2021) https://doi.org/10.1162/qss_a_00170 [29] Dieb, S., Amano, K., Tanabe, K., Sato, D., Ishii, M., Tanifuji, M.: Cre-ating research topic map for nims samurai database using natural lan-guage processing approach. Science and Technology of Advanced Materi-als: Methods 1(1), 2–11 (2021) https://doi.org/10.1080/27660400.2021.1899426 https://doi.org/10.1080/27660400.2021.1899426 [30] BATTERY 2030+ Consortium: BATTERY 2030+: Large-Scale Research Initia-tive. https://battery2030.eu. Accessed: 2026-04-06 (2025) [31] Färber, M., Lamprecht, D., Krause, J., Aung, L., Haase, P.: Semopenalex: The scientific landscape in 26 billion rdf triples. In: Payne, T.R., Presutti, V., Qi, G., Poveda-Villalón, M., Stoilos, G., Hollink, L., Kaoudi, Z., Cheng, G., Li, J. (eds.) The Semantic Web – ISWC 2023, pp. 94–112. Springer, Cham (2023) [32] Sinha, A., Shen, Z., Song, Y., Ma, H., Eide, D., Hsu, B.-J.p., Wang, K.: An overview of microsoft academic service (mas) and applications. In: Proceedings of the 24th International Conference on World Wide Web, pp. 243–246. ACM, New York, NY, USA (2015). https://doi.org/10.1145/2740908.2742839 [33] Devlin, J., Chang, M.-W., Lee, K., Toutanova, K.: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2019). https://arxiv. org/abs/1810.04805 [34] Reimers, N., Gurevych, I.: Sentence-bert: Sentence embeddings using siamese bert-networks. In: Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing. Association for Computational Linguistics, ??? (2019). https://arxiv.org/abs/1908.10084 
+
+[35] Huang, S., Cole, J.M.: Batterybert: A pretrained language model for battery database enhancement. Journal of chemical information and modeling 62 (24), 6365–6377 (2022) 17 [36] Grobid. GitHub. https://github.com/grobidOrg/grobid [37] Mueller, A.C.: Wordcloud (2023). https://github.com/amueller/wordcloud [38] Liu, J., Kaneko, T., Ock, J.-Y., Kondou, S., Ueno, K., Dokko, K., Sodeyama, K., Watanabe, M.: Distinct differences in li-deposition/dissolution reversibility in sulfolane-based electrolytes depending on li-salt species and their solvation structures. The Journal of Physical Chemistry C 127 (12), 5689–5701 (2023) https://doi.org/10.1021/acs.jpcc.2c09040 [39] Tomoaki, K., Yui, F., Toshihiko, M., Hiroaki, K., Keitaro, S.: Ether molecule decomposition on mgm2o4 (m = mn, fe, co) spinel surface: A first-principles study. Electrochemistry 92 (2) (2024) https://doi.org/23-0008710. 5796/electrochemistry.23-00087 [40] Sodeyama, K., Yamada, Y., Aikawa, K., Yamada, A., Tateyama, Y.: Sacrificial anion reduction mechanism for electrochemical stability improvement in highly concentrated li-salt electrolyte. The Journal of Physical Chemistry C 118 (26), 14091–14097 (2014) https://doi.org/10.1021/jp501178n [41] Sodeyama, K., Igarashi, Y., Nakayama, T., Tateyama, Y., Okada, M.: Liquid electrolyte informatics using an exhaustive search with linear regression. Physi-cal Chemistry Chemical Physics 20 (35), 22585–22591 (2018) https://doi.org/10. 1039/c7cp08280k [42] W3C: Resource Description Framework (RDF). https://www.w3.org/RDF/. Accessed: 2026-01-22 [43] Ellefi, M.B., Bellahsene, Z., Breslin, J.G., Demidova, E., Dietze, S., Szymański, J., Todorov, K.: Rdf dataset profiling – a survey of features, methods, vocabularies and applications. Semantic Web 9(5), 677–705 (2018) https://doi.org/10.3233/ SW-180294 https://journals.sagepub.com/doi/pdf/10.3233/SW-180294 [44] Library Carpentry: What is Wikidata? Introduction to Wikidata for Librarians. https://librarycarpentry.github.io/lc-wikidata/01-introduction.html. Accessed: 2026-01-22 [45] Van Veen, T.: Wikidata: from “an” identifier to “the” identifier. Information technology and libraries 38 (2), 72–81 (2019) [46] Burgstaller-Muehlbacher, S., Waagmeester, A., Mitraka, E., Turner, J., Putman, T., Leong, J., Naik, C., Pavlidis, P., Schriml, L., Good, B.M., Su, A.I.: Wikidata as a semantic framework for the gene wiki initiative. Database 2016 , 015 (2016) https://doi.org/ 10.1093/database/baw015 https://academic.oup.com/database/article-pdf/doi/10.1093/database/baw015/8222933/baw015.pdf 18 Statements and Declarations 
+
+Conflict of interests 
+
+The authors declare no conflict of interests. 
+
+Author contributions 
+
+L.F. : Conceptualisation; Methodology; Software; Data Curation; Formal Analysis; Writing – Original Draft; Writing – Review & Editing. S.D. : Conceptualisation; Methodology; Validation; Writing – Review & Editing; Supervision; Project Admin-istration. M.Z. : Methodology; Validation; Writing – Review & Editing. K.Ka. :Resources; Writing – Review & Editing. K.So. : Resources; Validation; Writing – Review & Editing. M.T. : Visualisation; Resources; Writing – Review & Editing; Supervision. 
+
+Funding 
+
+The authors declare that no funds, grants, or other support were received during the preparation of this manuscript. L.F. work was done partially while at the National Institute for Materials Science until April 2024, and partially while at ScienciaLAB, as the current affiliation. 
+
+Code availability 
+
+The code is available on GitHUB at the repository https://github.com/lfoppiano/ cocoa-visualisation. 19

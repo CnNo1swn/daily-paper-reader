@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.23406v1/fig-001.webp",
+      "caption": "Figure 1: The IIRSim Studio architecture. The Frontend Workbench provides visual pipeline composition, tutorials, and a",
+      "page": 2,
+      "index": 1,
+      "width": 1056,
+      "height": 366
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23406v1/fig-002.webp",
+      "caption": "Figure 4: The playground results interface displaying simula-",
+      "page": 4,
+      "index": 2,
+      "width": 506,
+      "height": 419
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23406v1/fig-003.webp",
+      "caption": "Figure 3: Custom component authoring and saving: in-",
+      "page": 4,
+      "index": 3,
+      "width": 506,
+      "height": 277
+    },
+    {
+      "url": "assets/figures/arxiv/2604.23406v1/fig-004.webp",
+      "caption": "Figure 2: The visual pipeline composer. Each node represents a simulation component (e.g., query generator, stopping strategy)",
+      "page": 4,
+      "index": 4,
+      "width": 1056,
+      "height": 615
+    }
+  ]
+}
