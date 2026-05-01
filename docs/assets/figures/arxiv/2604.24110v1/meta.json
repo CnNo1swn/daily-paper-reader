@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.24110v1/fig-001.webp",
+      "caption": "Fig. 4. Concurrency per Penny (Conc/¢): concurrent users per cent of spend per minute. Provisioned (blue) starts low at c = 1 but rises as the fixed cost amortizes across more users, crossing Standard near c = 10. Standard PayGo (orange) leads among pay-per-token tiers. Priority PayGo (green) is flat near 0.09; its 1.8× premium is the cost of flat latency.",
+      "page": 6,
+      "index": 1,
+      "width": 479,
+      "height": 314
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24110v1/fig-002.webp",
+      "caption": "Fig. 3. Effective throughput (req/min) vs. concurrent users. Priority PayGo (green) scales near-linearly to 748 req/min at c = 50, consistent with no head-of-line blocking in the priority queue. Provisioned (blue) plateaus near 390 req/min at c ≈ 20, corresponding to the GSU saturation point. Standard (orange) shows irregular growth under shared pool contention.",
+      "page": 6,
+      "index": 2,
+      "width": 479,
+      "height": 297
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24110v1/fig-003.webp",
+      "caption": "Fig. 5. Per-student cost at scale (10,000 questions/semester, worst-case ceiling, 24/7 provisioning assumed). Standard and Priority PayGo are flat at $39 and $71. Provisioned (dashed) is an upper bound; institutions with predictable traffic will see substantially lower costs.",
+      "page": 8,
+      "index": 3,
+      "width": 479,
+      "height": 298
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24110v1/fig-004.webp",
+      "caption": "Fig. 2. Median end-to-end latency and P95 band vs. concurrent users. Priority PayGo (green) maintains flat 3.5–4.0s median with a narrow P95 band throughout, consistent with low per-agent variance stabilizing the parallel-phase maximum. Provisioned (blue) starts lowest but its P95 diverges after c = 20 as GSU saturation appears to introduce queuing variance. Standard (orange) shows the widest P95 band; its P95 reaches 14.1s at c = 40.",
+      "page": 4,
+      "index": 4,
+      "width": 479,
+      "height": 297
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24110v1/fig-005.webp",
+      "caption": "TABLE II PER-AGENT MEDIAN LATENCY (S)",
+      "page": 5,
+      "index": 5,
+      "width": 336,
+      "height": 408
+    }
+  ]
+}

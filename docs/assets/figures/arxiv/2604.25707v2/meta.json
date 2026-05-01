@@ -1,0 +1,94 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.25707v2/fig-001.webp",
+      "caption": "Fig. 1. The GEO measurement problem decomposes into citation selection and citation absorption. Source: author synthesis from the geo-citation-lab pipeline design.",
+      "page": 6,
+      "index": 1,
+      "width": 827,
+      "height": 466
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25707v2/fig-002.webp",
+      "caption": "Fig. 6. Mean and median influence by word-count bin. Source: geo-citation-lab public report.",
+      "page": 15,
+      "index": 2,
+      "width": 827,
+      "height": 497
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25707v2/fig-003.webp",
+      "caption": "Fig. 7. Reported correlations between independent features and influence_score. Variables used directly in the score definition are intentionally omitted from this figure. Source: geo-citation-lab public report.",
+      "page": 15,
+      "index": 3,
+      "width": 827,
+      "height": 523
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25707v2/fig-004.webp",
+      "caption": "Fig. 3. Source-type composition indicates that official, news, and vertical sources form the default candidate pool. Source: geo-citation-lab public report.",
+      "page": 10,
+      "index": 4,
+      "width": 827,
+      "height": 496
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25707v2/fig-005.webp",
+      "caption": "Fig. 4. ChatGPT has substantially higher mean citation influence among fetched pages. Source: geo-citationlab public report.",
+      "page": 14,
+      "index": 5,
+      "width": 827,
+      "height": 497
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25707v2/fig-006.webp",
+      "caption": "Fig. 5. Ratio of top-quartile to bottom-quartile page attributes by influence score. Source: geo-citation-lab public report.",
+      "page": 14,
+      "index": 6,
+      "width": 827,
+      "height": 523
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25707v2/fig-007.webp",
+      "caption": "Fig. 11. Mean influence by question type. Source: geo-citation-lab public report.",
+      "page": 18,
+      "index": 7,
+      "width": 827,
+      "height": 525
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25707v2/fig-008.webp",
+      "caption": "Fig. 2. Search triggering is near universal, but citation breadth differs sharply by platform. Source: geocitation-lab public report.",
+      "page": 8,
+      "index": 8,
+      "width": 827,
+      "height": 482
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25707v2/fig-009.webp",
+      "caption": "Fig. 10. Platform-specific correlations indicate that each engine weights semantic and structural features differently. Source: geo-citation-lab public report.",
+      "page": 17,
+      "index": 9,
+      "width": 827,
+      "height": 497
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25707v2/fig-010.webp",
+      "caption": "Fig. 8. Mean influence uplift associated with evidence genres. Q&A format is the important negative case. Source: geo-citation-lab public report.",
+      "page": 16,
+      "index": 10,
+      "width": 827,
+      "height": 524
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25707v2/fig-011.webp",
+      "caption": "Fig. 9. Semantic role determines how much a citation matters. Source: geo-citation-lab public report.",
+      "page": 16,
+      "index": 11,
+      "width": 827,
+      "height": 525
+    }
+  ]
+}

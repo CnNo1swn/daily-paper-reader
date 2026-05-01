@@ -1,0 +1,102 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.27225v1/fig-001.webp",
+      "caption": "Figure 7: Post-course learning outcome ratings (n = 26). Bars show the percentage of respondents endorsing each response category. White bold labels inside bars indicate the combined agree-plus-strongly-agree percentage for each item.",
+      "page": 25,
+      "index": 1,
+      "width": 929,
+      "height": 624
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27225v1/fig-002.webp",
+      "caption": "Table 4: Post-Course Learning Outcome and Course Impact Ratings",
+      "page": 26,
+      "index": 2,
+      "width": 943,
+      "height": 415
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27225v1/fig-003.webp",
+      "caption": "Figure 8: Post-course competency mastery profile (n = 26). Each vertex represents the mean agreement rating (1–5 scale) for one of the six learning outcome items. The shaded region illustrates the overall competency profile.",
+      "page": 26,
+      "index": 3,
+      "width": 739,
+      "height": 489
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27225v1/fig-004.webp",
+      "caption": "Figure 4: Distribution of confidence ratings before and after the course for all eight competency domains. Boxes indicate the interquartile range; whiskers extend to 1.5 times the IQR; individual data points are overlaid with jitter. SW=Shapiro–Wilk normality test on post-course values; all post-course distributions departed significantly from normality, motivating the use of Wilcoxon signed-rank tests for significance testing.",
+      "page": 21,
+      "index": 4,
+      "width": 932,
+      "height": 541
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27225v1/fig-005.webp",
+      "caption": "Table 2: Pre- and Post-Course Confidence and Skills Ratings",
+      "page": 21,
+      "index": 5,
+      "width": 914,
+      "height": 506
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27225v1/fig-006.webp",
+      "caption": "Figure 2: Sample background characteristics (n = 27, pre-survey). Panel (A) shows enrollment by academic level, distinguishing traditional undergraduates, accelerated 4+1 students registered at the undergraduate level, and doctoral students; Panel (B) shows prior literature review experience; Panel (C) shows pre-course AI tool use frequency in the preceding six months.",
+      "page": 18,
+      "index": 6,
+      "width": 929,
+      "height": 375
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27225v1/fig-007.webp",
+      "caption": "Figure 5: Effect sizes (Cohen’s d) for pre–post confidence gains across the eight competency domains. Dashed vertical lines indicate conventional thresholds for small (d = 0.2), medium (d = 0.5), and large (d = 0.8) effects [25].",
+      "page": 23,
+      "index": 7,
+      "width": 740,
+      "height": 553
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27225v1/fig-008.webp",
+      "caption": "Table 1: Sample Characteristics.",
+      "page": 19,
+      "index": 8,
+      "width": 807,
+      "height": 1148
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27225v1/fig-009.webp",
+      "caption": "Figure 9: Overall course value and likelihood of applying course skills to future research (n = 26). Mean and SD are reported in each panel title.",
+      "page": 27,
+      "index": 9,
+      "width": 741,
+      "height": 346
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27225v1/fig-010.webp",
+      "caption": "Figure 6: Pre- and post-course mean ratings for the two skills assessment items. Error bars represent one standard deviation. Cohen’s d values are shown in the upper right of each panel.",
+      "page": 24,
+      "index": 10,
+      "width": 695,
+      "height": 357
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27225v1/fig-011.webp",
+      "caption": "Table 3: Effect Size Summary for All Pre–Post Comparisons",
+      "page": 24,
+      "index": 11,
+      "width": 943,
+      "height": 435
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27225v1/fig-012.webp",
+      "caption": "Figure 3: Pre- and post-course mean confidence ratings by competency domain. Error bars represent one standard deviation. Significance markers derive from Wilcoxon signedrank tests on matched pairs (n = 26); unmatched post-survey respondents are included in post-course means but excluded from significance testing: ∗p < .05, ∗∗p < .01, ∗∗∗p < .001, n.s. p ≥ .05.",
+      "page": 20,
+      "index": 12,
+      "width": 929,
+      "height": 595
+    }
+  ]
+}

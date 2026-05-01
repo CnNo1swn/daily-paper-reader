@@ -6,77 +6,77 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-04-30
-- 运行时间：2026-04-30 20:43:10 UTC
+- 最新运行日期：2026-05-01
+- 运行时间：2026-05-01 20:31:47 UTC
 - 运行状态：成功
 - 本次总论文数：19
 - 精读区：7
 - 速读区：12
 
 ### 今日简报（AI）
-今日处理19篇论文，重点精读电池研究知识图谱与学术方法演变两篇高分研究。最值得关注的方向是知识图谱的领域构建（电池研究）与学术生涯中研究方法的演化规律。建议普通读者优先了解知识图谱如何推动专业领域（如电池）的数据互联与智能分析。
-- 详情：[/202604/30/README](/202604/30/README)
+今日成功处理19篇科学文献，精读7篇聚焦AI前沿应用。最值得关注的是大语言模型通过上下文学习与提示链实现科学文本自动化分类，以及AI代理在复杂文献发现中的基准测试突破。建议普通读者跟踪AI工具在科研中的集成趋势，以提升文献管理效率。
+- 详情：[/202605/01/README](/202605/01/README)
 
 ### 精读区论文标签
-1. [Construction of a Battery Research Knowledge Graph using a Global Open Catalog](/202604/30/2604.20241v1-construction-of-a-battery-research-knowledge-graph-using-a-global-open-catalog)  
-   标签：评分：8.5/10、query:ai
-   evidence：利用开放书目目录构建知识图谱
-2. [Evolution of Research Method Usage Across the Academic Careers of Library and Information Science Scholars](/202604/30/2604.20528v1-evolution-of-research-method-usage-across-the-academic-careers-of-library-and-information-science-scholars)  
+1. [Automating Categorization of Scientific Texts with In-Context Learning and Prompt-Chaining in Large Language Models](/202605/01/2604.23430v1-automating-categorization-of-scientific-texts-with-in-context-learning-and-prompt-chaining-in-large-language-models)  
+   标签：评分：9.0/10、query:ai
+   evidence：科研信息检索中科学文本的自动分类
+2. [AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery](/202605/01/2604.25256v1-autoresearchbench-benchmarking-ai-agents-on-complex-scientific-literature-discovery)  
+   标签：评分：9.0/10、query:sr-amcr
+   evidence：在复杂科学文献发现任务上对AI代理进行基准测试
+3. [From Citation Selection to Citation Absorption: A Measurement Framework for Generative Engine Optimization Across AI Search Platforms](/202605/01/2604.25707v1-from-citation-selection-to-citation-absorption-a-measurement-framework-for-generative-engine-optimization-across-ai-search-platforms)  
+   标签：评分：8.5/10、query:sr-amcr
+   evidence：AI搜索中引用选择与吸收的衡量框架
+4. [ResRank: Unifying Retrieval and Listwise Reranking via End-to-End Joint Training with Residual Passage Compression](/202605/01/2604.22180v1-resrank-unifying-retrieval-and-listwise-reranking-via-end-to-end-joint-training-with-residual-passage-compression)  
    标签：评分：8.0/10、query:ai
-   evidence：图书馆与信息科学研究方法的自动分类
-3. [IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review](/202604/30/2604.22861v1-intragent-an-llm-agent-for-content-grounded-information-retrieval-through-literature-review)  
+   evidence：在信息检索中统一检索和列表重排序
+5. [IntrAgent: An LLM Agent for Content-Grounded Information Retrieval through Literature Review](/202605/01/2604.22861v1-intragent-an-llm-agent-for-content-grounded-information-retrieval-through-literature-review)  
    标签：评分：8.0/10、query:ai
-   evidence：通过文献综述进行内容锚定信息检索的LLM代理
-4. [How Researchers Navigate Accountability, Transparency, and Trust When Using AI Tools in Early-Stage Research: A Think-Aloud Study](/202604/30/2604.23136v1-how-researchers-navigate-accountability-transparency-and-trust-when-using-ai-tools-in-early-stage-research-a-think-aloud-study)  
+   evidence：用于通过文献综述进行基于内容的细粒度信息检索的LLM代理
+6. [Latency and Cost of Multi-Agent Intelligent Tutoring at Scale](/202605/01/2604.24110v1-latency-and-cost-of-multi-agent-intelligent-tutoring-at-scale)  
    标签：评分：8.0/10、query:sr-amcr
-   evidence：关于研究人员使用AI工具识别相关文献和评估证据的研究
-5. [Automating Categorization of Scientific Texts with In-Context Learning and Prompt-Chaining in Large Language Models](/202604/30/2604.23430v1-automating-categorization-of-scientific-texts-with-in-context-learning-and-prompt-chaining-in-large-language-models)  
-   标签：评分：8.0/10、query:ai
-   evidence：在研究信息系统中使用LLM自动对科学文本进行分类
-6. [Prism-Reranker: Beyond Relevance Scoring -- Jointly Producing Contributions and Evidence for Agentic Retrieval](/202604/30/2604.23734v1-prism-reranker-beyond-relevance-scoring----jointly-producing-contributions-and-evidence-for-agentic-retrieval)  
-   标签：评分：8.0/10、query:ai
-   evidence：信息系统的代理检索和证据生成
-7. [AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery](/202604/30/2604.25256v1-autoresearchbench-benchmarking-ai-agents-on-complex-scientific-literature-discovery)  
-   标签：评分：8.0/10、query:ai
-   evidence：针对科学文献发现和信息检索的AI代理基准测试
+   evidence：研究生STEM教育中大规模多智能体智能辅导系统的性能
+7. [RoadMapper: A Multi-Agent System for Roadmap Generation of Solving Complex Research Problems](/202605/01/2604.27616v1-roadmapper-a-multi-agent-system-for-roadmap-generation-of-solving-complex-research-problems)  
+   标签：评分：8.0/10、query:sr-amcr
+   evidence：用于研究问题解决和知识获取的多智能体系统
 
 ### 速读区论文标签
-1. [Multilingual and Domain-Agnostic Tip-of-the-Tongue Query Generation for Simulated Evaluation](/202604/30/2604.21096v1-multilingual-and-domain-agnostic-tip-of-the-tongue-query-generation-for-simulated-evaluation)  
+1. [CiteRadar: A Citation Intelligence Platform for Researcher Profiling and Geographic Visualization](/202605/01/2604.25057v1-citeradar-a-citation-intelligence-platform-for-researcher-profiling-and-geographic-visualization)  
+   标签：评分：8.0/10、query:ai
+   evidence：用于学术研究画像的引文智能平台
+2. [Reproducing Adaptive Reranking for Reasoning-Intensive IR](/202605/01/2604.27577v1-reproducing-adaptive-reranking-for-reasoning-intensive-ir)  
+   标签：评分：8.0/10、query:ai
+   evidence：推理密集型信息检索的自适应重排序
+3. [Aligning Dense Retrievers with LLM Utility via DistillationAligning Dense Retrievers with LLM Utility via Distillation](/202605/01/2604.22722v1-aligning-dense-retrievers-with-llm-utility-via-distillationaligning-dense-retrievers-with-llm-utility-via-distillation)  
    标签：评分：7.5/10、query:ai
-   evidence：多语言信息检索与模拟评估的查询生成
-2. [Contexts are Never Long Enough: Structured Reasoning for Scalable Question Answering over Long Document Sets](/202604/30/2604.22294v1-contexts-are-never-long-enough-structured-reasoning-for-scalable-question-answering-over-long-document-sets)  
-   标签：评分：7.5/10、query:ai
-   evidence：针对长文档集的可扩展问答系统，适用于信息检索
-3. [IIRSim Studio: A Dashboard for User Simulation](/202604/30/2604.23406v1-iirsim-studio-a-dashboard-for-user-simulation)  
-   标签：评分：7.5/10、query:ai
-   evidence：信息检索评估中的用户模拟方法
-4. [S2G-RAG: Structured Sufficiency and Gap Judging for Iterative Retrieval-Augmented QA](/202604/30/2604.23783v1-s2g-rag-structured-sufficiency-and-gap-judging-for-iterative-retrieval-augmented-qa)  
-   标签：评分：7.5/10、query:ai
-   evidence：用于多跳信息检索的迭代检索增强问答
-5. [RADD: Retrieval-Augmented Discrete Diffusion for Multi-Modal Knowledge Graph Completion](/202604/30/2604.25693v1-radd-retrieval-augmented-discrete-diffusion-for-multi-modal-knowledge-graph-completion)  
-   标签：评分：7.5/10、query:ai
-   evidence：用于知识图谱补全的检索增强框架
-6. [EvoAgent: An Evolvable Agent Framework with Skill Learning and Multi-Agent Delegation](/202604/30/2604.20133v2-evoagent-an-evolvable-agent-framework-with-skill-learning-and-multi-agent-delegation)  
+   evidence：将稠密检索器与LLM效用对齐以用于RAG
+4. [How Personal Characteristics Shape User Exploration of Diverse Movie Recommendations with a LLM-Based Multi-Agent System](/202605/01/2604.24405v2-how-personal-characteristics-shape-user-exploration-of-diverse-movie-recommendations-with-a-llm-based-multi-agent-system)  
+   标签：评分：7.5/10、query:sr-amcr
+   evidence：基于大语言模型的多智能体系统用于多样化推荐和用户参与
+5. [A Discipline-Agnostic AI Literacy Course for Academic Research: Architecture, Pedagogy, and Implementation](/202605/01/2604.27225v1-a-discipline-agnostic-ai-literacy-course-for-academic-research-architecture-pedagogy-and-implementation)  
+   标签：评分：7.5/10、query:sr-amcr
+   evidence：学术研究和学术工作的AI素养课程
+6. [Learning to Communicate: Toward End-to-End Optimization of Multi-Agent Language Systems](/202605/01/2604.21794v1-learning-to-communicate-toward-end-to-end-optimization-of-multi-agent-language-systems)  
    标签：评分：7.0/10、query:sr-amcr
-   evidence：用于复杂任务的分层子代理委派机制
-7. [The Last Harness You'll Ever Build](/202604/30/2604.21003v1-the-last-harness-youll-ever-build)  
+   evidence：多智能体通信系统的端到端优化
+7. [Contexts are Never Long Enough: Structured Reasoning for Scalable Question Answering over Long Document Sets](/202605/01/2604.22294v1-contexts-are-never-long-enough-structured-reasoning-for-scalable-question-answering-over-long-document-sets)  
+   标签：评分：7.0/10、query:ai
+   evidence：长文档集的可扩展问答与推理
+8. [Efficient Rationale-based Retrieval: On-policy Distillation from Generative Rerankers based on JEPA](/202605/01/2604.23336v1-efficient-rationale-based-retrieval-on-policy-distillation-from-generative-rerankers-based-on-jepa)  
+   标签：评分：7.0/10、query:ai
+   evidence：利用大模型蒸馏实现高效的基于原理的检索
+9. [Beyond Static Collision Handling: Adaptive Semantic ID Learning for Multimodal Recommendation at Industrial Scale](/202605/01/2604.23522v1-beyond-static-collision-handling-adaptive-semantic-id-learning-for-multimodal-recommendation-at-industrial-scale)  
    标签：评分：6.5/10、query:ai
-   evidence：使用AI代理自动化复杂的特定领域工作流和研究流程
-8. [Efficient Agent Evaluation via Diversity-Guided User Simulation](/202604/30/2604.21480v1-efficient-agent-evaluation-via-diversity-guided-user-simulation)  
+   evidence：用于多模态检索和排序的语义ID
+10. [UnIte: Uncertainty-based Iterative Document Sampling for Domain Adaptation in Information Retrieval](/202605/01/2604.25142v1-unite-uncertainty-based-iterative-document-sampling-for-domain-adaptation-in-information-retrieval)  
    标签：评分：6.5/10、query:ai
-   evidence：探索智能体与用户交互的用户模拟框架
-9. [A Decoupled Human-in-the-Loop System for Controlled Autonomy in Agentic Workflows](/202604/30/2604.23049v1-a-decoupled-human-in-the-loop-system-for-controlled-autonomy-in-agentic-workflows)  
-   标签：评分：6.5/10、query:sr-amcr
-   evidence：多智能体环境下的解耦人机协同系统
-10. [Evolve: A Persistent Knowledge Lifecycle for Small Language Models](/202604/30/2604.23424v1-evolve-a-persistent-knowledge-lifecycle-for-small-language-models)  
+   evidence：基于不确定性的迭代文档采样用于信息检索领域自适应
+11. [From Citation Selection to Citation Absorption: A Measurement Framework for Generative Engine Optimization Across AI Search Platforms](/202605/01/2604.25707v2-from-citation-selection-to-citation-absorption-a-measurement-framework-for-generative-engine-optimization-across-ai-search-platforms)  
    标签：评分：6.5/10、query:ai
-   evidence：数字图书馆中小型语言模型的持久知识库
-11. [How Personal Characteristics Shape User Exploration of Diverse Movie Recommendations with a LLM-Based Multi-Agent System](/202604/30/2604.24405v1-how-personal-characteristics-shape-user-exploration-of-diverse-movie-recommendations-with-a-llm-based-multi-agent-system)  
-   标签：评分：6.5/10、query:sr-amcr
-   evidence：基于大语言模型的多智能体推荐系统与用户探索研究
-12. [From Hidden Profiles to Governable Personalization: Recommender Systems in the Age of LLM Agents](/202604/30/2604.20065v1-from-hidden-profiles-to-governable-personalization-recommender-systems-in-the-age-of-llm-agents)  
-   标签：评分：6.0/10、query:ai
-   evidence：基于大语言模型的助手用于内容访问和用户表示
+   evidence：生成式搜索引擎和引用选择的衡量框架
+12. [Decoupling Knowledge and Task Subspaces for Composable Parametric Retrieval Augmented Generation](/202605/01/2604.26768v1-decoupling-knowledge-and-task-subspaces-for-composable-parametric-retrieval-augmented-generation)  
+   标签：评分：6.5/10、query:ai
+   evidence：用于数字图书馆知识编码的参数化检索增强生成
 
 
 <div class="dpr-home-promo-card">

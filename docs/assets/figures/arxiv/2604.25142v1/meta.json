@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.25142v1/fig-001.webp",
+      "caption": "Figure 1: The scatter plot shows that DUQGen tends to select samples from low-density (red) or highconfidence (orange) regions in TREC-COVID with Contriever (cropped for visibility). These samples lead to performance degradation, indicating they are suboptimal for domain adaptation.",
+      "page": 1,
+      "index": 1,
+      "width": 450,
+      "height": 426
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25142v1/fig-002.webp",
+      "caption": "Table 1: Retrieval performance (nDCG@10) on BEIR across retrievers and adaptation methods. Bold entries mark the highest performances per dataset for each retriever, while the underlined entries indicate the second-highest. \"AVG\" columns report the overall average. † indicates values taken from the original paper. ↑ is the difference between UnIte and DUQGen, and statistically significant improvement over DUQGen is denoted as ∗ (p < 0.05) and ♭ (p < 0.1).",
+      "page": 6,
+      "index": 2,
+      "width": 948,
+      "height": 552
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25142v1/fig-003.webp",
+      "caption": "Figure 3: Ablation results in an iterative sampling-training loop with and without AU and EU. Without both stages, we only measure the first-iteration performance and plot it as a horizontal line. We report DPR performance in nDCG@10 on TREC-COVID and Robust04.",
+      "page": 6,
+      "index": 3,
+      "width": 643,
+      "height": 232
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25142v1/fig-004.webp",
+      "caption": "Table 6: Retrieval performance (nDCG@10) on BEIR across late interaction and reranking model and adaptation methods. Bold entries mark the highest performances per dataset for each retriever, while the Underlined entries indicate the second-highest. \"AVG\" columns report the overall average. †indicates values taken from the original paper, and * denotes a statistically significant improvement over DUQGen (p<0.05).",
+      "page": 15,
+      "index": 4,
+      "width": 641,
+      "height": 373
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25142v1/fig-005.webp",
+      "caption": "Figure 6: Comparison of smoothed graph trends across different settings of smoothing factors.",
+      "page": 14,
+      "index": 5,
+      "width": 927,
+      "height": 588
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25142v1/fig-006.webp",
+      "caption": "Figure 2: UnIte pipeline overview. An example from the Biomedical Domain (TREC-COVID) is illustrated. AU filtering is performed first on the corpus. Then, the sampling-training loop samples documents based on EU and iterates until the maximum budget is reached or meets early stopping criteria.",
+      "page": 3,
+      "index": 6,
+      "width": 945,
+      "height": 304
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25142v1/fig-007.webp",
+      "caption": "Figure 5: The medians of the lexical kNN distances across various k-values are illustrated.",
+      "page": 13,
+      "index": 7,
+      "width": 950,
+      "height": 540
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25142v1/fig-008.webp",
+      "caption": "Table 3: Retrieval performance gain over zero-shot for unit sampling size (∆ nDCG@10 / 1k). Total sampling size is shown in brackets, except for DUQGen, which always samples 5k. Bold values indicate better performance per dataset for each retriever.",
+      "page": 8,
+      "index": 8,
+      "width": 921,
+      "height": 295
+    },
+    {
+      "url": "assets/figures/arxiv/2604.25142v1/fig-009.webp",
+      "caption": "Figure 7: Prompt template with in-context examples for query generation for the Robust04 Dataset.",
+      "page": 16,
+      "index": 9,
+      "width": 950,
+      "height": 1250
+    }
+  ]
+}

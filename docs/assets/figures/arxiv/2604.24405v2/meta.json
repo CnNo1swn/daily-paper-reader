@@ -1,0 +1,38 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.24405v2/fig-001.webp",
+      "caption": "Table 2: Regression Models: Effects of Condition, Personality, and Covariates on User Perceptions",
+      "page": 7,
+      "index": 1,
+      "width": 782,
+      "height": 457
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24405v2/fig-002.webp",
+      "caption": "Figure 2: Interaction Effects of Condition and Personality Traits on User Perceptions",
+      "page": 7,
+      "index": 2,
+      "width": 1042,
+      "height": 207
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24405v2/fig-003.webp",
+      "caption": "Table 1: Standardized Loadings, Reliability, and Convergent Validity for the Metrics",
+      "page": 5,
+      "index": 3,
+      "width": 506,
+      "height": 290
+    },
+    {
+      "url": "assets/figures/arxiv/2604.24405v2/fig-004.webp",
+      "caption": "Figure 1: Main interface of the experimental system. The interface consists of three main panels. (a) Agent Profile Panel: Displays information about the conversational chatbot. (b) Conversation Panel: Shows the explanation dialogue between agents and the user. (c) Movie Recommendation Panel: The list of twelve recommended movies (6 in-profile, 6 off-profile), where users can view agent endorsements, access IMDb pages, add titles to their watchlist, and rate movies.",
+      "page": 4,
+      "index": 4,
+      "width": 948,
+      "height": 487
+    }
+  ]
+}

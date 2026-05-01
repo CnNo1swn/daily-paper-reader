@@ -1,0 +1,134 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-001.webp",
+      "caption": "Figure 1: We propose the roadmap generation task. Prior answer formats and methods face multiple challenges when solving complex research problems, but RoadMapper effectively addresses these challenges through an iterative “critique-revise-evaluate” process.",
+      "page": 1,
+      "index": 1,
+      "width": 460,
+      "height": 521
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-002.webp",
+      "caption": "Table 3: Inference procedure of RoadMapper.",
+      "page": 6,
+      "index": 2,
+      "width": 454,
+      "height": 492
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-003.webp",
+      "caption": "Table 7: Base models evaluated in main experiments.",
+      "page": 15,
+      "index": 3,
+      "width": 456,
+      "height": 319
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-004.webp",
+      "caption": "Figure 9: Prompt of the K agent for knowledge augmentation.",
+      "page": 21,
+      "index": 4,
+      "width": 950,
+      "height": 1179
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-005.webp",
+      "caption": "Table 1: Comparison between RoadMapper and related research on structured content generation. I: Information Display, G: Guidance. RoadMapper offers three key advantages: (1) Field and knowledge coverage are ensured by multiple fields, diverse types, and bilingual support; (2) Professional depth is ensured by dissertations written by Master’s and Ph.D. students; (3) Step-by-step guidance is provided through a structured roadmap format.",
+      "page": 2,
+      "index": 5,
+      "width": 941,
+      "height": 234
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-006.webp",
+      "caption": "Table 4: Performance comparison across different models and methods on two splits. DP: Direct Prompting, BN: Best-of-N, Ours: RoadMapper with DPO training on Qwen3-32B, SS: StepScore, LS: LogicScore, DegS: DegreeScore, DepS: DepthScore. The top two results are highlighted in bold and underlined, respectively.",
+      "page": 7,
+      "index": 6,
+      "width": 945,
+      "height": 1127
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-007.webp",
+      "caption": "Figure 10: Prompt of the E agent.",
+      "page": 22,
+      "index": 7,
+      "width": 950,
+      "height": 1292
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-008.webp",
+      "caption": "Figure 2: Overview of RoadMap. ICE: Information and Communication Engineering, CS: Computer Science, EST: Electronic Science and Technology, CSE: Control Science and Engineering, EE: Electrical Engineering, Agr: Agronomy, Econ: Economics, Edu: Education, ME: Mechanical Engineering, Lit: Literature.",
+      "page": 3,
+      "index": 8,
+      "width": 950,
+      "height": 538
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-009.webp",
+      "caption": "Figure 11: Case study of RoadMapper.",
+      "page": 23,
+      "index": 9,
+      "width": 950,
+      "height": 1331
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-010.webp",
+      "caption": "Figure 6: Distribution of the publication year of our collected dissertations.",
+      "page": 13,
+      "index": 10,
+      "width": 461,
+      "height": 279
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-011.webp",
+      "caption": "Table 6: Key statistics of characters before and after filtering the parsed markdown files.",
+      "page": 13,
+      "index": 11,
+      "width": 454,
+      "height": 300
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-012.webp",
+      "caption": "Figure 7: Template for extracting core research problems and skill points from dissertations.",
+      "page": 19,
+      "index": 12,
+      "width": 950,
+      "height": 839
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-013.webp",
+      "caption": "Figure 12: Example of Golden-Roadmap.",
+      "page": 24,
+      "index": 13,
+      "width": 950,
+      "height": 997
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-014.webp",
+      "caption": "Figure 4: Quantitative analysis between enforced N iterations of “critique-revise” and performance. DP denotes Direct Prompting. The X-axis represents the rounds of “critique-revise” and the Y-axis shows the evaluation metrics.",
+      "page": 9,
+      "index": 14,
+      "width": 900,
+      "height": 281
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-015.webp",
+      "caption": "Figure 8: Prompt of the K agent for generation of internal knowledge.",
+      "page": 20,
+      "index": 15,
+      "width": 950,
+      "height": 812
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27616v1/fig-016.webp",
+      "caption": "Figure 3: Overview of RoadMapper, a multi-agent system consisting of six agents: Init Agent (I), Knowledge Agent (K), Logic Critique Agent (L), Granularity Critique Agent (G), Revise Agent (R), and Evaluate Agent (E).",
+      "page": 5,
+      "index": 16,
+      "width": 950,
+      "height": 752
+    }
+  ]
+}
