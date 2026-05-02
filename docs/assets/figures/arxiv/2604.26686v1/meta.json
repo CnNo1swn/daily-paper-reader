@@ -1,0 +1,86 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.26686v1/fig-001.webp",
+      "caption": "Fig. 4: Prompt template used for service recommendations.",
+      "page": 6,
+      "index": 1,
+      "width": 486,
+      "height": 387
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26686v1/fig-002.webp",
+      "caption": "Fig. 12: Entropy comparison across decoding steps. A narrower IQR indicates more stable and consistent generation behavior.",
+      "page": 11,
+      "index": 2,
+      "width": 433,
+      "height": 279
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26686v1/fig-003.webp",
+      "caption": "Fig. 11: Case Example for Service Recommendations in Code Scenarios. The figure illustrates (①) pre-extracted code context, (②) API/service attributes, and (③) the resulting code context after service insertion.",
+      "page": 11,
+      "index": 3,
+      "width": 519,
+      "height": 347
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26686v1/fig-004.webp",
+      "caption": "Fig. 9: Evolution patterns: newborn, dying, and volatile APIs.",
+      "page": 11,
+      "index": 4,
+      "width": 1068,
+      "height": 207
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26686v1/fig-005.webp",
+      "caption": "TABLE 1: Model Parameters.",
+      "page": 7,
+      "index": 5,
+      "width": 528,
+      "height": 233
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26686v1/fig-006.webp",
+      "caption": "Fig. 6: Effect of data scale on Recall@5.",
+      "page": 8,
+      "index": 6,
+      "width": 447,
+      "height": 276
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26686v1/fig-007.webp",
+      "caption": "Fig. 2: Overall framework of the proposed EVOREC. Model editing incorporates evolving service knowledge into the LLM, while FA-based constrained decoding ensures the validation of the generated sequence.",
+      "page": 4,
+      "index": 7,
+      "width": 963,
+      "height": 489
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26686v1/fig-008.webp",
+      "caption": "Fig. 14: Validity–probability tradeoff. FA-based constrained decoding consistently reduces entropy by restricting the candidate token space.",
+      "page": 12,
+      "index": 8,
+      "width": 431,
+      "height": 293
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26686v1/fig-009.webp",
+      "caption": "Fig. 7: Effect of the number of retrieved candidates on Recall@5.",
+      "page": 9,
+      "index": 9,
+      "width": 447,
+      "height": 276
+    },
+    {
+      "url": "assets/figures/arxiv/2604.26686v1/fig-010.webp",
+      "caption": "TABLE 2: Performance Comparison. FT represents a fine-tuning baseline, where the entire model is retrained using all available data, serving as an upper-bound adaptation strategy.",
+      "page": 9,
+      "index": 10,
+      "width": 1072,
+      "height": 536
+    }
+  ]
+}

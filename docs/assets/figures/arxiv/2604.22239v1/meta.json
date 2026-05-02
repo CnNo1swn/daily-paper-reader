@@ -1,0 +1,110 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.22239v1/fig-001.webp",
+      "caption": "Table 7: Model Source. All of the above except DeepSeek and Kimi are closed-source models, and all of them call commercial API services in the experiments of this paper.",
+      "page": 15,
+      "index": 1,
+      "width": 945,
+      "height": 219
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22239v1/fig-002.webp",
+      "caption": "Figure 8: Case Study: Schema Alignment Error in Code Execution",
+      "page": 15,
+      "index": 2,
+      "width": 943,
+      "height": 611
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22239v1/fig-003.webp",
+      "caption": "Table 1: Benchmark Comparison. Compared to Wikipedia-type benchmarks and benchmarks with long contexts, our benchmark has advantages in the number and size of documents as well as document structuring.",
+      "page": 2,
+      "index": 3,
+      "width": 946,
+      "height": 339
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22239v1/fig-004.webp",
+      "caption": "Figure 3: Document agentic workflow. A planning agent uses a metadata schema to generate sub-queries, an end-to-end RAG system answers single-document queries, then responses are normalized to JSON and analyzed by code to obtain the final answer.",
+      "page": 7,
+      "index": 4,
+      "width": 752,
+      "height": 527
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22239v1/fig-005.webp",
+      "caption": "Table 8: Some Examples of Our Benchmark",
+      "page": 22,
+      "index": 5,
+      "width": 950,
+      "height": 1011
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22239v1/fig-006.webp",
+      "caption": "Table 6: Data Source. Among them, cninfo and SEC are free public data, and wind and CSMAR are commercial databases.",
+      "page": 14,
+      "index": 6,
+      "width": 943,
+      "height": 186
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22239v1/fig-007.webp",
+      "caption": "Figure 7: Case Study: Ambiguous Information Extraction and Normalization Failure",
+      "page": 14,
+      "index": 7,
+      "width": 917,
+      "height": 592
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22239v1/fig-008.webp",
+      "caption": "Figure 5: Case Study: Planning errors stemming from a lack of knowledge regarding shareholder meetings",
+      "page": 13,
+      "index": 8,
+      "width": 941,
+      "height": 444
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22239v1/fig-009.webp",
+      "caption": "Figure 6: Case Study: Planning errors stemming from a lack of established annual report preparation protocols",
+      "page": 13,
+      "index": 9,
+      "width": 941,
+      "height": 446
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22239v1/fig-010.webp",
+      "caption": "Table 2: Experiment Results. Bolded labels indicate the optimal setup within each model group. The Accprocess metric has been adjusted to reflect the full evaluation set.",
+      "page": 8,
+      "index": 10,
+      "width": 917,
+      "height": 377
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22239v1/fig-011.webp",
+      "caption": "Figure 2: Document Elements Distribution. The distribution is divided into three sections: annual report, ESG report and announcement",
+      "page": 4,
+      "index": 11,
+      "width": 447,
+      "height": 351
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22239v1/fig-012.webp",
+      "caption": "Table 5: Performance comparison on the subset of Human Performance.",
+      "page": 12,
+      "index": 12,
+      "width": 917,
+      "height": 196
+    },
+    {
+      "url": "assets/figures/arxiv/2604.22239v1/fig-013.webp",
+      "caption": "Figure 4: The Impact of Document Collection Token Count on Document Information Extraction",
+      "page": 9,
+      "index": 13,
+      "width": 451,
+      "height": 291
+    }
+  ]
+}

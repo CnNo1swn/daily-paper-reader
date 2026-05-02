@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.25389v1/fig-001.webp",
+      "caption": "Table 2. Comparison of AI users and non-users across writing stages and individual factors. Values show group means (𝑀 , 𝑆𝐷 ; 𝑛) for each group. All scales range from 1–5, with higher values indicating more favorable evaluations. Test statistics are reported as Welch’s 𝑡 (df). Significance is indicated with ∗𝑝 < .05, ∗∗𝑝 < .01, ∗∗∗𝑝 < .001.",
+      "page": 10,
+      "index": 1,
+      "width": 895,
+      "height": 1053
+    }
+  ]
+}

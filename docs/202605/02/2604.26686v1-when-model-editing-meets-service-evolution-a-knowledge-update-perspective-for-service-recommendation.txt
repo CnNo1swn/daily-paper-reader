@@ -1,0 +1,975 @@
+Title: When Model Editing Meets Service Evolution: A Knowledge-Update Perspective for Service Recommendation
+
+URL Source: https://arxiv.org/pdf/2604.26686v1
+
+Published Time: Thu, 30 Apr 2026 00:55:33 GMT
+
+Number of Pages: 16
+
+Markdown Content:
+JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 1
+
+# When Model Editing Meets Service Evolution: A Knowledge-Update Perspective for Service Recommendation 
+
+Guodong Fan, Cuiyun Gao*, Chun Yong Chong, Lu Zhang, Jing Li, Jinglin Zhang, and Shizhan Chen 
+
+✦
+
+Abstract —The rapid evolution of software services poses substantial challenges to the design and implementation of effective recommen-dation systems. Traditional service recommendation approaches often rely on static representations and historical usage data, which are insufficient for adapting to the dynamic and evolving nature of ser-vice ecosystems. Recently, large language models (LLMs) have shown strong potential to overcome these limitations by leveraging rich con-textual understanding. However, their practical use faces two major challenges: outdated service facts and invalid or redundant services. To address these issues, we propose E VO REC , an evolution-aware framework for service recommendation that leverages model editing in a locate–then–edit paradigm to incorporate updated service facts without costly retraining efficiently. This allows the model to remain aligned with evolving service ecosystems. To address invalid service issues, we introduce a Finite Automata (FA)-based constrained decoding mecha-nism with deduplication, which enforces structural and semantic validity while eliminating repeated services. Experiments on real-world service datasets demonstrate that our framework consistently outperforms exist-ing baselines, e.g., achieving an average relative improvement of 25.9% in Recall@5. Moreover, under evolving service scenarios, our approach outperforms model fine-tuning approaches by 22.3%, demonstrating strong adaptability to service evolution and providing a practical solution for service recommendation in dynamic ecosystems. 
+
+Index Terms —Service recommendations, Large Language Models, Model Editing, Service Evolution. 
+
+1 INTRODUCTION 
+
+# SERVICE computing has become the cornerstone of mod-ern software ecosystems, enabling applications to be rapidly constructed by composing and reusing many het-erogeneous services [1], [2]. With the continuous expansion of service repositories, service recommendations have been extensively studied to assist developers in discovering, se-lecting, matching, and composing services that satisfy user 
+
+*Corresponding author. 
+
+• G. Fan is with the College of Information Science and Engineering, Shandong Agriculture and Engineering University, China. C. Gao is with the College of Computer Science and Technology, Harbin Institute of Technology (Shenzhen), China. C.Y. Chong is with School of Information Technology, Monash University Malaysia, Malaysia. L. Zhang and S. Chen are with the College of Computer Science and Technology, Tianjin University, China. J. Li is with the College of Computer Science and Technology, Shandong University of Technology, China. J. Zhang is with the School of Control Science and Engineering, Shandong University, China. w1
+
+w2 M M* 
+
+w1
+
+w2
+
+> The fastest route from home to the office.
+
+wi             
+
+> 2561901001
+> 05009
+> Softmax
+
+Wproj 
+
+> Key
+> Val  CE
+> Loss
+> KL
+> Loss
+
+Original Model 
+
+> Embedding
+> Attention
+> Edited FFN  Layer
+> Attention
+
+1) LLM Backbone Network 
+
+2) Model Editing Module 
+
+3) Constrained Decoding 
+
+Fig. 1: Model Editing for Service Evolution. M denotes the original LLM, M ∗ the updated model after service evolution, and w1, w 2 represent the selection probabilities of two services, whose values change accordingly during the transition. requirements [3]. However, the service ecosystem is inher-ently dynamic and evolving, where services are frequently updated, deprecated, or replaced, while new services are constantly introduced [4]. This continuous service evolution poses significant challenges to existing recommendation approaches. Traditional recommendation approaches, including rule-based semantic matching [5], collaborative filtering [6], and ontology-based matching [7], provide important founda-tions for service computing. These approaches often assume a relatively static service set and lack the flexibility to handle frequent service changes. Deep learning–based ap-proaches, such as representation learning with pre-trained encoders [8], graph neural networks [9], and sequence mod-els [2], improve semantic understanding and recommen-dation accuracy. However, they typically rely on historical training data and struggle to adapt when services evolve rapidly, resulting in performance degradation and outdated recommendations. The emergence of large language models (LLMs) has opened new opportunities for service recommendation [10]. LLMs possess strong abilities in semantic understand-ing [11], reasoning [12], and code generation [13], making them promising for generating executable service pipelines directly from natural language requirements. Recent ad-vances in retrieval-augmented generation (RAG) [14], parameter-efficient fine-tuning (PEFT) [15], in-context learn-ing [16], and chain of thought (CoT) [17] further enhance their adaptability across domains and tasks. Moreover, LLM-based tool-use and API invocation paradigms, e.g.,  
+
+> arXiv:2604.26686v1 [cs.SE] 29 Apr 2026 JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 2
+
+Toolformer [18], ReAct [19], Gorilla [20], enable models to leverage external tools and knowledge through retrieval. Despite these advances, directly applying LLMs to ser-vice recommendation still faces several challenges that limit their effectiveness in practice. As illustrated in Fig. 1, con-sider a service recommendation scenario where an LLM generates an executable pipeline to construct a complete travel itinerary by integrating flight booking, hotel reserva-tion, and local transportation services. M denotes a general-purpose pretrained LLM, while M ∗ represents the updated model after applying localized edits to incorporate newly in-troduced or modified service knowledge. Importantly, M ∗ is not retrained through full model retraining, but via efficient parameter-level editing. When underlying services evolve, e.g., API changes or parameter updates, previously valid pipelines may become invalid, requiring model updates. However, directly updating LLMs is costly and may cause performance degradation on existing services. However, injecting knowledge with a prompt at inference time with-out modifying the model’s internal knowledge may lead to inconsistent or unstable outputs, often requiring careful prompt engineering [21]. Instead of full model retraining, model editing performs localized edits that modify only a small subset of parameters, which reduces the compu-tational cost and allows efficient adaptation to evolving service ecosystems [22]. Moreover, LLMs may hallucinate non-existent or outdated services, i.e., generating service names or invocations that are syntactically plausible but do not correspond to any available or executable services in the target ecosystem, resulting in pipelines that appear plausible but fail during execution [23]. These challenges can be summarized into the following three key aspects:  
+
+> •
+
+Knowledge staleness occurs because LLMs are trained on static data, which prevents them from nat-urally reflecting service updates or version changes.  
+
+> •
+
+Hallucinations occur when LLMs generate non-existent or incorrect service calls, thereby undermin-ing reliability.  
+
+> •
+
+Maintenance cost arises because frequent re-training or full fine-tuning is computationally expensive and impractical for evolving ecosystems. To address these issues, model editing has emerged as a promising paradigm that aims to modify model behavior at particular knowledge points while preserving performance on unrelated inputs. Unlike full fine-tuning, model edit-ing enables localized modifications to model knowledge or behavior, allowing the correction or injection of specific service facts without retraining the entire model [24], [25]. This creates a new perspective for building evolution-aware generative frameworks for service recommendation in ser-vice computing. However, existing model editing methods primarily focus on injecting or correcting isolated knowl-edge, while largely overlooking shifts in the underlying service data distribution caused by service evolution. As service environments evolve, frequent and continual edits may lead to unstable model behavior and cumulative errors, undermining long-term reliability. In this paper, we propose an Evo lution-Aware Frame-work for Service Rec ommendation named E VO REC , based on Knowledge Updating and constrained Decoding. EVO REC integrates model editing and constrained decoding into a unified framework to handle dynamic service ecosys-tems. Specifically, model editing enables the LLM to effi-ciently incorporate evolving service knowledge, allowing it to adapt to interface changes and updated service facts with-out requiring full retraining. Constrained decoding, imple-mented via trie-guided Finite Automata (FA), ensures that the generated service recommendations are executable and compliant with service interface constraints, effectively mit-igating potential hallucinations. Extensive experiments on real-world service datasets demonstrate that our framework significantly outperforms traditional deep learning–based baselines, achieving higher recommendation accuracy and better adaptability to service evolution while maintaining low maintenance cost. The main contributions of this work can be summarized as follows:  
+
+> •
+
+To address the challenges posed by dynamic service ecosystems, we propose a unified framework that leverages model editing and trie-based constrained decoding to generate adaptive service recommenda-tions.  
+
+> •
+
+We adopt FA-based constrained decoding to enforce service and composition constraints, effectively mit-igating hallucinations and ensuring that generated sequences are valid.  
+
+> •
+
+We validate our approach on real-world service datasets, demonstrating up to 25.9% improvement in Recall@5 over both traditional and deep learn-ing–based baselines in terms of recommendation ac-curacy and adaptability to evolving services. Our code is realsed on GitHub 1.
+
+2 BACKGROUND 
+
+2.1 Problem Definition 
+
+We consider the problem of service recommendation in an evolving service ecosystem. Let St = {st
+
+> 1
+
+, s t
+
+> 2
+
+, . . . , s tNt }
+
+denote the set of available services at time t, where each service sti has an interface description, input/output con-straints, and version information. For example, in a travel planning scenario, services may include services such as “FlightSearch”, “FlightBooking”, and “HotelReservation”, each requiring specific parameters, e.g., departure city, date, and producing outputs that serve as inputs to subsequent services. Given a user requirement expressed as a natural language query qt or code context ct, the goal is to generate a sequence of services Yt = ( y1, y 2, . . . , y T ) such that each service in Yt complies with its interface constraints and the sequence adapts to the current state of the evolving service ecosystem, including new, updated, or deprecated services, without requiring full model retraining. In the above travel example, qt is a query description such as “plan a trip from Beijing to Shanghai”, ct can provide partial code or API usage context, e.g., retrieved examples as contextual demon-strations, and Yt corresponds to a valid service sequence result. Formally, the task is to learn a generative function: 
+
+fθ : ( qt ∨ ct, St) 7 → Yt, (1)  
+
+> 1. https://github.com/GuodongFan/EVOREC JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 3
+
+where θ is the model parameterized to incorporate evolving service knowledge and produce sequences that are valid, executable, and up-to-date. Our framework leverages model editing to handle evolving knowledge efficiently and FA-based constrained decoding to enforce interface and se-quence constraints. 
+
+2.2 Brief Introduction and Definition of Model Editing 
+
+Model editing typically follows a locate–then–edit paradigm, as exemplified by methods such as ROME [24]. Given a user query, the model first locates the internal neurons or key–value representations that are most responsible for encoding this knowledge. Then, it performs a localized edit by modifying only a small subset of parameters to inject updated knowledge. Let the pre-editing model be denoted as M , and the post-editing model as M ∗. Each editing operation modifies one knowledge point k, which consists of a query xk and its corresponding answer yk. The objective of model editing can be formally expressed as follows: 
+
+M ∗(x) = 
+
+(
+
+yk, if x = xk or x is related to xk,M (x), if x is irrelevant to xk. (2) In practice, (xk, y k) pairs are automatically constructed from service registries, API documentation, and historical usage data, where each pair corresponds to a requirement-service pair. 
+
+2.3 Finite Automata and Constrained Decoding 
+
+An FA is a computational model with a finite set of states and no auxiliary memory structure, capable of recognizing regular patterns. Formally, a deterministic finite automaton is defined as 
+
+A = ( Q, Σ, δ, q 0, F ), (3) where Q is a finite set of states, Σ is the input alphabet, 
+
+δ : Q × Σ → Q is the transition function, q0 ∈ Q is the start state, and F ⊆ Q is the set of accepting states. Compared to pushdown automata, finite automata lack a stack and there-fore capture only linear, non-nested structural constraints, but are simpler and more efficient to apply in decoding. During constrained decoding, the finite automaton reg-ulates the output of a language model by enforcing regular-pattern constraints. At each generation step, a token xt is permitted only if a valid automaton transition 
+
+qt = δ(qt−1, x t) (4) exists, where qt−1 is the current state and qt is the next state after consuming the token. Tokens that do not correspond to any valid transition are pruned during decoding, ensuring that the generated sequence conforms to the prescribed regular structure, such as API invocation formats, ordered protocol fields, or fixed template patterns. Unlike a Pushdown Automaton, an FA does not possess explicit memory in the classical computational sense. The decoding process of the FA allows it to behave as if previ-ously generated content were effectively remembered. After producing a prefix x1, . . . , x t−1, the automaton does not store this prefix directly; rather, its effect is fully encoded by the current state qt−1. This state represents an equivalence class of all prefixes that admit the same set of valid future continuations. In this sense, the generated prefix functions as an external form of memory: the automaton restricts future tokens based on the state reached through processing the prefix. Consequently, even though finite automata lack auxiliary memory structures such as stacks, their integration with the autoregressive generation process enables them to utilize past information implicitly through the state transi-tions. 
+
+2.4 Service Recommendation from Natural Language Requirements or Code Context 
+
+Service recommendation aims to map a user query qt,typically expressed in natural language, or a code context 
+
+ct, e.g., a code snippet, to a set of candidate services 
+
+S = {s1, s 2, . . . , s n}. Formally, the recommendation task can be expressed as: 
+
+ˆSk = arg max 
+
+> S′⊆S
+
+X
+
+> si∈S ′
+
+sim( qt/c t, s i). (5) where |S ′| = k and sim (·, ·) measures the semantic simi-larity between the query/code context and each candidate service, e.g., using embeddings or textual matching. The goal is to generate service recommendations ˆSk ⊆ S that best satisfies the user’s requirements. 
+
+3 APPROACH 
+
+The constrained decoding mechanism reduces hallucina-tions, i.e., preventing invalid, non-existent or incompati-ble services, by restricting the generation space to valid service names and enforcing structural constraints. While model editing helps reduce distribution mismatch by align-ing the model’s internal knowledge with updated service, i.e., adding and updating services, thereby improving con-sistency in downstream generation. The input query is augmented via retrieval, processed by the LLM, adapted through model editing, and finally decoded under FA-based constraints to generate valid service sequences. As illustrated in Fig. 2, our approach consists of four main components:  
+
+> •
+
+LLM Backbone Network. A Transformer-based de-coder that encodes natural language requirements or code context into related services.  
+
+> •
+
+Model Editing Module. An edited FFN layer with key-value projections adapts the model to evolving knowledge. It is optimized with cross-entropy loss for correctness and KL-divergence loss for consis-tency. The edits generalize to semantically similar queries while preserving unrelated service knowl-edge.  
+
+> •
+
+Constrained Decoding. A decoding strategy that filters and re-weights candidate tokens to enforce validity and reduce invalid outputs.  
+
+> •
+
+Retrieval-Augmented Prompt. A retrieval module dynamically supplies relevant examples from a ser-vice corpus to construct augmented prompts, en-hancing the model’s contextual understanding and adaptability to new service knowledge. JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 4wi             
+
+> 2561901001
+> 05009
+
+Softmax 
+
+# Wproj 
+
+> Key
+> Val
+
+CE 
+
+Loss 
+
+KL 
+
+Loss 
+
+## Original Model 
+
+> Embedding
+> Attention
+> Edited FFN  Layer
+> Attention
+
+## 1) LLM Backbone Network 
+
+## 2) Model Editing Module 
+
+## 3) Constrained Decoding 
+
+## 4) Prompt 
+
+## LLM 
+
+Mask 
+
+Relevant Examples 
+
+Automta 
+
+Valid Output  Services 
+
+Various Prompts 
+
+Evolved services 
+
+Fig. 2: Overall framework of the proposed E VO REC . Model editing incorporates evolving service knowledge into the LLM, while FA-based constrained decoding ensures the validation of the generated sequence. 
+
+3.1 Model Editing for Knowledge Updating 
+
+We adopt a locate-then-edit approach, ROME, for knowl-edge updating [24]. Intuitively, this process consists of two steps: locating where the target service knowledge is stored (key), and updating the corresponding representation (value) to reflect new or modified services. In essence, the editing process injects a mapping from a requirement pattern to the target services into the model’s internal space. 
+
+3.1.1 Calculate Key Value 
+
+The key vector represents the internal activation pattern that identifies where the target knowledge is stored in the model, as shown in Eq. 6. In the service recommendation setting, it corresponds to the representation of a service requirement, e.g., a query or code context, that is associated with a specific service. 
+
+k∗ = 1
+
+N
+
+> N
+
+X
+
+> j=1
+
+k(xj + s), (6) where xj denotes the j-th randomly sampled prefix and 
+
+k(xj + s) is the activation of the final token of s at the input of the feed-forward layer being edited (i.e., the input to Wproj ). 
+
+3.1.2 Update Value 
+
+The value vector v encodes the updated factual content to be written into the model at the located key position. It is learned via a combination of cross-entropy and KL divergence losses, as shown in Eqs. 7–9. The value vector 
+
+v encodes the representation of the target service to be generated, enabling the model to produce the correct ser-vice when encountering similar requirement patterns. The update is applied to the output projection matrix Wout of the MLP layer in a specific Transformer block. 
+
+L(v) = L1(v) + L2(v) (7) 
+
+L1(v) = 1
+
+N
+
+> N
+
+X
+
+> j=1
+
+− log PM ′ (sj | q + p), (8) 
+
+L2(v) = DKL 
+
+ PM ′ (r | q′) ∥ PM (r | q′). (9) Here, M and M ′ denote the original and edited models, respectively. The query q represents a service requirement with contextual prompt p, and sj is the corresponding target service. The auxiliary query q′ with irrelevant validation input r is used to regularize the edit. The loss L1 enforces the edited model to produce the target service, while L2
+
+preserves the model’s behavior on unrelated inputs via KL divergence, preventing catastrophic forgetting. 
+
+3.1.3 Editing Knowledge on Linear Projection Layer 
+
+Specifically, in the service recommendation setting, we re-gard Wproj as a linear key-value memory, i.e., W K ≈
+
+V , where the key set K = {k1, k 2, . . . , k n} corre-sponds to service-related queries and the value set V =
+
+{v1, v 2, . . . , v n} corresponds to the recommended services. The goal is to add a new key-value pair (k∗, v ∗) into Wproj ,such that the new service requirement k∗ is mapped to the desired service v∗, while preserving the original mappings as much as possible. This can be formulated as the following constrained least-squares problem, as follows. 
+
+min ∥W K − V ∥ (10) s.t. W k ∗ = v∗. (11) The closed-form solution to this optimization is given by Eq. 12, which performs a rank-one update to the weight matrix W , injecting a mapping from a requirement k∗ to the target service v∗. This localized update avoids full JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 5
+
+model retraining and restricts the modification to a specific subspace of the parameter matrix. 
+
+ˆW = W + Λ( C−1k∗)⊤, (12) where Λ = (v∗ − W k ∗)/(C−1k∗)⊤k∗, W is the origi-nal weight matrix, ˆW is the updated weight matrix, and 
+
+C = KK ⊤ is a pre-computed covariance matrix of keys. This formulation enables efficient updates through low-rank matrix modifications. By leveraging this lightweight update mechanism, ROME directly inserts the mapping from the service requirement k∗ to the target service v∗, thus achiev-ing knowledge editing tailored for service recommendation. 
+
+3.2 Trie-Guided and FA-Constrained Decoding 
+
+The key idea is to restrict the model’s output space to valid service sequences by enforcing lexical and structural constraints during decoding. These constraints are derived from service interface specifications, API documentation, or service catalogs, which define valid service names, pa-rameters, and invocation structures. Based on these sources, we construct a service lexicon and corresponding structural constraints, which are encoded into a Trie and an FA. The Trie ensures lexical validity of service names under subword tokenization, preventing invalid token combinations, while a FA enforces valid structural transitions during generation. Unconstrained decoding often yields invalid or dupli-cate service sequences, as shown in Alg. 1 and Alg. 2. We enforce correctness with a constrained decoder that com-bines an FA with a service lexicon Trie. The FA governs list structure, i.e., start, in-service, separator, end, while the Trie constrains token choices to valid service names and enables service-level deduplication. 
+
+States and transitions: Let T be the Trie over tokenized service names. Decoding alternates between two observable phases: (i) START, where a new service may start; and (ii) IN SERVICE, where tokens must follow a path in T .A service is completed only when the current Trie node is terminal, and the decoder emits a comma or ⟨eos ⟩; the corresponding service is then added to the used set D.
+
+Allowed set: Let ut be the Trie node after the last separator and define R(u) := { w ∈ Lab( u) |
+
+subtree sids(Next( u, w )) \ D̸ = ∅ }.
+
+At =
+
+
+
+R(root ) ∪ {⟨ eos ⟩} , ut = root, R(ut) ∪ { c, ⟨eos ⟩} , ut terminal and sid( ut) /∈ D, R(ut), otherwise. (13) 
+
+Masked decoding rule: At step t, we mask the model distribution by At:
+
+P ′(wt | w<t ) = 
+
+(
+
+P (wt | w<t ) if wt ∈ At,
+
+0 otherwise . (14) When ut is terminal and wt ∈ { c, ⟨eos ⟩} , we mark the corresponding service as used: D ← D ∪ { sid (ut)} and (if wt=c) reset ut+1 = root to start the next service. This 
+
+Algorithm 1 Trie and FA Decoding with De-duplication 
+
+Input: LLM M; service Trie T (node u: children , terminal sid ,
+
+subtree sids ); comma c; end ⟨eos ⟩.
+
+Output: valid, deduplicated sequence I. 
+
+> 1:
+
+I ← ϵ; D ← ∅ ; u ← root (T ) ▷ initialize an empty output sequence, set, node  
+
+> 2:
+
+while true do  
+
+> 3:
+
+ℓ ← log softmax( M(prefix = I))  
+
+> 4:
+
+A ← ALLOWED (u, D, T, c, ⟨eos ⟩) 
+
+> 5:
+
+mask: ℓ[w] ← −∞ for w / ∈ A 
+
+> 6:
+
+w ← arg max v∈A ℓ[v] 
+
+> 7:
+
+I ← I ◦ w 
+
+> 8:
+
+if w ∈ { c, ⟨eos ⟩} then  
+
+> 9:
+
+if terminal sid (u)̸ = ⊥ and terminal sid (u) /∈ D
+
+then  
+
+> 10:
+
+D ← D ∪ { terminal sid (u)} 
+
+> 11:
+
+end if  
+
+> 12:
+
+end if  
+
+> 13:
+
+if w = ⟨eos ⟩ then break  
+
+> 14:
+
+else if w = c then  
+
+> 15:
+
+u ← root (T ) 
+
+> 16:
+
+else if w ∈ children (u) then  
+
+> 17:
+
+u ← child (u, w ) 
+
+> 18:
+
+end if  
+
+> 19:
+
+end while  
+
+> 20:
+
+return I
+
+Algorithm 2 Allowed( u, D, T, c, ⟨eos ⟩): Reachable Token Set 
+
+Input: Trie node u; used services D; Trie T ; c, ⟨eos ⟩.
+
+Output: allowed token set A. 
+
+> 1:
+
+A ← ∅ ; define U (v) = subtree sids (v) \ D 
+
+> 2:
+
+if u = root (T ) then  
+
+> 3:
+
+A ← { w ∈ children (root ) | U (child (root, w )) ̸ = ∅ } ∪ {⟨ eos ⟩}  
+
+> 4:
+
+else  
+
+> 5:
+
+A ← { w ∈ children (u) | U (child (u, w )) ̸ = ∅ }  
+
+> 6:
+
+if terminal sid (u) /∈ D then  
+
+> 7:
+
+A ← A ∪ { c, ⟨eos ⟩}  
+
+> 8:
+
+end if  
+
+> 9:
+
+end if  
+
+> 10:
+
+return A
+
+rule allows us to prevent duplicates while allowing shared prefixes, e.g., google-maps vs. google-api .We mask model logits to permit only At. When a ter-minal node is closed by emitting c or ⟨eos ⟩, its sid( ut) is inserted into D and the Trie position resets to root . This enforces deduplication while preserving shared-prefix paths toward still-unused services. 
+
+Remarks: (1) Parsing the previously generated prefix no longer requires a stack; a finite automaton is sufficient during sequence generation. (2) The key to safe dedup is subtree reachability: we block only branches whose subtrees contain no unused services, rather than banning tokens that appear in already used names. 
+
+3.3 Retrieval-Augmented Prompt Design 
+
+While model editing allows incorporating new knowl-edge into LLMs, injecting too much knowledge can cause degradation[25]. Therefore, we integrate a retrieval module as an alternative to dynamically provide relevant knowl-edge with prompt-based generation. JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 6       
+
+> START IN SERVICE CLOSE
+> start
+> c/⟨eos ⟩
+> comma
+> At= Allowed( ut, D )mask logits by At
+
+(a) FA flow and masking by At. The decoding process is governed by an implicit DFA induced by the service Trie and token-level control flow. 
+
+root 
+
+a b c 
+
+> terminal, sid = 7
+
+x  
+
+> terminal, sid = 3 (prefix)
+
+y z 
+
+> terminal, sid = 12
+
+g
+
+o
+
+D = {sid = 3 , sid = 5 , . . . } 
+
+> pruned subtrees only in D
+
+(b) Trie reachability, where subtrees are pruned only when all reachable service identifiers are contained in D.
+
+Fig. 3: Trie-guided FA constrained decoding. 
+
+Retrieval Augmentation: Given a query description q, the model retrieves semantically similar examples from a cor-pus C = {(xi, y i)}Ni=1 , where xi is an application description and yi the associated APIs. Each description is encoded into a dense embedding vi = fθ (xi) using a sentence-transformer encoder, “all-MiniLM-L6-v2”. The corpus C is constructed from the training datasets, and in practice, it can be the latest API repository. A cross-encoder reranker, “bge-reranker-base” is then applied to re-rank the initial candidates for improved relevance. The query is similarly encoded as vq = fθ (q). We compute cosine similarity as: 
+
+sim( vq , vi) = v⊤ 
+
+> q
+
+vi
+
+∥vq ∥∥ vi∥ , Nk(q) = arg topk i∈C sim( vq , vi).
+
+(15) The top-k examples Nk(q) are retrieved to serve as few-shot contextual demonstrations. During training, the identical description is removed to avoid self-matching. 
+
+Prompt Construction: The final prompt follows a struc-ture consisting of an instruction, an input, and a set of few-shot examples. It begins with a task instruction that defines the model’s role as an API recommendation expert, followed by the input description and category information. The retrieved examples Nk(q) are then appended as the Similar Examples, each including a short description, its categories, and related APIs. This retrieval-augmented design allows the LLM to reason from semantically related cases while maintaining a consistent, structured output. An abstracted version of the Prompt Template is shown in Fig. 4. This unified retrieval-augmented prompt enables the model to leverage semantic similarity for in-context rea-soning and produces more relevant API recommendations, serving as a knowledge supplement for model editing. 
+
+4 EXPERIMENTAL SETUP 
+
+4.1 Dataset 
+
+We train our model with web service data crawled from ProgrammableWeb, the largest online API registry, which contains 22,457 Web APIs and 8,217 mashups. In ad-dition, we conduct comparative experiments on another dataset containing 3,925 Python and 6,563 Java APIs 
+
+You are an expert in API and service recommendation for mashup applications. Your task is to read a short description of an application idea and output a list of the most relevant APIs that can support its implementation. Input description: <description >
+
+Categories: <categories >
+
+Similar examples: 1. Description: <desc >
+
+Categories: <categories >
+
+Related APIs: <apis >
+
+Output: 
+
+Fig. 4: Prompt template used for service recommendations. along with corresponding queries without using the aug-mented code data, adopted from our prior work [2]. We split the dataset into 70% for training and 30% for testing. Each data point in this dataset is represented as ⟨Requirements, {AP I 1, AP I 2, ..., AP I n}⟩ , where n de-notes the number of candidate APIs for each query. The user requirements within the dataset pertain to either the description of mashups or functional specifications related to specific programming languages [2]. Moreover, we con-struct an evolution-oriented split by ordering all mashups according to their release date in ascending order, and then dividing the dataset chronologically into three consecutive segments, as shown in Fig. 5. For each segment, we further split the data into training and test sets, and the evaluation is performed on later instances, better reflecting real-world deployment under the evolution of the service ecosystem. To comprehensively assess the effectiveness and gener-alization of our approach, we further include a code-based dataset that provides real programming contexts for API invocation [26]. Specifically, the dataset consists of code snippets where the surrounding context, such as function definitions, variable names, and comments, serves as input, and the target is to predict the correct API to fill in. This JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 7  
+
+> t1t2t3
+> Train
+> Test
+> Train
+> Test
+> Train
+> Test
+
+Fig. 5: Chronological Dataset Split. dataset enables our model to learn contextual code-level semantics and improve API recommendation accuracy in practical programming scenarios. We observe an inconsistency between training and con-strained decoding. In this setting, subword tokenizers often merge delimiters, e.g., “(),”, into a single token, while the FA decoder assumes explicit token boundaries. This mismatch prevents E VO REC from generating multiple API names, as the model does not learn to produce a standalone comma token, causing the FA to terminate after a single API name. We address this by replacing commas with a dedicated single-token separator < |SEP | >, ensuring consistent seg-mentation and stable constrained generation. 
+
+4.2 Model Parameters 
+
+Table 1 summarizes the main hyperparameters used in our experiments. The Qwen2.5 model serves as the base architecture, trained with mixed-precision computation, and updated through a single editable layer located at the fifth layer. We adopt a backbone model with 7B parame-ters, which represents a commonly used scale for practical deployment while maintaining a balance between perfor-mance and computational cost [27]. For optimization, we set the number of gradient steps to 40, the learning rate to 1e-2, and apply a weight decay of 1e-3. To control parameter updates, the clamp factor is fixed at 4, and the KL regular-ization factor is set to 0.06. Regarding retrieval configuration, we use all-MiniLM-L6-v2 as the retrieval model, with a retrieval count of 5. The context template length is set to [5,8] [8,8], and model paral-lelism is enabled (true) to support efficient computation. The language modeling head (lm head) remains consistent with the default architecture of the base model. Unless otherwise specified, all experiments are conducted in accordance with the setup described in this section. TABLE 1: Model Parameters.                             
+
+> Parameter Value Parameter Value
+> fact token last subject layers 5
+> num grad steps 40 v lr 1e-2
+> loss layer 27 weight decay 1e-3
+> clamp factor 4kl factor 0.06
+> context len [5 ,8][8 ,8] model parallel true
+> fp16 true model name Qwen2.5
+> lm head lm_head retrieval count 5
+> retrieval model all-MiniLM-L6-v2
+
+4.3 Evaluation Metrics 
+
+To comprehensively evaluate the performance of our model, we adopt several widely used ranking metrics, includ-ing Recall@K, Precision@K, and Mean Average Precision (mAP@K). The Recall@K and Precision@K metrics are defined as follows:           
+
+> Recall@ K=T P T P +F N ,Precision@ K=T P T P +F P ,(16)
+
+where T P , F P , and F N denote the number of true posi-tives, false positives, and false negatives, respectively. To further measure the ranking quality, we use the mAP@K, which means value across all test samples, as follows:            
+
+> AP @K=1
+> m
+> KX
+> k=1
+> P(k)·rel (k),mAP @K=1
+> |M|
+> |M|
+> X
+> m=1
+> (AP @K)m,
+> (17)
+
+where P (k) denotes the precision at cutoff k, rel (k) is an in-dicator function that equals 1 if the k-th item is relevant and 0 otherwise, and |M | is the total number of test mashups. These metrics jointly evaluate both retrieval accuracy and the relative ranking quality of the recommended results. 
+
+4.4 Research Questions 
+
+To comprehensively evaluate the effectiveness of our ap-proach, we formulate the following research questions (RQs): 
+
+RQ1: How does the proposed method perform com-pared to baseline approaches? We answer this RQ by com-paring our approach with representative baselines across multiple datasets using standard evaluation metrics. This RQ also reflects the effectiveness of implicit knowledge in-tegration, e.g., model editing, compared to methods without explicit knowledge updating. 
+
+RQ2: How does each component of the proposed frame-work contribute to the overall performance? This RQ is in-vestigated through systematic ablation studies that remove or modify individual components of the framework. 
+
+RQ3: How effective is the proposed approach in han-dling software evolution scenarios? We address this RQ by evaluating the model on real-world software evolution cases, such as API changes across versions, and measuring its ability to correctly adapt or edit code accordingly. 
+
+RQ4: How well does the proposed method support recommendations in real-world code environments? This RQ is examined by deploying our approach in practical code settings and assessing its recommendation performance un-der realistic constraints. 
+
+RQ5: What is the impact of constrained decoding on the model’s probability distribution? This RQ is investigated by analyzing probability cost, entropy changes, and va-lidity–probability tradeoffs, to understand how constraints affect model confidence. 
+
+4.5 Experimental Environment 
+
+All experiments are conducted on a machine equipped with an NVIDIA GeForce RTX 5090 GPU, an AMD Ryzen 9 9950 CPU, and 128 GB of system memory. Experiments are performed on 3B- and 7B-parameter models. We conduct our experiments using the EasyEdit framework 2. 
+
+> 2. https://github.com/zjunlp/EasyEdit JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 8
+
+4.6 Baseline Selection 
+
+To comprehensively evaluate the effectiveness of our pro-posed approach, we compare it against a diverse set of representative baselines that cover different modeling paradigms for API/mashup recommendation tasks. Specifically, we include traditional information re-trieval (IR)-based methods, which rely on textual simi-larity between mashup descriptions and mashup-related information in the dataset and serve as strong non-neural baselines. In addition, we consider several neural and representation-learning-based approaches, including MTFM++ [28] and MNT, which model semantic relation-ships between mashups and APIs using learned latent rep-resentations. We further incorporate GSR [2], a generative semantic representation model designed to capture higher-level semantic information. We adopt a fine-tuning-based approach using LLamaFactory [29] as an upper bound, which adapts pre-trained models to the target task. In addition, we include a RAG baseline implemented with a retrieval count of 5, representing inference-time knowledge integration without modifying model parameters. We fur-ther adopt an agent-based baseline following a ReAct-style paradigm, where the model performs iterative reasoning and tool interaction by retrieving relevant examples and refining its decisions over multiple steps [19]. For a fair com-parison, we adopt the base model “Qwen2.5-7B-Instruct” and the retrieval model “all-MiniLML6-v2”. 
+
+5 EXPERIMENTAL RESULTS 
+
+In this section, we systematically address the four research questions by demonstrating the overall effectiveness of the proposed method, its superiority over both traditional and deep-learning-based baselines, the contributions of key components and design choices, as well as its robustness and generalization across diverse datasets and experimental settings. 
+
+5.1 RQ1. Baseline Comparison 
+
+Table 2 presents a comprehensive performance comparison across all datasets. Several observations can be drawn from the results. First, traditional IR-based and early neural mod-els, i.e., IR, MTFM++, and MNT, exhibit limited robustness. Their performance fluctuates substantially across datasets, indicating they are unable to capture service semantics. For example, on the Mashup dataset, IR reaches only 0.328 Re-call@1, while on Java and Python, this value drops to 0.183 and 0.082, respectively. MTFM++ suffers even more severe degradation, achieving only 0.036 Recall@1 on Java, high-lighting its sensitivity to distributional differences across datasets. Second, GSR GEN provides a stronger content-aware baseline and shows noticeable improvements over earlier models. Nevertheless, its advantages diminish at larger retrieval depths. On Mashup, GSR GEN achieves Recall@1 of 0.491, but Recall@10 remains at 0.549, lagging behind FT and E VO REC . This pattern suggests that a gener-ative model alone is insufficient for capturing fine-grained semantic patterns. Third, FT yields substantial performance gains by adapting the model to updated service information. Taking Mashup as an example, FT improves Recall@1 from GSR GEN’s 0.491 to 0.520, representing a relative gain of 5.9%. On Python, FT boosts Recall@1 from 0.122 to 0.187, a relative increase of 53.3%. However, FT requires a full retraining cycle and may induce representation drift, which can harm previously stable service knowledge. Compared with GSR, our method consistently improves Recall@5 by 24.8%, 11.4%, and 48.0% on Mashup, Java, and Python, respectively. Compared with FT, our approach achieves gains of 11.0%, 15.8%, and 30.0% across the three datasets. On Mashup, our method improves Recall@5 from FT’s 0.617 to 0.685, an 11.0% relative gain, and mAP@10 from 0.700 to 0.760, an 8.6% improvement. On Java, Recall@5 increases from 0.330 to 0.382, yielding a 15.8% gain. On Python, Recall@5 improves from 0.287 to 0.373, a 30.0% gain, while mAP@10 increases from 0.292 to 0.402, correspond-ing to a substantial 37.7% improvement. In particular, the improvement in mAP suggests that the proposed method ranks relevant services higher in the recommendation list, while the improvement in Precision indicates that the top-ranked recommendations are more accurate. The gains vary across datasets because the datasets differ in service di-versity and the semantic gap between queries and target services. Compared with RAG and Agent-based approaches, EVO REC consistently achieves superior performance, indi-cating that inference-time adaptation alone is insufficient. Model editing improves knowledge alignment, reducing outdated or incorrect service mappings. Constrained decod-ing enforces structural validity, preventing invalid service combinations. These complementary effects jointly lead to improved recommendation accuracy. These consistent gains indicate that our approach effectively outperforms baseline methods in both effectiveness and robustness. 
+
+Finding for RQ1. EVO REC delivers state-of-the-art per-formance on all datasets, achieving a 25.9% average improvement in Recall@5, which confirms its ability to incorporate new knowledge while maintaining accuracy and robustness comparable to full-data fine-tuning. 
+
+5.2 RQ2. Ablation Study and Hyperparameter Analysis 0 50 100 200 300 500   
+
+> Number of Edit Candidates
+> 10
+> 20
+> 30
+> 40
+> 50
+> 60
+> Metric Value (%)
+> Recall mMAP Precision
+
+Fig. 6: Effect of data scale on Recall@5. We conduct ablation experiments based on Qwen2.5-7B to analyze the contribution of each module in our frame-work, with all results reported at @5. JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 9
+
+TABLE 2: Performance Comparison. FT represents a fine-tuning baseline, where the entire model is retrained using all available data, serving as an upper-bound adaptation strategy.                                                                                                                                                                                                                                        
+
+> Dataset Model Recall@1 Precision@1 mAP@1 Recall@5 Precision@5 mAP@5 Recall@10 Precision@10 mAP@10 Mashup IR 0.328 0.469 0.469 0.419 0.427 0.520 0.423 0.426 0.520 MTFM++ 0.401 0.579 0.579 0.563 0.187 0.625 0.624 0.108 0.618 MNT 0.452 0.643 0.643 0.564 0.197 0.673 0.567 0.159 0.672 GSR GEN 0.491 0.695 0.695 0.549 0.643 0.710 0.549 0.643 0.710 RAG 0.225 0.295 0.295 0.362 0.251 0.393 0.368 0.247 0.394 Agent 0.485 0.680 0.680 0.617 0.500 0.721 0.625 0.495 0.720 FT 0.520 0.732 0.732 0.617 0.669 0.701 0.620 0.664 0.700 EVO REC 0.514 0.724 0.724 0.685 0.233 0.760 0.685 0.233 0.760 Java IR 0.183 0.300 0.300 0.289 0.287 0.328 0.289 0.287 0.328 MNT 0.166 0.269 0.269 0.307 0.157 0.315 0.317 0.153 0.316 MTFM++[28] 0.036 0.060 0.060 0.109 0.039 0.100 0.158 0.029 0.103 GSR GEN 0.196 0.316 0.316 0.343 0.205 0.360 0.349 0.203 0.360 RAG 0.121 0.188 0.188 0.211 0.210 0.245 0.212 0.210 0.245 Agent 0.221 0.333 0.333 0.335 0.266 0.377 0.360 0.260 0.379 FT 0.234 0.367 0.367 0.330 0.357 0.367 0.330 0.357 0.367 EVO REC 0.221 0.339 0.344 0.382 0.205 0.401 0.382 0.205 0.401 Python IR 0.082 0.159 0.159 0.154 0.150 0.201 0.156 0.151 0.202 MNT 0.118 0.234 0.234 0.250 0.147 0.291 0.252 0.143 0.291 MTFM++[28] 0.100 0.203 0.203 0.249 0.106 0.268 0.312 0.068 0.265 GSR GEN 0.122 0.238 0.238 0.252 0.155 0.297 0.254 0.152 0.296 RAG 0.089 0.166 0.166 0.183 0.181 0.233 0.183 0.180 0.233 Agent 0.146 0.261 0.261 0.249 0.201 0.306 0.273 0.193 0.307 FT 0.187 0.335 0.335 0.287 0.284 0.292 0.287 0.284 0.292 EVO REC 0.189 0.312 0.312 0.373 0.197 0.402 0.373 0.197 0.402 012345
+
+Number of Retrieved Candidates   
+
+> 20
+> 40
+> 60
+> 80
+> Metric Value (%)
+> Recall mMAP Precision
+
+Fig. 7: Effect of the number of retrieved candidates on Recall@5. 
+
+Effect of Model Components: Table 3 summarizes the impact of removing individual modules. Removing the re-trieval module leads to a notable drop in Recall and mAP, in-dicating that high-quality candidate retrieval is essential for narrowing the search space. Without constrained decoding, performance degrades drastically across all metrics, demon-strating its critical role in enforcing valid and stable pre-dictions. The editing module further improves performance by refining retrieved candidates, yielding consistent gains in Recall and Precision. The full model achieves the best results across all metrics, confirming the complementary nature of these components. 
+
+Effect of Editing Scale: Fig. 6 shows the effect of varying the number of edit candidates. Recall and mAP increase as the editing scale grows, but the gains become marginal once the scale exceeds 100, indicating clear saturation. Precision TABLE 3: Ablation study on the effects of different modules based on the Qwen2.5-7B (metrics @5).                
+
+> Model Variant Recall Precision mAP
+> w/o Retrieval Module 52.1 17.4 56.6 w/o Constrained Decoding 22.4 8.9 27.2 w/o Editing Module 66.3 22.2 74.0
+> Full Model (All) 68.5 23.3 76.0
+
+remains relatively stable throughout. This suggests that the editing module mainly improves coverage by exploring a richer candidate space, with diminishing returns beyond a moderate scale. 
+
+Effect of Retrieved Candidates: Fig. 7 illustrates the influ-ence of the number of retrieved candidates. Performance consistently improves as more candidates are retrieved, especially in Recall and mAP, before gradually saturating. This indicates that the retrieval module effectively captures relevant candidates at small scales, while constrained de-coding and editing mitigate noise introduced by additional candidates. 
+
+Effect of Different Base Models: We evaluate the impact of different base LLMs on service recommendation per-formance, as shown in Fig.8. Increasing model size from 3B to larger variants, 7B for Qwen and 8B for LLaMA-3, consistently improves Recall@5, demonstrating the benefit of LLMs in representing complex service knowledge. Com-pared with LLaMA, Qwen achieves higher recall at both scales, indicating better alignment with the service recom-mendation task. Notably, Qwen with 7B achieves the high-est performance among all evaluated models, highlighting its advantage in balancing model capacity and knowledge adaptability. Therefore, we select Qwen with 7B as the base JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 10 
+
+model for the remainder of our experiments. Qwen Llama  
+
+> 0.2
+> 0.3
+> 0.4
+> 0.5
+> 0.6
+> Recall@5
+> 3B 7B
+
+Fig. 8: Effectiveness of Different Base Models. 
+
+Finding for RQ2. Our ablation results demonstrate that each module is critical to the overall effectiveness of the framework. Retrieval and constrained decoding are indispensable for stable and accurate inference. 
+
+5.3 RQ3. Service Evolution 
+
+Analyzing: We first analyze the evolution of APIs on the mashup dataset. Complex evolutionary operations, such as API splitting, can be decomposed into two fundamental processes: the disappearance of existing APIs, referred to as dying APIs, and the emergence of new ones, referred to as newborn APIs. Additionally, we examine the evolution of usage distributions, which track the changes in adop-tion and relative importance of APIs over time, denoted as volatile APIs. The tree evolution patterns are shown in Fig. 9. 
+
+Data Design: We focus on newly introduced services that are invoked more than twice, ensuring that one instance is available for training and at least one for testing. For each such service, one instance is randomly selected for the training set, while the remaining instances are used for testing. All other services are included exclusively in another test set for testing knowledge preservation. This setup evaluates whether knowledge editing is effective on the targeted services and whether it preserves previously learned capabilities on untargeted services. For dying APIs, we apply constrained decoding during inference. To em-phasize temporal generalization, the base model is trained on data from time t0, and knowledge editing is performed using data from time t1, yielding an evolved model. 
+
+Experimental Design: To validate the effectiveness of our approach, the dataset is organized into a simple format. Each data sample consists of two parts: (1) a model input, which is a textual Description, and (2) a model output, which specifies the corresponding Output Services. This unified input–output structure is used consistently for both training and evaluation. We compare the performance of different methods under two evaluation conditions in terms of Recall@5. OLD denotes the model trained on time0 data and directly evaluated on time2 data without any adaptation. FT represents a fine-tuning baseline, where one sample is extracted for each new service from the time2 data and used for fine-tuning the model. E VO REC denotes our proposed method, where the retrieval module is removed. For evaluation, Condition 1 corresponds to testing on the full time2 test set, while Condition 2 is a more challenging setting in which every test instance in time2 must contain at least one new service. The improvements under this setting can be interpreted as evidence that model editing enhances the model’s coverage of newly introduced services and improves robustness to evolving service distributions. 
+
+Results: Several observations can be drawn from the results, as shown in Fig. 10. First, the OLD method exhibits a substantial performance drop under Condition 2, indi-cating that a model trained solely on historical data (time 0) struggles to generalize to newly introduced changes. Second, the FT approach improves performance in both con-ditions, demonstrating that incorporating a small amount of new-service data via fine-tuning can partially alleviate the distribution shift. However, its overall gains remain limited. In contrast, OUR method consistently achieves the best performance under both conditions, with particularly notable improvements in Condition 2. This suggests that our approach is more effective at handling the challenges posed by new services and exhibits stronger robustness and generalization ability, even without relying on a retrieval module. 
+
+Finding for RQ3. The results demonstrate that the proposed method significantly outperforms direct fine-tuning and provides a more reliable solution for adapt-ing to evolving service distributions over time. 
+
+5.4 RQ4. Experiments in Code Scenarios 
+
+Data Design: We adopt the dataset from Wang et al.[30], which includes 4,146 entries of API usage in 3,136 code files, covering 176 diverse APIs sourced from 853 popular Java projects. We construct a low-resource training set by selecting one usage instance per API, which contains 176 samples as editing knowledge in total, while using the remaining instances for evaluation. Function names are extracted from each project and serve as recommendation candidates. Given a code context in which function names are removed, the task is to recommend relevant function names based on the remaining code context, as shown in Fig.11. TABLE 4: Performance comparison of different approaches in Code Scenario based on the Qwen2.5-7B (metrics @5).                      
+
+> Method Recall Precision mAP
+> Pre+Post Code Context
+> Original 1.8 1.7 1.5 FT 57.1 56.1 46.1 EVO REC 70.6 16.9 58.0
+> Pre Code context
+> Original 5.8 6.2 5.2 FT 54.4 53.9 42.1 EVO REC 70.6 14.9 55.1
+
+JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 11 time-0 time-1 time-2 
+
+> Time partition
+> 0
+> 200
+> 400
+> 600
+> 800
+> Count
+> /api/twilio
+> /api/twilio-sms
+> /api/foursquare
+> /api/google-app-engine
+> /api/google-analytics-managment
+> /api/facebook-graph
+> /api/google-maps-data
+> /api/instagram-graph
+> Evolution of Newborn APIs
+
+(a) Newborn time-0 time-1 time-2  
+
+> Time partition
+> 0
+> 50
+> 100
+> 150
+> 200
+> 250
+> Count
+> /api/411sync
+> /api/technorati
+> /api/imageloop
+> /api/skype
+> /api/yahoo-shopping
+> /api/multimap
+> /api/rhapsody
+> /api/clearforest-semantic-web-services1
+> /api/google-mashup-editor
+> /api/cnet
+> /api/google-desktop
+> /api/yahoo-widgets
+> /api/seeqpod
+> /api/revver
+> /api/yahoo-my-web-search
+> Evolution of Dying APIs
+
+(b) Dying time-0 time-1 time-2  
+
+> Time partition
+> 0
+> 250
+> 500
+> 750
+> 1000
+> 1250
+> 1500
+> 1750
+> 2000
+> Count
+> /api/google-maps
+> /api/twitter
+> /api/twilio
+> /api/facebook
+> /api/twilio-sms
+> /api/youtube
+> /api/flickr
+> /api/foursquare
+> Volatility-driven Evolution of APIs
+
+(c) Volatile Fig. 9: Evolution patterns: newborn, dying, and volatile APIs. OLD FT OUR 
+
+Compared Methods  
+
+> 25
+> 30
+> 35
+> 40
+> 45
+> Recall (%)
+> Condition 1 Condition 2
+
+Fig. 10: Effectiveness of Knowledge Updating under Service Evolution /** 
+
+* Check whether the given string contains actual text. 
+
+* More specifically, this method returns {@code true} if the … 
+
+*/ 
+
+static List<Predicate> getPredicates(...) { 
+
+List<Predicate> predicates = new ArrayList<>(); 
+
+DirectFieldAccessFallbackBeanWrapper beanWrapper=new 
+
+DirectFieldAccessFallbackBeanWrapper(value); 
+
+for(SingularAttribute attribute : type.getSingularAttributes()){ 
+
+String currentPath = !StringUtils.hasText(path)? attribute.getName(): path + "." + attribute.getName(); 
+
+if (exampleAccessor.isIgnoredPath(currentPath)) { 
+
+continue; 
+
+}
+
+PropertyValueTransformer transformer = 
+
+exampleAccessor.getValueTransformerForPath(currentPath); 
+
+①Code Context Pre 
+
+③Code Context Post 
+
+②API/Service 
+
+Fig. 11: Case Example for Service Recommendations in Code Scenarios. The figure illustrates ( ①) pre-extracted code context, ( ②) API/service attributes, and ( ③) the resulting code context after service insertion. 
+
+Experimental Design: We evaluate the performance com-parison of different approaches under the code-only sce-nario, evaluated using Recall, Precision, and mAP. We con-sider two code context settings: (i) Pre+Post Code Context ,where both the pre- and post-level code surrounding the target API call is available, and (ii) Pre Code Context , where only the upper-level code context is provided. 
+
+Results: As shown in Table 4, across both settings, the proposed method consistently outperforms the Original and FT baselines. In particular, under the Upper+Lower Code Context, E VO REC achieves a Recall@5 of 70.6% and an mAP@5 of 58.0%, substantially ssurpassing FT, which 0 5 10 15 20 25 30 
+
+Decoding step 
+
+0.0 
+
+0.5 
+
+1.0 
+
+1.5 
+
+2.0 
+
+> Entropy
+
+Entropy by Step 
+
+> Raw
+> Raw IQR
+> FA
+> FA IQR
+
+Fig. 12: Entropy comparison across decoding steps. A nar-rower IQR indicates more stable and consistent generation behavior. attains 57.1% Recall and 46.1% mAP. Similar trends are observed in the more challenging Upper Code Context setting, indicating that our approach remains robust even when the available code context is limited. 
+
+Finding for RQ4. Our approach achieves the best per-formance in the code setting, and more information does not necessarily lead to better results. 
+
+5.5 RQ5. Analysis of Constrained Decoding 
+
+To understand the interaction between FA-based con-strained decoding and the model’s probability distribution, we conduct a quantitative analysis of probability cost, en-tropy dynamics, and validity–probability tradeoff, using the mashup dataset. 
+
+Probability cost.: We measure the impact of constrained decoding on the model’s confidence by computing the average probability cost. For each decoding step t, let 
+
+praw (wt) denote the probability of the token selected by unconstrained decoding, and pFA (wt) denote the probability of the token selected under FA constraints. The probability cost is defined as the average log-probability difference, as shown in Eq. 18. 
+
+∆ = 1
+
+T
+
+TX
+
+t=1 
+
+(log pFA (wt) − log praw (wt)) , (18) where T is the sequence length. A lower ∆ value indicates a larger deviation from the model’s original preference. As JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 12 0 1 2 3 4 5 6 
+
+> Entropy
+> 0
+> 5000
+> 10000
+> 15000
+> 20000
+> 25000
+> 30000
+> 35000
+> Count
+> Entropy Distribution
+> Raw FA
+
+Fig. 13: Entropy distribution under constrained decoding. The distribution toward lower entropy values indicates a global reduction in uncertainty. 0.0 0.2 0.4 0.6 0.8 
+
+> Raw token validity rate
+> 0.0
+> 0.1
+> 0.2
+> 0.3
+> 0.4
+> 0.5
+> 0.6
+> Average probability cost
+> Validity-Probability Tradeoff
+
+Fig. 14: Validity–probability tradeoff. FA-based constrained decoding consistently reduces entropy by restricting the candidate token space. shown in Fig. 12, the shaded area represents the interquar-tile range (IQR), which captures the variability of entropy across samples. FA-based constrained decoding consistently reduces entropy compared to unconstrained decoding. This suggests that constraints effectively narrow the candidate token space, leading to more deterministic generation. 
+
+Entropy analysis.: We further analyze the entropy of the token distribution at each decoding step, defined as 
+
+Ht = − P 
+
+> w
+
+p(w) log p(w), to measure uncertainty during generation. As shown in Fig. 13, Constrained decoding shifts the entropy distribution toward lower values, indi-cating a global reduction in uncertainty during generation. This confirms that FA constraints systematically restrict the model’s output space. 
+
+Validity–probability tradeoff.: We analyze the tradeoff be-tween output validity and probability cost. The validity rate measures the proportion of generated sequences that satisfy structural constraints derived from the Trie-based service lexicon. As shown in Fig. 14, we observe a clear negative cor-relation, where as the raw token validity rate decreases, the average probability cost increases. For example, the validity rate is 0.2, and the corresponding cost is around 0.5. This indicates that constrained decoding may suppress high-probability tokens when they violate structural constraints, leading to a local reduction in log-probability. 
+
+Finding for RQ5. FA-based constraints reshape the de-coding distribution by pruning invalid high-probability regions, effectively projecting the model’s original dis-tribution onto a structurally valid subspace, thereby aligning generation with task constraints. 
+
+6 RELATED WORK 
+
+Service recommendation addresses the challenge of select-ing, matching, and composing appropriate services to meet dynamic user needs. At the same time, model editing pro-vides efficient mechanisms for updating a model’s internal knowledge without full retraining. Building on these ad-vances, service evolution extends the adaptation of services to changing environments and requirements. 
+
+6.1 Service Recommendation 
+
+Research on service recommendation has evolved from rule-based and semantic matching methods to graph-based and deep learning approaches. Early rule-based methods relied on manually defined heuristics, business rules, or attribute constraints to identify suitable services, which were simple but lacked scalability [31]. Semantic matching methods in-troduced ontology reasoning and semantic similarity met-rics to measure the relatedness between user requirements and service descriptions, improving interpretability but de-pendent on manually crafted knowledge bases [7]. With the development of deep learning, representation learning methods were applied to map textual and behav-ioral service data into latent vector spaces using models such as Word2Vec or BERT [2], [28]. More recently, Graph Neural Network (GNN) models are introduced to jointly capture both the structural and semantic characteristics of service graphs through message passing, achieving im-proved accuracy, robustness, and generalization in service recommendation tasks [9]. As service ecosystems grow more complex, the above-mentioned approaches [9], [2], [28], [31], [7] perform recommendations through graph traversal, similarity propagation, or ranking algorithms, en-abling structural awareness but often relying on predefined relationships. Another line of work focuses on generating executable code that integrates API calls. Recent surveys [32] and mod-els such as CodeLlama and DeepSeek-Coder show strong performance in code synthesis, including API usage and dependency handling. These methods learn invocation pat-terns from large-scale code corpora and can generate syn-tactically correct and functionally plausible code snippets. Beyond code generation, several studies further explore API recommendation and orchestration, where models first select relevant APIs and then compose them into executable workflows [33]. This paradigm bridges natural language understanding with program synthesis and enables end-to-end task automation. JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 13 
+
+TABLE 5: Comparison of different approaches for handling evolving service environments.                               
+
+> Approach Knowledge Update Composition Reliability Constraint Awareness Context Overhead Cost
+> Fine-tuning Global High Low Low High RAG External Low Low High Medium Agent-based External Medium Low High Medium Model Editing Local High Low Low Low
+> Ours Local and structured High High Low Low
+
+6.2 LLM-based Tool Use and Agent Systems 
+
+We identify three closely related research directions, includ-ing LLM-based API invocation or tool use, and agent-based orchestration systems. Recent studies have explored leveraging LLMs for API selection and tool invocation. Toolformer [18] enables mod-els to learn when and how to call external tools through self-supervised signals, while ReAct [19] integrates reasoning and acting to construct tool-use trajectories iteratively. Go-rilla [20] further focuses on API selection and invocation by aligning model outputs with API documentation, improv-ing the accuracy of API calls. More recent systems, including API-Bank [34], ToolBench [35], and SWE-bench [36], pro-vide large-scale benchmarks and frameworks for evaluating service use capabilities in realistic scenarios. In software engineering, identifying significant limitations in evaluating LLM-based systems, particularly in realistic tool-use, execu-tion correctness, and complex decision-making scenarios are also systematically reviewed [37]. Agent frameworks, such as ReAct [19], Hugging-GPT [38], Agentic Context Engineering [39], and Harness Engineering [40], further extend this paradigm by dynam-ically selecting and invoking tools in multi-step reasoning processes. ReAct [19] integrates reasoning and acting to iter-atively construct tool-use trajectories, while Toolformer [18] enables models to learn when to invoke external tools through self-supervised signals. More recent LLM-based autonomous agents [41] further generalize this paradigm by enabling iterative planning, memory augmentation, and tool orchestration in complex environments. Meanwhile, emerging explainability research emphasizes the role of con-cept polysemanticity and proposes entropy-based metrics to characterize uncertainty in model interpretations [42]. Existing approaches rely on external retrieval or tool use at inference time. In contrast, E VO REC performs persistent and localized knowledge updates, yielding more stable and valid service recommendations. These paradigms are complementary, and E VO REC can be integrated with agent-based frameworks. The comparison is shown in Table 5. 
+
+6.3 Model Editing 
+
+Model editing aims to modify a trained model’s internal knowledge in a localized and efficient manner without retraining from scratch. It has become an important topic for maintaining and updating LLMs as world knowledge evolves. 
+
+Fine-tuning-based Approaches: Early attempts perform additional fine-tuning to inject new facts or correct wrong ones [43]. Typical methods include task-specific retraining or parameter-efficient fine-tuning, e.g., LoRA [44]. While TABLE 6: Memory characteristics of different adaptation strategies.             
+
+> Method Grad. Train Update Scope Memory Full Fine-tuning Yes Full model High LoRA / Adapter Yes Partial modules Low ROME (Editing) No Localized weights Very Low
+
+simple and intuitive, these methods are costly and prone to catastrophic forgetting, i.e., interference with unrelated knowledge. 
+
+Meta-learning-based Approaches: Meta-learning methods train an auxiliary “editor” network to predict how to adjust model parameters for new edits. Representative works in-clude MEND [45] and IKE [46]. Such approaches allow fast, one-shot editing at inference time. However, these methods often require accessing a large portion of the model’s in-ternal activations and parameters during editing, resulting in substantial computational overhead and high sample complexity. 
+
+Locate-then-Edit Approaches: A prominent line of work locates the parameters responsible for a fact and performs targeted modification. ROME uses causal tracing to identify and apply rank-one updates to MLP weights, while MEMIT extends this idea to simultaneous multi-fact editing [47]. These methods offer high locality and interpretability, yet may lose stability under sequential or large-scale edits. 
+
+Extension-based Approaches: Another strategy involves adding external modules or memory components to encode edits without modifying the base model, e.g., wise [48]. Examples include dynamic adapter layers or external key-value memories. Such methods are safe and reversible but introduce additional parameters and possible inconsisten-cies between the edited and base representations. 
+
+6.4 Software Service Evolution 
+
+Software service evolution addresses the adaptation of services over time in response to changing requirements, technologies, and environments [3]. Early work focused on versioning and lifecycle management of web services, proposing mechanisms for schema evolution, backward compatibility, and service deprecation [4]. Subsequently, research shifted towards service composition and dynamic adaptation, where services are re-bound at runtime accord-ing to evolving user needs, context, or QoS requirements. More recently, service evolution is studied in micro-service and cloud-native architectures, emphasising contin-uous deployment, automated refactoring, and dependency management across heterogeneous platforms [49]. Tech-niques such as service migration, container orchestration, JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 14 
+
+and service mesh are applied to support resilient evolution and rollback strategies [50]. Despite these advances, most existing studies focus on structural or operational aspects of service evolution, while the knowledge and behaviour of intelligent service models themselves are rarely considered as first-class evolvable entities. Therefore, in this paper, we explore a model-level evolution paradigm for service recommendation, viewed from a knowledge-update perspective, where service be-haviour can be dynamically updated or corrected through model editing techniques. 
+
+7 DISCUSSION 
+
+This work presents a novel attempt to bridge model editing and software service evolution, offering a novel perspective on adaptive service recommendation. 
+
+7.1 Advantages 
+
+First, the proposed framework formulates service evolu-tion as a localized knowledge update problem, enabling targeted modification of model behavior without affecting unrelated knowledge. This locality property allows the sys-tem to adapt to evolving service ecosystems while preserv-ing previously acquired associations, which is essential for maintaining behavioral consistency under continuous evo-lution. Second, the FA-based constrained decoding mecha-nism provides explicit structural and semantic guarantees during generation. By enforcing service availability and composition constraints at decoding time, the framework ensures that generated service sequences remain valid and well-formed, even when the underlying service set changes dynamically. The additional cost mainly comes from con-structing the valid token set Vvalid and masking logits at each step, with complexity O(|Vvalid |), where V denotes the full vocabulary. Since |Vvalid | ≪ |V |, the overhead remains limited. More importantly, the tight integration of knowledge editing and constraint-guided reasoning yields a stable adaptation mechanism that separates knowledge acquisition from validity enforcement. This separation en-ables incremental updates to evolving service knowledge while systematically limiting regression on unaffected ser-vices, offering a principled balance between adaptability and stability. Overall, these advantages make the proposed approach particularly suitable for long-running LLM-based service-dependent systems that must operate reliably in the face of continuous service evolution. 
+
+7.2 Limitations 
+
+Although the proposed FA-augmented decoding effectively enforces structural constraints, it may occasionally conflict with the model’s native probability distribution. In practice, the model occasionally produces tokens, such as separa-tors, brackets, or fused segments connecting two adjacent services, with high confidence, that contradict the FA con-straints. These forced rejections result in abrupt declines in local log-probability and can compromise the smoothness of generation. As a consequence, constrained decoding can impair the model’s ability to terminate generation auto-matically, resulting in reduced precision. Future work may explore adaptive logit reweighting or constraint relaxation to reduce these decoding–model inconsistencies. Further-more, despite the strong potential of model editing, its effectiveness depends on the availability and scale of editing data. As a result, the system may still encounter challenges such as incomplete generalization , particularly under large-scale or frequent updates, as well as potential catastrophic forgetting when integrating new knowledge. Our approach is particularly suitable for scenarios where service evolution is frequent but localized, allowing efficient knowledge up-dates via model editing without full retraining. 
+
+7.3 Threats to Validity 
+
+Our study may be subject to several threats to validity. 
+
+Internal validity. The effectiveness of our approach may be influenced by implementation choices, including the selection of the editable layer, hyperparameter settings such as learning rate and KL coefficient, and the design of constrained decoding. To mitigate this threat, we adopt widely used configurations reported in prior work, perform sensitivity analysis on key hyperparameters, and keep the editing strategy consistent across all experiments. 
+
+External validity. Our evaluation is conducted on datasets derived from ProgrammableWeb and code/query-based API data. Although these datasets cover diverse ser-vices, they may not fully represent all real-world service ecosystems, especially large-scale or rapidly evolving envi-ronments. To mitigate this threat, we evaluate our approach across these multiple datasets with different characteristics and include both static and evolving settings, and design chronological splits to better approximate evolution. 
+
+Construct validity. We adopt standard ranking metrics, including Recall, Precision, and mAP, to evaluate recom-mendation performance. These metrics primarily assess ac-curacy and ranking quality, but may not fully reflect other important aspects, such as execution correctness, robust-ness, or the long-term stability of generated service compo-sitions. To mitigate this threat, we incorporate constrained decoding to enforce structural validity during generation, and further analyze validity rate, entropy, and probability cost (RQ5) to provide additional evidence on generation quality and model behavior. 
+
+7.4 Implications for Software Engineering Practice 
+
+Our work lies at the intersection of software engineering and service computing, enabling the services to meet users’ requirements. Our findings offer several practical implica-tions for the design and maintenance of intelligent service recommendation systems in evolving software ecosystems. First, our results suggest that model editing can serve as a lightweight and cost-effective alternative to full retrain-ing when adapting LLM-based systems to frequent service changes. In practice, service repositories evolve continu-ously, with APIs being introduced, deprecated, or modi-fied at a pace that makes repeated retraining impractical. By enabling localized knowledge updates, E VO REC allows practitioners to incorporate service changes incrementally while preserving previously learned behaviors. Second, our study highlights the importance of enforcing structural and semantic constraints during generation. While LLMs exhibit JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 15 
+
+strong generative capabilities, unconstrained decoding may produce invalid, non-existent, or redundant service recom-mendations, which can undermine system reliability in real-world deployments. Third, the experimental results indicate that combining model editing, constrained decoding, and information retrieval provides a complementary balance between adaptability and stability. Model editing improves coverage of newly introduced services, while constrained decoding mitigates the instability and error propagation caused by frequent updates. Meanwhile, the retrieval mod-ule helps align the model with evolving service data dis-tributions by dynamically exposing relevant and up-to-date service candidates at inference time. 
+
+8 CONCLUSION 
+
+In this paper, we studied the problem of service recom-mendation in evolving service ecosystems and highlighted the limitations of existing approaches that rely on static training data and costly retraining procedures. To address service evolution from a knowledge-update perspective, we proposed EVO REC , a generative LLM-based constrained recommendation framework that integrates model editing and finite-automata(FA)-based constrained decoding. By adopting a locate–then–edit paradigm, E VO REC enables ef-ficient and localized updates of evolving service knowledge without requiring full model retraining, allowing the recom-mendation model to remain aligned with newly introduced, updated, or deprecated services. To further ensure the va-lidity and executability of generated recommendations, we introduced an FA-based constrained decoding mechanism with deduplication, which effectively enforces structural and semantic constraints and mitigates hallucinated or re-dundant service outputs. Extensive experiments on real-world service datasets demonstrate that our approach out-performs baseline methods. 
+
+ACKNOWLEDGMENT 
+
+This work is supported by the National Natural Science Key Foundation of China, grant No.62032016, the National Nat-ural Science Foundation of China, grant No. 62472126, the Shandong Provincial Natural Science Foundation for Young Scholars under Grant No. ZR2025QC2234Z, and by the Shandong Agriculture and Engineering University Start-Up Fund for Talented Scholars under grant No. 2025GCCZR-29. 
+
+REFERENCES 
+
+[1] F. Siqueira and J. G. Davis, “Service computing for industry 4.0: State of the art, challenges, and research opportunities,” ACM Computing Surveys (CSUR) , vol. 54, no. 9, pp. 1–38, 2021. [2] G. Fan, S. Chen, Q. He, H. Wu, J. Li, X. Xue, and Z. Feng, “Service recommendations for mashup based on generation model,” IEEE Transactions on Services Computing , vol. 17, no. 4, pp. 1820–1834, 2023. [3] G. Fan, S. Chen, and L. Zhang, “User feedback driven generative models-based methodology for service construction,” IEEE Inter-net Computing , 2025. [4] M. Liu, Z. Tu, Y. Zhu, X. Xu, Z. Wang, and Q. Z. Sheng, “Data correction and evolution analysis of the programmableweb service ecosystem,” Journal of Systems and Software , vol. 182, p. 111066, 2021. [5] Z. Meng and J. Lu, “A rule-based service customization strategy for smart home context-aware automation,” IEEE Transactions on Mobile Computing , vol. 15, no. 3, pp. 558–571, 2015. [6] X. Wu, B. Cheng, and J. Chen, “Collaborative filtering service rec-ommendation based on a novel similarity computation method,” 
+
+IEEE Transactions on Services Computing , vol. 10, no. 3, pp. 352–365, 2015. [7] S. Chen, Z. Feng, H. Wang, and T. Wang, “Building the semantic relations-based web services registry through services mining,” in 2009 Eighth IEEE/ACIS International Conference on Computer and Information Science . IEEE, 2009, pp. 736–743. [8] X. Wang, P. Zhou, Y. Wang, X. Liu, J. Liu, and H. Wu, “Servicebert: A pre-trained model for web service tagging and recommen-dation,” in International Conference on Service-Oriented Computing .Springer, 2021, pp. 464–478. [9] M. Liu, Z. Tu, H. Xu, X. Xu, and Z. Wang, “Dysr: A dynamic graph neural network based service bundle recommendation model for mashup creation,” IEEE Transactions on Services Computing , vol. 16, no. 4, pp. 2592–2605, 2023. [10] X. Ren, W. Wei, L. Xia, L. Su, S. Cheng, J. Wang, D. Yin, and C. Huang, “Representation learning with large language models for recommendation,” in Proceedings of the ACM web conference 2024 , 2024, pp. 3464–3475. [11] S. Yang, F. Chen, Y. Yang, and Z. Zhu, “A study on semantic understanding of large language models from the perspective of ambiguity resolution,” in Proceedings of the 2023 International Joint Conference on Robotics and Artificial Intelligence , 2023, pp. 165–170. [12] S. Yao, Q. Ke, Q. Wang, K. Li, and J. Hu, “Lawyer gpt: A legal large language model with enhanced domain knowledge and reasoning capabilities,” in Proceedings of the 2024 3rd International Symposium on Robotics, Artificial Intelligence and Information Engineering , 2024, pp. 108–112. [13] T. Chang, S. Chen, G. Fan, and Z. Feng, “A self-iteration code generation method based on large language models,” in 2023 IEEE 29th International Conference on Parallel and Distributed Systems (ICPADS) . IEEE, 2023, pp. 275–281. [14] S. Wu, Y. Xiong, Y. Cui, H. Wu, C. Chen, Y. Yuan, L. Huang, X. Liu, T.-W. Kuo, N. Guan et al. , “Retrieval-augmented gener-ation for natural language processing: A survey,” arXiv preprint arXiv:2407.13193 , 2024. [15] N. Ding, Y. Qin, G. Yang, F. Wei, Z. Yang, Y. Su, S. Hu, Y. Chen, C.-M. Chan, W. Chen et al. , “Parameter-efficient fine-tuning of large-scale pre-trained language models,” Nature machine intelligence ,vol. 5, no. 3, pp. 220–235, 2023. [16] Q. Dong, L. Li, D. Dai, C. Zheng, J. Ma, R. Li, H. Xia, J. Xu, Z. Wu, B. Chang et al. , “A survey on in-context learning,” in Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing , 2024, pp. 1107–1128. [17] J. Wei, X. Wang, D. Schuurmans, M. Bosma, F. Xia, E. Chi, Q. V. Le, D. Zhou et al. , “Chain-of-thought prompting elicits reasoning in large language models,” Advances in neural information processing systems , vol. 35, pp. 24 824–24 837, 2022. [18] T. Schick, J. Dwivedi-Yu, R. Dess` ı, R. Raileanu, M. Lomeli, E. Ham-bro, L. Zettlemoyer, N. Cancedda, and T. Scialom, “Toolformer: Language models can teach themselves to use tools,” Advances in neural information processing systems , vol. 36, pp. 68 539–68 551, 2023. [19] S. Yao, J. Zhao, D. Yu, N. Du, I. Shafran, K. R. Narasimhan, and Y. Cao, “React: Synergizing reasoning and acting in language models,” in The eleventh international conference on learning repre-sentations , 2022. [20] S. G. Patil, T. Zhang, X. Wang, and J. E. Gonzalez, “Gorilla: Large language model connected with massive apis,” Advances in Neural Information Processing Systems , vol. 37, pp. 126 544–126 565, 2024. [21] J. Wei, H. Zhou, X. Zhang, D. Zhang, Z. Qiu, N. Wei, J. Li, W. Ouyang, and S. Sun, “Retrieval is not enough: Enhancing rag through test-time critique and optimization,” in The Thirty-ninth Annual Conference on Neural Information Processing Systems .[22] H. Zheng, L. Shen, A. Tang, Y. Luo, H. Hu, B. Du, Y. Wen, and D. Tao, “Learning from models beyond fine-tuning,” Nature Machine Intelligence , vol. 7, no. 1, pp. 6–17, 2025. [23] C. Gao, G. Fan, C. Y. Chong, S. Chen, C. Liu, D. Lo, Z. Zheng, and Q. Liao, “A systematic literature review of code hallucinations in llms: Characterization, mitigation methods, challenges, and future directions for reliable ai,” arXiv preprint arXiv:2511.00776 , 2025. [24] K. Meng, D. Bau, A. Andonian, and Y. Belinkov, “Locating and editing factual associations in gpt,” Advances in neural information processing systems , vol. 35, pp. 17 359–17 372, 2022. JOURNAL OF L ATEX CLASS FILES, VOL. 14, NO. 8, AUGUST 2015 16 
+
+[25] N. Zhang, Y. Yao, B. Tian, P. Wang, S. Deng, M. Wang, Z. Xi, S. Mao, J. Zhang, Y. Ni et al. , “A comprehensive study of knowledge edit-ing for large language models,” arXiv preprint arXiv:2401.01286 ,2024. [26] Y. Peng, S. Li, W. Gu, Y. Li, W. Wang, C. Gao, and M. R. Lyu, “Revisiting, benchmarking and exploring api recommendation: How far are we?” IEEE Transactions on Software Engineering , vol. 49, no. 4, pp. 1876–1897, 2023. [27] S. Jiang, J. Li, H. Zong, H. Liu, H. Zhu, S. Hu, E. Li, J. Ding, Y. Han, W. Ning et al. , “aixcoder-7b: A lightweight and effective large language model for code processing,” in 2025 IEEE/ACM 47th International Conference on Software Engineering: Software Engi-neering in Practice (ICSE-SEIP) . IEEE, 2025, pp. 215–226. [28] H. Wu, Y. Duan, K. Yue, and L. Zhang, “Mashup-oriented web api recommendation via multi-model fusion and multi-task learning,” 
+
+IEEE Transactions on Services Computing , vol. 15, no. 6, pp. 3330– 3343, 2021. [29] Y. Zheng, R. Zhang, J. Zhang, Y. Ye, Z. Luo, Z. Feng, and Y. Ma, “Llamafactory: Unified efficient fine-tuning of 100+ language models,” in Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 3: System Demonstrations) .Bangkok, Thailand: Association for Computational Linguistics, 2024. [Online]. Available: http://arxiv.org/abs/2403.13372 [30] C. Wang, S. Gao, C. Gao, W. Wang, C. Y. Chong, S. Gao, and M. R. Lyu, “A systematic evaluation of large code models in api suggestion: When, which, and how,” in Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering , ser. ASE ’24. New York, NY, USA: Association for Computing Machinery, 2024, p. 281–293. [Online]. Available: https://doi.org/10.1145/3691620.3695004 [31] J. Li, G. Fan, M. Zhu, and Y. Yan, “Pre-joined semantic indexing graph for qos-aware service composition,” in 2019 IEEE Interna-tional Conference on Web Services (ICWS) . IEEE, 2019, pp. 116–120. [32] C. Wang, S. Gao, C. Gao, W. Wang, C. Y. Chong, S. Gao, and M. R. Lyu, “A systematic evaluation of large code models in api sugges-tion: When, which, and how,” in Proceedings of the 39th IEEE/ACM International Conference on Automated Software Engineering , 2024, pp. 281–293. [33] G. Fan, S. Chen, H. Wu, C. Gao, J. Wang, and Z. Feng, “Llms-based decision making for service recommendations and process automation under evolving ecosystem,” Automated Software Engi-neering , vol. 33, no. 2, p. 57, 2026. [34] M. Li, Y. Zhao, B. Yu, F. Song, H. Li, H. Yu, Z. Li, F. Huang, and Y. Li, “Api-bank: A comprehensive benchmark for tool-augmented llms,” in Proceedings of the 2023 conference on empirical methods in natural language processing , 2023, pp. 3102–3116. [35] Z. Guo, S. Cheng, H. Wang, S. Liang, Y. Qin, P. Li, Z. Liu, M. Sun, and Y. Liu, “Stabletoolbench: Towards stable large-scale bench-marking on tool learning of large language models,” in Findings of the Association for Computational Linguistics: ACL 2024 , 2024, pp. 11 143–11 156. [36] C. E. Jimenez, J. Yang, A. Wettig, S. Yao, K. Pei, O. Press, and K. Narasimhan, “Swe-bench: Can language models resolve real-world github issues?” arXiv preprint arXiv:2310.06770 , 2023. [37] R. Koohestani, P. de Bekker, B. Koc ¸, and M. Izadi, “Benchmarking ai models in software engineering: A review, search tool, and uni-fied approach for elevating benchmark quality,” IEEE Transactions on Software Engineering , 2025. [38] Y. Shen, K. Song, X. Tan, D. Li, W. Lu, and Y. Zhuang, “Hug-ginggpt: Solving ai tasks with chatgpt and its friends in hugging face,” Advances in Neural Information Processing Systems , vol. 36, pp. 38 154–38 180, 2023. [39] Q. Zhang, C. Hu, S. Upasani, B. Ma, F. Hong, V. Kamanuru, J. Rainton, C. Wu, M. Ji, H. Li et al. , “Agentic context engineering: Learning comprehensive contexts for self-improving language models,” in The Fourteenth International Conference on Learning Representations , 2026. [40] Z. Qi, H. Li, H. Qin, K. Peng, S. He, and X. Qin, “Harnessing large language models for virtual reality exploration testing: a case study,” Automated Software Engineering , vol. 33, no. 1, p. 7, 2026. [41] Y. Wang, X. Chen, X. Jin, M. Wang, and L. Yang, “Openclaw-rl: Train any agent simply by talking,” arXiv preprint arXiv:2603.10165 , 2026. [42] W. Yu, Q. Wang, C. Liu, D. Li, and Q. Hu, “Coe: Chain-of-explanation via automatic visual concept circuit description and polysemanticity quantification,” in Proceedings of the Computer Vision and Pattern Recognition Conference , 2025, pp. 4364–4374. [43] O. Ovadia, M. Brief, M. Mishaeli, and O. Elisha, “Fine-tuning or retrieval? comparing knowledge injection in llms,” in Proceedings of the 2024 Conference on Empirical Methods in Natural Language Processing , 2024, pp. 237–250. [44] E. J. Hu, Y. Shen, P. Wallis, Z. Allen-Zhu, Y. Li, S. Wang, L. Wang, W. Chen et al. , “Lora: Low-rank adaptation of large language models.” ICLR , vol. 1, no. 2, p. 3, 2022. [45] E. Mitchell, C. Lin, A. Bosselut, C. Finn, and C. D. Manning, “Fast model editing at scale,” in International Conference on Learning Representations .[46] C. Zheng, L. Li, Q. Dong, Y. Fan, Z. Wu, J. Xu, and B. Chang, “Can we edit factual knowledge by in-context learning?” in The 2023 Conference on Empirical Methods in Natural Language Processing .[47] K. Meng, A. S. Sharma, A. Andonian, Y. Belinkov, and D. Bau, “Mass-editing memory in a transformer,” arXiv preprint arXiv:2210.07229 , 2022. [48] P. Wang, Z. Li, N. Zhang, Z. Xu, Y. Yao, Y. Jiang, P. Xie, F. Huang, and H. Chen, “Wise: Rethinking the knowledge memory for lifelong model editing of large language models,” Advances in Neural Information Processing Systems , vol. 37, pp. 53 764–53 797, 2024. [49] T. Cerny, G. Goulis, and A. S. Abdelfattah, “Towards change impact analysis in microservices-based system evolution,” in 2025 IEEE International Conference on Software Analysis, Evolution and Reengineering (SANER) . IEEE, 2025, pp. 159–169. [50] B. Farkiani and R. Jain, “Service mesh: Architectures, applications, and implementations,” arXiv preprint arXiv:2405.13333 , 2024.
