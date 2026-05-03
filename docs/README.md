@@ -6,68 +6,76 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-05-02
-- 运行时间：2026-05-02 20:37:57 UTC
+- 最新运行日期：2026-05-03
+- 运行时间：2026-05-03 20:22:44 UTC
 - 运行状态：成功
-- 本次总论文数：16
-- 精读区：4
+- 本次总论文数：18
+- 精读区：6
 - 速读区：12
 
 ### 今日简报（AI）
-今日成功处理16篇论文，精读聚焦AI在科研文献发现与分类的自动化研究。最值得关注的方向是AI代理在复杂科学文献发现中的基准测试和利用大模型进行文本分类的自动化。建议普通读者关注AI辅助科研工具的发展，以提升学术工作效率。
-- 详情：[/202605/02/README](/202605/02/README)
+今日成功筛选18篇论文，精读6篇高分研究，聚焦AI代理与伦理前沿。  
+最值得关注AI代理在科学发现中的基准测试（9.0分）及AI工具使用中的责任与信任研究（8.0分）。  
+建议读者跟踪AI代理发展和伦理规范，以洞察研究动向。
+- 详情：[/202605/03/README](/202605/03/README)
 
 ### 精读区论文标签
-1. [AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery](/202605/02/2604.25256v1-autoresearchbench-benchmarking-ai-agents-on-complex-scientific-literature-discovery)  
+1. [AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery](/202605/03/2604.25256v1-autoresearchbench-benchmarking-ai-agents-on-complex-scientific-literature-discovery)  
    标签：评分：9.0/10、query:sr-amcr
-   evidence：在复杂科学文献发现中对AI智能体进行基准测试
-2. [Automating Categorization of Scientific Texts with In-Context Learning and Prompt-Chaining in Large Language Models](/202605/02/2604.23430v1-automating-categorization-of-scientific-texts-with-in-context-learning-and-prompt-chaining-in-large-language-models)  
+   evidence：AI代理在复杂科学文献发现方面的基准测试
+2. [How Researchers Navigate Accountability, Transparency, and Trust When Using AI Tools in Early-Stage Research: A Think-Aloud Study](/202605/03/2604.23136v1-how-researchers-navigate-accountability-transparency-and-trust-when-using-ai-tools-in-early-stage-research-a-think-aloud-study)  
+   标签：评分：8.0/10、query:sr-amcr
+   evidence：研究人员使用AI工具识别相关文献并评估证据
+3. [Automating Categorization of Scientific Texts with In-Context Learning and Prompt-Chaining in Large Language Models](/202605/03/2604.23430v1-automating-categorization-of-scientific-texts-with-in-context-learning-and-prompt-chaining-in-large-language-models)  
    标签：评分：8.0/10、query:ai
-   evidence：自动对科学文献进行分类以进行研究信息检索
-3. [All Models are Wrong, Some are Annotated: Automating Metadata in Biomedical Repositories](/202605/02/biorxiv-10-64898-2026-04-23-720371-v1-all-models-are-wrong-some-are-annotated-automating-metadata-in-biomedical-repositories)  
+   evidence：自动化科学文本分类以用于研究信息检索
+4. [Web2BigTable: A Bi-Level Multi-Agent LLM System for Internet-Scale Information Search and Extraction](/202605/03/2604.27221v1-web2bigtable-a-bi-level-multi-agent-llm-system-for-internet-scale-information-search-and-extraction)  
+   标签：评分：8.0/10、query:sr-amcr
+   evidence：用于互联网规模信息搜索和提取的双层多智能体系统
+5. [A Reproducibility Study of LLM-Based Query Reformulation](/202605/03/2604.27421v1-a-reproducibility-study-of-llm-based-query-reformulation)  
    标签：评分：8.0/10、query:ai
-   evidence：使用大语言模型在知识库中自动推断元数据
-4. [Deterministic retrieval recovers biomedical associations lost by language models](/202605/02/biorxiv-10-64898-2026-04-25-720782-v1-deterministic-retrieval-recovers-biomedical-associations-lost-by-language-models)  
+   evidence：信息检索系统中的LLM查询重构
+6. [All Models are Wrong, Some are Annotated: Automating Metadata in Biomedical Repositories](/202605/03/biorxiv-10-64898-2026-04-23-720371-v1-all-models-are-wrong-some-are-annotated-automating-metadata-in-biomedical-repositories)  
    标签：评分：8.0/10、query:ai
-   evidence：使用大语言模型进行查询解释的确定性图检索框架
+   evidence：利用大语言模型自动提取科学仓库中的元数据
 
 ### 速读区论文标签
-1. [Improving Robustness of Tabular Retrieval via Representational Stability](/202605/02/2604.24040v2-improving-robustness-of-tabular-retrieval-via-representational-stability)  
+1. [IIRSim Studio: A Dashboard for User Simulation](/202605/03/2604.23406v1-iirsim-studio-a-dashboard-for-user-simulation)  
    标签：评分：7.5/10、query:ai
-   evidence：提高数字图书馆中表格检索的鲁棒性
-2. [Co-Writing with AI: An Empirical Study of Diverse Academic Writing Workflows](/202605/02/2604.25389v1-co-writing-with-ai-an-empirical-study-of-diverse-academic-writing-workflows)  
+   evidence：信息检索系统评估中的用户模拟
+2. [Prism-Reranker: Beyond Relevance Scoring -- Jointly Producing Contributions and Evidence for Agentic Retrieval](/202605/03/2604.23734v1-prism-reranker-beyond-relevance-scoring----jointly-producing-contributions-and-evidence-for-agentic-retrieval)  
+   标签：评分：7.5/10、query:ai
+   evidence：产生证据和贡献陈述的智能体检索
+3. [ITAS: A Multi-Agent Architecture for LLM-Based Intelligent Tutoring](/202605/03/2604.24808v1-itas-a-multi-agent-architecture-for-llm-based-intelligent-tutoring)  
    标签：评分：7.5/10、query:sr-amcr
-   evidence：研究生使用AI进行学术写作和资源获取的实证研究
-3. [Contexts are Never Long Enough: Structured Reasoning for Scalable Question Answering over Long Document Sets](/202605/02/2604.22294v1-contexts-are-never-long-enough-structured-reasoning-for-scalable-question-answering-over-long-document-sets)  
-   标签：评分：7.0/10、query:ai
-   evidence：针对长文档集的扩展性问答的结构化推理
-4. [Aligning Dense Retrievers with LLM Utility via DistillationAligning Dense Retrievers with LLM Utility via Distillation](/202605/02/2604.22722v1-aligning-dense-retrievers-with-llm-utility-via-distillationaligning-dense-retrievers-with-llm-utility-via-distillation)  
-   标签：评分：7.0/10、query:ai
-   evidence：将稠密检索器与大模型效用对齐以实现高性能检索
-5. [MindTrellis: Co-Creating Knowledge Structures with AI through Interactive Visual Exploration](/202605/02/2604.23129v1-mindtrellis-co-creating-knowledge-structures-with-ai-through-interactive-visual-exploration)  
-   标签：评分：7.0/10、query:ai
-   evidence：人工智能支持的知识结构共建与信息综合
-6. [How Researchers Navigate Accountability, Transparency, and Trust When Using AI Tools in Early-Stage Research: A Think-Aloud Study](/202605/02/2604.23136v1-how-researchers-navigate-accountability-transparency-and-trust-when-using-ai-tools-in-early-stage-research-a-think-aloud-study)  
-   标签：评分：7.0/10、query:ai
-   evidence：研究人员在早期研究中使用AI工具进行文献识别和学术判断
-7. [Skill Retrieval Augmentation for Agentic AI](/202605/02/2604.24594v1-skill-retrieval-augmentation-for-agentic-ai)  
-   标签：评分：6.5/10、query:sr-amcr
-   evidence：智能体AI系统的动态技能检索
-8. [Why Search When You Can Transfer? Amortized Agentic Workflow Design from Structural Priors](/202605/02/2604.25012v1-why-search-when-you-can-transfer-amortized-agentic-workflow-design-from-structural-priors)  
-   标签：评分：6.5/10、query:sr-amcr
-   evidence：多智能体系统的自动化代理工作流设计和结构先验
-9. [When Model Editing Meets Service Evolution: A Knowledge-Update Perspective for Service Recommendation](/202605/02/2604.26686v1-when-model-editing-meets-service-evolution-a-knowledge-update-perspective-for-service-recommendation)  
+   evidence：研究生课程智能辅导的多智能体架构
+4. [Co-Writing with AI: An Empirical Study of Diverse Academic Writing Workflows](/202605/03/2604.25389v1-co-writing-with-ai-an-empirical-study-of-diverse-academic-writing-workflows)  
+   标签：评分：7.5/10、query:sr-amcr
+   evidence：研究生在学术写作和资源获取中对人工智能的使用
+5. [CORAL: Adaptive Retrieval Loop for Culturally-Aligned Multilingual RAG](/202605/03/2604.25676v1-coral-adaptive-retrieval-loop-for-culturally-aligned-multilingual-rag)  
+   标签：评分：7.5/10、query:ai
+   evidence：多语言检索增强生成的自适应检索方法
+6. [A Discipline-Agnostic AI Literacy Course for Academic Research: Architecture, Pedagogy, and Implementation](/202605/03/2604.27225v1-a-discipline-agnostic-ai-literacy-course-for-academic-research-architecture-pedagogy-and-implementation)  
+   标签：评分：7.5/10、query:sr-amcr
+   evidence：面向学术研究的人工智能素养课程及学术工作能力培养
+7. [No Test Cases, No Problem: Distillation-Driven Code Generation for Scientific Workflows](/202605/03/2604.23106v1-no-test-cases-no-problem-distillation-driven-code-generation-for-scientific-workflows)  
    标签：评分：6.5/10、query:ai
-   evidence：利用大语言模型进行演化服务生态系统的服务推荐框架
-10. [An End-to-End Ukrainian RAG for Local Deployment. Optimized Hybrid Search and Lightweight Generation](/202605/02/2604.22095v1-an-end-to-end-ukrainian-rag-for-local-deployment-optimized-hybrid-search-and-lightweight-generation)  
-   标签：评分：6.0/10、query:ai
-   evidence：用于文档问答的检索增强生成
-11. [Navigating Large-Scale Document Collections: MuDABench for Multi-Document Analytical QA](/202605/02/2604.22239v1-navigating-large-scale-document-collections-mudabench-for-multi-document-analytical-qa)  
-   标签：评分：6.0/10、query:sr-amcr
-   evidence：大型文档集合上的分析型问答，需要综合和提取信息
-12. [Multi-Agent Consensus as a Cognitive Bias Trigger in Human-AI Interaction](/202605/02/2604.22277v1-multi-agent-consensus-as-a-cognitive-bias-trigger-in-human-ai-interaction)  
-   标签：评分：6.0/10、query:sr-amcr
-   evidence：多智能体AI系统中的社会动态与共识
+   evidence：用于科学代码生成和工作流分解的多智能体框架
+8. [An Agentic Framework for Intent Co-Creation in 6G NaaS: Architecture and Open-Source Model Evaluation](/202605/03/2604.23288v1-an-agentic-framework-for-intent-co-creation-in-6g-naas-architecture-and-open-source-model-evaluation)  
+   标签：评分：6.5/10、query:sr-amcr
+   evidence：使用领域专家智能体和知识库的基于智能体的协作框架
+9. [GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs](/202605/03/2604.23626v1-graphplanner-graph-memory-augmented-agentic-routing-for-multi-agent-llms)  
+   标签：评分：6.5/10、query:sr-amcr
+   evidence：多智能体路由与协作，用于复杂任务规划
+10. [DataClaw: An Autonomous Data Agent with Instant Messaging Integration](/202605/03/2604.24067v1-dataclaw-an-autonomous-data-agent-with-instant-messaging-integration)  
+   标签：评分：6.5/10、query:ai
+   evidence：通过聊天进行数据任务和用户参与的自主智能体
+11. [Why Search When You Can Transfer? Amortized Agentic Workflow Design from Structural Priors](/202605/03/2604.25012v1-why-search-when-you-can-transfer-amortized-agentic-workflow-design-from-structural-priors)  
+   标签：评分：6.5/10、query:sr-amcr
+   evidence：自动化代理工作流设计与结构知识重用
+12. [Health System Scale Semantic Search Across Unstructured Clinical Notes](/202605/03/2604.25605v1-health-system-scale-semantic-search-across-unstructured-clinical-notes)  
+   标签：评分：6.5/10、query:ai
+   evidence：大规模非结构化文档集的语义搜索与信息检索
 
 
 <div class="dpr-home-promo-card">

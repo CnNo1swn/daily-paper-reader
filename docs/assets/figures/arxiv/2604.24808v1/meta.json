@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.24808v1/fig-001.webp",
+      "caption": "Fig. 1. The three layers of ITAS. The teaching layer runs in real time during student interaction. The operational layer captures events and persists state. The feedback layer lets the instructor query aggregated patterns conversationally. Arrows denote the data flow that binds the three layers into one system.",
+      "page": 3,
+      "index": 1,
+      "width": 420,
+      "height": 346
+    }
+  ]
+}

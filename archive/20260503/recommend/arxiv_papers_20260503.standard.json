@@ -1,0 +1,775 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-03T20:09:23.995321+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 6,
+    "deep_cap": 7,
+    "deep_selected": 6,
+    "quick_candidates": 99,
+    "quick_skim_target": 12,
+    "quick_selected": 12
+  },
+  "deep_dive": [
+    {
+      "id": "2604.25256v1",
+      "source": "arxiv",
+      "title": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+      "abstract": "Autonomous scientific research is significantly advanced thanks to the development of AI agents. One key step in this process is finding the right scientific literature, whether to explore existing knowledge for a research problem, or to acquire evidence for verifying assumptions and supporting claims. To assess AI agents' capability in driving this process, we present AutoResearchBench, a dedicated benchmark for autonomous scientific literature discovery. AutoResearchBench consists of two complementary task types: (1) Deep Research, which requires tracking down a specific target paper through a progressive, multi-step probing process, and (2) Wide Research, which requires comprehensively collecting a set of papers satisfying given conditions. Compared to previous benchmarks on agentic web browsing, AutoResearchBench is distinguished along three dimensions: it is research-oriented, calling for in-depth comprehension of scientific concepts; literature-focused, demanding fine-grained utilization of detailed information; and open-ended, involving an unknown number of qualified papers and thus requiring deliberate reasoning and search throughout. These properties make AutoResearchBench uniquely suited for evaluating autonomous research capabilities, and extraordinarily challenging. Even the most powerful LLMs, despite having largely conquered general agentic web-browsing benchmarks such as BrowseComp, achieve only 9.39% accuracy on Deep Research and 9.31% IoU on Wide Research, while many other strong baselines fall below 5%. We publicly release the dataset and evaluation pipeline to facilitate future research in this direction. We publicly release the dataset, evaluation pipeline, and code at https://github.com/CherYou/AutoResearchBench.",
+      "authors": [
+        "Lei Xiong",
+        "Kun Luo",
+        "Ziyi Xia",
+        "Wenbo Zhang",
+        "Jin-Ge Yao",
+        "Zheng Liu",
+        "Jingying Shao",
+        "Jianlyu Chen",
+        "Hongjin Qian",
+        "Xi Yang",
+        "Qian Yu",
+        "Hao Li",
+        "Chen Yue",
+        "Xiaan Du",
+        "Yuyang Wang",
+        "Yesheng Liu",
+        "Haiyu Xu",
+        "Zhicheng Dou"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-28T06:05:17+00:00",
+      "link": "https://arxiv.org/pdf/2604.25256v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "benchmarking AI agents on complex scientific literature discovery",
+      "llm_evidence_cn": "AI代理在复杂科学文献发现方面的基准测试",
+      "llm_evidence": "AI代理在复杂科学文献发现方面的基准测试",
+      "canonical_evidence": "AI代理在复杂科学文献发现方面的基准测试",
+      "llm_tldr_en": "AutoResearchBench evaluates AI agents' ability to perform deep and wide scientific literature discovery.",
+      "llm_tldr_cn": "AutoResearchBench评估了AI代理在深度和广度科学文献发现任务中的能力。",
+      "llm_tldr": "AutoResearchBench评估了AI代理在深度和广度科学文献发现任务中的能力。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "resource discovery academic libraries postgraduate",
+      "matched_requirement_id": "req-16",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.23430v1",
+      "source": "arxiv",
+      "title": "Automating Categorization of Scientific Texts with In-Context Learning and Prompt-Chaining in Large Language Models",
+      "abstract": "The relentless expansion of scientific literature presents significant challenges for navigation and knowledge discovery. Within Research Information Retrieval, established tasks such as text summarization and classification remain crucial for enabling researchers and practitioners to effectively navigate this vast landscape, so that efforts have increasingly been focused on developing advanced research information systems. These systems aim not only to provide standard keyword-based search functionalities but also to incorporate capabilities for automatic content categorization within knowledge-intensive organizations across academia and industry. This study systematically evaluates the performance of off-the-shelf Large Language Models (LLMs) in analyzing scientific texts according to a given classification scheme. We utilized the hierarchical ORKG taxonomy as a classification framework, employing the FORC dataset as ground truth. We investigated the effectiveness of advanced prompt engineering strategies, namely In-Context Learning (ICL) and Prompt Chaining, and experimentally explored the influence of the LLMs' temperature hyperparameter on classification accuracy. Our experiments demonstrate that Prompt Chaining yields superior classification accuracy compared to pure ICL, particularly when applied to the nested structure of the ORKG taxonomy. LLMs with prompt chaining outperform the state-of-the-art models for domain (1st level) prediction and show even better performance for subject (2nd level) prediction compared to the older BERT model. However, LLMs are not yet able to perform well in classifying the topic (3rd level) of research areas based on this specific hierarchical taxonomy, as they only reach about 50% accuracy even with prompt chaining.",
+      "authors": [
+        "Gautam Kishore Shahi",
+        "Oliver Hummel"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.CL",
+        "cs.DL",
+        "cs.SE"
+      ],
+      "published": "2026-04-25T19:52:21+00:00",
+      "link": "https://arxiv.org/pdf/2604.23430v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "automating categorization of scientific texts for research information retrieval",
+      "llm_evidence_cn": "自动化科学文本分类以用于研究信息检索",
+      "llm_evidence": "自动化科学文本分类以用于研究信息检索",
+      "canonical_evidence": "自动化科学文本分类以用于研究信息检索",
+      "llm_tldr_en": "Evaluates LLMs for automatic categorization of scientific literature to improve research navigation.",
+      "llm_tldr_cn": "评估了大语言模型在科学文献自动分类中的表现，以改进研究导航。",
+      "llm_tldr": "评估了大语言模型在科学文献自动分类中的表现，以改进研究导航。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.23136v1",
+      "source": "arxiv",
+      "title": "How Researchers Navigate Accountability, Transparency, and Trust When Using AI Tools in Early-Stage Research: A Think-Aloud Study",
+      "abstract": "In the early stages of scientific research, researchers rely on core scholarly judgments to identify relevant literature, assess credible evidence, and determine which directions merit pursuit. As AI tools become increasingly integrated into these early-stage workflows, the scholarly judgments that were once transparent and attributable to individual researchers become obscured, raising critical Responsible AI (RAI) concerns around accountability, transparency, and trust. Yet how these three dimensions manifest in real-time, in-situ scholarly practice remains largely unexplored. To address this gap, we conducted a think-aloud study with 15 researchers to examine how they used AI tools powered by large language models (LLMs) across early-stage research tasks, including literature exploration, synthesis, and research ideation. Our key findings address the tripartite constructs of accountability, transparency, and trust. First, the confident tone of AI outputs misrepresents epistemic uncertainty, making it more difficult for researchers (who are ultimately accountable) to identify which outputs require the greatest scrutiny. Second, opaque retrieval and content construction make provenance difficult to establish for transparency. Third, trust in AI is fragile, context-dependent, and easily eroded. In response, participant researchers were seen to develop compensatory strategies to restore scholarly judgment under uncertainty. Overall, our findings serve to contextualize AI-mediated research as a RAI problem grounded in lived researcher experience and motivate attention to deliberate AI integration that preserves accountability, supports transparency, and fosters informed trust.",
+      "authors": [
+        "Sanjana Gautam",
+        "Houjiang Liu",
+        "Yujin Choi",
+        "Matthew Lease"
+      ],
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY",
+        "cs.HC"
+      ],
+      "published": "2026-04-25T04:35:48+00:00",
+      "link": "https://arxiv.org/pdf/2604.23136v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "researchers using AI tools to identify relevant literature and assess evidence",
+      "llm_evidence_cn": "研究人员使用AI工具识别相关文献并评估证据",
+      "llm_evidence": "研究人员使用AI工具识别相关文献并评估证据",
+      "canonical_evidence": "研究人员使用AI工具识别相关文献并评估证据",
+      "llm_tldr_en": "A study on how researchers maintain accountability and trust when using AI for literature discovery and judgment.",
+      "llm_tldr_cn": "关于研究人员在使用AI进行文献发现和判断时如何保持问责制和信任的研究。",
+      "llm_tldr": "关于研究人员在使用AI进行文献发现和判断时如何保持问责制和信任的研究。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "AI supported academic library services for postgraduate students resource discovery",
+      "matched_requirement_id": "req-19",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.27221v1",
+      "source": "arxiv",
+      "title": "Web2BigTable: A Bi-Level Multi-Agent LLM System for Internet-Scale Information Search and Extraction",
+      "abstract": "Agentic web search increasingly faces two distinct demands: deep reasoning over a single target, and structured aggregation across many entities and heterogeneous sources. Current systems struggle on both fronts. Breadth-oriented tasks demand schema-aligned outputs with wide coverage and cross-entity consistency, while depth-oriented tasks require coherent reasoning over long, branching search trajectories. We introduce \\textbf{Web2BigTable}, a multi-agent framework for web-to-table search that supports both regimes. Web2BigTable adopts a bi-level architecture in which an upper-level orchestrator decomposes the task into sub-problems and lower-level worker agents solve them in parallel. Through a closed-loop run--verify--reflect process, the framework jointly improves decomposition and execution over time via persistent, human-readable external memory, with self-evolving updates to each single-agent. During execution, workers coordinate through a shared workspace that makes partial findings visible, allowing them to reduce redundant exploration, reconcile conflicting evidence, and adapt to emerging coverage gaps. Web2BigTable sets a new state of the art on WideSearch, reaching an Avg@4 Success Rate of \\textbf{38.50} ($7.5\\times$ the second best at 5.10), Row F1 of \\textbf{63.53} (+25.03 over the second best), and Item F1 of \\textbf{80.12} (+14.42 over the second best). It also generalises to depth-oriented search on XBench-DeepSearch, achieving 73.0 accuracy. Code is available at https://github.com/web2bigtable/web2bigtable.",
+      "authors": [
+        "Yuxuan Huang",
+        "Yihang Chen",
+        "Zhiyuan He",
+        "Yuxiang Chen",
+        "Ka Yiu Lee",
+        "Huichi Zhou",
+        "Weilin Luo",
+        "Meng Fang",
+        "Jun Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-29T21:43:16+00:00",
+      "link": "https://arxiv.org/pdf/2604.27221v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "bi-level multi-agent system for internet-scale information search and extraction",
+      "llm_evidence_cn": "用于互联网规模信息搜索和提取的双层多智能体系统",
+      "llm_evidence": "用于互联网规模信息搜索和提取的双层多智能体系统",
+      "canonical_evidence": "用于互联网规模信息搜索和提取的双层多智能体系统",
+      "llm_tldr_en": "Web2BigTable is a multi-agent framework for complex web search and structured data extraction.",
+      "llm_tldr_cn": "Web2BigTable是一个用于复杂网络搜索和结构化数据提取的多智能体框架。",
+      "llm_tldr": "Web2BigTable是一个用于复杂网络搜索和结构化数据提取的多智能体框架。",
+      "llm_tags": [
+        "query:sr-amcr:composite"
+      ],
+      "matched_query_tag": "query:sr-amcr:composite",
+      "matched_query_text": "Papers central to 请帮我查找关于A Multi-Agent Collaborative Referral Mechanism for AI-Supported Academic Library Services: Postgraduate Resource Discovery and Reference Consultation的论文, especially work that connects or combines: multi-agent collaborative referral mechanism AI library services; artificial intelligence supported academic library services; reference consultation services academic libraries; academic library services AI support; multi-agent system library referral; resource discovery academic libraries postgraduate; multi agent collaborative referral mechanism for AI supported academic library services; postgraduate resource discovery and reference consultation in academic libraries using multi agent systems; AI supported academic library services for postgraduate students resource discovery; collaborative referral mechanism in academic libraries using multi agent AI.",
+      "matched_requirement_id": "req-composite-sr-amcr",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.27421v1",
+      "source": "arxiv",
+      "title": "A Reproducibility Study of LLM-Based Query Reformulation",
+      "abstract": "Large Language Models (LLMs) are now widely used for query reformulation and expansion in Information Retrieval, with many studies reporting substantial effectiveness gains. However, these results are typically obtained under heterogeneous experimental conditions, making it difficult to assess which findings are reproducible and which depend on specific implementation choices. In this work, we present a systematic reproducibility and comparative study of ten representative LLM-based query reformulation methods under a unified and strictly controlled experimental framework. We evaluate methods across two architectural LLM families at two parameter scales, three retrieval paradigms (lexical, learned sparse, and dense), and nine benchmark datasets spanning TREC Deep Learning and BEIR. Our results show that reformulation gains are strongly conditioned on the retrieval paradigm, that improvements observed under lexical retrieval do not consistently transfer to neural retrievers, and that larger LLMs do not uniformly yield better downstream performance. These findings clarify the stability and limits of reported gains in prior work. To enable transparent replication and ongoing comparison, we release all prompts, configurations, evaluation scripts, and run files through QueryGym, an open-source reformulation toolkit with a public leaderboard.\\footnote{https://leaderboard.querygym.com}",
+      "authors": [
+        "Amin Bigdeli",
+        "Radin Hamidi Rad",
+        "Hai Son Le",
+        "Mert Incesu",
+        "Negar Arabzadeh",
+        "Charles L. A. Clarke",
+        "Ebrahim Bagheri"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.CL"
+      ],
+      "published": "2026-04-30T04:51:52+00:00",
+      "link": "https://arxiv.org/pdf/2604.27421v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "LLM-based query reformulation in information retrieval systems",
+      "llm_evidence_cn": "信息检索系统中的LLM查询重构",
+      "llm_evidence": "信息检索系统中的LLM查询重构",
+      "canonical_evidence": "信息检索系统中的LLM查询重构",
+      "llm_tldr_en": "Systematically evaluates LLM-based query reformulation methods across multiple retrieval paradigms.",
+      "llm_tldr_cn": "系统地评估了多种检索范式下基于大语言模型的查询重构方法。",
+      "llm_tldr": "系统地评估了多种检索范式下基于大语言模型的查询重构方法。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "biorxiv-10-64898-2026-04-23-720371-v1",
+      "source": "biorxiv",
+      "title": "All Models are Wrong, Some are Annotated: Automating Metadata in Biomedical Repositories",
+      "abstract": "ObjectiveHigh-quality metadata is essential for scientific discovery, yet sparse annotations in rapidly growing repositories leave many biologically relevant details uncaptured. We evaluated whether large language models (LLMs) can accurately infer ion channel and receptor subtype metadata from source code in a neuroscience repository.\n\nMaterials and MethodsWe extracted 5,133 model files from ModelDB. A subset of 1,100 was manually annotated; 253 were held out for testing, and the remainder split into training (80%) and validation (20%) sets. LLM-based approaches (GPT-5.2 and GPT-mini) were evaluated under zero-shot and heuristic-augmented prompting. Performance was assessed at type and subtype levels using accuracy, precision, recall, and F1 score. A feature-engineered XGBoost model using text- and simulation-derived features served as a baseline.\n\nResultsLLMs outperformed the XGBoost baseline. At the type level, GPT-mini with heuristic augmentation achieved the highest performance (accuracy 96.0%, F1 0.962). At the subtype level, both GPT-5.2+heuristics and GPT-mini+heuristics achieved identical accuracy (88.1%), with GPT-5.2+heuristics achieving the highest F1(0.878). Model outputs were consistent across runs and errors confined to related mechanistic families.\n\nDiscussion and ConclusionLLMs demonstrate strong potential for metadata annotation directly from source code, outperforming feature-engineering approaches with minimal tuning. However, performance varied across subtypes, and errors often reflected ambiguity or bias toward more common labels. These findings suggest LLMs may serve as practical tools for scalable metadata generation in biomedical repositories, although careful evaluation and domain-specific validation remain important. While demonstrated in computational neuroscience, this approach may generalize to repository-agnostic metadata annotation in other scientific code repositories.",
+      "authors": [
+        "Cohen, I.",
+        "Yu, H.",
+        "McDougal, R. A."
+      ],
+      "primary_category": "neuroscience",
+      "categories": [
+        "neuroscience"
+      ],
+      "published": "2026-04-27T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.04.23.720371v1.full.pdf",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "automating metadata extraction in scientific repositories using large language models",
+      "llm_evidence_cn": "利用大语言模型自动提取科学仓库中的元数据",
+      "llm_evidence": "利用大语言模型自动提取科学仓库中的元数据",
+      "canonical_evidence": "利用大语言模型自动提取科学仓库中的元数据",
+      "llm_tldr_en": "Evaluates LLMs for automating metadata annotation in biomedical repositories to enhance discovery.",
+      "llm_tldr_cn": "评估了大模型在生物医学仓库中自动标注元数据的能力，以增强科学发现。",
+      "llm_tldr": "评估了大模型在生物医学仓库中自动标注元数据的能力，以增强科学发现。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "automation of library processes using AI",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2604.23406v1",
+      "source": "arxiv",
+      "title": "IIRSim Studio: A Dashboard for User Simulation",
+      "abstract": "User simulation is a valuable methodology for evaluation in Information Retrieval (IR), enabling low-cost experimentation and counterfactual analysis. However, existing simulation frameworks are primarily code-centric libraries that require substantial setup effort, which limits adoption and hinders reproducibility. The bottleneck is not the simulation engines themselves, but the lack of infrastructure connecting experiment design, execution, and sharing into a single verifiable workflow. This paper introduces IIRSim Studio, a web-based workbench that addresses this gap through four contributions: (1) a visual environment for composing simulation pipelines on top of simulation frameworks, serving both novices learning simulation concepts and experts piloting large-scale experiments; (2) a component lifecycle that supports authoring, versioning, and sharing custom simulation components through Git-backed storage and runtime injection; (3) a provenance model based on experiment bundles and environment templates that makes the scope of replication explicit; and (4) a shared-task workflow, demonstrated through the re-deployment of a Sim4IA micro-task. IIRSim Studio is available as a hosted service and as a portable containerized deployment.",
+      "authors": [
+        "Saber Zerhoudi",
+        "Adam Roegiest",
+        "Michael Granitzer"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.HC"
+      ],
+      "published": "2026-04-25T18:53:17+00:00",
+      "link": "https://arxiv.org/pdf/2604.23406v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "user simulation for evaluation in information retrieval systems",
+      "llm_evidence_cn": "信息检索系统评估中的用户模拟",
+      "llm_evidence": "信息检索系统评估中的用户模拟",
+      "canonical_evidence": "信息检索系统评估中的用户模拟",
+      "llm_tldr_en": "Introduces IIRSim Studio, a workbench for user simulation to evaluate information retrieval systems.",
+      "llm_tldr_cn": "推出IIRSim Studio，一个用于模拟用户以评估信息检索系统的实验平台。",
+      "llm_tldr": "推出IIRSim Studio，一个用于模拟用户以评估信息检索系统的实验平台。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.23106v1",
+      "source": "arxiv",
+      "title": "No Test Cases, No Problem: Distillation-Driven Code Generation for Scientific Workflows",
+      "abstract": "Existing multi-agent Large Language Model (LLM) frameworks for code generation typically use execution feedback and improve iteratively using Input/Output (I/O) test cases. However, this does not work for scientific workflows, where I/O test cases do not exist, and generating them requires solving the very problem at hand. To address this, we introduce MOSAIC, a training-free multi-agent framework for scientific code generation without I/O supervision. Instead of execution feedback, MOSAIC employs a student-teacher knowledge distillation framework that grounds generation through domain-specific examples and structured problem decomposition. To further mitigate hallucinations across chained subproblems, we introduce a Consolidated Context Window (CCW) for maintaining consistent reasoning across agents. Experiments on the SciCode benchmark show that MOSAIC improves accuracy, executability, and numerical precision over existing approaches while relying on lightweight models.",
+      "authors": [
+        "Siddeshwar Raghavan",
+        "Tanwi Mallick"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.MA"
+      ],
+      "published": "2026-04-25T02:01:54+00:00",
+      "link": "https://arxiv.org/pdf/2604.23106v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "multi-agent framework for scientific code generation and workflow decomposition",
+      "llm_evidence_cn": "用于科学代码生成和工作流分解的多智能体框架",
+      "llm_evidence": "用于科学代码生成和工作流分解的多智能体框架",
+      "canonical_evidence": "用于科学代码生成和工作流分解的多智能体框架",
+      "llm_tldr_en": "MOSAIC uses knowledge distillation for scientific code generation without requiring I/O test cases.",
+      "llm_tldr_cn": "MOSAIC采用知识蒸馏技术，在无需输入输出测试用例的情况下生成科学工作流代码。",
+      "llm_tldr": "MOSAIC采用知识蒸馏技术，在无需输入输出测试用例的情况下生成科学工作流代码。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.23734v1",
+      "source": "arxiv",
+      "title": "Prism-Reranker: Beyond Relevance Scoring -- Jointly Producing Contributions and Evidence for Agentic Retrieval",
+      "abstract": "Modern retrieval pipelines increasingly serve downstream consumers like retrieval-augmented generation (RAG) and autonomous agents that need more than a scalar relevance score. A reranker that only tells the caller \"how relevant\" forces the agent to dump entire documents into the language-model context, wasting tokens on tangential passages and boilerplate. We introduce Prism-Reranker, a family of reranker models built on Qwen3.5 at four sizes (0.8B, 2B, 4B, 9B) that goes beyond scalar scoring. In addition to the standard yes/no relevance judgement, whenever the verdict is yes the model emits (i) a contribution statement summarizing how the document helps the query, and (ii) an evidence passage: a self-contained rewrite that preserves every query-relevant signal while discarding noise. Prism-Reranker is trained with a hybrid objective combining point-wise distillation from a strong commercial reranker API with supervised fine-tuning on contribution and evidence targets. We curate training data from KaLM-Embedding's open-source aggregation, augmented with real web documents retrieved via commercial search APIs for open-domain queries and LLM-synthesized variants, and rewrite a portion of queries into keyword-style reformulations to adapt the model to agent-issued traffic. To reconcile inconsistent labels across open corpora and obtain crisp binary supervision, we relabel data with an LLM-as-Judge ensemble aggregating votes from five frontier LLMs. On a QA subset of BEIR and on an LLM-judged evaluation of contribution and evidence quality, Prism-Reranker attains solid results across all four sizes. We further show that the same recipe extends existing LLM-based rerankers, augmenting Qwen3-Reranker-4B with contribution and evidence capabilities while improving its average BEIR-QA NDCG@10 by +1.54 over the base model. Model weights, training recipe, and evaluation suite are released.",
+      "authors": [
+        "Dun Zhang"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-04-26T14:28:48+00:00",
+      "link": "https://arxiv.org/pdf/2604.23734v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "agentic retrieval producing evidence and contribution statements",
+      "llm_evidence_cn": "产生证据和贡献陈述的智能体检索",
+      "llm_evidence": "产生证据和贡献陈述的智能体检索",
+      "canonical_evidence": "产生证据和贡献陈述的智能体检索",
+      "llm_tldr_en": "Prism-Reranker provides relevance scores along with summaries and evidence to assist agentic retrieval.",
+      "llm_tldr_cn": "Prism-Reranker在提供相关性评分的同时输出摘要和证据，以辅助智能体检索。",
+      "llm_tldr": "Prism-Reranker在提供相关性评分的同时输出摘要和证据，以辅助智能体检索。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.23288v1",
+      "source": "arxiv",
+      "title": "An Agentic Framework for Intent Co-Creation in 6G NaaS: Architecture and Open-Source Model Evaluation",
+      "abstract": "6G network complexity necessitates high levels of autonomy, yet current intent-based systems struggle with ambiguous or incomplete human requests. This paper introduces an agent-based, intent-driven end-to-end (E2E) orchestration framework designed for Network-as-a-Service (NaaS) delivery through collaborative intent co-creation. The proposed system leverages a pool of Domain Expert Agents and a TM Forum-aligned Body-of-Knowledge (BoK) to iteratively refine user requests into deterministic, machine-readable actions. A fundamental design principle is the decoupling of cognition and actuation, where AI-driven reasoning is isolated from standardized execution controllers to ensure safety and operational trust. The framework includes a dual-layer memory system to maintain coherence during multi-step collaborations. The presented prototype, built on ETSI OpenSlice and the Model Context Protocol (MCP), evaluates across several open-source Large Language Models (LLMs). While these models demonstrate high instruction compliance, results reveal a significant gap in translating high-resolution intents into valid, catalog-backed orders without hallucinations.",
+      "authors": [
+        "Kostis Trantzas",
+        "Besiana Agko",
+        "Christos Tranoris",
+        "Irene Denazi"
+      ],
+      "primary_category": "cs.NI",
+      "categories": [
+        "cs.NI"
+      ],
+      "published": "2026-04-25T13:04:23+00:00",
+      "link": "https://arxiv.org/pdf/2604.23288v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "Agent-based collaborative framework using domain expert agents and body of knowledge",
+      "llm_evidence_cn": "使用领域专家智能体和知识库的基于智能体的协作框架",
+      "llm_evidence": "使用领域专家智能体和知识库的基于智能体的协作框架",
+      "canonical_evidence": "使用领域专家智能体和知识库的基于智能体的协作框架",
+      "llm_tldr_en": "Presents an agentic framework for collaborative intent refinement using domain-specific expert agents.",
+      "llm_tldr_cn": "提出了一个利用领域专家智能体进行协作意图细化的智能体框架。",
+      "llm_tldr": "提出了一个利用领域专家智能体进行协作意图细化的智能体框架。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent collaborative referral mechanism AI library services",
+      "matched_requirement_id": "req-11",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.24808v1",
+      "source": "arxiv",
+      "title": "ITAS: A Multi-Agent Architecture for LLM-Based Intelligent Tutoring",
+      "abstract": "Large language model tutors are easy to build in a notebook and hard to run in a real course. We describe ITAS (Intelligent Teaching Assistant System), a multi-agent tutoring system that a graduate quantum computing course used for a semester at Old Dominion University. The system has three layers. The teaching layer is a Spoke-and-Wheel of three parallel specialist agents (Video, Code, Guidance) followed by a Synthesizer, plus a separate autograder that evaluates both the correctness and the approach of checkpoint submissions. The operational layer is four Cloud Run microservices with session state in Cloud SQL and interaction events streamed through Pub/Sub to BigQuery. The feedback layer is a narrow-scope conversational agent that answers instructor questions over per-lesson pseudonymized event streams, addressing what we call the Blind Instructor Problem: LLM tutors accumulate more data about students than the instructor can reach through routine channels. The architecture is a direct response to specific failures of an earlier prototype, and we describe which of those fixes carried forward and which were dropped for this iteration. We report on a pilot deployment (five students, one course, one semester) interpreted as system-behavior evidence rather than learning-outcome evidence: the teaching layer handled 334 chat turns without the task-boundary hallucinations that domain consolidation would have risked, the operational layer captured 10,628 events across five modules, and the feedback layer surfaced two findings the instructor acted on mid-semester. We do not claim the pilot generalizes. We do claim that the system as described is one workable answer to the question of what an LLM-based ITS needs to look like end-to-end to run in a real course.",
+      "authors": [
+        "Iizalaarab Elhaimeur",
+        "Nikos Chrisochoides"
+      ],
+      "primary_category": "cs.MA",
+      "categories": [
+        "cs.MA",
+        "cs.AI",
+        "cs.CY",
+        "cs.DC"
+      ],
+      "published": "2026-04-27T07:12:28+00:00",
+      "link": "https://arxiv.org/pdf/2604.24808v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "multi-agent architecture for intelligent tutoring in graduate courses",
+      "llm_evidence_cn": "研究生课程智能辅导的多智能体架构",
+      "llm_evidence": "研究生课程智能辅导的多智能体架构",
+      "canonical_evidence": "研究生课程智能辅导的多智能体架构",
+      "llm_tldr_en": "ITAS is a multi-agent system providing specialized tutoring and automated feedback for university courses.",
+      "llm_tldr_cn": "ITAS是一个多智能体系统，为大学课程提供专业化辅导和自动化反馈。",
+      "llm_tldr": "ITAS是一个多智能体系统，为大学课程提供专业化辅导和自动化反馈。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "artificial intelligence supported academic library services",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.23626v1",
+      "source": "arxiv",
+      "title": "GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs",
+      "abstract": "LLM routing has achieved promising results in integrating the strengths of diverse models while balancing efficiency and performance. However, to support more realistic and challenging applications, routing must extend into agentic LLM settings, where task planning, multi-round cooperation among heterogeneous agents, and memory utilization are indispensable. To address this gap, we propose GraphPlanner, a heterogeneous graph memory-augmented agentic router for multi-agent LLMs that generates routing workflows for each query and supports both inductive and transductive inference. GraphPlanner formulates workflow generation as a Markov Decision Process (MDP), where at each step it selects both the LLM backbone and the agent role, including Planner, Executor, and Summarizer. By leveraging a heterogeneous graph, denoted as GARNet, to capture interaction memories among queries, agents, and responses, GraphPlanner integrates historical memory and workflow memory into richer state representations. The entire pipeline is optimized with reinforcement learning, jointly improving task-specific performance and computational efficiency. We evaluate GraphPlanner across 14 diverse LLM tasks and demonstrate that: (1) GraphPlanner outperforms strong single-round and multi-round routers, improving accuracy by up to 9.3% while reducing GPU cost from 186.26 GiB to 1.04 GiB; (2) GraphPlanner generalizes robustly to unseen tasks and LLMs, exhibiting strong zero-shot capabilities; and (3) GraphPlanner effectively leverages historical memories, supporting both inductive and transductive inference for more adaptive routing. Our code for GraphPlanner is released at https://github.com/ulab-uiuc/GraphPlanner.",
+      "authors": [
+        "Tao Feng",
+        "Haozhen Zhang",
+        "Zijie Lei",
+        "Peixuan Han",
+        "Jiaxuan You"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-26T09:38:32+00:00",
+      "link": "https://arxiv.org/pdf/2604.23626v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "multi-agent routing and cooperation for complex task planning",
+      "llm_evidence_cn": "多智能体路由与协作，用于复杂任务规划",
+      "llm_evidence": "多智能体路由与协作，用于复杂任务规划",
+      "canonical_evidence": "多智能体路由与协作，用于复杂任务规划",
+      "llm_tldr_en": "Proposes GraphPlanner for multi-agent LLM routing using graph memory to improve task cooperation.",
+      "llm_tldr_cn": "提出GraphPlanner，利用图记忆增强多智能体大模型路由，提升任务协作能力。",
+      "llm_tldr": "提出GraphPlanner，利用图记忆增强多智能体大模型路由，提升任务协作能力。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.25389v1",
+      "source": "arxiv",
+      "title": "Co-Writing with AI: An Empirical Study of Diverse Academic Writing Workflows",
+      "abstract": "Despite AI tools becoming increasingly embedded in academic practice, little is known about how university students integrate them into their writing processes. We examine how students engage with AI across different writing tasks, and how this engagement is shaped by individual factors including AI literacy, writing confidence, trust, authorship concerns, and motivation. Study~1 surveys 107 UK university students to map task-specific and co-occurring patterns of AI use across five writing stages (ideation, sourcing, planning, drafting, and reviewing) and their associations with individual factors. Study~2 complements this by exploring how these patterns can be assembled in practice, through interviews with 12 postgraduates reflecting on their established use of AI in assessed writing. Together, the studies suggest that AI integration is selective and heterogeneous, forming three recurring and value-oriented configurations: (1) early-stage (learning-oriented), where tools support exploration and understanding; (2) late-stage (quality-oriented), where tools support drafting and refinement; and (3) peripheral (productivity-oriented), where tools are used to reduce friction and sustain momentum across the process. We offer a workflow-level account of AI-supported academic writing, showing how students navigate competing priorities of learning, quality, productivity, and authorship, and how they evaluate and take responsibility for AI-generated outputs.",
+      "authors": [
+        "Silvia Bodei",
+        "Duncan P. Brumby",
+        "Katie Fisher",
+        "Jon Mella"
+      ],
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "published": "2026-04-28T09:00:48+00:00",
+      "link": "https://arxiv.org/pdf/2604.25389v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "AI use in academic writing and sourcing by postgraduate students",
+      "llm_evidence_cn": "研究生在学术写作和资源获取中对人工智能的使用",
+      "llm_evidence": "研究生在学术写作和资源获取中对人工智能的使用",
+      "canonical_evidence": "研究生在学术写作和资源获取中对人工智能的使用",
+      "llm_tldr_en": "Studies how university students, including postgraduates, integrate AI into academic writing and sourcing.",
+      "llm_tldr_cn": "研究了包括研究生在内的大学生如何将AI整合到学术写作和资源获取过程中。",
+      "llm_tldr": "研究了包括研究生在内的大学生如何将AI整合到学术写作和资源获取过程中。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "AI supported academic library services for postgraduate students resource discovery",
+      "matched_requirement_id": "req-19",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.24067v1",
+      "source": "arxiv",
+      "title": "DataClaw: An Autonomous Data Agent with Instant Messaging Integration",
+      "abstract": "In daily life, there are many scenarios that people need to tackle data-related tasks, such as filling out forms, analyzing Excel files, and visualize data report. However, the tools available for these tasks often fragment, requiring users to switch between multiple applications and manually orchestrate steps like data processing, querying, and visualization. Moreover, these tools often assume a certain level of technical proficiency, creating barriers for non-technical users. To facilitate tacking daily data task, we present DataClaw, an autonomous data agent that integrates directly into familiar instant messaging (IM) platforms. By simply typing a natural language request in a chat interface, users enable DataClaw to autonomously plan and execute a complete analytical pipeline, delivering insights, charts, and reports directly back into the conversation. Under the hood, DataClaw is powered by a transparent ReAct reasoning engine, a multi-tiered memory system for cross session context preservation, and a pluggable skill architecture for on-the-fly extensibility. In this demonstration, attendees will interact with DataClaw via standard IM platforms to solve real-world data scenarios, experiencing how it serves as a highly capable personal data assistant.",
+      "authors": [
+        "Huahang Li",
+        "Wentao Hu",
+        "Zhuoyue Wan",
+        "Chen Jason Zhang",
+        "Haoyang Li",
+        "Xiaoyong Wei"
+      ],
+      "primary_category": "cs.DB",
+      "categories": [
+        "cs.DB"
+      ],
+      "published": "2026-04-27T05:50:39+00:00",
+      "link": "https://arxiv.org/pdf/2604.24067v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "autonomous agent for data tasks and user engagement via chat",
+      "llm_evidence_cn": "通过聊天进行数据任务和用户参与的自主智能体",
+      "llm_evidence": "通过聊天进行数据任务和用户参与的自主智能体",
+      "canonical_evidence": "通过聊天进行数据任务和用户参与的自主智能体",
+      "llm_tldr_en": "Presents DataClaw, an autonomous data agent integrated into messaging platforms for natural language tasks.",
+      "llm_tldr_cn": "介绍了DataClaw，一种集成到即时通讯平台中处理自然语言任务的自主数据智能体。",
+      "llm_tldr": "介绍了DataClaw，一种集成到即时通讯平台中处理自然语言任务的自主数据智能体。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "intelligent systems for library management and user engagement",
+      "matched_requirement_id": "req-10",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.25676v1",
+      "source": "arxiv",
+      "title": "CORAL: Adaptive Retrieval Loop for Culturally-Aligned Multilingual RAG",
+      "abstract": "Multilingual retrieval-augmented generation (mRAG) is often implemented within a fixed retrieval space, typically via query or document translation or multilingual embedding vector representations. However, this approach may be inadequate for culturally grounded queries, in which retrieval-condition misalignment may occur. Even strong retrievers and generators may struggle to produce culturally relevant answers when sourcing evidence from inappropriate linguistic or regional contexts. To this end, we introduce CORAL (COntext-aware Retrieval with Agentic Loop, an adaptive retrieval methodology for mRAG that enables iterative refinement of both the retrieval space (corpora) and the retrieval probe (query) based on the quality of the evidence. The overall process includes: (1) selecting corpora, (2) retrieving documents, (3) critiquing evidence for relevance and cultural alignment, and (4) checking sufficiency. If the retrieved documents are insufficient to answer the query correctly, the system (5) reselects corpora and rewrites the query. Across two cultural QA benchmarks, CORAL achieves up to a 3.58%p accuracy improvement on low-resource languages relative to the strongest baselines.",
+      "authors": [
+        "Nayeon Lee",
+        "Jiwoo Song",
+        "Byeongcheol Kang"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-28T14:06:43+00:00",
+      "link": "https://arxiv.org/pdf/2604.25676v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "adaptive retrieval methodology for multilingual retrieval-augmented generation",
+      "llm_evidence_cn": "多语言检索增强生成的自适应检索方法",
+      "llm_evidence": "多语言检索增强生成的自适应检索方法",
+      "canonical_evidence": "多语言检索增强生成的自适应检索方法",
+      "llm_tldr_en": "CORAL uses an agentic loop to iteratively refine retrieval space and queries for culturally-aligned RAG.",
+      "llm_tldr_cn": "CORAL利用代理循环迭代优化检索空间和查询，以实现文化对齐的多语言检索增强生成。",
+      "llm_tldr": "CORAL利用代理循环迭代优化检索空间和查询，以实现文化对齐的多语言检索增强生成。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.25012v1",
+      "source": "arxiv",
+      "title": "Why Search When You Can Transfer? Amortized Agentic Workflow Design from Structural Priors",
+      "abstract": "Automated agentic workflow design currently relies on per-task iterative search, which is computationally prohibitive and fails to reuse structural knowledge across tasks. We observe that optimized workflows converge to a small family of domain-specific topologies, suggesting that this combinatorial search is largely redundant. Building on this insight, we propose SWIFT (Synthesizing Workflows via Few-shot Transfer), a framework that amortizes workflow design into reusable structural priors. SWIFT first distills compositional heuristics and output-interface contracts from contrastive analysis of prior search trajectories across source tasks. At inference time, it conditions a single LLM generation pass on these priors together with cross-task workflow demonstrations to synthesize a complete, executable workflow for an unseen target task, bypassing iterative search entirely. On five benchmarks, SWIFT outperforms the state-of-the-art search-based method while reducing marginal per-task optimization cost by three orders of magnitude. It further generalizes to four additional unseen benchmarks and transfers successfully from GPT-4o-mini to three additional foundation models (Grok, Qwen, Gemma). Controlled ablations reveal that workflow demonstrations primarily transfer topological structure rather than surface semantics: replacing all operator names with random strings still retains over 93% of the full system's average performance.",
+      "authors": [
+        "Shiyi Du",
+        "Jiayuan Liu",
+        "Weihua Du",
+        "Yue Huang",
+        "Jiayi Li",
+        "Yingtao Luo",
+        "Xiangliang Zhang",
+        "Vincent Conitzer",
+        "Carl Kingsford"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG"
+      ],
+      "published": "2026-04-27T21:25:00+00:00",
+      "link": "https://arxiv.org/pdf/2604.25012v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "automated agentic workflow design and structural knowledge reuse",
+      "llm_evidence_cn": "自动化代理工作流设计与结构知识重用",
+      "llm_evidence": "自动化代理工作流设计与结构知识重用",
+      "canonical_evidence": "自动化代理工作流设计与结构知识重用",
+      "llm_tldr_en": "SWIFT framework distills structural priors to automate and optimize multi-agent workflow design.",
+      "llm_tldr_cn": "SWIFT框架通过提取结构先验知识，实现多智能体工作流的自动化与优化设计。",
+      "llm_tldr": "SWIFT框架通过提取结构先验知识，实现多智能体工作流的自动化与优化设计。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.27225v1",
+      "source": "arxiv",
+      "title": "A Discipline-Agnostic AI Literacy Course for Academic Research: Architecture, Pedagogy, and Implementation",
+      "abstract": "The rapid integration of generative AI into academic workflows demands curricula that equip students not only with tool proficiency but with the critical judgment to use those tools responsibly in scholarly work. Existing offerings cluster around two inadequate poles: technical AI development courses serving narrow specialist audiences, and brief general-literacy interventions that cannot develop the sustained, practice-based competencies rigorous research requires. This paper reports the design, theoretical rationale, and implementation of BSTA 495/395: Getting Started with AI-Assisted Research, developed and delivered at Lehigh University (Spring 2026). The course addresses an underserved gap: the competencies required for rigorous AI-assisted literature review. Its architecture organizes instruction into four sequential modules aligned with the cognitive demands of that task: comprehension of individual papers, construction and validation of knowledge taxonomies, identification of research gaps, and synthesis and production of complete literature reviews. Each module embeds an explicit verification discipline and standardized AI attribution practice. Prerequisite-free and discipline-agnostic, the course enrolls upper-level undergraduates and graduate students across all fields with differentiated assessment expectations. Pre- and post-course survey data from the inaugural offering indicate substantial self-reported confidence gains, with the largest in hallucination detection (d = +1.45), responsible AI use (d = +1.33), and AI attribution practice (d = +2.40), consistent with the course's design emphasis. The course constitutes a replicable model for the emerging genre of AI research literacy curricula.",
+      "authors": [
+        "Gideon K. Gogovi"
+      ],
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY"
+      ],
+      "published": "2026-04-29T21:47:00+00:00",
+      "link": "https://arxiv.org/pdf/2604.27225v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "AI literacy course for academic research and scholarly work competencies",
+      "llm_evidence_cn": "面向学术研究的人工智能素养课程及学术工作能力培养",
+      "llm_evidence": "面向学术研究的人工智能素养课程及学术工作能力培养",
+      "canonical_evidence": "面向学术研究的人工智能素养课程及学术工作能力培养",
+      "llm_tldr_en": "Describes an AI literacy course designed to equip students with competencies for AI-assisted academic research.",
+      "llm_tldr_cn": "介绍了一门旨在培养学生人工智能辅助学术研究能力的AI素养课程。",
+      "llm_tldr": "介绍了一门旨在培养学生人工智能辅助学术研究能力的AI素养课程。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "artificial intelligence supported academic library services",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.25605v1",
+      "source": "arxiv",
+      "title": "Health System Scale Semantic Search Across Unstructured Clinical Notes",
+      "abstract": "Introduction: Semantic search, which retrieves documents based on conceptual similarity rather than keyword matching, offers substantial advantages for retrieval of clinical information. However, deploying semantic search across entire health systems, comprising hundreds of millions of clinical notes, presents formidable engineering, cost, and governance challenges that have prevented adoption. Methods: We deployed a semantic search system at a large children's hospital indexing 166 million clinical notes (484 million vectors) from 1.68 million patients. The system uses instruction-tuned qwen3-embedding-0.6B embeddings, stores vectors in a managed database with storage-optimized indexing, maintains full-text metadata in a low-latency key-value store, and operates within a HIPAA-compliant governance framework. We evaluated the system through three experiments: optimization of embedding model and chunking strategy using a physician-authored benchmark dataset, characterization of full-scale performance (cost, latency, retrieval quality), and clinical utility assessment via comparison of chart abstraction efficiency across three tasks. Results: The system delivers sub-second query latency (median 237 ms single-user, 451 ms 20-user concurrency) with monthly costs of approximately USD 4,000. Qwen3 embeddings with 300-token chunk size achieved 94.6% accuracy on a clinical question-answering benchmark. In clinical utility evaluation across three abstraction tasks, semantic search reduced time-to-completion by 24 to 89% compared to clinician-performed chart review while maintaining comparable inter-rater agreement. Conclusion: Health-system-scale semantic search is both technically and operationally feasible. The system provides infrastructure supporting interactive search, cohort generation, and downstream LLM-powered clinical applications without requiring specialized informatics expertise.",
+      "authors": [
+        "Faith Wavinya Mutinda",
+        "Spandana Makeneni",
+        "Anna Lin",
+        "Shivaji Dutta",
+        "Irit R. Rasooly",
+        "Patrick Dibussolo",
+        "Shivani Kamath Belman",
+        "Hessam Shahriari",
+        "Kevin Murphy",
+        "Alex B. Ruan",
+        "Barbara H. Chaiyachati",
+        "Sanjay Chainani",
+        "Robert W. Grundmeier",
+        "Scott M. Haag",
+        "Jeffrey M. Miller",
+        "Heather M. Griffis",
+        "Ian M. Campbell"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.DB"
+      ],
+      "published": "2026-04-28T13:09:48+00:00",
+      "link": "https://arxiv.org/pdf/2604.25605v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "Semantic search and information retrieval across large-scale unstructured document collections",
+      "llm_evidence_cn": "大规模非结构化文档集的语义搜索与信息检索",
+      "llm_evidence": "大规模非结构化文档集的语义搜索与信息检索",
+      "canonical_evidence": "大规模非结构化文档集的语义搜索与信息检索",
+      "llm_tldr_en": "Deploys a large-scale semantic search system for unstructured notes using advanced embeddings and indexing.",
+      "llm_tldr_cn": "部署了一个针对大规模非结构化笔记的语义搜索系统，利用先进的嵌入和索引技术。",
+      "llm_tldr": "部署了一个针对大规模非结构化笔记的语义搜索系统，利用先进的嵌入和索引技术。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
