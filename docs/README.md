@@ -6,76 +6,73 @@
 </div>
 
 ## 每次日报
-- 最新运行日期：2026-05-03
-- 运行时间：2026-05-03 20:22:44 UTC
+- 最新运行日期：2026-05-04
+- 运行时间：2026-05-04 20:42:39 UTC
 - 运行状态：成功
-- 本次总论文数：18
-- 精读区：6
+- 本次总论文数：17
+- 精读区：5
 - 速读区：12
 
 ### 今日简报（AI）
-今日成功筛选18篇论文，精读6篇高分研究，聚焦AI代理与伦理前沿。  
-最值得关注AI代理在科学发现中的基准测试（9.0分）及AI工具使用中的责任与信任研究（8.0分）。  
-建议读者跟踪AI代理发展和伦理规范，以洞察研究动向。
-- 详情：[/202605/03/README](/202605/03/README)
+AI研究日报成功处理17篇论文，精读5篇高分研究。  
+精读亮点是AI代理在科学文献发现中的基准测试（AutoResearchBench）和多代理LLM系统（Web2BigTable）的应用。  
+建议普通读者关注检索增强生成与AI搜索平台的前沿进展。
+- 详情：[/202605/04/README](/202605/04/README)
 
 ### 精读区论文标签
-1. [AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery](/202605/03/2604.25256v1-autoresearchbench-benchmarking-ai-agents-on-complex-scientific-literature-discovery)  
+1. [AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery](/202605/04/2604.25256v1-autoresearchbench-benchmarking-ai-agents-on-complex-scientific-literature-discovery)  
    标签：评分：9.0/10、query:sr-amcr
-   evidence：AI代理在复杂科学文献发现方面的基准测试
-2. [How Researchers Navigate Accountability, Transparency, and Trust When Using AI Tools in Early-Stage Research: A Think-Aloud Study](/202605/03/2604.23136v1-how-researchers-navigate-accountability-transparency-and-trust-when-using-ai-tools-in-early-stage-research-a-think-aloud-study)  
+   evidence：用于复杂科学文献发现和研究的人工智能代理
+2. [Web2BigTable: A Bi-Level Multi-Agent LLM System for Internet-Scale Information Search and Extraction](/202605/04/2604.27221v1-web2bigtable-a-bi-level-multi-agent-llm-system-for-internet-scale-information-search-and-extraction)  
    标签：评分：8.0/10、query:sr-amcr
-   evidence：研究人员使用AI工具识别相关文献并评估证据
-3. [Automating Categorization of Scientific Texts with In-Context Learning and Prompt-Chaining in Large Language Models](/202605/03/2604.23430v1-automating-categorization-of-scientific-texts-with-in-context-learning-and-prompt-chaining-in-large-language-models)  
-   标签：评分：8.0/10、query:ai
-   evidence：自动化科学文本分类以用于研究信息检索
-4. [Web2BigTable: A Bi-Level Multi-Agent LLM System for Internet-Scale Information Search and Extraction](/202605/03/2604.27221v1-web2bigtable-a-bi-level-multi-agent-llm-system-for-internet-scale-information-search-and-extraction)  
+   evidence：互联网规模信息搜索的双层多智能体系统
+3. [A Discipline-Agnostic AI Literacy Course for Academic Research: Architecture, Pedagogy, and Implementation](/202605/04/2604.27225v1-a-discipline-agnostic-ai-literacy-course-for-academic-research-architecture-pedagogy-and-implementation)  
    标签：评分：8.0/10、query:sr-amcr
-   evidence：用于互联网规模信息搜索和提取的双层多智能体系统
-5. [A Reproducibility Study of LLM-Based Query Reformulation](/202605/03/2604.27421v1-a-reproducibility-study-of-llm-based-query-reformulation)  
+   evidence：面向学术研究和学术工作的AI素养课程
+4. [Building Persona-Based Agents On Demand: Tailoring Multi-Agent Workflows to User Needs](/202605/04/2604.27882v1-building-persona-based-agents-on-demand-tailoring-multi-agent-workflows-to-user-needs)  
+   标签：评分：8.0/10、query:sr-amcr
+   evidence：根据用户需求和角色定制的多代理工作流
+5. [All Models are Wrong, Some are Annotated: Automating Metadata in Biomedical Repositories](/202605/04/biorxiv-10-64898-2026-04-23-720371-v1-all-models-are-wrong-some-are-annotated-automating-metadata-in-biomedical-repositories)  
    标签：评分：8.0/10、query:ai
-   evidence：信息检索系统中的LLM查询重构
-6. [All Models are Wrong, Some are Annotated: Automating Metadata in Biomedical Repositories](/202605/03/biorxiv-10-64898-2026-04-23-720371-v1-all-models-are-wrong-some-are-annotated-automating-metadata-in-biomedical-repositories)  
-   标签：评分：8.0/10、query:ai
-   evidence：利用大语言模型自动提取科学仓库中的元数据
+   evidence：使用大语言模型自动化生物医学库中的元数据
 
 ### 速读区论文标签
-1. [IIRSim Studio: A Dashboard for User Simulation](/202605/03/2604.23406v1-iirsim-studio-a-dashboard-for-user-simulation)  
+1. [SEARCH-R: Structured Entity-Aware Retrieval with Chain-of-Reasoning Navigator for Multi-hop Question Answering](/202605/04/2604.24515v1-search-r-structured-entity-aware-retrieval-with-chain-of-reasoning-navigator-for-multi-hop-question-answering)  
    标签：评分：7.5/10、query:ai
-   evidence：信息检索系统评估中的用户模拟
-2. [Prism-Reranker: Beyond Relevance Scoring -- Jointly Producing Contributions and Evidence for Agentic Retrieval](/202605/03/2604.23734v1-prism-reranker-beyond-relevance-scoring----jointly-producing-contributions-and-evidence-for-agentic-retrieval)  
+   evidence：用于多跳问答的结构化实体感知检索
+2. [XGRAG: A Graph-Native Framework for Explaining KG-based Retrieval-Augmented Generation](/202605/04/2604.24623v1-xgrag-a-graph-native-framework-for-explaining-kg-based-retrieval-augmented-generation)  
    标签：评分：7.5/10、query:ai
-   evidence：产生证据和贡献陈述的智能体检索
-3. [ITAS: A Multi-Agent Architecture for LLM-Based Intelligent Tutoring](/202605/03/2604.24808v1-itas-a-multi-agent-architecture-for-llm-based-intelligent-tutoring)  
-   标签：评分：7.5/10、query:sr-amcr
-   evidence：研究生课程智能辅导的多智能体架构
-4. [Co-Writing with AI: An Empirical Study of Diverse Academic Writing Workflows](/202605/03/2604.25389v1-co-writing-with-ai-an-empirical-study-of-diverse-academic-writing-workflows)  
-   标签：评分：7.5/10、query:sr-amcr
-   evidence：研究生在学术写作和资源获取中对人工智能的使用
-5. [CORAL: Adaptive Retrieval Loop for Culturally-Aligned Multilingual RAG](/202605/03/2604.25676v1-coral-adaptive-retrieval-loop-for-culturally-aligned-multilingual-rag)  
+   evidence：基于图的检索增强生成技术可用于结构化信息检索
+3. [From Citation Selection to Citation Absorption: A Measurement Framework for Generative Engine Optimization Across AI Search Platforms](/202605/04/2604.25707v2-from-citation-selection-to-citation-absorption-a-measurement-framework-for-generative-engine-optimization-across-ai-search-platforms)  
    标签：评分：7.5/10、query:ai
-   evidence：多语言检索增强生成的自适应检索方法
-6. [A Discipline-Agnostic AI Literacy Course for Academic Research: Architecture, Pedagogy, and Implementation](/202605/03/2604.27225v1-a-discipline-agnostic-ai-literacy-course-for-academic-research-architecture-pedagogy-and-implementation)  
-   标签：评分：7.5/10、query:sr-amcr
-   evidence：面向学术研究的人工智能素养课程及学术工作能力培养
-7. [No Test Cases, No Problem: Distillation-Driven Code Generation for Scientific Workflows](/202605/03/2604.23106v1-no-test-cases-no-problem-distillation-driven-code-generation-for-scientific-workflows)  
-   标签：评分：6.5/10、query:ai
-   evidence：用于科学代码生成和工作流分解的多智能体框架
-8. [An Agentic Framework for Intent Co-Creation in 6G NaaS: Architecture and Open-Source Model Evaluation](/202605/03/2604.23288v1-an-agentic-framework-for-intent-co-creation-in-6g-naas-architecture-and-open-source-model-evaluation)  
+   evidence：AI搜索平台中引文选择与吸收的测量框架
+4. [NuggetIndex: Governed Atomic Retrieval for Maintainable RAG](/202605/04/2604.27306v1-nuggetindex-governed-atomic-retrieval-for-maintainable-rag)  
+   标签：评分：7.5/10、query:ai
+   evidence：用于可维护检索系统的原子信息单元
+5. [Reproducing Adaptive Reranking for Reasoning-Intensive IR](/202605/04/2604.27577v1-reproducing-adaptive-reranking-for-reasoning-intensive-ir)  
+   标签：评分：7.5/10、query:ai
+   evidence：针对推理密集型信息检索的自适应重排序
+6. [PixelDeck: A local-first media library manager for biomedical imaging](/202605/04/biorxiv-10-64898-2026-04-24-719925-v1-pixeldeck-a-local-first-media-library-manager-for-biomedical-imaging)  
+   标签：评分：7.5/10、query:ai
+   evidence：用于生物医学图像检索和管理的媒体库管理器
+7. [LUCid: Redefining Relevance For Lifelong Personalization](/202605/04/2604.26996v1-lucid-redefining-relevance-for-lifelong-personalization)  
+   标签：评分：6.8/10、query:ai
+   evidence：个性化与检索中以用户为中心的情境相关性
+8. [How Personal Characteristics Shape User Exploration of Diverse Movie Recommendations with a LLM-Based Multi-Agent System](/202605/04/2604.24405v2-how-personal-characteristics-shape-user-exploration-of-diverse-movie-recommendations-with-a-llm-based-multi-agent-system)  
    标签：评分：6.5/10、query:sr-amcr
-   evidence：使用领域专家智能体和知识库的基于智能体的协作框架
-9. [GraphPlanner: Graph Memory-Augmented Agentic Routing for Multi-Agent LLMs](/202605/03/2604.23626v1-graphplanner-graph-memory-augmented-agentic-routing-for-multi-agent-llms)  
-   标签：评分：6.5/10、query:sr-amcr
-   evidence：多智能体路由与协作，用于复杂任务规划
-10. [DataClaw: An Autonomous Data Agent with Instant Messaging Integration](/202605/03/2604.24067v1-dataclaw-an-autonomous-data-agent-with-instant-messaging-integration)  
+   evidence：基于大语言模型的多智能体推荐系统探索
+9. [Navigating Global AI Regulation: A Multi-Jurisdictional Retrieval-Augmented Generation System](/202605/04/2604.25448v1-navigating-global-ai-regulation-a-multi-jurisdictional-retrieval-augmented-generation-system)  
    标签：评分：6.5/10、query:ai
-   evidence：通过聊天进行数据任务和用户参与的自主智能体
-11. [Why Search When You Can Transfer? Amortized Agentic Workflow Design from Structural Priors](/202605/03/2604.25012v1-why-search-when-you-can-transfer-amortized-agentic-workflow-design-from-structural-priors)  
+   evidence：多司法管辖区法律文档的检索增强生成
+10. [OxyGent: Making Multi-Agent Systems Modular, Observable, and Evolvable via Oxy Abstraction](/202605/04/2604.25602v1-oxygent-making-multi-agent-systems-modular-observable-and-evolvable-via-oxy-abstraction)  
    标签：评分：6.5/10、query:sr-amcr
-   evidence：自动化代理工作流设计与结构知识重用
-12. [Health System Scale Semantic Search Across Unstructured Clinical Notes](/202605/03/2604.25605v1-health-system-scale-semantic-search-across-unstructured-clinical-notes)  
+   evidence：模块化且可演化的多智能体系统框架
+11. [Health System Scale Semantic Search Across Unstructured Clinical Notes](/202605/04/2604.25605v1-health-system-scale-semantic-search-across-unstructured-clinical-notes)  
    标签：评分：6.5/10、query:ai
-   evidence：大规模非结构化文档集的语义搜索与信息检索
+   evidence：大规模非结构化文档检索的语义搜索
+12. [Think it, Run it: Autonomous ML pipeline generation via self-healing multi-agent AI](/202605/04/2604.27096v1-think-it-run-it-autonomous-ml-pipeline-generation-via-self-healing-multi-agent-ai)  
+   标签：评分：6.5/10、query:sr-amcr
+   evidence：用于自动化流水线生成的统一多智能体架构
 
 
 <div class="dpr-home-promo-card">

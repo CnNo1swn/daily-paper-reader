@@ -1,0 +1,725 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-04T20:30:55.427956+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 5,
+    "deep_cap": 7,
+    "deep_selected": 5,
+    "quick_candidates": 93,
+    "quick_skim_target": 12,
+    "quick_selected": 12
+  },
+  "deep_dive": [
+    {
+      "id": "2604.25256v1",
+      "source": "arxiv",
+      "title": "AutoResearchBench: Benchmarking AI Agents on Complex Scientific Literature Discovery",
+      "abstract": "Autonomous scientific research is significantly advanced thanks to the development of AI agents. One key step in this process is finding the right scientific literature, whether to explore existing knowledge for a research problem, or to acquire evidence for verifying assumptions and supporting claims. To assess AI agents' capability in driving this process, we present AutoResearchBench, a dedicated benchmark for autonomous scientific literature discovery. AutoResearchBench consists of two complementary task types: (1) Deep Research, which requires tracking down a specific target paper through a progressive, multi-step probing process, and (2) Wide Research, which requires comprehensively collecting a set of papers satisfying given conditions. Compared to previous benchmarks on agentic web browsing, AutoResearchBench is distinguished along three dimensions: it is research-oriented, calling for in-depth comprehension of scientific concepts; literature-focused, demanding fine-grained utilization of detailed information; and open-ended, involving an unknown number of qualified papers and thus requiring deliberate reasoning and search throughout. These properties make AutoResearchBench uniquely suited for evaluating autonomous research capabilities, and extraordinarily challenging. Even the most powerful LLMs, despite having largely conquered general agentic web-browsing benchmarks such as BrowseComp, achieve only 9.39% accuracy on Deep Research and 9.31% IoU on Wide Research, while many other strong baselines fall below 5%. We publicly release the dataset and evaluation pipeline to facilitate future research in this direction. We publicly release the dataset, evaluation pipeline, and code at https://github.com/CherYou/AutoResearchBench.",
+      "authors": [
+        "Lei Xiong",
+        "Kun Luo",
+        "Ziyi Xia",
+        "Wenbo Zhang",
+        "Jin-Ge Yao",
+        "Zheng Liu",
+        "Jingying Shao",
+        "Jianlyu Chen",
+        "Hongjin Qian",
+        "Xi Yang",
+        "Qian Yu",
+        "Hao Li",
+        "Chen Yue",
+        "Xiaan Du",
+        "Yuyang Wang",
+        "Yesheng Liu",
+        "Haiyu Xu",
+        "Zhicheng Dou"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-28T06:05:17+00:00",
+      "link": "https://arxiv.org/pdf/2604.25256v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 9.0,
+      "llm_evidence_en": "AI agents for complex scientific literature discovery and research",
+      "llm_evidence_cn": "用于复杂科学文献发现和研究的人工智能代理",
+      "llm_evidence": "用于复杂科学文献发现和研究的人工智能代理",
+      "canonical_evidence": "用于复杂科学文献发现和研究的人工智能代理",
+      "llm_tldr_en": "Benchmarks AI agents on their ability to discover and collect scientific literature for research.",
+      "llm_tldr_cn": "基准测试了人工智能代理在发现和收集科研文献方面的能力。",
+      "llm_tldr": "基准测试了人工智能代理在发现和收集科研文献方面的能力。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "resource discovery academic libraries postgraduate",
+      "matched_requirement_id": "req-16",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "biorxiv-10-64898-2026-04-23-720371-v1",
+      "source": "biorxiv",
+      "title": "All Models are Wrong, Some are Annotated: Automating Metadata in Biomedical Repositories",
+      "abstract": "ObjectiveHigh-quality metadata is essential for scientific discovery, yet sparse annotations in rapidly growing repositories leave many biologically relevant details uncaptured. We evaluated whether large language models (LLMs) can accurately infer ion channel and receptor subtype metadata from source code in a neuroscience repository.\n\nMaterials and MethodsWe extracted 5,133 model files from ModelDB. A subset of 1,100 was manually annotated; 253 were held out for testing, and the remainder split into training (80%) and validation (20%) sets. LLM-based approaches (GPT-5.2 and GPT-mini) were evaluated under zero-shot and heuristic-augmented prompting. Performance was assessed at type and subtype levels using accuracy, precision, recall, and F1 score. A feature-engineered XGBoost model using text- and simulation-derived features served as a baseline.\n\nResultsLLMs outperformed the XGBoost baseline. At the type level, GPT-mini with heuristic augmentation achieved the highest performance (accuracy 96.0%, F1 0.962). At the subtype level, both GPT-5.2+heuristics and GPT-mini+heuristics achieved identical accuracy (88.1%), with GPT-5.2+heuristics achieving the highest F1(0.878). Model outputs were consistent across runs and errors confined to related mechanistic families.\n\nDiscussion and ConclusionLLMs demonstrate strong potential for metadata annotation directly from source code, outperforming feature-engineering approaches with minimal tuning. However, performance varied across subtypes, and errors often reflected ambiguity or bias toward more common labels. These findings suggest LLMs may serve as practical tools for scalable metadata generation in biomedical repositories, although careful evaluation and domain-specific validation remain important. While demonstrated in computational neuroscience, this approach may generalize to repository-agnostic metadata annotation in other scientific code repositories.",
+      "authors": [
+        "Cohen, I.",
+        "Yu, H.",
+        "McDougal, R. A."
+      ],
+      "primary_category": "neuroscience",
+      "categories": [
+        "neuroscience"
+      ],
+      "published": "2026-04-27T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.04.23.720371v1.full.pdf",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Automating metadata in biomedical repositories using LLMs",
+      "llm_evidence_cn": "使用大语言模型自动化生物医学库中的元数据",
+      "llm_evidence": "使用大语言模型自动化生物医学库中的元数据",
+      "canonical_evidence": "使用大语言模型自动化生物医学库中的元数据",
+      "llm_tldr_en": "Evaluates LLMs for automating metadata extraction in scientific repositories to improve discovery.",
+      "llm_tldr_cn": "评估大语言模型在科学数据库中自动提取元数据以改进资源发现的效果。",
+      "llm_tldr": "评估大语言模型在科学数据库中自动提取元数据以改进资源发现的效果。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "automation of library processes using AI",
+      "matched_requirement_id": "req-4",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.27221v1",
+      "source": "arxiv",
+      "title": "Web2BigTable: A Bi-Level Multi-Agent LLM System for Internet-Scale Information Search and Extraction",
+      "abstract": "Agentic web search increasingly faces two distinct demands: deep reasoning over a single target, and structured aggregation across many entities and heterogeneous sources. Current systems struggle on both fronts. Breadth-oriented tasks demand schema-aligned outputs with wide coverage and cross-entity consistency, while depth-oriented tasks require coherent reasoning over long, branching search trajectories. We introduce \\textbf{Web2BigTable}, a multi-agent framework for web-to-table search that supports both regimes. Web2BigTable adopts a bi-level architecture in which an upper-level orchestrator decomposes the task into sub-problems and lower-level worker agents solve them in parallel. Through a closed-loop run--verify--reflect process, the framework jointly improves decomposition and execution over time via persistent, human-readable external memory, with self-evolving updates to each single-agent. During execution, workers coordinate through a shared workspace that makes partial findings visible, allowing them to reduce redundant exploration, reconcile conflicting evidence, and adapt to emerging coverage gaps. Web2BigTable sets a new state of the art on WideSearch, reaching an Avg@4 Success Rate of \\textbf{38.50} ($7.5\\times$ the second best at 5.10), Row F1 of \\textbf{63.53} (+25.03 over the second best), and Item F1 of \\textbf{80.12} (+14.42 over the second best). It also generalises to depth-oriented search on XBench-DeepSearch, achieving 73.0 accuracy. Code is available at https://github.com/web2bigtable/web2bigtable.",
+      "authors": [
+        "Yuxuan Huang",
+        "Yihang Chen",
+        "Zhiyuan He",
+        "Yuxiang Chen",
+        "Ka Yiu Lee",
+        "Huichi Zhou",
+        "Weilin Luo",
+        "Meng Fang",
+        "Jun Wang"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-29T21:43:16+00:00",
+      "link": "https://arxiv.org/pdf/2604.27221v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "Bi-level multi-agent system for internet-scale information search",
+      "llm_evidence_cn": "互联网规模信息搜索的双层多智能体系统",
+      "llm_evidence": "互联网规模信息搜索的双层多智能体系统",
+      "canonical_evidence": "互联网规模信息搜索的双层多智能体系统",
+      "llm_tldr_en": "A multi-agent framework for complex web search and structured data extraction across heterogeneous sources.",
+      "llm_tldr_cn": "一种用于跨异构源进行复杂网络搜索和结构化数据提取的多智能体框架。",
+      "llm_tldr": "一种用于跨异构源进行复杂网络搜索和结构化数据提取的多智能体框架。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.27225v1",
+      "source": "arxiv",
+      "title": "A Discipline-Agnostic AI Literacy Course for Academic Research: Architecture, Pedagogy, and Implementation",
+      "abstract": "The rapid integration of generative AI into academic workflows demands curricula that equip students not only with tool proficiency but with the critical judgment to use those tools responsibly in scholarly work. Existing offerings cluster around two inadequate poles: technical AI development courses serving narrow specialist audiences, and brief general-literacy interventions that cannot develop the sustained, practice-based competencies rigorous research requires. This paper reports the design, theoretical rationale, and implementation of BSTA 495/395: Getting Started with AI-Assisted Research, developed and delivered at Lehigh University (Spring 2026). The course addresses an underserved gap: the competencies required for rigorous AI-assisted literature review. Its architecture organizes instruction into four sequential modules aligned with the cognitive demands of that task: comprehension of individual papers, construction and validation of knowledge taxonomies, identification of research gaps, and synthesis and production of complete literature reviews. Each module embeds an explicit verification discipline and standardized AI attribution practice. Prerequisite-free and discipline-agnostic, the course enrolls upper-level undergraduates and graduate students across all fields with differentiated assessment expectations. Pre- and post-course survey data from the inaugural offering indicate substantial self-reported confidence gains, with the largest in hallucination detection (d = +1.45), responsible AI use (d = +1.33), and AI attribution practice (d = +2.40), consistent with the course's design emphasis. The course constitutes a replicable model for the emerging genre of AI research literacy curricula.",
+      "authors": [
+        "Gideon K. Gogovi"
+      ],
+      "primary_category": "cs.CY",
+      "categories": [
+        "cs.CY"
+      ],
+      "published": "2026-04-29T21:47:00+00:00",
+      "link": "https://arxiv.org/pdf/2604.27225v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "AI literacy course for academic research and scholarly work",
+      "llm_evidence_cn": "面向学术研究和学术工作的AI素养课程",
+      "llm_evidence": "面向学术研究和学术工作的AI素养课程",
+      "canonical_evidence": "面向学术研究和学术工作的AI素养课程",
+      "llm_tldr_en": "Describes a discipline-agnostic AI literacy course to equip students for AI-assisted academic research.",
+      "llm_tldr_cn": "描述了一门跨学科AI素养课程，旨在培养学生进行AI辅助学术研究的能力。",
+      "llm_tldr": "描述了一门跨学科AI素养课程，旨在培养学生进行AI辅助学术研究的能力。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "artificial intelligence supported academic library services",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.27882v1",
+      "source": "arxiv",
+      "title": "Building Persona-Based Agents On Demand: Tailoring Multi-Agent Workflows to User Needs",
+      "abstract": "Recent advances in agentic AI are shifting automation from discrete tools to proactive multi-agent systems that coordinate multi-specialized capabilities behind unified interfaces. However, today's agent systems typically rely on hard-coded agent architectures with fixed roles, coordination patterns, and interaction flows that limit end-user personalization and make adaptation to individual needs and contexts difficult. Given this limitation, we argue that on-demand persona-based agent generation offers a promising path towards more efficient and contextually appropriate interaction within agentic workflows. By dynamically crafting agents and personas at run-time to match user characteristics, task demands, and workflow context, agentic platforms can move beyond one-size-fits-all configurations. We present a pipeline for on-demand persona generation in agentic platforms, detailing how real-time crafting of AI personas can be systematically integrated within agent systems, aiming to open new possibilities in agentic platform design paradigms.",
+      "authors": [
+        "Giuseppe Arbore",
+        "Andrea Sillano",
+        "Luigi De Russis"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.HC"
+      ],
+      "published": "2026-04-30T14:01:06+00:00",
+      "link": "https://arxiv.org/pdf/2604.27882v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "multi-agent workflows tailored to user needs and personas",
+      "llm_evidence_cn": "根据用户需求和角色定制的多代理工作流",
+      "llm_evidence": "根据用户需求和角色定制的多代理工作流",
+      "canonical_evidence": "根据用户需求和角色定制的多代理工作流",
+      "llm_tldr_en": "Proposes on-demand generation of persona-based agents to improve personalization in multi-agent systems.",
+      "llm_tldr_cn": "提出按需生成基于角色的代理，以提高多代理系统中的个性化水平。",
+      "llm_tldr": "提出按需生成基于角色的代理，以提高多代理系统中的个性化水平。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2604.24515v1",
+      "source": "arxiv",
+      "title": "SEARCH-R: Structured Entity-Aware Retrieval with Chain-of-Reasoning Navigator for Multi-hop Question Answering",
+      "abstract": "Multi-hop Question Answering (MHQA) aims to answer questions that require multi-step reasoning. It presents two key challenges: generating correct reasoning paths in response to the complex user queries, and accurately retrieving essential knowledge in the face of potential limitations in large language models (LLMs). Existing approaches primarily rely on prompt-based methods to generate reasoning paths, which are further combined with traditional sparse or dense retrieval to produce the final answer. However, the generation of reasoning paths commonly lacks effective control over the generative process, thus leading the reasoning astray. Meanwhile, the retrieval methods over-rely on knowledge matching or similarity scores rather than evaluating the practical utility of the information, resulting in retrieving homogeneous or non-useful information. Therefore, we propose a Structured Entity-Aware Retrieval with Chain-of-Reasoning Navigator framework named SEARCH-R. Specifically, SEARCH-R trains an end-to-end reasoning path navigator, which is able to provide a powerful sub-question decomposer by fine-tuning the Llama3.1-8B model. Moreover, a novel dependency tree-based retrieval is designed to evaluate the informational contribution of the document quantitatively. Extensive experiments on three challenging multi-hop datasets validate the effectiveness of the proposed framework. The code and dataset are available at: https://github.com/Applied-Machine-Learning-Lab/ACL2026_SEARCH-R.",
+      "authors": [
+        "Yuqing Fu",
+        "Yimin Deng",
+        "Wanyu Wang",
+        "Yuhao Wang",
+        "Yejing Wang",
+        "Hongshi Liu",
+        "Yiqi Wang",
+        "Xiao Han",
+        "Maolin Wang",
+        "Guoshuai Zhao",
+        "Yi Chang",
+        "Xiangyu Zhao"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-27T14:17:08+00:00",
+      "link": "https://arxiv.org/pdf/2604.24515v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "structured entity-aware retrieval for multi-hop question answering",
+      "llm_evidence_cn": "用于多跳问答的结构化实体感知检索",
+      "llm_evidence": "用于多跳问答的结构化实体感知检索",
+      "canonical_evidence": "用于多跳问答的结构化实体感知检索",
+      "llm_tldr_en": "Presents SEARCH-R for improved knowledge retrieval and reasoning in complex question answering tasks.",
+      "llm_tldr_cn": "提出SEARCH-R系统，通过链式推理导航器改进复杂问答中的知识检索与推理。",
+      "llm_tldr": "提出SEARCH-R系统，通过链式推理导航器改进复杂问答中的知识检索与推理。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.26996v1",
+      "source": "arxiv",
+      "title": "LUCid: Redefining Relevance For Lifelong Personalization",
+      "abstract": "Current approaches to lifelong personalization operationalize relevance through semantic proximity, causing them to miss essential user information from topically unrelated interactions. To address this gap, we introduce LUCid, a benchmark designed to measure situational user-centric relevance in personalization. The benchmark consists of 1,936 realistic queries paired with interaction histories from up to 500 sessions. Across multiple architectures, our experiments show significant performance collapse when relevant context must be surfaced from semantically distant history: retrieval recall drops to near zero on the hardest instances, and response alignment remains near 50% even for state-of-the-art models such as Gemini-3-Flash, GPT-5.4, and Claude Haiku. These results expose a fundamental mismatch between the notion of relevance encoded by current systems and the situational relevance required for personalization, with direct implications for robustness and safety when critical user attributes remain undetected. LUCid enables the systematic evaluation of whether current models can surface situationally-relevant user information from previous interactions, and serves as a step toward realigning personalization with user-centered relevance.",
+      "authors": [
+        "Chimaobi Okite",
+        "Anika Misra",
+        "Joyce Chai",
+        "Rada Mihalcea"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-04-29T01:21:56+00:00",
+      "link": "https://arxiv.org/pdf/2604.26996v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.8,
+      "llm_evidence_en": "situational user-centric relevance in personalization and retrieval",
+      "llm_evidence_cn": "个性化与检索中以用户为中心的情境相关性",
+      "llm_evidence": "个性化与检索中以用户为中心的情境相关性",
+      "canonical_evidence": "个性化与检索中以用户为中心的情境相关性",
+      "llm_tldr_en": "Introduces a benchmark for lifelong personalization in retrieval, applicable to AI-enhanced library services.",
+      "llm_tldr_cn": "引入检索中终身个性化的基准，适用于AI增强的图书馆用户服务。",
+      "llm_tldr": "引入检索中终身个性化的基准，适用于AI增强的图书馆用户服务。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "AI-enhanced user services in libraries",
+      "matched_requirement_id": "req-5",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.24623v1",
+      "source": "arxiv",
+      "title": "XGRAG: A Graph-Native Framework for Explaining KG-based Retrieval-Augmented Generation",
+      "abstract": "Graph-based Retrieval-Augmented Generation (GraphRAG) extends traditional RAG by using knowledge graphs (KGs) to give large language models (LLMs) a structured, semantically coherent context, yielding more grounded answers. However, GraphRAG reasoning process remains a black-box, limiting our ability to understand how specific pieces of structured knowledge influence the final output. Existing explainability (XAI) methods for RAG systems, designed for text-based retrieval, are limited to interpreting an LLM response through the relational structures among knowledge components, creating a critical gap in transparency and trustworthiness. To address this, we introduce XGRAG, a novel framework that generates causally grounded explanations for GraphRAG systems by employing graph-based perturbation strategies, to quantify the contribution of individual graph components on the model answer. We conduct extensive experiments comparing XGRAG against RAG-Ex, an XAI baseline for standard RAG, and evaluate its robustness across various question types, narrative structures and LLMs. Our results demonstrate a 14.81% improvement in explanation quality over the baseline RAG-Ex across NarrativeQA, FairyTaleQA, and TriviaQA, evaluated by F1-score measuring alignment between generated explanations and original answers. Furthermore, XGRAG explanations exhibit a strong correlation with graph centrality measures, validating its ability to capture graph structure. XGRAG provides a scalable and generalizable approach towards trustworthy AI through transparent, graph-based explanations that enhance the interpretability of RAG systems.",
+      "authors": [
+        "Zhuoling Li",
+        "Ha Linh Hong Tran Nguyen",
+        "Valeria Bladinieres",
+        "Maxim Romanovsky"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.IR",
+        "cs.LG"
+      ],
+      "published": "2026-04-27T15:52:20+00:00",
+      "link": "https://arxiv.org/pdf/2604.24623v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "Graph-based Retrieval-Augmented Generation for structured information retrieval",
+      "llm_evidence_cn": "基于图的检索增强生成技术可用于结构化信息检索",
+      "llm_evidence": "基于图的检索增强生成技术可用于结构化信息检索",
+      "canonical_evidence": "基于图的检索增强生成技术可用于结构化信息检索",
+      "llm_tldr_en": "Introduces XGRAG to provide explainable, graph-based retrieval-augmented generation for grounded AI responses.",
+      "llm_tldr_cn": "引入XGRAG框架，为基于知识图谱的检索增强生成提供可解释的因果说明。",
+      "llm_tldr": "引入XGRAG框架，为基于知识图谱的检索增强生成提供可解释的因果说明。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.24405v2",
+      "source": "arxiv",
+      "title": "How Personal Characteristics Shape User Exploration of Diverse Movie Recommendations with a LLM-Based Multi-Agent System",
+      "abstract": "Diversity is an important evaluation criterion for recommender systems beyond accuracy, yet users differ in their willingness to engage with novel and diverse content. In this work, we investigate how a Large Language Model (LLM)-based multi-agent system supports users' exploration of diverse recommendations, and how individual characteristics shape user experiences. We conducted a between-subjects user study (N = 100) comparing a single-agent system (baseline) with a multi-agent system for movie recommendations. We measured Perceived Accuracy, diversity, novelty, and overall rating, and examined the influence of personal characteristics, including personality traits, demographics, GenAI recommendation experience, and GenAI skepticism. Results show that the multi-agent system significantly increases Perceived Novelty and Shannon Diversity. Conscientiousness is positively associated with Perceived Accuracy and diversity, whereas extraversion is negatively associated with Perceived Diversity. Prior experience with GenAI-based recommendations is positively associated with Shannon Diversity, while skepticism toward GenAI is negatively associated with it. We also observe significant interaction effects between system design and user characteristics. These findings highlight the importance of personality-aware conversational recommender systems and caution against one-size-fits-all multi-agent designs.",
+      "authors": [
+        "Yufan Zhou",
+        "Yirui Huang",
+        "Zhao Wang",
+        "Yucheng Jin"
+      ],
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC"
+      ],
+      "published": "2026-04-27T12:29:23+00:00",
+      "link": "https://arxiv.org/pdf/2604.24405v2",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "LLM-based multi-agent system for recommendation exploration",
+      "llm_evidence_cn": "基于大语言模型的多智能体推荐系统探索",
+      "llm_evidence": "基于大语言模型的多智能体推荐系统探索",
+      "canonical_evidence": "基于大语言模型的多智能体推荐系统探索",
+      "llm_tldr_en": "Investigates how multi-agent systems support user exploration of diverse recommendations based on personal traits.",
+      "llm_tldr_cn": "研究基于大语言模型的多智能体系统如何支持用户探索多样化推荐及其个人特征的影响。",
+      "llm_tldr": "研究基于大语言模型的多智能体系统如何支持用户探索多样化推荐及其个人特征的影响。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.25707v2",
+      "source": "arxiv",
+      "title": "From Citation Selection to Citation Absorption: A Measurement Framework for Generative Engine Optimization Across AI Search Platforms",
+      "abstract": "Generative search engines increasingly determine whether online information is merely discoverable, cited as a source, or actually absorbed into generated answers. This paper proposes a two-stage measurement framework for Generative Engine Optimization (GEO): citation selection, where a platform triggers search and chooses sources, and citation absorption, where a cited page contributes language, evidence, structure, or factual support to the final answer. We analyze the public geo-citation-lab dataset covering 602 controlled prompts across ChatGPT, Google AI Overview/Gemini, and Perplexity; 21,143 valid search-layer citations; 23,745 citation-level feature records; 18,151 successfully fetched pages; and 72 extracted features. The central descriptive finding is that citation breadth and citation depth diverge. Perplexity and Google cite more sources on average, while ChatGPT cites fewer sources but shows substantially higher average citation influence among fetched pages. High-influence pages tend to be longer, more structured, semantically aligned, and richer in extractable evidence such as definitions, numerical facts, comparisons, and procedural steps. The results suggest that GEO should be measured beyond citation counts, with answer-level absorption treated as a separate outcome.",
+      "authors": [
+        "Zhang Kai",
+        "He Xinyue",
+        "Yao Jingang"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-04-28T14:34:20+00:00",
+      "link": "https://arxiv.org/pdf/2604.25707v2",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "measurement framework for citation selection and absorption in AI search platforms",
+      "llm_evidence_cn": "AI搜索平台中引文选择与吸收的测量框架",
+      "llm_evidence": "AI搜索平台中引文选择与吸收的测量框架",
+      "canonical_evidence": "AI搜索平台中引文选择与吸收的测量框架",
+      "llm_tldr_en": "Analyzes how AI search engines select and absorb citations, relevant to digital library information retrieval.",
+      "llm_tldr_cn": "分析AI搜索引擎如何选择和吸收引文，与数字图书馆信息检索相关。",
+      "llm_tldr": "分析AI搜索引擎如何选择和吸收引文，与数字图书馆信息检索相关。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.25448v1",
+      "source": "arxiv",
+      "title": "Navigating Global AI Regulation: A Multi-Jurisdictional Retrieval-Augmented Generation System",
+      "abstract": "Navigating AI regulation across jurisdictions is increasingly difficult for policymakers, legal professionals, and researchers. To address this, we present a multi-jurisdictional Retrieval-Augmented Generation system for global AI regulation. Our corpus includes 242 documents across 68 jurisdictions, ranging from formal legislation like the EU AI Act to unstructured policy documents such as national AI strategies. The system makes three technical contributions: type-specific chunking that preserve legal structure across heterogenous documents; conditional retrieval routing with entity detection and metadata for legal citations; and priority-based re-ranking to boost enacted legislation over policy and secondary sources. Evaluation of 50 queries reveals strong performance across both single-entity and multi-jurisdictional questions, achieving 0.87 average faithfulness and 0.84 average answer relevancy. Single-entity queries achieve 0.86 average faithfulness and 0.92 average answer relevancy, while multi-jurisdictional comparison queries achieve 0.88 average faithfulness and 0.75 average answer relevancy. These findings highlight the effectiveness of domain-specific retrieval strategies for navigating complex, heterogenous regulatory corpora.",
+      "authors": [
+        "Courtney Ford",
+        "Ojas Rane",
+        "Susan Leavy"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-28T09:58:18+00:00",
+      "link": "https://arxiv.org/pdf/2604.25448v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "retrieval-augmented generation for multi-jurisdictional legal documents",
+      "llm_evidence_cn": "多司法管辖区法律文档的检索增强生成",
+      "llm_evidence": "多司法管辖区法律文档的检索增强生成",
+      "canonical_evidence": "多司法管辖区法律文档的检索增强生成",
+      "llm_tldr_en": "Presents a RAG system for navigating global AI regulations using type-specific chunking and re-ranking.",
+      "llm_tldr_cn": "介绍了一个利用特定类型分块和重排序来导航全球人工智能法规的RAG系统。",
+      "llm_tldr": "介绍了一个利用特定类型分块和重排序来导航全球人工智能法规的RAG系统。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.27306v1",
+      "source": "arxiv",
+      "title": "NuggetIndex: Governed Atomic Retrieval for Maintainable RAG",
+      "abstract": "Retrieval-augmented generation (RAG) systems are frequently evaluated via fact-based metrics, yet standard implementations retrieve passages or static propositions. This unit mismatch between evaluation and retrieval objects hinders maintenance when corpora evolve and fails to capture superseded facts or source disagreements. We propose NuggetIndex, a retrieval system that stores atomic information units as managed records, so called nuggets. Each record maintains links to evidence, a temporal validity interval, and a lifecycle state. By filtering invalid or deprecated nuggets prior to ranking, the system prevents the inclusion of outdated information. We evaluate the approach using a nuggetized MS MARCO subset, a temporal Wikipedia QA dataset, and a multi-hop QA task. Against passage and unmanaged proposition retrieval baselines, NuggetIndex improves nugget recall by 42%, increases temporal correctness by 9 percentage points without the recall collapse observed in time-filtered baselines, and reduces conflict rates by 55%. The compact nugget format reduces generator input length by 64% while enabling lightweight index structures suitable for browser-based and resource-constrained deployment. We release our implementation, datasets, and evaluation scripts",
+      "authors": [
+        "Saber Zerhoudi",
+        "Michael Granitzer",
+        "Jelena Mitrovic"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-04-30T01:33:56+00:00",
+      "link": "https://arxiv.org/pdf/2604.27306v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "atomic information units for maintainable retrieval systems",
+      "llm_evidence_cn": "用于可维护检索系统的原子信息单元",
+      "llm_evidence": "用于可维护检索系统的原子信息单元",
+      "canonical_evidence": "用于可维护检索系统的原子信息单元",
+      "llm_tldr_en": "NuggetIndex improves RAG by storing atomic information units to handle outdated facts and source disagreements.",
+      "llm_tldr_cn": "NuggetIndex通过存储原子信息单元来改进RAG，有效处理过时事实和来源争议。",
+      "llm_tldr": "NuggetIndex通过存储原子信息单元来改进RAG，有效处理过时事实和来源争议。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.25602v1",
+      "source": "arxiv",
+      "title": "OxyGent: Making Multi-Agent Systems Modular, Observable, and Evolvable via Oxy Abstraction",
+      "abstract": "Deploying production-ready multi-agent systems (MAS) in complex industrial environments remains challenging due to limitations in scalability, observability, and autonomous evolution. We present OxyGent, an open-source framework that enables modular, observable, and evolvable MAS via a unified Oxy abstraction, in which agents, tools, LLMs, and reasoning flows are encapsulated as pluggable atomic components. This Lego-like assembly paradigm supports scalable system composition and non-intrusive monitoring. To enhance observability, OxyGent introduces permission-driven dynamic planning that replaces rigid workflows with execution graphs generated at runtime, which provide adaptive visualizations. To support continuous evolution, the framework integrates OxyBank, an AI asset management platform that supports automated data backflow, annotation, and joint evolution. Empirical evaluations and real-world case studies show that OxyGent provides a robust and scalable foundation for MAS. OxyGent is publicly available at https://oxygent.jd.com/.",
+      "authors": [
+        "Junxing Hu",
+        "Tianlong Li",
+        "Lei Yu",
+        "Ai Han"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-28T13:08:14+00:00",
+      "link": "https://arxiv.org/pdf/2604.25602v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "modular and evolvable multi-agent system framework",
+      "llm_evidence_cn": "模块化且可演化的多智能体系统框架",
+      "llm_evidence": "模块化且可演化的多智能体系统框架",
+      "canonical_evidence": "模块化且可演化的多智能体系统框架",
+      "llm_tldr_en": "OxyGent provides a modular framework for deploying scalable and observable multi-agent systems in complex settings.",
+      "llm_tldr_cn": "OxyGent提供了一个模块化框架，用于在复杂环境中部署可扩展且可观察的多智能体系统。",
+      "llm_tldr": "OxyGent提供了一个模块化框架，用于在复杂环境中部署可扩展且可观察的多智能体系统。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.27577v1",
+      "source": "arxiv",
+      "title": "Reproducing Adaptive Reranking for Reasoning-Intensive IR",
+      "abstract": "The classical cascading pipeline of retrieve--rerank suffers from a bounded recall problem, stemming from limitations of the first-stage retriever. Most current approaches address the bounded recall problem by improving the first-stage retriever, but this incurs substantial training and inference costs, especially to handle queries that require substantial reasoning. To circumvent the computational costs of reasoning-based retrievers, we replicate the findings of GAR, Graph-based Adaptive Reranking, on the BRIGHT reasoning-intensive retrieval benchmark. GAR addresses the bounded recall problem by modifying the reranking process itself through iterative exploration of a corpus graph, but it was previously only tested on models designed for topical and question-answering-style queries. Hence, reproduce GAR in reasoning-intensive settings with reasoning and non-reasoning reranking models. We observe that the quality of the reranker's signal plays an important role in identifying additional relevant documents within the corpus graph. Overall, we find that GAR boosts the effectiveness of reasoning-intensive retrieval across a variety of models while contributing minimally to computational overheads. Ultimately, this work enables more practical deployment of retrieval systems that can address reasoning-intensive queries.",
+      "authors": [
+        "Mandeep Rathee",
+        "V Venktesh",
+        "Sean MacAvaney",
+        "Avishek Anand"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-04-30T08:30:09+00:00",
+      "link": "https://arxiv.org/pdf/2604.27577v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "adaptive reranking for reasoning-intensive information retrieval",
+      "llm_evidence_cn": "针对推理密集型信息检索的自适应重排序",
+      "llm_evidence": "针对推理密集型信息检索的自适应重排序",
+      "canonical_evidence": "针对推理密集型信息检索的自适应重排序",
+      "llm_tldr_en": "Explores graph-based adaptive reranking to improve recall in reasoning-intensive retrieval tasks.",
+      "llm_tldr_cn": "探索基于图的自适应重排序，以提高推理密集型检索任务中的召回率。",
+      "llm_tldr": "探索基于图的自适应重排序，以提高推理密集型检索任务中的召回率。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.25605v1",
+      "source": "arxiv",
+      "title": "Health System Scale Semantic Search Across Unstructured Clinical Notes",
+      "abstract": "Introduction: Semantic search, which retrieves documents based on conceptual similarity rather than keyword matching, offers substantial advantages for retrieval of clinical information. However, deploying semantic search across entire health systems, comprising hundreds of millions of clinical notes, presents formidable engineering, cost, and governance challenges that have prevented adoption. Methods: We deployed a semantic search system at a large children's hospital indexing 166 million clinical notes (484 million vectors) from 1.68 million patients. The system uses instruction-tuned qwen3-embedding-0.6B embeddings, stores vectors in a managed database with storage-optimized indexing, maintains full-text metadata in a low-latency key-value store, and operates within a HIPAA-compliant governance framework. We evaluated the system through three experiments: optimization of embedding model and chunking strategy using a physician-authored benchmark dataset, characterization of full-scale performance (cost, latency, retrieval quality), and clinical utility assessment via comparison of chart abstraction efficiency across three tasks. Results: The system delivers sub-second query latency (median 237 ms single-user, 451 ms 20-user concurrency) with monthly costs of approximately USD 4,000. Qwen3 embeddings with 300-token chunk size achieved 94.6% accuracy on a clinical question-answering benchmark. In clinical utility evaluation across three abstraction tasks, semantic search reduced time-to-completion by 24 to 89% compared to clinician-performed chart review while maintaining comparable inter-rater agreement. Conclusion: Health-system-scale semantic search is both technically and operationally feasible. The system provides infrastructure supporting interactive search, cohort generation, and downstream LLM-powered clinical applications without requiring specialized informatics expertise.",
+      "authors": [
+        "Faith Wavinya Mutinda",
+        "Spandana Makeneni",
+        "Anna Lin",
+        "Shivaji Dutta",
+        "Irit R. Rasooly",
+        "Patrick Dibussolo",
+        "Shivani Kamath Belman",
+        "Hessam Shahriari",
+        "Kevin Murphy",
+        "Alex B. Ruan",
+        "Barbara H. Chaiyachati",
+        "Sanjay Chainani",
+        "Robert W. Grundmeier",
+        "Scott M. Haag",
+        "Jeffrey M. Miller",
+        "Heather M. Griffis",
+        "Ian M. Campbell"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI",
+        "cs.DB"
+      ],
+      "published": "2026-04-28T13:09:48+00:00",
+      "link": "https://arxiv.org/pdf/2604.25605v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "Semantic search for large-scale unstructured document retrieval",
+      "llm_evidence_cn": "大规模非结构化文档检索的语义搜索",
+      "llm_evidence": "大规模非结构化文档检索的语义搜索",
+      "canonical_evidence": "大规模非结构化文档检索的语义搜索",
+      "llm_tldr_en": "Deploys a large-scale semantic search system for clinical notes using advanced embeddings and vector databases.",
+      "llm_tldr_cn": "在大型医院部署了语义搜索系统，利用先进嵌入技术实现对海量临床笔记的检索。",
+      "llm_tldr": "在大型医院部署了语义搜索系统，利用先进嵌入技术实现对海量临床笔记的检索。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "biorxiv-10-64898-2026-04-24-719925-v1",
+      "source": "biorxiv",
+      "title": "PixelDeck: A local-first media library manager for biomedical imaging",
+      "abstract": "Modern biomedical imaging workflows generate large volumes of derived images and short videos that must be reviewed, compared, curated, and reused following primary acquisition and analysis. In practice, these assets are often dispersed across nested filesystem hierarchies on local drives, external media, or network storage, limiting efficient retrieval, deduplication, and figure assembly. We present PixelDeck, an open-source, local-first browser application for organizing and interactively browsing large biomedical image and video libraries on commodity workstations. PixelDeck integrates recursive folder import, SHA-256-based duplicate detection, metadata extraction, thumbnail and preview generation, full-text search, and asynchronous export within a responsive interface, supported by a modular ingestion pipeline, managed storage layer, and interactive browsing environment optimized for high-volume media collections. The system is implemented using a Next.js and React frontend, a SQLite metadata store accessed via Prisma, managed local media storage, and a background worker that executes import and export tasks asynchronously, enabling scalable processing on standard hardware. To evaluate performance, we conducted structured benchmark imports using public histopathology images curated from PanopTILs, SICAPv2, and PanNuke datasets, where dataset-specific import behavior, duplicate detection, and ingestion metrics were recorded as reproducible outputs. Embedding-based analysis further demonstrates dataset-level separation consistent with underlying image characteristics. These results show that PixelDeck provides an efficient, scalable local curation layer for heterogeneous biomedical imaging collections, enabling streamlined dataset exploration and preparation for downstream analysis.",
+      "authors": [
+        "Kidder, B. L."
+      ],
+      "primary_category": "bioinformatics",
+      "categories": [
+        "bioinformatics"
+      ],
+      "published": "2026-04-28T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.04.24.719925v1.full.pdf",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "media library manager for biomedical imaging and retrieval",
+      "llm_evidence_cn": "用于生物医学图像检索和管理的媒体库管理器",
+      "llm_evidence": "用于生物医学图像检索和管理的媒体库管理器",
+      "canonical_evidence": "用于生物医学图像检索和管理的媒体库管理器",
+      "llm_tldr_en": "PixelDeck is a local-first tool for organizing and searching large biomedical image and video libraries.",
+      "llm_tldr_cn": "PixelDeck是一个用于组织和搜索大型生物医学图像及视频库的本地优先工具。",
+      "llm_tldr": "PixelDeck是一个用于组织和搜索大型生物医学图像及视频库的本地优先工具。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "library services and technology",
+      "matched_requirement_id": "req-2",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.27096v1",
+      "source": "arxiv",
+      "title": "Think it, Run it: Autonomous ML pipeline generation via self-healing multi-agent AI",
+      "abstract": "The purpose of our paper is to develop a unified multi-agent architecture that automates end-to-end machine learning (ML) pipeline generation from datasets and natural-language (NL) goals, improving efficiency, robustness and explainability. A five-agent system is proposed to handle profiling, intent parsing, microservice recommendation, Directed Acyclic Graph (DAG) construction and execution. It integrates code-grounded Retrieval-Augmented Generation (RAG) for microservice understanding, an explainable hybrid recommender combining multiple criteria, a self-healing mechanism using Large Language Model (LLM)-based error interpretation and adaptive learning from execution history. The approach is evaluated on 150 ML tasks across diverse scenarios. The system achieves an 84.7% end-to-end pipeline success rate, outperforming baseline methods. It demonstrates improved robustness through self-healing and reduces workflow development time compared to manual construction. The study introduces a novel integration of code-grounded RAG, explainable recommendation, self-healing execution and adaptive learning within a single architecture, showing that tightly coupled intelligent components can outperform isolated solutions.",
+      "authors": [
+        "Adela Bara",
+        "Gabriela Dobrita",
+        "Simona-Vasilica Oprea"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-29T18:42:08+00:00",
+      "link": "https://arxiv.org/pdf/2604.27096v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "unified multi-agent architecture for automated pipeline generation",
+      "llm_evidence_cn": "用于自动化流水线生成的统一多智能体架构",
+      "llm_evidence": "用于自动化流水线生成的统一多智能体架构",
+      "canonical_evidence": "用于自动化流水线生成的统一多智能体架构",
+      "llm_tldr_en": "A five-agent system automates ML pipeline generation using RAG and self-healing mechanisms for better efficiency.",
+      "llm_tldr_cn": "一个五智能体系统利用RAG和自愈机制自动化机器学习流水线生成，提高了效率。",
+      "llm_tldr": "一个五智能体系统利用RAG和自愈机制自动化机器学习流水线生成，提高了效率。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}
