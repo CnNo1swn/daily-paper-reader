@@ -1,0 +1,118 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-001.webp",
+      "caption": "Figure 4: HTNA comparison of interaction types between Q1 and Q4 students. Red edges: stronger for Q1; green edges: stronger for Q4. Blue nodes: instrumental help-seeking; teal nodes: executive help-seeking; gray nodes: AI pedagogical roles; orange: AI non-pedagogical roles. Only transitions over 0.3 are shown.",
+      "page": 11,
+      "index": 1,
+      "width": 577,
+      "height": 408
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-002.webp",
+      "caption": "Table 7: Linear regression model of interaction types with grade as dependent variable",
+      "page": 21,
+      "index": 2,
+      "width": 558,
+      "height": 362
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-003.webp",
+      "caption": "Table 6: Top 10 interaction type patterns showing significant frequency differences across all performance levels (all p < 0.001). Student prompt elements appear in normal font; AI response elements appear in italics.",
+      "page": 21,
+      "index": 3,
+      "width": 720,
+      "height": 212
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-004.webp",
+      "caption": "Table 1: Coding schemes for student-AI interactions",
+      "page": 7,
+      "index": 4,
+      "width": 787,
+      "height": 623
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-005.webp",
+      "caption": "Table 2: Top 10 interaction element patterns showing significant frequency differences between Q1 and Q4 students (all p < 0.001). Student prompt elements appear in normal font; AI response elements appear in italics.",
+      "page": 10,
+      "index": 5,
+      "width": 827,
+      "height": 199
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-006.webp",
+      "caption": "Figure 3: Comparing frequency of individual interaction types between Q1 and Q4 students. Blue shading indicates overrepresentation, while red shading indicates underrepresentation of each element within a group.",
+      "page": 10,
+      "index": 6,
+      "width": 650,
+      "height": 349
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-007.webp",
+      "caption": "Figure 5: Pearson residual analysis comparing the frequency of individual interaction elements across all performance level groups (x2(30) = 137.5, p < 0.001). Blue shading indicates overrepresentation, while red shading indicates underrepresentation of each element within a group.",
+      "page": 18,
+      "index": 7,
+      "width": 577,
+      "height": 288
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-008.webp",
+      "caption": "Figure 6: Heterogeneous Temporal Network Analysis (HTNA) models of interaction patterns for each performance groups. Directed edges show transition probabilities between patterns, with edge width proportional to transition strength. Pie rings indicate the starting probability for each interaction pattern.",
+      "page": 18,
+      "index": 8,
+      "width": 650,
+      "height": 337
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-009.webp",
+      "caption": "Figure 1: Comparing frequency of individual interaction elements between Q1 and Q4 students. Blue shading indicates overrepresentation, while red shading indicates underrepresentation of each element within a group.",
+      "page": 8,
+      "index": 9,
+      "width": 720,
+      "height": 348
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-010.webp",
+      "caption": "Table 4: Top 10 interaction element patterns showing significant frequency differences across all performance levels (all p < 0.001). Student prompt elements appear in normal font; AI response elements appear in italics.",
+      "page": 19,
+      "index": 10,
+      "width": 720,
+      "height": 202
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-011.webp",
+      "caption": "Table 5: Linear regression model of interaction elements with grade as dependent variable",
+      "page": 19,
+      "index": 11,
+      "width": 570,
+      "height": 486
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-012.webp",
+      "caption": "Table 3: Top 10 pattern differences of interaction types between Q1 and Q4 students, sorted by chi-square statistic. All patterns shown are statistically significant at p < 0.05.",
+      "page": 12,
+      "index": 12,
+      "width": 827,
+      "height": 209
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-013.webp",
+      "caption": "Figure 2: HTNA comparison model for interaction elements. For Q1 students, stronger connections are highlighted in red, whereas for Q4 students, they are highlighted in green. Violet nodes: elements of AI responses; yellow nodes: elements of student prompts. Only transitions over 0.4 are shown.",
+      "page": 9,
+      "index": 13,
+      "width": 577,
+      "height": 393
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27134v1/fig-014.webp",
+      "caption": "Figure 8: Heterogeneous Temporal Network Analysis (HTNA) models of interaction types for each performance groups. Directed edges show transition probabilities between patterns, with edge width proportional to transition strength. Pie rings indicate the starting probability for each interaction pattern.",
+      "page": 20,
+      "index": 14,
+      "width": 720,
+      "height": 464
+    }
+  ]
+}

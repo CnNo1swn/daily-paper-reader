@@ -1,0 +1,704 @@
+{
+  "mode": "standard",
+  "generated_at": "2026-05-05T20:58:45.223019+00:00",
+  "stats": {
+    "mode": "standard",
+    "tag_count": 2,
+    "deep_divecandidates": 5,
+    "deep_cap": 7,
+    "deep_selected": 5,
+    "quick_candidates": 40,
+    "quick_skim_target": 12,
+    "quick_selected": 12
+  },
+  "deep_dive": [
+    {
+      "id": "biorxiv-10-64898-2026-04-24-719925-v1",
+      "source": "biorxiv",
+      "title": "PixelDeck: A local-first media library manager for biomedical imaging",
+      "abstract": "Modern biomedical imaging workflows generate large volumes of derived images and short videos that must be reviewed, compared, curated, and reused following primary acquisition and analysis. In practice, these assets are often dispersed across nested filesystem hierarchies on local drives, external media, or network storage, limiting efficient retrieval, deduplication, and figure assembly. We present PixelDeck, an open-source, local-first browser application for organizing and interactively browsing large biomedical image and video libraries on commodity workstations. PixelDeck integrates recursive folder import, SHA-256-based duplicate detection, metadata extraction, thumbnail and preview generation, full-text search, and asynchronous export within a responsive interface, supported by a modular ingestion pipeline, managed storage layer, and interactive browsing environment optimized for high-volume media collections. The system is implemented using a Next.js and React frontend, a SQLite metadata store accessed via Prisma, managed local media storage, and a background worker that executes import and export tasks asynchronously, enabling scalable processing on standard hardware. To evaluate performance, we conducted structured benchmark imports using public histopathology images curated from PanopTILs, SICAPv2, and PanNuke datasets, where dataset-specific import behavior, duplicate detection, and ingestion metrics were recorded as reproducible outputs. Embedding-based analysis further demonstrates dataset-level separation consistent with underlying image characteristics. These results show that PixelDeck provides an efficient, scalable local curation layer for heterogeneous biomedical imaging collections, enabling streamlined dataset exploration and preparation for downstream analysis.",
+      "authors": [
+        "Kidder, B. L."
+      ],
+      "primary_category": "bioinformatics",
+      "categories": [
+        "bioinformatics"
+      ],
+      "published": "2026-04-28T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.04.24.719925v1.full.pdf",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.5,
+      "llm_evidence_en": "media library manager for efficient retrieval and organization",
+      "llm_evidence_cn": "用于高效检索和组织的媒体库管理器",
+      "llm_evidence": "用于高效检索和组织的媒体库管理器",
+      "canonical_evidence": "用于高效检索和组织的媒体库管理器",
+      "llm_tldr_en": "Presents PixelDeck, a tool for managing and searching large biomedical image and video libraries.",
+      "llm_tldr_cn": "介绍了PixelDeck，一个用于管理和搜索大型生物医学图像及视频库的工具。",
+      "llm_tldr": "介绍了PixelDeck，一个用于管理和搜索大型生物医学图像及视频库的工具。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.00410v1",
+      "source": "arxiv",
+      "title": "Agent Capsules: Quality-Gated Granularity Control for Multi-Agent LLM Pipelines",
+      "abstract": "A multi-agent pipeline with N agents typically issues N LLM calls per run. Merging agents into fewer calls (compound execution) promises token savings, but naively merged calls silently degrade quality through tool loss and prompt compression. We present Agent Capsules, an adaptive execution runtime that treats multi-agent pipeline execution as an optimization problem with empirical quality constraints. The runtime instruments coordination overhead per group, scores composition opportunity, selects among three compound execution strategies, and gates every mode switch on rolling-mean output quality. A controlled negative result confirms that injecting more context into a merged call worsens compression rather than relieving it, so the framework's escalation ladder (standard, then two-phase, then sequential) recovers quality by moving toward per-agent dispatch rather than by rewriting merged prompts. On LLM-judged quality, the controller matches a hand-tuned oracle on every measured (model, group, mode) cell: routing compound whenever the oracle would, and reverting to fine whenever quality would fail the floor, without per-model configuration. Against a hand-crafted LangGraph implementation of a 14-agent competitive intelligence pipeline, Agent Capsules uses 51% fewer fine-mode input tokens and 42% fewer compound-mode input tokens, at +0.020 and +0.017 quality respectively. Against a DSPy implementation of a 5-agent due diligence pipeline, the framework uses 19% fewer tokens than uncompiled DSPy at quality parity, and 68% fewer tokens than MIPROv2 at +0.052 quality. Even before compound mode fires, the runtime delivers efficiency through automatic policy resolution, cache-aligned prompts, and topology-aware context injection, matching both hand-tuned and compile-time baselines without training data or per-pipeline engineering.",
+      "authors": [
+        "Aninda Ray"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-05-01T05:08:14+00:00",
+      "link": "https://arxiv.org/pdf/2605.00410v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "quality-gated control for multi-agent LLM pipelines",
+      "llm_evidence_cn": "多智能体LLM流水线的质量门控控制",
+      "llm_evidence": "多智能体LLM流水线的质量门控控制",
+      "canonical_evidence": "多智能体LLM流水线的质量门控控制",
+      "llm_tldr_en": "Agent Capsules optimizes multi-agent pipelines by adaptively merging calls while maintaining output quality.",
+      "llm_tldr_cn": "Agent Capsules通过自适应合并调用并保持输出质量来优化多智能体流水线。",
+      "llm_tldr": "Agent Capsules通过自适应合并调用并保持输出质量来优化多智能体流水线。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2604.27577v1",
+      "source": "arxiv",
+      "title": "Reproducing Adaptive Reranking for Reasoning-Intensive IR",
+      "abstract": "The classical cascading pipeline of retrieve--rerank suffers from a bounded recall problem, stemming from limitations of the first-stage retriever. Most current approaches address the bounded recall problem by improving the first-stage retriever, but this incurs substantial training and inference costs, especially to handle queries that require substantial reasoning. To circumvent the computational costs of reasoning-based retrievers, we replicate the findings of GAR, Graph-based Adaptive Reranking, on the BRIGHT reasoning-intensive retrieval benchmark. GAR addresses the bounded recall problem by modifying the reranking process itself through iterative exploration of a corpus graph, but it was previously only tested on models designed for topical and question-answering-style queries. Hence, reproduce GAR in reasoning-intensive settings with reasoning and non-reasoning reranking models. We observe that the quality of the reranker's signal plays an important role in identifying additional relevant documents within the corpus graph. Overall, we find that GAR boosts the effectiveness of reasoning-intensive retrieval across a variety of models while contributing minimally to computational overheads. Ultimately, this work enables more practical deployment of retrieval systems that can address reasoning-intensive queries.",
+      "authors": [
+        "Mandeep Rathee",
+        "V Venktesh",
+        "Sean MacAvaney",
+        "Avishek Anand"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-04-30T08:30:09+00:00",
+      "link": "https://arxiv.org/pdf/2604.27577v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "adaptive reranking for reasoning-intensive information retrieval",
+      "llm_evidence_cn": "针对推理密集型信息检索的自适应重排序",
+      "llm_evidence": "针对推理密集型信息检索的自适应重排序",
+      "canonical_evidence": "针对推理密集型信息检索的自适应重排序",
+      "llm_tldr_en": "Explores graph-based adaptive reranking to solve the bounded recall problem in reasoning-intensive retrieval.",
+      "llm_tldr_cn": "探索基于图的自适应重排序，以解决推理密集型检索中的召回率受限问题。",
+      "llm_tldr": "探索基于图的自适应重排序，以解决推理密集型检索中的召回率受限问题。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "2605.00529v1",
+      "source": "arxiv",
+      "title": "Hierarchical Abstract Tree for Cross-Document Retrieval-Augmented Generation",
+      "abstract": "Retrieval-augmented generation (RAG) enhances large language models with external knowledge, and tree-based RAG organizes documents into hierarchical indexes to support queries at multiple granularities. However, existing Tree-RAG methods designed for single-document retrieval face critical challenges in scaling to cross-document multi-hop questions: (1) poor distribution adaptability, where $k$-means clustering introduces noise due to rigid distribution assumptions; (2) structural isolation, as tree indexes lack explicit cross-document connections; and (3) coarse abstraction, which obscures fine-grained details. To address these limitations, we propose $Ψ$-RAG, a tree-RAG framework with two key components. First, a hierarchical abstract tree index built through an iterative \"merging and collapse\" process that adapts to data distributions without a priori assumption. Second, a multi-granular retrieval agent that intelligently interacts with the knowledge base with reorganized queries and an agent-powered hybrid retriever. $Ψ$-RAG supports diverse tasks from token-level question answering to document-level summarization. On cross-document multi-hop QA benchmarks, it outperforms RAPTOR by 25.9% and HippoRAG 2 by 7.4% in average F1 score. Code is available at https://github.com/Newiz430/Psi-RAG.",
+      "authors": [
+        "Ziwen Zhao",
+        "Menglin Yang"
+      ],
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI",
+        "cs.IR"
+      ],
+      "published": "2026-05-01T09:06:23+00:00",
+      "link": "https://arxiv.org/pdf/2605.00529v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "cross-document retrieval-augmented generation for digital libraries",
+      "llm_evidence_cn": "数字图书馆的跨文档检索增强生成",
+      "llm_evidence": "数字图书馆的跨文档检索增强生成",
+      "canonical_evidence": "数字图书馆的跨文档检索增强生成",
+      "llm_tldr_en": "Psi-RAG uses a hierarchical abstract tree to improve cross-document multi-hop retrieval and generation.",
+      "llm_tldr_cn": "Psi-RAG利用分层抽象树改进了跨文档多跳检索与生成。",
+      "llm_tldr": "Psi-RAG利用分层抽象树改进了跨文档多跳检索与生成。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch"
+    },
+    {
+      "id": "biorxiv-10-64898-2026-04-23-720371-v1",
+      "source": "biorxiv",
+      "title": "All Models are Wrong, Some are Annotated: Automating Metadata in Biomedical Repositories",
+      "abstract": "ObjectiveHigh-quality metadata is essential for scientific discovery, yet sparse annotations in rapidly growing repositories leave many biologically relevant details uncaptured. We evaluated whether large language models (LLMs) can accurately infer ion channel and receptor subtype metadata from source code in a neuroscience repository.\n\nMaterials and MethodsWe extracted 5,133 model files from ModelDB. A subset of 1,100 was manually annotated; 253 were held out for testing, and the remainder split into training (80%) and validation (20%) sets. LLM-based approaches (GPT-5.2 and GPT-mini) were evaluated under zero-shot and heuristic-augmented prompting. Performance was assessed at type and subtype levels using accuracy, precision, recall, and F1 score. A feature-engineered XGBoost model using text- and simulation-derived features served as a baseline.\n\nResultsLLMs outperformed the XGBoost baseline. At the type level, GPT-mini with heuristic augmentation achieved the highest performance (accuracy 96.0%, F1 0.962). At the subtype level, both GPT-5.2+heuristics and GPT-mini+heuristics achieved identical accuracy (88.1%), with GPT-5.2+heuristics achieving the highest F1(0.878). Model outputs were consistent across runs and errors confined to related mechanistic families.\n\nDiscussion and ConclusionLLMs demonstrate strong potential for metadata annotation directly from source code, outperforming feature-engineering approaches with minimal tuning. However, performance varied across subtypes, and errors often reflected ambiguity or bias toward more common labels. These findings suggest LLMs may serve as practical tools for scalable metadata generation in biomedical repositories, although careful evaluation and domain-specific validation remain important. While demonstrated in computational neuroscience, this approach may generalize to repository-agnostic metadata annotation in other scientific code repositories.",
+      "authors": [
+        "Cohen, I.",
+        "Yu, H.",
+        "McDougal, R. A."
+      ],
+      "primary_category": "neuroscience",
+      "categories": [
+        "neuroscience"
+      ],
+      "published": "2026-04-27T00:00:00+00:00",
+      "link": "https://www.biorxiv.org/content/10.64898/2026.04.23.720371v1.full.pdf",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 8.0,
+      "llm_evidence_en": "automating metadata in biomedical repositories using LLMs",
+      "llm_evidence_cn": "使用大语言模型自动生成生物医学库中的元数据",
+      "llm_evidence": "使用大语言模型自动生成生物医学库中的元数据",
+      "canonical_evidence": "使用大语言模型自动生成生物医学库中的元数据",
+      "llm_tldr_en": "Evaluates LLMs for automating metadata extraction in scientific repositories to improve discovery.",
+      "llm_tldr_cn": "评估大语言模型在科学数据库中自动提取元数据的能力，以促进科研发现。",
+      "llm_tldr": "评估大语言模型在科学数据库中自动提取元数据的能力，以促进科研发现。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch"
+    }
+  ],
+  "quick_skim": [
+    {
+      "id": "2604.24222v1",
+      "source": "arxiv",
+      "title": "MEMCoder: Multi-dimensional Evolving Memory for Private-Library-Oriented Code Generation",
+      "abstract": "Large Language Models (LLMs) excel at general code generation, but their performance drops sharply in enterprise settings that rely on internal private libraries absent from public pre-training corpora. While Retrieval-Augmented Generation (RAG) offers a training-free alternative by providing static API documentation, we find that such documentation typically provides only isolated definitions, leaving a fundamental knowledge gap. Specifically, LLMs struggle with a task-level lack of coordination patterns between APIs and an API-level misunderstanding of parameter constraints and boundary conditions. To address this, we propose MEMCoder, a novel framework that enables LLMs to autonomously accumulate and evolve Usage Guidelines across these two dimensions. MEMCoder introduces a Multi-dimensional Evolving Memory that captures distilled lessons from the model's own problem-solving trajectories. During inference, MEMCoder employs a dual-source retrieval mechanism to inject both static documentation and relevant historical guidelines into the context. The framework operates in an automated closed loop by using objective execution feedback to reflect on successes and failures, resolve knowledge conflicts, and dynamically update memory. Extensive evaluations on the NdonnxEval and NumbaEval benchmarks demonstrate that MEMCoder substantially enhances existing RAG systems, yielding an average absolute pass@1 gain of 16.31%. Furthermore, MEMCoder exhibits vastly superior domain-specific adaptation compared to existing memory-based continual learning methods.",
+      "authors": [
+        "Mofei Li",
+        "Taozhi Chen",
+        "Guowei Yang",
+        "Jia Li"
+      ],
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.AI",
+        "cs.CL"
+      ],
+      "published": "2026-04-27T09:27:59+00:00",
+      "link": "https://arxiv.org/pdf/2604.24222v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "private-library-oriented code generation using evolving memory",
+      "llm_evidence_cn": "使用演化记忆的面向私有库的代码生成",
+      "llm_evidence": "使用演化记忆的面向私有库的代码生成",
+      "canonical_evidence": "使用演化记忆的面向私有库的代码生成",
+      "llm_tldr_en": "Enables LLMs to use internal private libraries through an autonomous memory evolution framework.",
+      "llm_tldr_cn": "通过自主记忆演化框架，使大语言模型能够使用内部私有库。",
+      "llm_tldr": "通过自主记忆演化框架，使大语言模型能够使用内部私有库。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.25602v2",
+      "source": "arxiv",
+      "title": "OxyGent: Making Multi-Agent Systems Modular, Observable, and Evolvable via Oxy Abstraction",
+      "abstract": "Deploying production-ready multi-agent systems (MAS) in complex industrial environments remains challenging due to limitations in scalability, observability, and autonomous evolution. We present OxyGent, an open-source framework driven by two core novelties: a unified Oxy abstraction and the OxyBank evolution engine. The unified abstraction encapsulates agents, tools, LLMs, and reasoning flows as pluggable atomic components, enabling Lego-like scalable system composition and non-intrusive monitoring. To enhance observability, OxyGent introduces permission-driven dynamic planning that replaces rigid workflows with execution graphs generated at runtime, providing adaptive visualizations. Furthermore, to support continuous evolution, OxyBank serves as an AI asset management platform that drives automated data backflow, annotation, and joint evolution. Empirical evaluations and real-world case studies show that OxyGent provides a robust and scalable foundation for MAS. OxyGent is fully open-sourced under the Apache License 2.0 at https://github.com/jd-opensource/OxyGent.",
+      "authors": [
+        "Junxing Hu",
+        "Tianlong Li",
+        "Lei Yu",
+        "Ai Han"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-28T13:08:14+00:00",
+      "link": "https://arxiv.org/pdf/2604.25602v2",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "modular multi-agent system framework for complex environments",
+      "llm_evidence_cn": "适用于复杂环境的模块化多智能体系统框架",
+      "llm_evidence": "适用于复杂环境的模块化多智能体系统框架",
+      "canonical_evidence": "适用于复杂环境的模块化多智能体系统框架",
+      "llm_tldr_en": "Introduces OxyGent, a framework for building scalable and observable multi-agent systems using atomic components.",
+      "llm_tldr_cn": "介绍了OxyGent，一个使用原子组件构建可扩展且可观察的多智能体系统的框架。",
+      "llm_tldr": "介绍了OxyGent，一个使用原子组件构建可扩展且可观察的多智能体系统的框架。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.25707v2",
+      "source": "arxiv",
+      "title": "From Citation Selection to Citation Absorption: A Measurement Framework for Generative Engine Optimization Across AI Search Platforms",
+      "abstract": "Generative search engines increasingly determine whether online information is merely discoverable, cited as a source, or actually absorbed into generated answers. This paper proposes a two-stage measurement framework for Generative Engine Optimization (GEO): citation selection, where a platform triggers search and chooses sources, and citation absorption, where a cited page contributes language, evidence, structure, or factual support to the final answer. We analyze the public geo-citation-lab dataset covering 602 controlled prompts across ChatGPT, Google AI Overview/Gemini, and Perplexity; 21,143 valid search-layer citations; 23,745 citation-level feature records; 18,151 successfully fetched pages; and 72 extracted features. The central descriptive finding is that citation breadth and citation depth diverge. Perplexity and Google cite more sources on average, while ChatGPT cites fewer sources but shows substantially higher average citation influence among fetched pages. High-influence pages tend to be longer, more structured, semantically aligned, and richer in extractable evidence such as definitions, numerical facts, comparisons, and procedural steps. The results suggest that GEO should be measured beyond citation counts, with answer-level absorption treated as a separate outcome.",
+      "authors": [
+        "Zhang Kai",
+        "He Xinyue",
+        "Yao Jingang"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR"
+      ],
+      "published": "2026-04-28T14:34:20+00:00",
+      "link": "https://arxiv.org/pdf/2604.25707v2",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "measurement framework for generative search engines and citation selection",
+      "llm_evidence_cn": "生成式搜索引擎和引用选择的测量框架",
+      "llm_evidence": "生成式搜索引擎和引用选择的测量框架",
+      "canonical_evidence": "生成式搜索引擎和引用选择的测量框架",
+      "llm_tldr_en": "Proposes a framework to evaluate how AI search engines select and absorb citations into generated answers.",
+      "llm_tldr_cn": "提出了一个评估AI搜索引擎如何选择引用并将其吸收到生成答案中的框架。",
+      "llm_tldr": "提出了一个评估AI搜索引擎如何选择引用并将其吸收到生成答案中的框架。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.27132v1",
+      "source": "arxiv",
+      "title": "TRUST: A Framework for Decentralized AI Service v.0.1",
+      "abstract": "Large Reasoning Models (LRMs) and Multi-Agent Systems (MAS) in high-stakes domains demand reliable verification, yet centralized approaches suffer four limitations: (1) Robustness, with single points of failure vulnerable to attacks and bias; (2) Scalability, as reasoning complexity creates bottlenecks; (3) Opacity, as hidden auditing erodes trust; and (4) Privacy, as exposed reasoning traces risk model theft. We introduce TRUST (Transparent, Robust, and Unified Services for Trustworthy AI), a decentralized framework with three innovations: (i) Hierarchical Directed Acyclic Graphs (HDAGs) that decompose Chain-of-Thought reasoning into five abstraction levels for parallel distributed auditing; (ii) the DAAN protocol, which projects multi-agent interactions into Causal Interaction Graphs (CIGs) for deterministic root-cause attribution; and (iii) a multi-tier consensus mechanism among computational checkers, LLM evaluators, and human experts with stake-weighted voting that guarantees correctness under 30% adversarial participation. We prove a Safety-Profitability Theorem ensuring honest auditors profit while malicious actors incur losses. All decisions are recorded on-chain, while privacy-by-design segmentation prevents reconstruction of proprietary logic. Across multiple LLMs and benchmarks, TRUST attains 72.4% accuracy (4-18% above baselines) and remains resilient against 20% corruption. DAAN reaches 70% root-cause attribution (vs. 54-63% for standard methods) with 60% token savings. Human studies validate the design (F1 = 0.89, Brier = 0.074). The framework supports (A1) decentralized auditing, (A2) tamper-proof leaderboards, (A3) trustless data annotation, and (A4) governed autonomous agents, pioneering decentralized AI auditing for safe, accountable deployment of reasoning-capable systems.",
+      "authors": [
+        "Yu-Chao Huang",
+        "Zhen Tan",
+        "Mohan Zhang",
+        "Pingzhi Li",
+        "Zhuo Zhang",
+        "Tianlong Chen"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-29T19:32:58+00:00",
+      "link": "https://arxiv.org/pdf/2604.27132v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "decentralized multi-agent systems for trustworthy AI services",
+      "llm_evidence_cn": "用于可信人工智能服务的分中心多智能体系统",
+      "llm_evidence": "用于可信人工智能服务的分中心多智能体系统",
+      "canonical_evidence": "用于可信人工智能服务的分中心多智能体系统",
+      "llm_tldr_en": "Introduces a decentralized framework for multi-agent systems to ensure robustness and privacy in AI services.",
+      "llm_tldr_cn": "介绍了一种多智能体系统去中心化框架，以确保AI服务的鲁棒性和隐私。",
+      "llm_tldr": "介绍了一种多智能体系统去中心化框架，以确保AI服务的鲁棒性和隐私。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.26768v1",
+      "source": "arxiv",
+      "title": "Decoupling Knowledge and Task Subspaces for Composable Parametric Retrieval Augmented Generation",
+      "abstract": "Parametric Retrieval-Augmented Generation (PRAG) encodes external documents into lightweight parameter modules that can be retrieved and merged at inference time, offering a promising alternative to in-context retrieval augmentation. Despite its potential, many PRAG implementations train document adapters with task-supervised objectives, which may cause each adapter to encode both document-specific facts and reusable task-solving behavior. This entanglement may make adapter composition less reliable: when multiple adapters are merged at inference time, their overlapping task behaviors can accumulate together with document-specific updates, potentially making the merged adapter less stable and less focused on the intended document knowledge. To examine this issue, we explore Orthogonal Subspace Decomposition (OSD), an adapter-training setup that separates reusable task behavior from document-specific knowledge adapters. Concretely, we first train a Task LoRA to capture reusable task behavior, and then train document LoRAs to encode document-specific knowledge in a orthogonal subspace. This setup provides a controlled way to examine how orthogonalizing task and document LoRA updates affects adapter composition in multi-document PRAG. Experiments across multiple knowledge-intensive tasks and model scales suggest that this orthogonalization strategy can improve compositional robustness in parametric RAG, especially when multiple document adapters are merged.",
+      "authors": [
+        "Weihang Su",
+        "Hanwen Zhang",
+        "Qingyao Ai",
+        "Yiqun Liu"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-29T15:00:35+00:00",
+      "link": "https://arxiv.org/pdf/2604.26768v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.5,
+      "llm_evidence_en": "parametric retrieval augmented generation for external documents",
+      "llm_evidence_cn": "针对外部文档的参数化检索增强生成",
+      "llm_evidence": "针对外部文档的参数化检索增强生成",
+      "canonical_evidence": "针对外部文档的参数化检索增强生成",
+      "llm_tldr_en": "Decouples knowledge and task subspaces in PRAG to improve document-specific retrieval and generation.",
+      "llm_tldr_cn": "在PRAG中解耦知识和任务子空间，以改进特定文档的检索和生成。",
+      "llm_tldr": "在PRAG中解耦知识和任务子空间，以改进特定文档的检索和生成。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "machine learning and natural language processing in digital libraries",
+      "matched_requirement_id": "req-9",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.27134v1",
+      "source": "arxiv",
+      "title": "Unpacking Vibe Coding: Help-Seeking Processes in Student-AI Interactions While Programming",
+      "abstract": "Generative AI is reshaping higher education programming through vibe coding, where students collaborate with AI via natural language rather than writing code line-by-line. We conceptualize this practice as help-seeking, analyzing 19,418 interaction turns from 110 undergraduate students. Using inductive coding and Heterogeneous Transition Network Analysis, we examined interaction sequences to compare top- and low-performing students. Results reveal that top performers engaged in instrumental help-seeking -- inquiry and exploration -- eliciting tutor-like AI responses. In contrast, low performers relied on executive help-seeking, frequently delegating tasks and prompting the AI to assume an executor role focused on ready-made solutions. These findings indicate that currently generative AI mirrors student intent (whether productive or passive) rather than optimizing for learning. To evolve from tools to teammates, AI systems must move beyond passive compliance. We argue for pedagogically aligned design that detect unproductive delegation and adaptively steer educational interactions toward inquiry, ensuring student-AI partnerships augment rather than replace cognitive effort.",
+      "authors": [
+        "Daiana Rinja",
+        "Eduardo Araujo Oliveira",
+        "Sonsoles López-Pernas",
+        "Mohammed Saqr",
+        "Marcus Specht",
+        "Kamila Misiejuk"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.HC"
+      ],
+      "published": "2026-04-29T19:35:10+00:00",
+      "link": "https://arxiv.org/pdf/2604.27134v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.5,
+      "llm_evidence_en": "student-AI interactions and help-seeking in higher education",
+      "llm_evidence_cn": "高等教育中的学生与AI互动及求助行为",
+      "llm_evidence": "高等教育中的学生与AI互动及求助行为",
+      "canonical_evidence": "高等教育中的学生与AI互动及求助行为",
+      "llm_tldr_en": "Analyzes how students interact with AI for programming help, distinguishing between different help-seeking styles.",
+      "llm_tldr_cn": "分析了学生如何与AI互动以获取编程帮助，区分了不同的求助风格。",
+      "llm_tldr": "分析了学生如何与AI互动以获取编程帮助，区分了不同的求助风格。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "AI supported academic library services for postgraduate students resource discovery",
+      "matched_requirement_id": "req-19",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.24026v2",
+      "source": "arxiv",
+      "title": "From Skill Text to Skill Structure: The Scheduling-Structural-Logical Representation for Agent Skills",
+      "abstract": "LLM agents increasingly rely on reusable skills, capability packages that combine instructions, control flow, constraints, and tool calls. In most current agent systems, however, skills are still represented by text-heavy artifacts, including SKILL{.}md-style documents and structured records whose machine-usable evidence remains embedded largely in natural-language descriptions. This poses a challenge for skill-centered agent systems: managing skill collections and using skills to support agent both require reasoning over invocation interfaces, execution structure, and concrete side effects that are often entangled in a single textual surface. An explicit representation of skill knowledge may therefore help make these artifacts easier for machines to acquire and leverage. Drawing on Memory Organization Packets, Script Theory, and Conceptual Dependency from Schank and Abelson's classical work on linguistic knowledge representation, we introduce what is, to our knowledge, the first structured representation for agent skill artifacts that disentangles skill-level scheduling signals, scene-level execution structure, and logic-level action and resource-use evidence: the Scheduling-Structural-Logical (SSL) representation. We instantiate SSL with an LLM-based normalizer and evaluate it on a corpus of skills in two tasks, Skill Discovery and Risk Assessment, and superiorly outperform the text-only baselines: in Skill Discovery, SSL improves MRR from 0.573 to 0.707; in Risk Assessment, it improves macro F1 from 0.744 to 0.787. These findings reveal that explicit, source-grounded structure makes agent skills easier to search and review. They also suggest that SSL is best understood as a practical step toward more inspectable, reusable, and operationally actionable skill representations for agent systems, rather than as a finished standard or an end-to-end mechanism for managing and using skills.",
+      "authors": [
+        "Qiliang Liang",
+        "Hansi Wang",
+        "Zhong Liang",
+        "Yang Liu"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "published": "2026-04-27T04:25:15+00:00",
+      "link": "https://arxiv.org/pdf/2604.24026v2",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "explicit representation of agent skills for multi-agent systems",
+      "llm_evidence_cn": "多智能体系统中智能体技能的显式表示",
+      "llm_evidence": "多智能体系统中智能体技能的显式表示",
+      "canonical_evidence": "多智能体系统中智能体技能的显式表示",
+      "llm_tldr_en": "Proposes a structural representation for agent skills to improve management and reasoning in agent systems.",
+      "llm_tldr_cn": "提出了一种智能体技能的结构化表示，以改进智能体系统的管理和推理。",
+      "llm_tldr": "提出了一种智能体技能的结构化表示，以改进智能体系统的管理和推理。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "multi-agent system library referral",
+      "matched_requirement_id": "req-15",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.24071v1",
+      "source": "arxiv",
+      "title": "PeeriScope: A Multi-Faceted Framework for Evaluating Peer Review Quality",
+      "abstract": "The increasing scale and variability of peer review in scholarly venues has created an urgent need for systematic, interpretable, and extensible tools to assess review quality. We present PeeriScope, a modular platform that integrates structured features, rubric-guided large language model assessments, and supervised prediction to evaluate peer review quality along multiple dimensions. Designed for openness and integration, PeeriScope provides both a public interface and a documented API, supporting practical deployment and research extensibility. The demonstration illustrates its use for reviewer self-assessment, editorial triage, and large-scale auditing, and it enables the continued development of quality evaluation methods within scientific peer review. PeeriScope is available both as a live demo at https://app.reviewer.ly/app/peeriscope and via API services at https://github.com/Reviewerly-Inc/Peeriscope.",
+      "authors": [
+        "Sajad Ebrahimi",
+        "Soroush Sadeghian",
+        "Ali Ghorbanpour",
+        "Negar Arabzadeh",
+        "Sara Salamat",
+        "Seyed Mohammad Hosseini",
+        "Hai Son Le",
+        "Mahdi Bashari",
+        "Ebrahim Bagheri"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-27T05:56:56+00:00",
+      "link": "https://arxiv.org/pdf/2604.24071v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "AI-supported evaluation of scholarly peer review quality",
+      "llm_evidence_cn": "AI支持的学术同行评审质量评估",
+      "llm_evidence": "AI支持的学术同行评审质量评估",
+      "canonical_evidence": "AI支持的学术同行评审质量评估",
+      "llm_tldr_en": "A framework using LLMs to evaluate the quality of scholarly peer reviews for editorial triage.",
+      "llm_tldr_cn": "一个利用大语言模型评估学术同行评审质量以辅助编辑分选的框架。",
+      "llm_tldr": "一个利用大语言模型评估学术同行评审质量以辅助编辑分选的框架。",
+      "llm_tags": [
+        "query:sr-amcr"
+      ],
+      "matched_query_tag": "query:sr-amcr",
+      "matched_query_text": "artificial intelligence supported academic library services",
+      "matched_requirement_id": "req-12",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.25142v1",
+      "source": "arxiv",
+      "title": "UnIte: Uncertainty-based Iterative Document Sampling for Domain Adaptation in Information Retrieval",
+      "abstract": "Unsupervised domain adaptation generalizes neural retrievers to an unseen domain by generating pseudo queries on target domain documents. The quality and efficiency of this adaptation critically depend on which documents are selected for pseudo query generation. The existing document sampling method focuses on diversity but fails to capture model uncertainty. In contrast, we propose **Un**certainty-based **Ite**rative Document Sampling (UnIte) addressing these limitations by (1) filtering documents with high aleatoric uncertainty and (2) prioritizing those with high epistemic uncertainty, maximizing the learning utility of the current model. We conducted extensive experiments on a large corpus of BEIR with small and large models, showing significant gains of +2.45 and +3.49 nDCG@10 with a smaller training sample size, 4k on average.",
+      "authors": [
+        "Jongyoon Kim",
+        "Minseong Hwang",
+        "Seung-won Hwang"
+      ],
+      "primary_category": "cs.IR",
+      "categories": [
+        "cs.IR",
+        "cs.AI"
+      ],
+      "published": "2026-04-28T02:43:03+00:00",
+      "link": "https://arxiv.org/pdf/2604.25142v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "uncertainty-based document sampling for domain adaptation in information retrieval",
+      "llm_evidence_cn": "信息检索中基于不确定性的领域自适应文档采样",
+      "llm_evidence": "信息检索中基于不确定性的领域自适应文档采样",
+      "canonical_evidence": "信息检索中基于不确定性的领域自适应文档采样",
+      "llm_tldr_en": "Proposes an iterative document sampling method to improve neural retriever performance in new domains.",
+      "llm_tldr_cn": "提出了一种迭代文档采样方法，以提高神经检索器在领域自适应中的性能。",
+      "llm_tldr": "提出了一种迭代文档采样方法，以提高神经检索器在领域自适应中的性能。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.24515v1",
+      "source": "arxiv",
+      "title": "SEARCH-R: Structured Entity-Aware Retrieval with Chain-of-Reasoning Navigator for Multi-hop Question Answering",
+      "abstract": "Multi-hop Question Answering (MHQA) aims to answer questions that require multi-step reasoning. It presents two key challenges: generating correct reasoning paths in response to the complex user queries, and accurately retrieving essential knowledge in the face of potential limitations in large language models (LLMs). Existing approaches primarily rely on prompt-based methods to generate reasoning paths, which are further combined with traditional sparse or dense retrieval to produce the final answer. However, the generation of reasoning paths commonly lacks effective control over the generative process, thus leading the reasoning astray. Meanwhile, the retrieval methods over-rely on knowledge matching or similarity scores rather than evaluating the practical utility of the information, resulting in retrieving homogeneous or non-useful information. Therefore, we propose a Structured Entity-Aware Retrieval with Chain-of-Reasoning Navigator framework named SEARCH-R. Specifically, SEARCH-R trains an end-to-end reasoning path navigator, which is able to provide a powerful sub-question decomposer by fine-tuning the Llama3.1-8B model. Moreover, a novel dependency tree-based retrieval is designed to evaluate the informational contribution of the document quantitatively. Extensive experiments on three challenging multi-hop datasets validate the effectiveness of the proposed framework. The code and dataset are available at: https://github.com/Applied-Machine-Learning-Lab/ACL2026_SEARCH-R.",
+      "authors": [
+        "Yuqing Fu",
+        "Yimin Deng",
+        "Wanyu Wang",
+        "Yuhao Wang",
+        "Yejing Wang",
+        "Hongshi Liu",
+        "Yiqi Wang",
+        "Xiao Han",
+        "Maolin Wang",
+        "Guoshuai Zhao",
+        "Yi Chang",
+        "Xiangyu Zhao"
+      ],
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "published": "2026-04-27T14:17:08+00:00",
+      "link": "https://arxiv.org/pdf/2604.24515v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "structured entity-aware retrieval for multi-hop question answering",
+      "llm_evidence_cn": "用于多跳问答的结构化实体感知检索",
+      "llm_evidence": "用于多跳问答的结构化实体感知检索",
+      "canonical_evidence": "用于多跳问答的结构化实体感知检索",
+      "llm_tldr_en": "Proposes a structured retrieval method to improve multi-step reasoning and knowledge discovery.",
+      "llm_tldr_cn": "提出一种结构化检索方法，以改进多步推理和知识发现。",
+      "llm_tldr": "提出一种结构化检索方法，以改进多步推理和知识发现。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    },
+    {
+      "id": "2604.26176v1",
+      "source": "arxiv",
+      "title": "CacheRAG: A Semantic Caching System for Retrieval-Augmented Generation in Knowledge Graph Question Answering",
+      "abstract": "The integration of Large Language Models (LLMs) with Retrieval-Augmented Generation (RAG) has significantly advanced Knowledge Graph Question Answering (KGQA). However, existing LLM-driven KGQA systems act as stateless planners, generating retrieval plans in isolation without exploiting historical query patterns: analogous to a database system that optimizes every query from scratch without a plan cache. This fundamental design flaw leads to schema hallucinations and limited retrieval coverage. We propose CacheRAG, a systematic cache-augmented architecture for LLM-based KGQA that transforms stateless planners into continual learners. Unlike traditional database plan caching (which optimizes for frequency), CacheRAG introduces three novel design principles tailored for LLM contexts: (1) Schema-agnostic user interface: A two-stage semantic parsing framework via Intermediate Semantic Representation (ISR) enables non-expert users to interact purely in natural language, while a Backend Adapter grounds the LLM with local schema context to compile executable physical queries safely. (2) Diversity-optimized cache retrieval: A two-layer hierarchical index (Domain $\\rightarrow$ Aspect) coupled with Maximal Marginal Relevance (MMR) maximizes structural variety in cached examples, effectively mitigating reasoning homogeneity. (3) Bounded heuristic expansion: Deterministic depth and breadth subgraph operators with strict complexity guarantees significantly enhance retrieval recall without risking unbounded API execution. Extensive experiments on multiple benchmarks demonstrate that CacheRAG significantly outperforms state-of-the-art baselines (e.g., +13.2% accuracy and +17.5% truthfulness on the CRAG dataset).",
+      "authors": [
+        "Yushi Sun",
+        "Lei Chen"
+      ],
+      "primary_category": "cs.DB",
+      "categories": [
+        "cs.DB",
+        "cs.CL"
+      ],
+      "published": "2026-04-28T23:46:47+00:00",
+      "link": "https://arxiv.org/pdf/2604.26176v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 7.0,
+      "llm_evidence_en": "semantic caching for knowledge graph retrieval systems",
+      "llm_evidence_cn": "知识图谱检索系统的语义缓存",
+      "llm_evidence": "知识图谱检索系统的语义缓存",
+      "canonical_evidence": "知识图谱检索系统的语义缓存",
+      "llm_tldr_en": "CacheRAG improves KGQA by using a semantic cache to transform stateless planners into continual learners.",
+      "llm_tldr_cn": "CacheRAG通过语义缓存将无状态规划器转变为持续学习者，提升知识图谱问答性能。",
+      "llm_tldr": "CacheRAG通过语义缓存将无状态规划器转变为持续学习者，提升知识图谱问答性能。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "7"
+    },
+    {
+      "id": "2604.25693v1",
+      "source": "arxiv",
+      "title": "RADD: Retrieval-Augmented Discrete Diffusion for Multi-Modal Knowledge Graph Completion",
+      "abstract": "Most multi-modal knowledge graph completion (MMKGC) models use one embedding scorer to do both retrieval over the full entity set and final decision making. We argue that this coupling is a core bottleneck: global high-recall search and local fine-grained disambiguation require different inductive biases. Therefore, we propose a Retrieval-Augmented Discrete Diffusion (RADD) framework to decouple retrieve and reranking for MMKGC. A relation-aware multimodal KGE retriever serves as both global retriever and distillation teacher, while a conditional discrete denoiser performs shortlist-level entity-identity generation for reranking. Training combines KGE supervision, denoising cross-entropy, and temperature-scaled distillation from the retriever to the denoiser. At inference, the designed Diff-Rerank first forms a top-$K$ shortlist with the retriever and then reranks it with the denoiser, ensuring that recall is a strict prerequisite for precision. Experiments on three MMKGC benchmarks show that RADD achieves the best performance and consistent gains over strong unimodal, multimodal, and LLM-based baselines, while ablations further verify the contribution of each component.",
+      "authors": [
+        "Guanglin Niu",
+        "Bo Li"
+      ],
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "published": "2026-04-28T14:21:03+00:00",
+      "link": "https://arxiv.org/pdf/2604.25693v1",
+      "tags": [
+        "keyword:AI图书馆",
+        "keyword:SR AMCR",
+        "query:AI图书馆",
+        "query:SR AMCR"
+      ],
+      "llm_score": 6.0,
+      "llm_evidence_en": "retrieval-augmented framework for knowledge graph completion",
+      "llm_evidence_cn": "用于知识图谱补全的检索增强框架",
+      "llm_evidence": "用于知识图谱补全的检索增强框架",
+      "canonical_evidence": "用于知识图谱补全的检索增强框架",
+      "llm_tldr_en": "Decouples retrieval and reranking for multi-modal knowledge graph completion using a diffusion-based framework.",
+      "llm_tldr_cn": "使用扩散框架解耦多模态知识图谱补全中的检索与重排序过程。",
+      "llm_tldr": "使用扩散框架解耦多模态知识图谱补全中的检索与重排序过程。",
+      "llm_tags": [
+        "query:ai"
+      ],
+      "matched_query_tag": "query:ai",
+      "matched_query_text": "information retrieval systems in libraries",
+      "matched_requirement_id": "req-3",
+      "selection_source": "fresh_fetch",
+      "quick_tier": "6"
+    }
+  ]
+}

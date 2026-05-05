@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "extractor": "pdffigures2",
+  "figures": [
+    {
+      "url": "assets/figures/arxiv/2604.27132v1/fig-001.webp",
+      "caption": "Figure 2: The dual decomposition engine of Trust. Linear Chain-of-Thought reasoning is mapped to Hierarchical Directed Acyclic Graphs (a), while Multi-Agent interactions are projected into Causal Interaction Graphs (b). Both representations enable parallel, privacy-preserving verification by distributed auditor networks.",
+      "page": 11,
+      "index": 1,
+      "width": 1010,
+      "height": 287
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27132v1/fig-002.webp",
+      "caption": "Figure 1: Comparison of sound clinical reasoning versus flawed reasoning that produces the correct CHA2DS2-VASc score (2) by coincidence. Both traces generate identical outputs and pass output-only auditing. However, TRUST semantic auditing detects four critical errors in the flawed trace: (1) confused age with weight and creatinine values, (2) completely skipped the Age 65-74 rule, (3) inferred hypertension from elevated creatinine instead of reading the explicit clinical note, and (4) combined vascular disease and sex rules instead of evaluating independently. These errors remain hidden under output-only auditing but cause catastrophic failures under distribution shift.",
+      "page": 10,
+      "index": 2,
+      "width": 1017,
+      "height": 824
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27132v1/fig-003.webp",
+      "caption": "Table 3: Latency Breakdown for Typical Audit Session",
+      "page": 23,
+      "index": 3,
+      "width": 554,
+      "height": 356
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27132v1/fig-004.webp",
+      "caption": "Figure 3: Example HDAG for a mathematical integration problem. Node color indicates the assigned difficulty level for different auditor tiers. Node shape denotes the type of step (basic reasoning, tool usage, or fact/premise). Edges represent logical relationships, including decomposition, dependency, and validation.",
+      "page": 12,
+      "index": 4,
+      "width": 602,
+      "height": 297
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27132v1/fig-005.webp",
+      "caption": "Table 4: Summary of Notation for Theoretical Analysis",
+      "page": 24,
+      "index": 5,
+      "width": 683,
+      "height": 910
+    },
+    {
+      "url": "assets/figures/arxiv/2604.27132v1/fig-006.webp",
+      "caption": "Table 8: Comparison of centralized (LMArena) and decentralized (TRUST) evaluation paradigms.",
+      "page": 37,
+      "index": 6,
+      "width": 935,
+      "height": 218
+    }
+  ]
+}
